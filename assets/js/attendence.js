@@ -1,14 +1,14 @@
 const staffNames = [
-  "John Smith",
-  "Jane Doe",
-  "David Lee",
-  "Emily Davis",
-  "Chris Johnson",
-  "Lisa Wong",
-  "Michael Brown",
-  "Sarah Taylor",
-  "Daniel Wilson",
-  "Olivia Martin",
+  "Shubham Khodke",
+  "pawan satpute",
+  "Aniket Wagh",
+  "Emily Rathi",
+  "Shivam Patil",
+  "Om Nandgirwar",
+  "Mithilesh Pathak",
+  "Arjun thakre",
+  "Shreyash Gawande",
+  "Manish Bhagat",
 ];
 const staffData = {};
 const memberData = {};
