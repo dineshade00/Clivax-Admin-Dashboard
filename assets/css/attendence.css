@@ -1,4 +1,4 @@
- /* .calendar-checkbox {
+ .calendar-checkbox {
      appearance: none;
      width: 20px;
      height: 20px;
@@ -7,7 +7,7 @@
      position: relative;
      display: inline-block;
      cursor: default;
- } */
+ }
 
  .calendar-checkbox.green {
      background-color: green;
