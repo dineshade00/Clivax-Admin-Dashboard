@@ -1,4 +1,3 @@
-
 const staffNames = [
   "John Smith",
   "Jane Doe",
@@ -11,7 +10,6 @@ const staffNames = [
   "Daniel Wilson",
   "Olivia Martin",
 ];
-
 const staffData = {};
 const memberData = {};
 
@@ -38,7 +36,6 @@ function getDateDay(dateStr) {
 function submitAttendance(type, isPresent) {
   const name = document.getElementById(`${type}FullName`).value;
   const date = document.getElementById(`${type}Date`).value;
-
   if (!name || !date) return;
 
   const dataSet = type === "staff" ? staffData : memberData;
@@ -61,34 +58,38 @@ function submitAttendance(type, isPresent) {
 
 function renderAttendanceTable(type) {
   const dataSet = type === "staff" ? staffData : memberData;
-  const tbody = document.getElementById(`${type}TableBody`);
+  const tbody = document.getElementById(type + "TableBody");
   tbody.innerHTML = "";
 
   Object.entries(dataSet).forEach(([fullName, daysArray]) => {
     const row = document.createElement("tr");
     row.innerHTML = `
-      <td>${fullName}</td>
-      <td>${generateDayGrid(daysArray)}</td>
-    `;
+          <td>${fullName}</td>
+          <td>${generateDayGrid(daysArray)}</td>
+        `;
     tbody.appendChild(row);
   });
 }
 
 function generateDayGrid(daysArray) {
   return `
-    <div class="d-flex flex-wrap gap-1">
-      ${daysArray
-        .map((status, i) => {
-          const color = status === true ? "green" : status === false ? "red" : "gray";
-          const checked = status !== null ? "checked" : "";
-          return `
-            <label style="display:inline-flex; align-items:center; gap:4px;">
-              <input type="checkbox" class="calendar-checkbox ${color}" disabled ${checked} />
-              ${i + 1}
-            </label>
-          `;
-        })
-        .join("")}
-    </div>
-  `;
+        <div class="day-grid">
+          ${daysArray
+            .map((status, i) => {
+              if (status === true) {
+                return `<label><input type="checkbox" class="calendar-checkbox green" disabled checked /> ${
+                  i + 1
+                }</label>`;
+              } else if (status === false) {
+                return `<label><input type="checkbox" class="calendar-checkbox red" disabled checked /> ${
+                  i + 1
+                }</label>`;
+              }
+              return `<label><input type="checkbox" class="calendar-checkbox" disabled /> ${
+                i + 1
+              }</label>`;
+            })
+            .join("")}
+        </div>
+      `;
 }
