@@ -1,9 +1,3 @@
- $('#fromDate, #toDate').datepicker({
-        format: "mm/yyyy",
-        startView: "months",
-        minViewMode: "months",
-        autoclose: true
-    });
 
 
 var linechartDatalabelColors = ["#34c38f", "#ff0000"]; // Green for Active, Red for Inactive
