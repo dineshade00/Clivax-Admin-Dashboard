@@ -1,26 +1,15 @@
- <!doctype html>
+<!doctype html>
 <html lang="en">
 
 <head>
 
     <meta charset="utf-8" />
-    <title>Datatable Base | Clivax - Admin & Dashboard Template</title>
+    <title>Renewals | Clivax</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Codebucks" name="author" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="assets/images/favicon.ico">
-
-    <!-- DataTables -->
-    <link href="assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-
-    <!-- buttons datatable -->
-    <link href="assets/libs/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet"
-        type="text/css" />
-
-    <!-- Responsive datatable examples -->
-    <link href="assets/libs/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet"
-        type="text/css" />
 
 
     <!-- dark layout js -->
@@ -39,7 +28,6 @@
 
 <body>
 
-    <!-- Begin page -->
     <div id="layout-wrapper">
 
 
@@ -81,64 +69,76 @@
                         <div class="dropdown d-none d-lg-block">
                             <button type="button" class="btn btn-primary btn-sm fs-14 d-inline"
                                 data-bs-toggle="dropdown">
-                                Apps
+                                Gym Modules
                                 <i class="mdi mdi-chevron-down align-middle"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-start dropdown-menu-animated">
+
+                                <!-- Inventory Manager -->
                                 <a href="#" class="dropdown-item">
-                                    <div class="dropdown-icon"><i class="fa fa-boxes"></i></div>
-                                    <span class="dropdown-content">Inventory Manager</span>
+                                    <div class="dropdown-icon"><i class="fas fa-dumbbell"></i></div>
+                                    <span class="dropdown-content">Equipment Manager</span>
                                     <div class="dropdown-addon"><span class="badge badge-warning rounded-pill">20</span>
                                     </div>
                                 </a>
+
+                                <!-- Project Manager as Workout Programs -->
                                 <div class="dropdown-submenu">
                                     <a href="#" class="dropdown-item">
-                                        <div class="dropdown-icon"><i class="fa fa-project-diagram"></i></div>
-                                        <span class="dropdown-content">Project manager</span>
+                                        <div class="dropdown-icon"><i class="fas fa-running"></i></div>
+                                        <span class="dropdown-content">Workout Programs</span>
                                         <div class="dropdown-addon"><i class="mdi mdi-chevron-right align-middle"></i>
                                         </div>
                                     </a>
                                     <div class="dropdown-submenu-menu dropdown-submenu-end">
-                                        <a href="#" class="dropdown-item"><i class="dropdown-bullet"></i> <span
-                                                class="dropdown-content">Create project</span> </a>
-                                        <a href="#" class="dropdown-item"><i class="dropdown-bullet"></i> <span
-                                                class="dropdown-content">Delete project</span> </a>
-                                        <a href="#" class="dropdown-item"><i class="dropdown-bullet"></i> <span
-                                                class="dropdown-content">Ongoing project</span> </a>
-                                        <a href="#" class="dropdown-item"><i class="dropdown-bullet"></i> <span
-                                                class="dropdown-content">Completed project</span> </a>
-                                        <a href="#" class="dropdown-item"><i class="dropdown-bullet"></i> <span
-                                                class="dropdown-content">Urgent project</span></a>
+                                        <a href="#" class="dropdown-item"><i class="dropdown-bullet"></i>
+                                            <span class="dropdown-content">Create Program</span> </a>
+                                        <a href="#" class="dropdown-item"><i class="dropdown-bullet"></i>
+                                            <span class="dropdown-content">Delete Program</span> </a>
+                                        <a href="#" class="dropdown-item"><i class="dropdown-bullet"></i>
+                                            <span class="dropdown-content">Active Programs</span> </a>
+                                        <a href="#" class="dropdown-item"><i class="dropdown-bullet"></i>
+                                            <span class="dropdown-content">Completed Programs</span> </a>
+                                        <a href="#" class="dropdown-item"><i class="dropdown-bullet"></i>
+                                            <span class="dropdown-content">High Priority</span></a>
                                     </div>
                                 </div>
+
+                                <!-- Task Manager as Trainer Schedules -->
                                 <div class="dropdown-submenu">
                                     <a href="#" class="dropdown-item">
-                                        <div class="dropdown-icon"><i class="fa fa-tasks"></i></div>
-                                        <span class="dropdown-content">Task manager</span>
+                                        <div class="dropdown-icon"><i class="fas fa-user-clock"></i></div>
+                                        <span class="dropdown-content">Trainer Schedules</span>
                                         <div class="dropdown-addon"><i class="mdi mdi-chevron-right align-middle"></i>
                                         </div>
                                     </a>
                                     <div class="dropdown-submenu-menu dropdown-submenu-end">
-                                        <a href="#" class="dropdown-item"><i class="dropdown-bullet"></i> <span
-                                                class="dropdown-content">Show task</span> </a>
-                                        <a href="#" class="dropdown-item"><i class="dropdown-bullet"></i> <span
-                                                class="dropdown-content">Assign task</span> </a>
-                                        <a href="#" class="dropdown-item"><i class="dropdown-bullet"></i> <span
-                                                class="dropdown-content">Assign member</span> </a>
-                                        <a href="#" class="dropdown-item"><i class="dropdown-bullet"></i> <span
-                                                class="dropdown-content">Completed task</span> </a>
-                                        <a href="#" class="dropdown-item"><i class="dropdown-bullet"></i> <span
-                                                class="dropdown-content">Urgent task</span></a>
+                                        <a href="#" class="dropdown-item"><i class="dropdown-bullet"></i>
+                                            <span class="dropdown-content">View Schedule</span> </a>
+                                        <a href="#" class="dropdown-item"><i class="dropdown-bullet"></i>
+                                            <span class="dropdown-content">Assign Schedule</span> </a>
+                                        <a href="#" class="dropdown-item"><i class="dropdown-bullet"></i>
+                                            <span class="dropdown-content">Assign Trainer</span> </a>
+                                        <a href="#" class="dropdown-item"><i class="dropdown-bullet"></i>
+                                            <span class="dropdown-content">Completed Sessions</span> </a>
+                                        <a href="#" class="dropdown-item"><i class="dropdown-bullet"></i>
+                                            <span class="dropdown-content">Urgent Sessions</span></a>
                                     </div>
                                 </div>
+
+                                <!-- Invoice -->
                                 <a href="#" class="dropdown-item">
-                                    <div class="dropdown-icon"><i class="fa fa-dollar-sign"></i></div>
-                                    <span class="dropdown-content">Invoice</span>
+                                    <div class="dropdown-icon"><i class="fas fa-file-invoice"></i></div>
+                                    <span class="dropdown-content">Membership Invoice</span>
                                 </a>
+
+                                <!-- Divider -->
                                 <div class="dropdown-divider"></div>
+
+                                <!-- My Account -->
                                 <a href="apps-contact.html" class="dropdown-item">
-                                    <div class="dropdown-icon"><i class="fa fa-user-cog"></i></div>
-                                    <span class="dropdown-content">My Account</span>
+                                    <div class="dropdown-icon"><i class="fas fa-user-circle"></i></div>
+                                    <span class="dropdown-content">My Profile</span>
                                 </a>
                             </div>
                         </div>
@@ -152,74 +152,85 @@
                             <div
                                 class="dropdown-menu dropdown-menu-start dropdown-menu-lg-widest dropdown-menu-widest dropdown-menu-animated bg-primary-subtle overflow-hidden">
                                 <div class="dropdown-row justify-content-center">
+
+                                    <!-- Original Image (Unchanged) -->
                                     <div class="p-2 menu-image">
                                         <img src="assets/images/mega-menu.png" alt="mega-menu image" class="img-fluid"
                                             style="height: 200px;">
                                     </div>
+
+                                    <!-- Gym Welcome Section -->
                                     <div class="dropdown-col">
-                                        <h2 class="">Welcome back!</h2>
+                                        <h2 class="">Welcome to FitPro Gym!</h2>
                                         <p class="text-muted mb-0">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium,
-                                            commodi hic qui aspernatur doloremque quos tempora placeat culpa illum,
-                                            voluptatibus delectus provident cumque
-                                            aliquid enim, laborum aliquam. Quod, perferendis unde.
+                                            Track members, manage plans, monitor trainers, and streamline gym operations
+                                            with our digital gym
+                                            dashboard.
                                         </p>
                                         <div class="mt-3">
-                                            <a href="auth-login.html" class="btn btn-dark btn-wider">Login</a>
+                                            <a href="auth-login.html" class="btn btn-dark btn-wider">Admin Login</a>
                                         </div>
                                     </div>
+
+                                    <!-- Features Section -->
                                     <div class="dropdown-col border-start border-primary border-opacity-50">
-                                        <h4 class="dropdown-header">Features</h4>
+                                        <h4 class="dropdown-header">Gym Features</h4>
                                         <div class="grid-nav grid-nav-action">
                                             <div class="grid-nav-row">
-                                                <a href="index.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="far fa-window-restore"></i>
-                                                    </div>
+                                                <a href="dashboard.html" class="grid-nav-item">
+                                                    <div class="grid-nav-icon"><i class="fas fa-chart-line"></i></div>
                                                     <span class="grid-nav-content">Dashboard</span>
                                                 </a>
-                                                <a href="apps-kanban.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="far fa-clipboard"></i></div>
-                                                    <span class="grid-nav-content">TODO List</span>
+                                                <a href="members.html" class="grid-nav-item">
+                                                    <div class="grid-nav-icon"><i class="fas fa-user-friends"></i></div>
+                                                    <span class="grid-nav-content">Members</span>
                                                 </a>
-                                                <a href="#" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="far fa-question-circle"></i>
-                                                    </div>
-                                                    <span class="grid-nav-content">Help Center</span>
+                                                <a href="renewals.html" class="grid-nav-item">
+                                                    <div class="grid-nav-icon"><i class="fas fa-redo-alt"></i></div>
+                                                    <span class="grid-nav-content">Renewals</span>
                                                 </a>
                                             </div>
                                             <div class="grid-nav-row">
-                                                <a href="#" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="far fa-images"></i></div>
-                                                    <span class="grid-nav-content">Gallery</span>
+                                                <a href="trainers.html" class="grid-nav-item">
+                                                    <div class="grid-nav-icon"><i class="fas fa-dumbbell"></i></div>
+                                                    <span class="grid-nav-content">Trainers</span>
                                                 </a>
-                                                <a href="#" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="far fa-chart-bar"></i></div>
-                                                    <span class="grid-nav-content">Scrumboard</span>
+                                                <a href="plans.html" class="grid-nav-item">
+                                                    <div class="grid-nav-icon"><i class="fas fa-id-card-alt"></i></div>
+                                                    <span class="grid-nav-content">Membership Plans</span>
                                                 </a>
-                                                <a href="#" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="far fa-bookmark"></i></div>
-                                                    <span class="grid-nav-content">Docs</span>
+                                                <a href="reports.html" class="grid-nav-item">
+                                                    <div class="grid-nav-icon"><i class="fas fa-file-alt"></i></div>
+                                                    <span class="grid-nav-content">Reports</span>
                                                 </a>
                                             </div>
                                         </div>
                                     </div>
+
+                                    <!-- Tools Section -->
                                     <div class="dropdown-col border-start border-primary border-opacity-50">
-                                        <h4 class="dropdown-header">Tools</h4>
-                                        <a href="#" class="dropdown-item"><i
-                                                class="mdi mdi-checkbox-blank-circle align-middle dropdown-bullet me-2"></i>
-                                            <span class="dropdown-content">Components</span> </a>
-                                        <a href="#" class="dropdown-item"><i
-                                                class="mdi mdi-checkbox-blank-circle align-middle dropdown-bullet me-2"></i>
-                                            <span class="dropdown-content">Form Wizard</span> </a>
-                                        <a href="#" class="dropdown-item"><i
-                                                class="mdi mdi-checkbox-blank-circle align-middle dropdown-bullet me-2"></i>
-                                            <span class="dropdown-content">Documentation</span> </a>
-                                        <a href="#" class="dropdown-item"><i
-                                                class="mdi mdi-checkbox-blank-circle align-middle dropdown-bullet me-2"></i>
-                                            <span class="dropdown-content">Knowledge Base</span> </a>
-                                        <a href="#" class="dropdown-item"><i
-                                                class="mdi mdi-checkbox-blank-circle align-middle dropdown-bullet me-2"></i>
-                                            <span class="dropdown-content">Inventory Manager</span></a>
+                                        <h4 class="dropdown-header">Quick Tools</h4>
+                                        <a href="attendance.html" class="dropdown-item">
+                                            <i
+                                                class="mdi mdi-account-check-outline align-middle dropdown-bullet me-2"></i>
+                                            <span class="dropdown-content">Attendance</span>
+                                        </a>
+                                        <a href="diet-plans.html" class="dropdown-item">
+                                            <i class="mdi mdi-food-apple-outline align-middle dropdown-bullet me-2"></i>
+                                            <span class="dropdown-content">Diet Plans</span>
+                                        </a>
+                                        <a href="workout-videos.html" class="dropdown-item">
+                                            <i class="mdi mdi-video-outline align-middle dropdown-bullet me-2"></i>
+                                            <span class="dropdown-content">Workout Videos</span>
+                                        </a>
+                                        <a href="staff.html" class="dropdown-item">
+                                            <i class="mdi mdi-account-tie align-middle dropdown-bullet me-2"></i>
+                                            <span class="dropdown-content">Staff Management</span>
+                                        </a>
+                                        <a href="notifications.html" class="dropdown-item">
+                                            <i class="mdi mdi-bell-outline align-middle dropdown-bullet me-2"></i>
+                                            <span class="dropdown-content">Notifications</span>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -252,102 +263,110 @@
                                             </h6>
                                         </div>
                                         <div class="col-auto">
-                                            <a href="#!" class="badge bg-info-subtle text-info"> 8+</a>
+                                            <a href="#!" class="badge bg-info-subtle text-info"> 6+</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div data-simplebar style="max-height: 230px;">
-                                    <a href="" class="text-reset notification-item">
-                                        <div class="d-flex">
-                                            <div class="avatar avatar-xs avatar-label-primary me-3">
-                                                <span class="rounded fs-16">
-                                                    <i class="mdi mdi-file-document-outline"></i>
-                                                </span>
-                                            </div>
-                                            <div class="flex-1">
-                                                <h6 class="mb-1">New report has been recived</h6>
-                                                <div class="fs-12 text-muted">
-                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 3 min ago</p>
-                                                </div>
-                                            </div>
-                                            <i class="mdi mdi-chevron-right align-middle ms-2"></i>
-                                        </div>
-                                    </a>
-                                    <a href="" class="text-reset notification-item">
+
+                                    <a href="#" class="text-reset notification-item">
                                         <div class="d-flex">
                                             <div class="avatar avatar-xs avatar-label-success me-3">
                                                 <span class="rounded fs-16">
-                                                    <i class="mdi mdi-cart-variant"></i>
+                                                    <i class="mdi mdi-account-plus-outline"></i>
                                                 </span>
                                             </div>
                                             <div class="flex-1">
-                                                <h6 class="mb-1">Last order was completed</h6>
+                                                <h6 class="mb-1">New member registered</h6>
                                                 <div class="fs-12 text-muted">
-                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 1 hour ago</p>
+                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 5 min ago</p>
                                                 </div>
                                             </div>
                                             <i class="mdi mdi-chevron-right align-middle ms-2"></i>
                                         </div>
                                     </a>
-                                    <a href="" class="text-reset notification-item">
-                                        <div class="d-flex">
-                                            <div class="avatar avatar-xs avatar-label-danger me-3">
-                                                <span class="rounded fs-16">
-                                                    <i class="mdi mdi-account-group"></i>
-                                                </span>
-                                            </div>
-                                            <div class="flex-1">
-                                                <h6 class="mb-1">Completed meeting canceled</h6>
-                                                <div class="fs-12 text-muted">
-                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 5 hour ago</p>
-                                                </div>
-                                            </div>
-                                            <i class="mdi mdi-chevron-right align-middle ms-2"></i>
-                                        </div>
-                                    </a>
-                                    <a href="" class="text-reset notification-item">
+
+                                    <a href="#" class="text-reset notification-item">
                                         <div class="d-flex">
                                             <div class="avatar avatar-xs avatar-label-warning me-3">
                                                 <span class="rounded fs-16">
-                                                    <i class="mdi mdi-send-outline"></i>
+                                                    <i class="mdi mdi-alarm"></i>
                                                 </span>
                                             </div>
                                             <div class="flex-1">
-                                                <h6 class="mb-1">New feedback received</h6>
+                                                <h6 class="mb-1">Session missed by trainer</h6>
                                                 <div class="fs-12 text-muted">
-                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 6 hour ago</p>
+                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 30 min ago</p>
                                                 </div>
                                             </div>
                                             <i class="mdi mdi-chevron-right align-middle ms-2"></i>
                                         </div>
                                     </a>
-                                    <a href="" class="text-reset notification-item">
+
+                                    <a href="#" class="text-reset notification-item">
                                         <div class="d-flex">
-                                            <div class="avatar avatar-xs avatar-label-secondary me-3">
+                                            <div class="avatar avatar-xs avatar-label-danger me-3">
                                                 <span class="rounded fs-16">
-                                                    <i class="mdi mdi-download-box"></i>
+                                                    <i class="mdi mdi-cash-clock"></i>
                                                 </span>
                                             </div>
                                             <div class="flex-1">
-                                                <h6 class="mb-1">New update was available</h6>
+                                                <h6 class="mb-1">Payment due for member ID #1023</h6>
                                                 <div class="fs-12 text-muted">
-                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 1 day ago</p>
+                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 2 hours ago
+                                                    </p>
                                                 </div>
                                             </div>
                                             <i class="mdi mdi-chevron-right align-middle ms-2"></i>
                                         </div>
                                     </a>
-                                    <a href="" class="text-reset notification-item">
+
+                                    <a href="#" class="text-reset notification-item">
                                         <div class="d-flex">
                                             <div class="avatar avatar-xs avatar-label-info me-3">
                                                 <span class="rounded fs-16">
-                                                    <i class="mdi mdi-hexagram-outline"></i>
+                                                    <i class="mdi mdi-calendar-check-outline"></i>
                                                 </span>
                                             </div>
                                             <div class="flex-1">
-                                                <h6 class="mb-1">Your password was changed</h6>
+                                                <h6 class="mb-1">Today’s session starts in 30 minutes</h6>
                                                 <div class="fs-12 text-muted">
-                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 2 day ago</p>
+                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 3 hours ago
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <i class="mdi mdi-chevron-right align-middle ms-2"></i>
+                                        </div>
+                                    </a>
+
+                                    <a href="#" class="text-reset notification-item">
+                                        <div class="d-flex">
+                                            <div class="avatar avatar-xs avatar-label-secondary me-3">
+                                                <span class="rounded fs-16">
+                                                    <i class="mdi mdi-update"></i>
+                                                </span>
+                                            </div>
+                                            <div class="flex-1">
+                                                <h6 class="mb-1">Member plan updated (ID #1008)</h6>
+                                                <div class="fs-12 text-muted">
+                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> Yesterday</p>
+                                                </div>
+                                            </div>
+                                            <i class="mdi mdi-chevron-right align-middle ms-2"></i>
+                                        </div>
+                                    </a>
+
+                                    <a href="#" class="text-reset notification-item">
+                                        <div class="d-flex">
+                                            <div class="avatar avatar-xs avatar-label-primary me-3">
+                                                <span class="rounded fs-16">
+                                                    <i class="mdi mdi-lock-reset"></i>
+                                                </span>
+                                            </div>
+                                            <div class="flex-1">
+                                                <h6 class="mb-1">Admin password changed</h6>
+                                                <div class="fs-12 text-muted">
+                                                    <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 2 days ago</p>
                                                 </div>
                                             </div>
                                             <i class="mdi mdi-chevron-right align-middle ms-2"></i>
@@ -374,7 +393,6 @@
                             </button>
                         </div>
                         <!-- End Activities -->
-
                         <!-- Start Profile -->
                         <div class="dropdown d-inline-block">
                             <button type="button" class="btn btn-sm top-icon p-0" id="page-header-user-dropdown"
@@ -389,62 +407,69 @@
                                         <div class="rich-list-item w-100 p-0">
                                             <div class="rich-list-prepend">
                                                 <div class="avatar avatar-label-light avatar-circle">
-                                                    <div class="avatar-display"><i class="fa fa-user-alt"></i></div>
+                                                    <div class="avatar-display"><i class="fas fa-user-circle"></i></div>
                                                 </div>
                                             </div>
                                             <div class="rich-list-content">
-                                                <h3 class="rich-list-title text-white">Charlie Stone</h3>
-                                                <span class="rich-list-subtitle text-white">admin@codubucks.in</span>
+                                                <h3 class="rich-list-title text-white">Admin</h3>
+                                                <span class="rich-list-subtitle text-white">info@kavyainfoweb.com</span>
                                             </div>
-                                            <div class="rich-list-append"><span
-                                                    class="badge badge-label-light fs-6">6+</span></div>
+                                            <div class="rich-list-append">
+                                                <span class="badge badge-label-light fs-6">6+</span>
+                                            </div>
                                         </div>
                                     </div>
+
                                     <div class="card-body p-0">
                                         <div class="grid-nav grid-nav-flush grid-nav-action grid-nav-no-rounded">
                                             <div class="grid-nav-row">
-                                                <a href="apps-contact.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="far fa-address-card"></i></div>
-                                                    <span class="grid-nav-content">Profile</span>
+                                                <a href="profile.html" class="grid-nav-item">
+                                                    <div class="grid-nav-icon"><i class="fas fa-user-edit"></i></div>
+                                                    <span class="grid-nav-content">My Profile</span>
                                                 </a>
-                                                <a href="#!" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="far fa-comments"></i></div>
-                                                    <span class="grid-nav-content">Messages</span>
+                                                <a href="trainer-chats.html" class="grid-nav-item">
+                                                    <div class="grid-nav-icon"><i class="fas fa-dumbbell"></i></div>
+                                                    <span class="grid-nav-content">Trainer Chats</span>
                                                 </a>
-                                                <a href="#!" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="far fa-clone"></i></div>
-                                                    <span class="grid-nav-content">Activities</span>
+                                                <a href="workout-logs.html" class="grid-nav-item">
+                                                    <div class="grid-nav-icon"><i class="fas fa-running"></i></div>
+                                                    <span class="grid-nav-content">Workout Logs</span>
                                                 </a>
                                             </div>
+
                                             <div class="grid-nav-row">
-                                                <a href="#!" class="grid-nav-item">
+                                                <a href="session-calendar.html" class="grid-nav-item">
                                                     <div class="grid-nav-icon"><i class="far fa-calendar-check"></i>
                                                     </div>
-                                                    <span class="grid-nav-content">Tasks</span>
+                                                    <span class="grid-nav-content">Session Calendar</span>
                                                 </a>
-                                                <a href="#!" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="far fa-sticky-note"></i></div>
-                                                    <span class="grid-nav-content">Notes</span>
+                                                <a href="diet-notes.html" class="grid-nav-item">
+                                                    <div class="grid-nav-icon"><i class="fas fa-apple-alt"></i></div>
+                                                    <span class="grid-nav-content">Diet Notes</span>
                                                 </a>
-                                                <a href="#!" class="grid-nav-item">
+                                                <a href="notifications.html" class="grid-nav-item">
                                                     <div class="grid-nav-icon"><i class="far fa-bell"></i></div>
-                                                    <span class="grid-nav-content">Notification</span>
+                                                    <span class="grid-nav-content">Notifications</span>
                                                 </a>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card-footer card-footer-bordered rounded-0"><a href="auth-login.html"
-                                            class="btn btn-label-danger">Sign out</a></div>
+
+                                    <div class="card-footer card-footer-bordered rounded-0">
+                                        <a href="auth-login.html" class="btn btn-label-danger">Sign out</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <!-- End Profile -->
+
                     </div>
                 </div>
                 <!-- End menu -->
             </div>
         </header>
         <!-- End topbar -->
+
 
         <!-- ========== Left Sidebar Start ========== -->
         <div class="sidebar-left">
@@ -470,10 +495,10 @@
                                 <span>Member Management</span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="ui-accordions.html">
+                                <li><a href="add-new-member.html">
                                         <i class="mdi mdi-checkbox-blank-circle align-middle"></i>Add New Member</a>
                                 </li>
-                                <li><a href="ui-breadcrumb.html">
+                                <li><a href="show-all-member.html">
                                         <i class="mdi mdi-checkbox-blank-circle align-middle"></i>Show All Member</a>
                                 </li>
                             </ul>
@@ -487,19 +512,19 @@
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
                                 <li>
-                                    <a href="ui-avatar.html">
+                                    <a href="add-new-plan.html">
                                         <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
                                         Add New
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="ui-avatar.html">
+                                    <a href="view-plan.html">
                                         <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
                                         View Plan
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="ui-blockUI.html">
+                                    <a href="manage-plan.html">
                                         <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
                                         Manage Plan
                                     </a>
@@ -513,12 +538,12 @@
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
                                 <li>
-                                    <a href="session-live.html">
+                                    <a href="live-session.html">
                                         <i class="mdi mdi-checkbox-blank-circle align-middle"></i>Live Session
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="session-offline.html">
+                                    <a href="offline-session.html">
                                         <i class="mdi mdi-checkbox-blank-circle align-middle"></i>Offline Session
                                     </a>
                                 </li>
@@ -533,14 +558,15 @@
                                 <span>Staff Management</span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="show_all.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i> Show All</a>
-                                </li>
-                                <li><a href="add_new.html">
+
+                                <li><a href="add-new-staff.html">
                                         <i class="mdi mdi-checkbox-blank-circle align-middle"></i> Add New</a>
                                 </li>
-                                <li><a href="manage_staff.html">
+                                <li><a href="manage-staff.html">
                                         <i class="mdi mdi-checkbox-blank-circle align-middle"></i> Manage Staff</a>
+                                </li>
+                                <li><a href="show-all-staff.html">
+                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i> Show All</a>
                                 </li>
                             </ul>
                         </li>
@@ -554,43 +580,28 @@
 
                                 <!-- Show All -->
                                 <li>
-                                    <a href="member-billing-overview.html">
+                                    <a href="add-new-account.html">
+                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>Add New Account
+                                    </a>
+                                </li>
+
+                                <!-- Show All -->
+                                <li>
+                                    <a href="show-all-account.html">
                                         <i class="mdi mdi-checkbox-blank-circle align-middle"></i> Show All
                                     </a>
                                 </li>
 
-
-                                <li>
-                                    <a href="member-billing-overview.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i> Add New Account
-                                    </a>
-                                </li>
-
-
                                 <!-- Member Invoices with dropdown -->
                                 <li>
-                                    <a href="javascript: void(0);" class="has-arrow">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i> Member Invoices
+                                    <a href="create-invoice.html">
+                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i> Create Invoices
                                     </a>
-                                    <ul class="sub-menu" aria-expanded="false">
-                                        <li>
-                                            <a href="invoice-create.html">
-                                                <i class="mdi mdi-checkbox-blank-circle align-middle"></i> Create
-                                                Invoice
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="invoice-list.html">
-                                                <i class="mdi mdi-checkbox-blank-circle align-middle"></i> View All
-                                                Invoices
-                                            </a>
-                                        </li>
-                                    </ul>
                                 </li>
 
                                 <!-- Payment History -->
                                 <li>
-                                    <a href="payment-history.html">
+                                    <a href="pyments.html">
                                         <i class="mdi mdi-checkbox-blank-circle align-middle"></i> Payment History
                                     </a>
                                 </li>
@@ -601,9 +612,7 @@
                         <li>
                             <a href="renewals.html">
                                 <i class="fa fa-sync-alt"></i>
-                                <span>Renewals
-                                
-                                </span>
+                                <span>Renewals</span>
                             </a>
                         </li>
 
@@ -664,348 +673,413 @@
         </div>
         <!-- Left Sidebar End -->
 
-        <!-- ============================================================== -->
-        <!-- Start right Content here -->
-        <!-- ============================================================== -->
-       <div class="main-content">
-  <div class="page-content">
-    <div class="container-fluid">
+      <!-- ============================================================== -->
+      <!-- Start right Content here -->
+      <!-- ============================================================== -->
+      <div class="main-content">
+        <div class="page-content">
+          <div class="container-fluid">
+            <!-- Page Title -->
+            <div class="row">
+              <div class="col-12">
+                <div
+                  class="page-title-box d-flex align-items-center justify-content-between"
+                >
+                  <h4 class="mb-sm-0">Renewals</h4>
+                  <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                      <li class="breadcrumb-item">
+                        <a href="javascript: void(0);">Datatable</a>
+                      </li>
+                      <li class="breadcrumb-item active">Base</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Page Title -->
 
-      <!-- Page Title -->
-      <div class="row">
-        <div class="col-12">
-          <div class="page-title-box d-flex align-items-center justify-content-between">
-            <h4 class="mb-sm-0">Renewals</h4>
-            <div class="page-title-right">
-              <ol class="breadcrumb m-0">
-                <li class="breadcrumb-item"><a href="javascript: void(0);">Datatable</a></li>
-                <li class="breadcrumb-item active">Base</li>
-              </ol>
+            <!-- Tabs -->
+            <div class="container py-4">
+              <ul class="nav nav-tabs" id="mainTabs">
+                <li class="nav-item">
+                  <button
+                    class="nav-link active"
+                    data-bs-toggle="tab"
+                    data-bs-target="#staffTab"
+                  >
+                    Staff
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button
+                    class="nav-link"
+                    data-bs-toggle="tab"
+                    data-bs-target="#memberTab"
+                  >
+                    Member
+                  </button>
+                </li>
+              </ul>
+
+              <!-- Tab Contents -->
+              <div class="tab-content pt-3">
+                <!-- Staff Tab - ACTIVE BY DEFAULT -->
+                <div class="tab-pane fade show active" id="staffTab">
+                  <div class="table-responsive">
+                    <table
+                      class="table table-bordered table-striped align-middle text-center"
+                    >
+                      <thead class="table-bg">
+                        <tr>
+                          <th style="background-color: #38c66c">Name</th>
+                          <th style="background-color: #38c66c">Designation</th>
+                          <th style="background-color: #38c66c">Gym Branch</th>
+                          <th style="background-color: #38c66c">Age</th>
+                          <th style="background-color: #38c66c">
+                            Joining Date
+                          </th>
+                          <th style="background-color: #38c66c">Shift Time</th>
+                        </tr>
+                      </thead>
+                      <tbody id="sharedTableBody"></tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!-- Member Tab -->
+                <div class="tab-pane fade" id="memberTab">
+                  <div class="table-responsive">
+                    <table
+                      class="table table-bordered table-striped align-middle text-center"
+                    >
+                      <thead class="table-white">
+                        <tr>
+                          <th style="background-color: #38c66c">Name</th>
+                          <th style="background-color: #38c66c">Age</th>
+                          <th style="background-color: #38c66c">
+                            Joining Date
+                          </th>
+                          <th style="background-color: #38c66c">
+                            Date of Birth
+                          </th>
+                          <th style="background-color: #38c66c">Email Id</th>
+                        </tr>
+                      </thead>
+
+                      <tbody id="sharedTableBodyClone"></tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- End Page Title -->
 
-      <!-- Tabs -->
-      <div class="container py-4">
-        <ul class="nav nav-tabs" id="mainTabs">
-          <li class="nav-item">
-            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#staffTab">Staff</button>
-          </li>
-          <li class="nav-item">
-            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#memberTab">Member</button>
-          </li>
-        </ul>
-
-        <!-- Tab Contents -->
-        <div class="tab-content pt-3">
-          <!-- Staff Tab - ACTIVE BY DEFAULT -->
-          <div class="tab-pane fade show active" id="staffTab">
-            <div class="table-responsive">
-              <table class="table table-bordered table-striped align-middle text-center">
-                <thead class="table-bg">
-                  <tr>
-                    <th style="background-color: #38C66C;"> Name</th>
-                    <th style="background-color: #38C66C;">Designation</th>
-                    <th style="background-color: #38C66C;">Gym Branch</th>
-                    <th style="background-color: #38C66C;">Age</th>
-                    <th style="background-color: #38C66C;">Joining Date</th>
-                    <th style="background-color: #38C66C;">Shift Time</th>
-              
- 
-
-
-                  </tr>
-                </thead>
-                <tbody id="sharedTableBody"></tbody>
-              </table>
+        <!-- Footer -->
+        <footer class="footer">
+          <div class="container-fluid">
+            <div class="row align-items-center">
+              <div class="col-sm-6">
+                <script>
+                  document.write(new Date().getFullYear());
+                </script>
+                © FitPro Gym.
+              </div>
+              <div class="col-sm-6">
+                <div class="text-sm-end d-none d-sm-block">
+                  Designed & Developed
+                  <i class="mdi mdi-heart text-danger"></i> by
+                  <a
+                    href="https://kavyainfoweb.com/"
+                    target="_blank"
+                    class="text-muted"
+                    >Kavya Infoweb Pvt. Ltd.</a
+                  >
+                </div>
+              </div>
             </div>
           </div>
-
-          <!-- Member Tab -->
-          <div class="tab-pane fade" id="memberTab">
-            <div class="table-responsive">
-              <table class="table table-bordered table-striped align-middle text-center">
-                <thead class="table-white">
-                  <tr>
-                    <th style="background-color: #38C66C;">Name</th>
-                    <th style="background-color: #38C66C;">Age</th>
-                    <th style="background-color: #38C66C;">Joining Date</th>
-                    <th style="background-color: #38C66C;">Date of Birth</th>
-                    <th style="background-color: #38C66C;">Email Id</th>
-                    
-                  </tr>
-                  
-                </thead>
-                
-                <tbody id="sharedTableBodyClone"></tbody>
-              </table>
-            </div>
-          </div>
-        </div>
+        </footer>
       </div>
 
-    </div>
-  </div>
+      <!-- Custom JS -->
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container-fluid">
-      <div class="row align-items-center">
-        <div class="col-sm-6">
-          <script>document.write(new Date().getFullYear())</script> © FitPro Gym.
-        </div>
-        <div class="col-sm-6">
-          <div class="text-sm-end d-none d-sm-block">
-            Designed & Developed <i class="mdi mdi-heart text-danger"></i> by
-            <a href="https://kavyainfoweb.com/" target="_blank" class="text-muted">Kavya Infoweb Pvt. Ltd.</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-</div>
-
-
-
-<!-- Custom JS -->
-
-        <!-- end main content-->
-
+      <!-- end main content-->
     </div>
     <!-- END layout-wrapper -->
 
-
-    <div class="custom-setting bg-primary pe-0 d-flex flex-column rounded-start">
-        <button type="button" class="btn btn-wide border-0 text-white fs-20 avatar-sm rounded-end-0"
-            id="light-dark-mode">
-            <i class="mdi mdi-brightness-7 align-middle"></i>
-            <i class="mdi mdi-white-balance-sunny align-middle"></i>
-        </button>
-       
+    <div
+      class="custom-setting bg-primary pe-0 d-flex flex-column rounded-start"
+    >
+      <button
+        type="button"
+        class="btn btn-wide border-0 text-white fs-20 avatar-sm rounded-end-0"
+        id="light-dark-mode"
+      >
+        <i class="mdi mdi-brightness-7 align-middle"></i>
+        <i class="mdi mdi-white-balance-sunny align-middle"></i>
+      </button>
     </div>
-
 
     <!-- Rightbar Sidebar -->
     <div class="offcanvas offcanvas-end" id="offcanvas-rightsidabar">
-        <div class="card h-100 rounded-0" data-simplebar="init">
-            <div class="card-header bg-light">
-                <h6 class="card-title text-uppercase">Activities</h6>
-                <div class="card-addon">
-                    <button class="btn btn-label-danger" data-bs-dismiss="offcanvas">
-                        <i class="fa fa-times"></i>
-                    </button>
-                </div>
+      <div class="card h-100 rounded-0" data-simplebar="init">
+        <div class="card-header bg-light">
+          <h6 class="card-title text-uppercase">Activities</h6>
+          <div class="card-addon">
+            <button class="btn btn-label-danger" data-bs-dismiss="offcanvas">
+              <i class="fa fa-times"></i>
+            </button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="">
+            <h3 class="card-title">Company summary</h3>
+            <div class="border rounded p-2">
+              <p class="text-muted mb-2">Server Load</p>
+              <h4 class="fs-16 mb-2">489</h4>
+              <div class="progress progress-sm" style="height: 4px">
+                <div class="progress-bar bg-success" style="width: 49.4%"></div>
+              </div>
+              <p class="text-muted mb-0 mt-1">49.4% <span>Avg</span></p>
             </div>
-            <div class="card-body">
-                <div class="">
-                    <h3 class="card-title">Company summary</h3>
-                    <div class="border rounded p-2">
-                        <p class="text-muted mb-2">Server Load</p>
-                        <h4 class="fs-16 mb-2">489</h4>
-                        <div class="progress progress-sm" style="height:4px;">
-                            <div class="progress-bar bg-success" style="width: 49.4%"></div>
-                        </div>
-                        <p class="text-muted mb-0 mt-1">49.4% <span>Avg</span></p>
-                    </div>
-                    <div class="border rounded p-2">
-                        <p class="text-muted mb-2">Members online</p>
-                        <h4 class="fs-16 mb-2">3,450</h4>
-                        <div class="progress progress-sm" style="height:4px;">
-                            <div class="progress-bar bg-danger" style="width: 34.6%"></div>
-                        </div>
-                        <p class="text-muted mb-0 mt-1">34.6% <span>Avg</span></p>
-                    </div>
-                    <div class="border rounded p-2">
-                        <p class="text-muted mb-2">Today's revenue</p>
-                        <h4 class="fs-16 mb-2">$18,390</h4>
-                        <div class="progress progress-sm" style="height:4px;">
-                            <div class="progress-bar bg-warning" style="width: 20%"></div>
-                        </div>
-                        <p class="text-muted mb-0 mt-1">$37,578 <span>Avg</span></p>
-                    </div>
-                    <div class="border rounded p-2">
-                        <p class="text-muted mb-2">Expected profit</p>
-                        <h4 class="fs-16 mb-2">$23,461</h4>
-                        <div class="progress progress-sm" style="height:4px;">
-                            <div class="progress-bar bg-info" style="width: 60%"></div>
-                        </div>
-                        <p class="text-muted mb-0 mt-1">$23,461 <span>Avg</span></p>
-                    </div>
-                </div>
-
-                <div class="mt-4">
-                    <h3 class="card-title">Latest log</h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-primary"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">12 new users registered</p>
-                                    <span class="text-muted">Just now</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-success"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">System shutdown <span
-                                            class="badge badge-label-success">pending</span></p>
-                                    <span class="text-muted">2 mins</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-primary"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">New invoice received</p>
-                                    <span class="text-muted">3 mins</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-danger"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">New order received <span
-                                            class="badge badge-label-danger">urgent</span></p>
-                                    <span class="text-muted">10 mins</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-warning"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">Production server down</p>
-                                    <span class="text-muted">1 hrs</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-info"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">System error <a href="#">check</a></p>
-                                    <span class="text-muted">2 hrs</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-secondary"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">DB overloaded 80%</p>
-                                    <span class="text-muted">5 hrs</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-success"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">Production server up</p>
-                                    <span class="text-muted">6 hrs</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-4">
-                    <h3 class="card-title">Upcoming activities</h3>
-                    <div class="timeline timeline-timed">
-                        <div class="timeline-item">
-                            <span class="timeline-time">10:00</span>
-                            <div class="timeline-pin"><i class="marker marker-circle text-primary"></i></div>
-                            <div class="timeline-content">
-                                <div>
-                                    <span>Meeting with</span>
-                                    <div class="avatar-group ms-2">
-                                        <div class="avatar avatar-circle">
-                                            <img src="assets/images/users/avatar-1.png" alt="Avatar image"
-                                                class="avatar-2xs" />
-                                        </div>
-                                        <div class="avatar avatar-circle">
-                                            <img src="assets/images/users/avatar-2.png" alt="Avatar image"
-                                                class="avatar-2xs" />
-                                        </div>
-                                        <div class="avatar avatar-circle">
-                                            <img src="assets/images/users/avatar-3.png" alt="Avatar image"
-                                                class="avatar-2xs" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-time">12:45</span>
-                            <div class="timeline-pin"><i class="marker marker-circle text-warning"></i></div>
-                            <div class="timeline-content">
-                                <p class="mb-0">Lorem ipsum dolor sit amit,consectetur eiusmdd tempor incididunt ut
-                                    labore et dolore magna elit enim at minim veniam quis nostrud</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-time">14:00</span>
-                            <div class="timeline-pin"><i class="marker marker-circle text-danger"></i></div>
-                            <div class="timeline-content">
-                                <p class="mb-0">Received a new feedback on <a href="#">GoFinance</a> App product.</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-time">15:20</span>
-                            <div class="timeline-pin"><i class="marker marker-circle text-success"></i></div>
-                            <div class="timeline-content">
-                                <p class="mb-0">Lorem ipsum dolor sit amit,consectetur eiusmdd tempor incididunt ut
-                                    labore et dolore magna.</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-time">17:00</span>
-                            <div class="timeline-pin"><i class="marker marker-circle text-info"></i></div>
-                            <div class="timeline-content">
-                                <p class="mb-0">Make Deposit <a href="#">USD 700</a> o ESL.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="border rounded p-2">
+              <p class="text-muted mb-2">Members online</p>
+              <h4 class="fs-16 mb-2">3,450</h4>
+              <div class="progress progress-sm" style="height: 4px">
+                <div class="progress-bar bg-danger" style="width: 34.6%"></div>
+              </div>
+              <p class="text-muted mb-0 mt-1">34.6% <span>Avg</span></p>
             </div>
-        </div> <!-- end card-->
+            <div class="border rounded p-2">
+              <p class="text-muted mb-2">Today's revenue</p>
+              <h4 class="fs-16 mb-2">$18,390</h4>
+              <div class="progress progress-sm" style="height: 4px">
+                <div class="progress-bar bg-warning" style="width: 20%"></div>
+              </div>
+              <p class="text-muted mb-0 mt-1">$37,578 <span>Avg</span></p>
+            </div>
+            <div class="border rounded p-2">
+              <p class="text-muted mb-2">Expected profit</p>
+              <h4 class="fs-16 mb-2">$23,461</h4>
+              <div class="progress progress-sm" style="height: 4px">
+                <div class="progress-bar bg-info" style="width: 60%"></div>
+              </div>
+              <p class="text-muted mb-0 mt-1">$23,461 <span>Avg</span></p>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <h3 class="card-title">Latest log</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-primary"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">12 new users registered</p>
+                    <span class="text-muted">Just now</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-success"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">
+                      System shutdown
+                      <span class="badge badge-label-success">pending</span>
+                    </p>
+                    <span class="text-muted">2 mins</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-primary"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">New invoice received</p>
+                    <span class="text-muted">3 mins</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-danger"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">
+                      New order received
+                      <span class="badge badge-label-danger">urgent</span>
+                    </p>
+                    <span class="text-muted">10 mins</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-warning"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">Production server down</p>
+                    <span class="text-muted">1 hrs</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-info"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">System error <a href="#">check</a></p>
+                    <span class="text-muted">2 hrs</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-secondary"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">DB overloaded 80%</p>
+                    <span class="text-muted">5 hrs</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-success"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">Production server up</p>
+                    <span class="text-muted">6 hrs</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <h3 class="card-title">Upcoming activities</h3>
+            <div class="timeline timeline-timed">
+              <div class="timeline-item">
+                <span class="timeline-time">10:00</span>
+                <div class="timeline-pin">
+                  <i class="marker marker-circle text-primary"></i>
+                </div>
+                <div class="timeline-content">
+                  <div>
+                    <span>Meeting with</span>
+                    <div class="avatar-group ms-2">
+                      <div class="avatar avatar-circle">
+                        <img
+                          src="assets/images/users/avatar-1.png"
+                          alt="Avatar image"
+                          class="avatar-2xs"
+                        />
+                      </div>
+                      <div class="avatar avatar-circle">
+                        <img
+                          src="assets/images/users/avatar-2.png"
+                          alt="Avatar image"
+                          class="avatar-2xs"
+                        />
+                      </div>
+                      <div class="avatar avatar-circle">
+                        <img
+                          src="assets/images/users/avatar-3.png"
+                          alt="Avatar image"
+                          class="avatar-2xs"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-time">12:45</span>
+                <div class="timeline-pin">
+                  <i class="marker marker-circle text-warning"></i>
+                </div>
+                <div class="timeline-content">
+                  <p class="mb-0">
+                    Lorem ipsum dolor sit amit,consectetur eiusmdd tempor
+                    incididunt ut labore et dolore magna elit enim at minim
+                    veniam quis nostrud
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-time">14:00</span>
+                <div class="timeline-pin">
+                  <i class="marker marker-circle text-danger"></i>
+                </div>
+                <div class="timeline-content">
+                  <p class="mb-0">
+                    Received a new feedback on <a href="#">GoFinance</a> App
+                    product.
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-time">15:20</span>
+                <div class="timeline-pin">
+                  <i class="marker marker-circle text-success"></i>
+                </div>
+                <div class="timeline-content">
+                  <p class="mb-0">
+                    Lorem ipsum dolor sit amit,consectetur eiusmdd tempor
+                    incididunt ut labore et dolore magna.
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-time">17:00</span>
+                <div class="timeline-pin">
+                  <i class="marker marker-circle text-info"></i>
+                </div>
+                <div class="timeline-content">
+                  <p class="mb-0">
+                    Make Deposit <a href="#">USD 700</a> o ESL.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end card-->
     </div>
 
-    <!-- JAVASCRIPT -->
-    <script src="assets/libs/jquery/jquery.min.js"></script>
-    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/libs/metismenu/metisMenu.min.js"></script>
-    <script src="assets/libs/simplebar/simplebar.min.js"></script>
-    <script src="assets/libs/node-waves/waves.min.js"></script>
+        <!-- JAVASCRIPT -->
+        <script src="assets/libs/jquery/jquery.min.js"></script>
+        <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/libs/metismenu/metisMenu.min.js"></script>
+        <script src="assets/libs/simplebar/simplebar.min.js"></script>
+        <script src="assets/libs/node-waves/waves.min.js"></script>
 
-    <!-- Required datatable js -->
-    <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+        <!-- SweetAlert2 CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <!-- apexcharts -->
+        <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
 
-    <!-- buttons examples -->
-    <script src="assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="assets/libs/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
-    <script src="assets/libs/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+        <script src="assets/js/pages/dashboard.init.js"></script>
 
-    <!-- Responsive examples -->
-    <script src="assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="assets/libs/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
-
-    <!-- Datatable init js -->
-    <script src="assets/js/pages/datatables-advanced.init.js"></script>
-
-    <script src="assets/js/app.js"></script>
-    <!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-   
-<script src="assets/js/renewals.js"></script>
-
+        <!-- App js -->
+        <script src="assets/js/app.js"></script>
+        <!-- JS Script for Tabs -->
+        <script src="assets/js/renewals.js"></script>
 
 </body>
 
