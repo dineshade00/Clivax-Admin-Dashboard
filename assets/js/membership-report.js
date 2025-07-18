@@ -197,3 +197,13 @@ if (planChartColors) {
   };
   new ApexCharts(document.querySelector("#basic_radar"), options1).render();
 }
+
+
+
+
+ $('#fromDate, #toDate').datepicker({
+        format: "mm/yyyy",
+        startView: "months",
+        minViewMode: "months",
+        autoclose: true
+    });
