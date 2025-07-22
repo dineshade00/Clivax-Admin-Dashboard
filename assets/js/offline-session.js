@@ -1,15 +1,20 @@
 $(document).ready(function () {
+  // Unified icon set for all DataTables instances
+  const paginateIcons = {
+    first: "<i class='mdi mdi-chevron-double-left'></i>",
+    previous: "<i class='mdi mdi-chevron-left'></i>",
+    next: "<i class='mdi mdi-chevron-right'></i>",
+    last: "<i class='mdi mdi-chevron-double-right'></i>",
+  };
+
+  // #datatable
   $("#datatable").DataTable({
-    language: {
-      paginate: {
-        previous: "<i class='mdi mdi-chevron-left'>",
-        next: "<i class='mdi mdi-chevron-right'>",
-      },
-    },
+    language: { paginate: paginateIcons },
     drawCallback: function () {
       $(".dataTables_paginate > .pagination").addClass("pagination");
     },
-  }),
+  });
+
     $("#scroll-sidebar-datatable").DataTable({
       scrollY: "350px",
       scrollCollapse: !0,
