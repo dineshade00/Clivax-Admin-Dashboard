@@ -15,20 +15,20 @@ $(document).ready(function () {
     },
   });
 
-    $("#scroll-sidebar-datatable").DataTable({
-      scrollY: "350px",
-      scrollCollapse: !0,
-      paging: !0,
-      language: {
-        paginate: {
-          previous: "<i class='mdi mdi-chevron-left'>",
-          next: "<i class='mdi mdi-chevron-right'>",
-        },
+  $("#scroll-sidebar-datatable").DataTable({
+    scrollY: "350px",
+    scrollCollapse: !0,
+    paging: !0,
+    language: {
+      paginate: {
+        previous: "<i class='mdi mdi-chevron-left'>",
+        next: "<i class='mdi mdi-chevron-right'>",
       },
-      drawCallback: function () {
-        $(".dataTables_paginate > .pagination").addClass("pagination");
-      },
-    }),
+    },
+    drawCallback: function () {
+      $(".dataTables_paginate > .pagination").addClass("pagination");
+    },
+  }),
     $("#alternative-page-datatable").DataTable({
       pagingType: "full_numbers",
       drawCallback: function () {
@@ -425,12 +425,13 @@ $(function () {
     const $wrap = $("#todays-session-cards").empty();
     const todayKey = +startOfDay(new Date());
     let row,
-      styleIndex = 0;
+      styleIndex = 0,
+      foundAny = false;
 
     table.rows().every(function () {
       const data = this.data();
 
-      // Extract and sanitise the date‑time cell
+      // Extract and sanitize the date‑time cell
       const dateCell = $("<div>")
         .html(data[3])
         .text()
@@ -440,7 +441,9 @@ $(function () {
 
       const [rawDate, rawTime] = dateCell.split(" ");
       const thisDate = new Date(normaliseDatePart(rawDate));
-      if (+startOfDay(thisDate) !== todayKey) return; // skip if not today
+      if (+startOfDay(thisDate) !== todayKey) return;
+
+      foundAny = true;
 
       const session = {
         title: $("<div>").html(data[0]).text().trim(),
@@ -450,7 +453,6 @@ $(function () {
         timeStr: rawTime,
       };
 
-      // Three cards per row
       if (!row || row.children().length === 3) {
         row = $('<div class="row mb-3"></div>');
         $wrap.append(row);
@@ -460,6 +462,17 @@ $(function () {
       styleIndex += 1;
       row.append(buildCard(session, style));
     });
+
+    // ✅ Show fallback message if no sessions found for today
+    if (!foundAny) {
+      $wrap.append(`
+      <div class="col-12">
+        <div class="alert alert-info text-center mb-0" role="alert">
+          There are no session for today...
+        </div>
+      </div>
+    `);
+    }
   }
 
   // Initial card build
