@@ -1185,110 +1185,130 @@
 
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const addMemberForm = document.getElementById('addMemberForm');
-            const successModal = new bootstrap.Modal(document.getElementById('successModal'));
-            const errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
+      document.addEventListener('DOMContentLoaded', function () {
+    const addMemberForm = document.getElementById('addMemberForm');
+    const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+    const errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
+    const photoInput = document.getElementById('photo');
 
-            addMemberForm.addEventListener('submit', function (event) {
-                event.preventDefault(); // Prevent the default form submission
+    photoInput.addEventListener('change', function () {
+        if (this.files.length > 0) {
+            const file = this.files[0];
+            const fileSize = file.size; // Size in bytes
+            const maxSize = 40 * 1024; // 40 KB in bytes (30 KB would be 30 * 1024)
 
-                let allFieldsFilled = true;
-                const memberData = {}; // Object to store form data
+            if (fileSize > maxSize) {
+                alert('Photo size exceeds the limit of 30-40 KB. Please select a smaller photo.');
+                this.value = ''; // Clear the file input
+            }
+        }
+    });
 
-                const requiredFields = addMemberForm.querySelectorAll('[required]');
+    addMemberForm.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent the default form submission
 
-                requiredFields.forEach(field => {
-                    if (field.tagName === 'SELECT') {
-                        if (field.value === '') {
-                            allFieldsFilled = false;
-                        }
-                    } else if (field.type === 'file') {
-                        // For demo, we'll use a placeholder URL for photo.
-                        // In a real app, you'd handle file uploads to a server.
-                        memberData.photoUrl = "https://via.placeholder.com/150/CCCCCC/888888?text=No+Photo";
-                    } else {
-                        if (field.value.trim() === '') {
-                            allFieldsFilled = false;
-                        }
-                    }
-                    memberData[field.id] = field.value.trim();
-                });
+        let allFieldsFilled = true;
+        const memberData = {}; // Object to store form data
 
-                if (allFieldsFilled) {
-                    // Get existing members from localStorage or initialize an empty array
-                    const members = JSON.parse(localStorage.getItem('members')) || [];
+        const requiredFields = addMemberForm.querySelectorAll('[required]');
 
-                    // Determine the next ID
-                    const newId = members.length > 0 ? Math.max(...members.map(m => m.id)) + 1 : 1;
-
-                    // Add photoUrl if not already set by file input (or if file input wasn't handled)
-                    if (!memberData.photoUrl) {
-                        memberData.photoUrl = "https://via.placeholder.com/150/CCCCCC/888888?text=No+Photo";
-                    }
-
-                    const newMember = {
-                        id: newId,
-                        firstName: memberData.firstName,
-                        lastName: memberData.lastName,
-                        contact: memberData.contact,
-                        emailAddress: memberData.emailAddress,
-                        gender: memberData.gender,
-                        dob: memberData.dob,
-                        maritalStatus: memberData.maritalStatus,
-                        address: memberData.address,
-                        city: memberData.city,
-                        pincode: memberData.pincode,
-                        occupation: memberData.occupation, // This field is not in the form, but was in your JS
-                        photoUrl: memberData.photoUrl,
-                        membership_type: memberData.membership_type,
-                        status: 'Active' // Default status for new members
-                    };
-
-                    members.push(newMember);
-                    localStorage.setItem('members', JSON.stringify(members)); // Save updated array
-
-                    // Add the new member to the DataTable
-                    const table = $('#datatable-col-visiblility').DataTable();
-                    const photoSrc = newMember.photoUrl; // Use the photoUrl from newMember
-                    const statusBadgeClass = newMember.status === 'Active' ? 'bg-success' : 'bg-danger';
-
-                    table.row.add([
-                        newMember.id,
-                        `<img src="${photoSrc}" alt="Photo" width="40" height="40" />`,
-                        newMember.firstName,
-                        newMember.lastName,
-                        newMember.gender,
-                        newMember.dob,
-                        newMember.maritalStatus,
-                        newMember.contact,
-                        newMember.emailAddress,
-                        newMember.address,
-                        newMember.city,
-                        newMember.pincode,
-                        newMember.membership_type,
-                        `<span class="badge ${statusBadgeClass}">${newMember.status}</span>`,
-                        `
-                    <a class="btn btn-sm btn-info view-card-btn" data-member-id="${newMember.id}">
-                        <i class="fas fa-id-card"></i>
-                    </a>
-                    <a href="edit-member.html" class="btn btn-sm btn-primary">
-                        <i class="fas fa-pen"></i>
-                    </a>
-                    <a class="btn btn-sm btn-danger delete-member-btn">
-                        <i class="fas fa-trash"></i>
-                    </a>
-                    `
-                    ]).draw(false); // Use draw(false) to redraw without re-sorting or re-paging
-
-                    successModal.show();
-                    addMemberForm.reset();
-
-                } else {
-                    errorModal.show();
+        requiredFields.forEach(field => {
+            if (field.tagName === 'SELECT') {
+                if (field.value === '') {
+                    allFieldsFilled = false;
                 }
-            });
+            } else if (field.type === 'file') {
+                // The file size check is now handled by the 'change' event listener
+                // If a file is selected and valid, it will be in this.files[0]
+                if (field.files.length > 0) {
+                    // For demo, we'll use a placeholder URL for photo.
+                    // In a real app, you'd handle file uploads to a server.
+                    memberData.photoUrl = URL.createObjectURL(field.files[0]); // Create a URL for display
+                } else {
+                    memberData.photoUrl = "https://via.placeholder.com/150/CCCCCC/888888?text=No+Photo";
+                }
+            } else {
+                if (field.value.trim() === '') {
+                    allFieldsFilled = false;
+                }
+            }
+            memberData[field.id] = field.value.trim();
         });
+
+        if (allFieldsFilled) {
+            // Get existing members from localStorage or initialize an empty array
+            const members = JSON.parse(localStorage.getItem('members')) || [];
+
+            // Determine the next ID
+            const newId = members.length > 0 ? Math.max(...members.map(m => m.id)) + 1 : 1;
+
+            // If photoUrl was not set by file input (e.g., if no file was selected)
+            if (!memberData.photoUrl || photoInput.files.length === 0) {
+                memberData.photoUrl = "https://via.placeholder.com/150/CCCCCC/888888?text=No+Photo";
+            }
+
+            const newMember = {
+                id: newId,
+                firstName: memberData.firstName,
+                lastName: memberData.lastName,
+                contact: memberData.contact,
+                emailAddress: memberData.emailAddress,
+                gender: memberData.gender,
+                dob: memberData.dob,
+                maritalStatus: memberData.maritalStatus,
+                address: memberData.address,
+                city: memberData.city,
+                pincode: memberData.pincode,
+                occupation: memberData.occupation, // This field is not in the form, but was in your JS
+                photoUrl: memberData.photoUrl,
+                membership_type: memberData.membership_type,
+                status: 'Active' // Default status for new members
+            };
+
+            members.push(newMember);
+            localStorage.setItem('members', JSON.stringify(members)); // Save updated array
+
+            // Add the new member to the DataTable
+            const table = $('#datatable-col-visiblility').DataTable();
+            const photoSrc = newMember.photoUrl; // Use the photoUrl from newMember
+            const statusBadgeClass = newMember.status === 'Active' ? 'bg-success' : 'bg-danger';
+
+            table.row.add([
+                newMember.id,
+                `<img src="${photoSrc}" alt="Photo" width="40" height="40" />`,
+                newMember.firstName,
+                newMember.lastName,
+                newMember.gender,
+                newMember.dob,
+                newMember.maritalStatus,
+                newMember.contact,
+                newMember.emailAddress,
+                newMember.address,
+                newMember.city,
+                newMember.pincode,
+                newMember.membership_type,
+                `<span class="badge ${statusBadgeClass}">${newMember.status}</span>`,
+                `
+                <a class="btn btn-sm btn-info view-card-btn" data-member-id="${newMember.id}">
+                    <i class="fas fa-id-card"></i>
+                </a>
+                <a href="edit-member.html" class="btn btn-sm btn-primary">
+                    <i class="fas fa-pen"></i>
+                </a>
+                <a class="btn btn-sm btn-danger delete-member-btn">
+                    <i class="fas fa-trash"></i>
+                </a>
+                `
+            ]).draw(false); // Use draw(false) to redraw without re-sorting or re-paging
+
+            successModal.show();
+            addMemberForm.reset();
+
+        } else {
+            errorModal.show();
+        }
+    });
+});
     </script>
 </body>
 
