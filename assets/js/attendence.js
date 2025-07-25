@@ -1,14 +1,13 @@
 const staffNames = [
-  "Shubham Khodke",
-  "pawan satpute",
-  "Aniket Wagh",
+  "Vishal Kubde",
+  "Darshan Lakde",
   "Emily Rathi",
+  "pawan Satpute",
+  "shree Patahak",
+  "Mayank Rahate",
   "Shivam Patil",
-  "Om Nandgirwar",
-  "Mithilesh Pathak",
-  "Arjun thakre",
-  "Shreyash Gawande",
-  "Manish Bhagat",
+  "dinesh Ade",
+  "Abhishek Amre",
 ];
 const staffData = {};
 const memberData = {};
