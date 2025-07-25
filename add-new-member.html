@@ -680,7 +680,7 @@
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Clivax</a></li>
                                         <li class="breadcrumb-item active">Add New Member</li>
                                     </ol>
                                 </div>
@@ -690,217 +690,487 @@
                     </div>
                     <!-- end page title -->
 
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">Add New Member</h4>
-                        </div>
-                        <div class="card-body">
-                            <form id="addMemberForm" action="#" class="custom-validation">
-                                <div class="row">
-                                    <div class="col-md-4 mb-3">
-                                        <label for="firstName">First Name</label>
-                                        <div>
-                                            <input type="text" id="firstName" class="form-control" required
-                                                data-parsley-minlength="2" placeholder="Enter First Name" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <label for="lastName">Last Name</label>
-                                        <div>
-                                            <input type="text" id="lastName" class="form-control" required
-                                                data-parsley-minlength="2" placeholder="Enter Last Name" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <label for="emailAddress">Email Address</label>
-                                        <div>
-                                            <input type="email" id="emailAddress" class="form-control" required
-                                                data-parsley-type="email" placeholder="Enter Email Address" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <label for="contact">Contact</label>
-                                        <div>
-                                            <input type="tel" id="contact" class="form-control" required
-                                                pattern="[0-9]{10}" placeholder="Enter Contact No. (10 digits)"
-                                                title="Please enter a 10-digit number" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 mb-3">
-                                        <label for="gender">Gender</label>
-                                        <div>
-                                            <select id="gender" class="form-select" name="gender" required>
-                                                <option value="">Select your gender</option>
-                                                <option value="Male">Male</option>
-                                                <option value="Female">Female</option>
-                                                <option value="Other">Other</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-4 mb-3">
-                                        <label for="dob">Date of Birth</label>
-                                        <div>
-                                            <input type="date" id="dob" name="dob" class="form-control" required />
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-4 mb-3">
-                                        <label for="maritalStatus">Marital Status</label>
-                                        <div>
-                                            <select id="maritalStatus" class="form-select" name="maritalStatus"
-                                                required>
-                                                <option value="">Select</option>
-                                                <option value="Single">Single</option>
-                                                <option value="Married">Married</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-4 mb-3">
-                                        <label for="address">Address</label>
-                                        <div>
-                                            <input type="text" id="address" name="address" class="form-control" required
-                                                placeholder="Enter your address" />
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-4 mb-3">
-                                        <label for="city">City</label>
-                                        <div>
-                                            <input type="text" id="city" name="city" class="form-control" required
-                                                placeholder="Enter City Name" />
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-4 mb-3">
-                                        <label for="pincode">Pincode</label>
-                                        <div>
-                                            <input type="number" id="pincode" class="form-control" required
-                                                pattern="[0-9]{6}" placeholder="Enter Pincode (6 digits)"
-                                                title="Please enter a 6-digit pincode" />
-                                        </div>
-                                    </div>
-
-
-
-                                    <div class="col-md-4 mb-3">
-                                        <label for="photo">Photo</label>
-                                        <div>
-                                            <input type="file" id="photo" name="photo" class="form-control"
-                                                accept="image/*" />
-
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-4 mb-3">
-                                        <label for="membership_type">Membership Type</label>
-                                        <div>
-                                            <select id="membership_type" name="membership_type" class="form-select"
-                                                required>
-                                                <option value="">Select Membership Type</option>
-                                                <option value="1 month plan">1 month plan - Rs. 500</option>
-                                                <option value="3 month plan">3 month plan - Rs. 1300</option>
-                                                <option value="6 month plan">6 month plan - Rs. 2000</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-0">
-                                    <div class="text-end">
-                                        <button type="submit" class="btn btn-primary waves-effect waves-light me-1">
-                                            Add New Member
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-           
+            <div class="card">
+  <div class="card-header">
+    <h4 class="card-title">Add New Member</h4>
+  </div>
+  <div class="card-body">
+    <form id="addMemberForm" action="#" class="custom-validation">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="firstName" class="form-label">First Name</label>
+          <div>
+            <input
+              type="text"
+              id="firstName"
+              class="form-control"
+              required
+              data-parsley-minlength="2"
+              placeholder="Enter First Name"
+            />
+            <div class="invalid-feedback">
+              Please enter a first name (at least 2 characters).
+            </div>
+          </div>
         </div>
+        <div class="col-md-4 mb-3">
+          <label for="lastName" class="form-label">Last Name</label>
+          <div>
+            <input
+              type="text"
+              id="lastName"
+              class="form-control"
+              required
+              data-parsley-minlength="2"
+              placeholder="Enter Last Name"
+            />
+            <div class="invalid-feedback">
+              Please enter a last name (at least 2 characters).
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="emailAddress" class="form-label">Email Address</label>
+          <div>
+            <input
+              type="email"
+              id="emailAddress"
+              class="form-control"
+              required
+              data-parsley-type="email"
+              placeholder="Enter Email Address"
+            />
+            <div class="invalid-feedback">
+              Please enter a valid email address.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="contact" class="form-label">Contact</label>
+          <div>
+            <input
+              type="tel"
+              id="contact"
+              class="form-control"
+              required
+              pattern="[0-9]{10}"
+              placeholder="Enter Contact No. (10 digits)"
+              title="Please enter a 10-digit number"
+              oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);"
+            />
+            <div class="invalid-feedback">
+              Please enter a 10-digit contact number.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="gender" class="form-label">Gender</label>
+          <div>
+            <select id="gender" class="form-select" name="gender" required>
+              <option value="">Select your gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select your gender.
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <label for="dob" class="form-label">Date of Birth</label>
+          <div>
+            <input
+              type="date"
+              id="dob"
+              name="dob"
+              class="form-control"
+              required
+            />
+            <div class="invalid-feedback">
+              Please select your date of birth.
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <label for="address" class="form-label">Address</label>
+          <div>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              class="form-control"
+              required
+              placeholder="Enter your address"
+              maxlength="150"
+            />
+            <div class="invalid-feedback">
+              Please enter your address.
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <label for="city" class="form-label">City</label>
+          <div>
+            <input
+              type="text"
+              id="city"
+              name="city"
+              class="form-control"
+              required
+              placeholder="Enter City Name"
+            />
+            <div class="invalid-feedback">
+              Please enter your city.
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <label for="pincode" class="form-label">Pincode</label>
+          <div>
+            <input
+              type="text"
+              id="pincode"
+              class="form-control"
+              required
+              pattern="[0-9]{6}"
+              placeholder="Enter Pincode (6 digits)"
+              title="Please enter a 6-digit pincode"
+              maxlength="6"
+            />
+            <div class="invalid-feedback">
+              Please enter a 6-digit pincode.
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <label for="photo" class="form-label">Photo</label>
+          <div>
+            <input
+              type="file"
+              id="photo"
+              name="photo"
+              class="form-control"
+              accept=".jpg, .jpeg, .png"
+            />
+            <div class="invalid-feedback">
+              Please upload a photo (only .jpg, .jpeg, .png formats allowed, max 40 KB).
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <label for="membership_type" class="form-label"
+            >Membership Type</label
+          >
+          <div>
+            <select
+              id="membership_type"
+              name="membership_type"
+              class="form-select"
+              required
+            >
+              <option value="">Select Membership Type</option>
+              <option value="1 month plan">1 month plan - Rs. 500</option>
+              <option value="3 month plan">3 month plan - Rs. 1300</option>
+              <option value="6 month plan">6 month plan - Rs. 2000</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a membership type.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mb-0">
+        <div class="text-end">
+          <button
+            type="button"
+            id="proceedToPaymentBtn"
+            class="btn btn-primary waves-effect waves-light me-1"
+          >
+            Proceed to Payment
+          </button>
+          <button
+            type="submit"
+            id="addMemberBtn"
+            class="btn btn-primary waves-effect waves-light me-1"
+            style="display: none;"
+          >
+            Add New Member
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+                </div>
+            </div>
+        </div>
+
+<div
+  class="modal fade"
+  id="successModal"
+  tabindex="-1"
+  aria-labelledby="successModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div
+        class="modal-header d-flex justify-content-center border-0 pb-0"
+      >
+        <div class="text-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="60"
+            height="60"
+            fill="#28a745"
+            class="bi bi-check-circle"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+            />
+            <path
+              d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.423 5.514 7.567a.235.235 0 0 0-.02-.022A.5.5 0 0 1 5.5 7h5a.5.5 0 0 1 .47.53z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="modal-body text-center">
+        <h5 class="modal-title" id="successModalLabel">Success</h5>
+        <p>Member data saved successfully! You can now view it in the members list.</p>
+      </div>
+      <div
+        class="modal-footer d-flex justify-content-center border-0 pt-0"
+      >
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-dismiss="modal"
+        >
+          OK
+        </button>
+      </div>
     </div>
+  </div>
 </div>
 
- <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header d-flex justify-content-center border-0 pb-0">
-                        <div class="text-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="#28a745"
-                                class="bi bi-check-circle" viewBox="0 0 16 16">
-                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                <path
-                                    d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.423 5.514 7.567a.235.235 0 0 0-.02-.022A.5.5 0 0 1 5.5 7h5a.5.5 0 0 1 .47.53z" />
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="modal-body text-center">
-                        <h5 class="modal-title" id="successModalLabel">Success</h5>
-                        <p>Member data saved successfully! You can now view it in the members list.</p>
-                    </div>
-                    <div class="modal-footer d-flex justify-content-center border-0 pt-0">
-                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
-                    </div>
-                </div>
-            </div>
+<div
+  class="modal fade"
+  id="errorModal"
+  tabindex="-1"
+  aria-labelledby="errorModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div
+        class="modal-header d-flex justify-content-center border-0 pb-0"
+      >
+        <div class="text-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="60"
+            height="60"
+            fill="#dc3545"
+            class="bi bi-exclamation-circle"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+            />
+            <path
+              d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.5.5 0 0 1-1 .094l-.35-3.507z"
+            />
+          </svg>
         </div>
+      </div>
+      <div class="modal-body text-center">
+        <h5 class="modal-title" id="errorModalLabel">Error</h5>
+        <p>Please fill in all required fields correctly.</p>
+      </div>
+      <div
+        class="modal-footer d-flex justify-content-center border-0 pt-0"
+      >
+        <button
+          type="button"
+          class="btn btn-danger"
+          data-bs-dismiss="modal"
+        >
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 
-        <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header d-flex justify-content-center border-0 pb-0">
-                        <div class="text-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="#dc3545"
-                                class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                <path
-                                    d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.5.5 0 0 1-1 .094l-.35-3.507z" />
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="modal-body text-center">
-                        <h5 class="modal-title" id="errorModalLabel">Error</h5>
-                        <p>Please fill in all required fields correctly.</p>
-                    </div>
-                    <div class="modal-footer d-flex justify-content-center border-0 pt-0">
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">OK</button>
-                    </div>
-                </div>
-            </div>
+<div
+  class="modal fade"
+  id="paymentModal"
+  tabindex="-1"
+  aria-labelledby="paymentModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="paymentModalLabel">How would you like to pay?</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body text-center">
+        <div class="row row-cols-3 g-3 justify-content-center">
+          <div class="col">
+            <button
+              type="button"
+              class="btn btn-outline-primary p-3 w-100 payment-option"
+              data-payment-method="visa"
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png"
+                alt="Visa"
+                class="img-fluid"
+                style="height: 40px;"
+              />
+            </button>
+          </div>
+          <div class="col">
+            <button
+              type="button"
+              class="btn btn-outline-primary p-3 w-100 h2 payment-option"
+              data-payment-method="mastercard"
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png"
+                alt="Mastercard"
+                class="img-fluid"
+                style="max-height: 40px;"
+              />
+            </button>
+          </div>
+          <div class="col">
+            <button
+              type="button"
+              class="btn btn-outline-primary p-3 w-100 payment-option"
+              data-payment-method="paytm"
+            >
+              <img
+                src="assets/images/Paytm-Logo.svg"
+                alt="paytm"
+                class="img-fluid"
+                style="max-height: 40px;"
+              />
+            </button>
+          </div>
+          <div class="col">
+            <button
+              type="button"
+              class="btn btn-outline-primary p-3 w-100 payment-option"
+              data-payment-method="phonepay"
+            >
+              <img
+                src="assets/images/PhonePe_Logo.svg.webp"
+                alt="PhonePe"
+                class="img-fluid"
+                style="height: 40px;"
+              />
+            </button>
+          </div>
+          <div class="col">
+            <button
+              type="button"
+              class="btn btn-outline-primary p-3 w-100 payment-option"
+              data-payment-method="googlepay"
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Google_Pay_Logo.svg/1280px-Google_Pay_Logo.svg.png"
+                alt="Google Pay"
+                class="img-fluid"
+                style="max-height: 40px;"
+              />
+            </button>
+          </div>
+          <div class="col">
+            <button
+              type="button"
+              class="btn btn-outline-primary p-3 w-100 payment-option"
+              data-payment-method="upi"
+            >
+              <img
+                src="assets/images/upi1.webp"
+                alt="UPI"
+                class="img-fluid"
+                style="max-height: 40px;"
+              />
+            </button>
+          </div>
+          <div class="col-12 mt-3">
+            <button
+              type="button"
+              class="btn btn-success w-100 payment-option"
+              data-payment-method="On Cash"
+            >
+              On Cash
+            </button>
+          </div>
         </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 
+
+        <!-- end main content-->
 
     </div>
     <!-- END layout-wrapper -->
-  <footer class="footer">
-                    <div class="container-fluid">
-                        <div class="row align-items-center">
-                            <div class="col-sm-6">
-                                <script>document.write(new Date().getFullYear())</script> © Clivax Gym.
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="text-sm-end d-none d-sm-block">
-                                    Designed & Developed <i class="mdi mdi-heart text-danger"></i> by <a
-                                        href="https://kavyainfoweb.com/" target="_blank" class="text-muted">Kavya
-                                        Infoweb
-                                        Pvt. Ltd.</a>
-                                </div>
-                            </div>
-                        </div>
+
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-sm-6">
+                    <script>document.write(new Date().getFullYear())</script> © Clivax.
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-end d-none d-sm-block">
+                        Crafted with <i class="mdi mdi-heart text-danger"></i> by <a href="http://codebucks.in/"
+                            target="_blank" class="text-muted">Codebucks</a>
                     </div>
-                </footer>
+                </div>
+            </div>
+        </div>
+    </footer>
     <div class="custom-setting bg-primary pe-0 d-flex flex-column rounded-start">
         <button type="button" class="btn btn-wide border-0 text-white fs-20 avatar-sm rounded-end-0"
             id="light-dark-mode">
             <i class="mdi mdi-brightness-7 align-middle"></i>
             <i class="mdi mdi-white-balance-sunny align-middle"></i>
         </button>
-        <!-- <button type="button" class="btn btn-wide border-0 text-white fs-20 avatar-sm" data-toggle="fullscreen">
+        <button type="button" class="btn btn-wide border-0 text-white fs-20 avatar-sm" data-toggle="fullscreen">
             <i class="mdi mdi-arrow-expand-all align-middle"></i>
         </button>
         <button type="button" class="btn btn-wide border-0 text-white fs-16 avatar-sm" id="layout-dir-btn">
             <span>RTL</span>
-        </button> -->
+        </button>
     </div>
 
 
@@ -1120,133 +1390,311 @@
     <!-- App js -->
     <script src="assets/js/app.js"></script>
 
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-   <script>
-      document.addEventListener('DOMContentLoaded', function () {
-    const addMemberForm = document.getElementById('addMemberForm');
-    const successModal = new bootstrap.Modal(document.getElementById('successModal'));
-    const errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
-    const photoInput = document.getElementById('photo');
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    photoInput.addEventListener('change', function () {
-        if (this.files.length > 0) {
-            const file = this.files[0];
-            const fileSize = file.size; // Size in bytes
-            const maxSize = 40 * 1024; // 40 KB in bytes (30 KB would be 30 * 1024)
 
-            if (fileSize > maxSize) {
-                alert('Photo size exceeds the limit of 30-40 KB. Please select a smaller photo.');
-                this.value = ''; // Clear the file input
-            }
-        }
-    });
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const addMemberForm = document.getElementById("addMemberForm");
+    const proceedToPaymentBtn = document.getElementById("proceedToPaymentBtn");
+    const addMemberBtn = document.getElementById("addMemberBtn");
+    const successModal = new bootstrap.Modal(
+      document.getElementById("successModal")
+    );
+    const errorModal = new bootstrap.Modal(
+      document.getElementById("errorModal")
+    );
+    const paymentModal = new bootstrap.Modal(
+      document.getElementById("paymentModal")
+    );
+    const photoInput = document.getElementById("photo");
+    const paymentOptions = document.querySelectorAll(".payment-option");
 
-    addMemberForm.addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent the default form submission
+    let isPaymentSuccessful = false; // Flag to track payment status
 
-        let allFieldsFilled = true;
-        const memberData = {}; // Object to store form data
+    // Add invalid-feedback for photo input in HTML and use it here
+    photoInput.addEventListener("change", function () {
+      if (this.files.length > 0) {
+        const file = this.files[0];
+        const fileSize = file.size; // Size in bytes
+        const maxSize = 40 * 1024; // 40 KB in bytes
+        const allowedTypes = ["image/jpeg", "image/png"]; // Allowed MIME types
 
-        const requiredFields = addMemberForm.querySelectorAll('[required]');
-
-        requiredFields.forEach(field => {
-            if (field.tagName === 'SELECT') {
-                if (field.value === '') {
-                    allFieldsFilled = false;
-                }
-            } else if (field.type === 'file') {
-                // The file size check is now handled by the 'change' event listener
-                // If a file is selected and valid, it will be in this.files[0]
-                if (field.files.length > 0) {
-                    // For demo, we'll use a placeholder URL for photo.
-                    // In a real app, you'd handle file uploads to a server.
-                    memberData.photoUrl = URL.createObjectURL(field.files[0]); // Create a URL for display
-                } else {
-                    memberData.photoUrl = "https://via.placeholder.com/150/CCCCCC/888888?text=No+Photo";
-                }
-            } else {
-                if (field.value.trim() === '') {
-                    allFieldsFilled = false;
-                }
-            }
-            memberData[field.id] = field.value.trim();
-        });
-
-        if (allFieldsFilled) {
-            // Get existing members from localStorage or initialize an empty array
-            const members = JSON.parse(localStorage.getItem('members')) || [];
-
-            // Determine the next ID
-            const newId = members.length > 0 ? Math.max(...members.map(m => m.id)) + 1 : 1;
-
-            // If photoUrl was not set by file input (e.g., if no file was selected)
-            if (!memberData.photoUrl || photoInput.files.length === 0) {
-                memberData.photoUrl = "https://via.placeholder.com/150/CCCCCC/888888?text=No+Photo";
-            }
-
-            const newMember = {
-                id: newId,
-                firstName: memberData.firstName,
-                lastName: memberData.lastName,
-                contact: memberData.contact,
-                emailAddress: memberData.emailAddress,
-                gender: memberData.gender,
-                dob: memberData.dob,
-                maritalStatus: memberData.maritalStatus,
-                address: memberData.address,
-                city: memberData.city,
-                pincode: memberData.pincode,
-                occupation: memberData.occupation, // This field is not in the form, but was in your JS
-                photoUrl: memberData.photoUrl,
-                membership_type: memberData.membership_type,
-                status: 'Active' // Default status for new members
-            };
-
-            members.push(newMember);
-            localStorage.setItem('members', JSON.stringify(members)); // Save updated array
-
-            // Add the new member to the DataTable
-            const table = $('#datatable-col-visiblility').DataTable();
-            const photoSrc = newMember.photoUrl; // Use the photoUrl from newMember
-            const statusBadgeClass = newMember.status === 'Active' ? 'bg-success' : 'bg-danger';
-
-            table.row.add([
-                newMember.id,
-                `<img src="${photoSrc}" alt="Photo" width="40" height="40" />`,
-                newMember.firstName,
-                newMember.lastName,
-                newMember.gender,
-                newMember.dob,
-                newMember.maritalStatus,
-                newMember.contact,
-                newMember.emailAddress,
-                newMember.address,
-                newMember.city,
-                newMember.pincode,
-                newMember.membership_type,
-                `<span class="badge ${statusBadgeClass}">${newMember.status}</span>`,
-                `
-                <a class="btn btn-sm btn-info view-card-btn" data-member-id="${newMember.id}">
-                    <i class="fas fa-id-card"></i>
-                </a>
-                <a href="edit-member.html" class="btn btn-sm btn-primary">
-                    <i class="fas fa-pen"></i>
-                </a>
-                <a class="btn btn-sm btn-danger delete-member-btn">
-                    <i class="fas fa-trash"></i>
-                </a>
-                `
-            ]).draw(false); // Use draw(false) to redraw without re-sorting or re-paging
-
-            successModal.show();
-            addMemberForm.reset();
-
+        let isValid = true;
+        if (fileSize > maxSize) {
+          this.classList.add("is-invalid");
+          this.nextElementSibling.textContent =
+            "Photo size exceeds the limit of 40 KB. Please select a smaller photo.";
+          isValid = false;
+        } else if (!allowedTypes.includes(file.type)) {
+          this.classList.add("is-invalid");
+          this.nextElementSibling.textContent =
+            "Only JPG, JPEG, and PNG image formats are allowed. Please select a valid photo.";
+          isValid = false;
         } else {
-            errorModal.show();
+          this.classList.remove("is-invalid");
         }
+
+        if (!isValid) {
+          this.value = ""; // Clear the file input if invalid
+        }
+      } else {
+        this.classList.remove("is-invalid"); // Remove validation state if no file
+      }
     });
-});
-    </script>
+
+    // Event listener for "Proceed to Payment" button
+    proceedToPaymentBtn.addEventListener("click", function (event) {
+      event.preventDefault(); // Prevent default button action
+
+      let allFieldsFilled = true;
+      const requiredFields = addMemberForm.querySelectorAll(
+        "[required]:not(#photo)"
+      ); // Photo is optional
+
+      requiredFields.forEach((field) => {
+        if (
+          field.value.trim() === "" ||
+          (field.tagName === "SELECT" && field.value === "")
+        ) {
+          field.classList.add("is-invalid");
+          allFieldsFilled = false;
+        } else {
+          field.classList.remove("is-invalid");
+        }
+      });
+
+      // Validate contact number (10 digits)
+      const contactField = document.getElementById("contact");
+      if (contactField.value.length !== 10) {
+        contactField.classList.add("is-invalid");
+        allFieldsFilled = false;
+      } else {
+        contactField.classList.remove("is-invalid");
+      }
+
+      // Validate pincode (6 digits)
+      const pincodeField = document.getElementById("pincode");
+      if (pincodeField.value.length !== 6) {
+        pincodeField.classList.add("is-invalid");
+        allFieldsFilled = false;
+      } else {
+        pincodeField.classList.remove("is-invalid");
+      }
+
+      // Re-check photo file size and type validation before opening payment modal
+      if (photoInput.files.length > 0) {
+        const file = photoInput.files[0];
+        const fileSize = file.size;
+        const maxSize = 40 * 1024;
+        const allowedTypes = ["image/jpeg", "image/png"];
+
+        if (fileSize > maxSize || !allowedTypes.includes(file.type)) {
+          // The photoInput event listener should handle adding 'is-invalid' and message
+          allFieldsFilled = false; // Mark as not filled if photo validation fails
+        }
+      }
+
+      if (allFieldsFilled) {
+        paymentModal.show(); // Show the payment options modal
+      } else {
+        errorModal.show(); // Show error if form fields are not filled
+      }
+    });
+
+    // Event listeners for payment options
+    paymentOptions.forEach((button) => {
+      button.addEventListener("click", function () {
+        const paymentMethod = this.dataset.paymentMethod;
+        console.log("Selected payment method:", paymentMethod);
+
+        // Simulate payment processing
+        setTimeout(() => {
+          alert("Payment successful with " + paymentMethod + "!");
+          isPaymentSuccessful = true;
+          paymentModal.hide(); // Hide payment modal
+          proceedToPaymentBtn.style.display = "none"; // Hide payment button
+          addMemberBtn.style.display = "inline-block"; // Show "Add New Member" button
+        }, 1000); // Simulate a 1-second delay for payment processing
+      });
+    });
+
+    // Original form submission for "Add New Member"
+    addMemberForm.addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      if (!isPaymentSuccessful) {
+        // This condition should ideally not be met if the button is hidden,
+        // but as a safeguard.
+        errorModal.show();
+        return;
+      }
+
+      let allFieldsFilled = true;
+      const memberData = {}; // Object to store form data
+
+      const requiredFields = addMemberForm.querySelectorAll(
+        "[required]:not(#photo)"
+      );
+
+      requiredFields.forEach((field) => {
+        if (
+          field.value.trim() === "" ||
+          (field.tagName === "SELECT" && field.value === "")
+        ) {
+          field.classList.add("is-invalid");
+          allFieldsFilled = false;
+        } else {
+          field.classList.remove("is-invalid");
+        }
+        if (field.id) {
+          memberData[field.id] = field.value.trim();
+        }
+      });
+
+      // Manual validation for contact and pincode here as well for direct submission
+      const contactField = document.getElementById("contact");
+      if (contactField.value.length !== 10) {
+        contactField.classList.add("is-invalid");
+        allFieldsFilled = false;
+      } else {
+        contactField.classList.remove("is-invalid");
+      }
+
+      const pincodeField = document.getElementById("pincode");
+      if (pincodeField.value.length !== 6) {
+        pincodeField.classList.add("is-invalid");
+        allFieldsFilled = false;
+      } else {
+        pincodeField.classList.remove("is-invalid");
+      }
+
+      // Handle photo data: Read as Data URL for storage and display
+      if (photoInput.files.length > 0) {
+        const file = photoInput.files[0];
+        const fileSize = file.size;
+        const maxSize = 40 * 1024;
+        const allowedTypes = ["image/jpeg", "image/png"];
+
+        if (fileSize > maxSize || !allowedTypes.includes(file.type)) {
+          // This case should ideally be caught by the photoInput change listener
+          // and proceedToPaymentBtn validation, but adding a final check.
+          photoInput.classList.add("is-invalid");
+          photoInput.nextElementSibling.textContent =
+            "Please upload a valid photo (only .jpg, .jpeg, .png formats allowed, max 40 KB).";
+          allFieldsFilled = false;
+        } else {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            memberData.photoUrl = e.target.result; // Store base64 string
+            finalizeMemberAddition(memberData, allFieldsFilled);
+          };
+          reader.readAsDataURL(file); // Read file as Data URL
+        }
+      } else {
+        // If no photo is selected, use a placeholder
+        memberData.photoUrl =
+          "https://via.placeholder.com/150/CCCCCC/888888?text=No+Photo";
+        finalizeMemberAddition(memberData, allFieldsFilled);
+      }
+    });
+
+    function finalizeMemberAddition(memberData, allFieldsFilled) {
+      if (allFieldsFilled) {
+        const members = JSON.parse(localStorage.getItem("members")) || [];
+        const newId = members.length > 0 ? Math.max(...members.map((m) => m.id)) + 1 : 1;
+
+        const newMember = {
+          id: newId,
+          firstName: memberData.firstName,
+          lastName: memberData.lastName,
+          contact: memberData.contact,
+          emailAddress: memberData.emailAddress,
+          gender: memberData.gender,
+          dob: memberData.dob,
+          address: memberData.address,
+          city: memberData.city,
+          pincode: memberData.pincode,
+          photoUrl: memberData.photoUrl, // This will now be the base64 string or placeholder
+          membership_type: memberData.membership_type,
+          status: "Active",
+        };
+
+        members.push(newMember);
+        localStorage.setItem("members", JSON.stringify(members));
+
+        // Check if DataTable is initialized before trying to add a row
+        if ($.fn.DataTable.isDataTable("#datatable-col-visiblility")) {
+          const table = $("#datatable-col-visiblility").DataTable();
+          const statusBadgeClass =
+            newMember.status === "Active" ? "bg-success" : "bg-danger";
+
+          table.row
+            .add([
+              newMember.id,
+              `<img src="${newMember.photoUrl}" alt="Photo" width="40" height="40" class="rounded-circle"/>`, // Display image directly
+              newMember.firstName,
+              newMember.lastName,
+              newMember.gender,
+              newMember.dob,
+              // Removed maritalStatus and occupation as they are not in the form
+              newMember.contact,
+              newMember.emailAddress,
+              newMember.address,
+              newMember.city,
+              newMember.pincode,
+              newMember.membership_type,
+              `<span class="badge ${statusBadgeClass}">${newMember.status}</span>`,
+              `
+                            <a href="edit-member.html?id=${newMember.id}" class="btn btn-sm btn-primary">
+                                <i class="fas fa-pen"></i>
+                            </a>
+                            <a class="btn btn-sm btn-danger delete-member-btn" data-id="${newMember.id}">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                            `,
+            ])
+            .draw(false);
+        } else {
+          console.warn(
+            "DataTable '#datatable-col-visiblility' not initialized. Member data saved to localStorage but not added to table display."
+          );
+        }
+
+        successModal.show();
+        addMemberForm.reset();
+        isPaymentSuccessful = false; // Reset payment status for next member
+        proceedToPaymentBtn.style.display = "inline-block"; // Show payment button again
+        addMemberBtn.style.display = "none"; // Hide "Add New Member" button
+      } else {
+        errorModal.show();
+      }
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const contactInput = document.getElementById("contact");
+    const pincodeInput = document.getElementById("pincode");
+
+    // Allow only numbers for contact
+    contactInput.addEventListener("keypress", function (event) {
+      const charCode = event.which ? event.which : event.keyCode;
+      if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        event.preventDefault();
+      }
+    });
+
+    // Allow only numbers for pincode
+    pincodeInput.addEventListener("keypress", function (event) {
+      const charCode = event.which ? event.which : event.keyCode;
+      if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        event.preventDefault();
+      }
+    });
+  });
+</script>
+
+ 
 </body>
 
 </html>
