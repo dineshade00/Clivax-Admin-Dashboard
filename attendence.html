@@ -688,10 +688,10 @@
 
                     <!-- start page title -->
                    <!-- start page title -->
-                    <div class="row">
+                     <div class="row">
                         <div class="col-12">
                             <div class="d-flex justify-content-between align-items-center flex-column flex-md-row mb-3">
-                                <div class="container">
+                                <div class="container-fluid">
                                     <h4 class="mb-3">Attendance Tracker</h4>
 
 
@@ -700,26 +700,28 @@
                                             <button class="nav-link active" data-bs-toggle="tab"
                                                 data-bs-target="#attendanceTab">Attendance</button>
                                         </li>
-                                        <li class="nav-item">
-                                            <button class="nav-link" data-bs-toggle="tab"
-                                                data-bs-target="#staffDisplayTab">Staff</button>
-                                        </li>
+                                       
                                         <li class="nav-item">
                                             <button class="nav-link" data-bs-toggle="tab"
                                                 data-bs-target="#memberDisplayTab">Member</button>
+                                        </li>
+                                         <li class="nav-item">
+                                            <button class="nav-link" data-bs-toggle="tab"
+                                                data-bs-target="#staffDisplayTab">Staff</button>
                                         </li>
                                     </ul>
 
                                     <div class="tab-content">
                                         <div class="tab-pane fade show active" id="attendanceTab">
-                                            <ul class="nav nav-pills mt-3">
-                                                <li class="nav-item">
-                                                    <button class="nav-link active" data-bs-toggle="pill"
-                                                        data-bs-target="#staffFormTab">Staff Attendance</button>
-                                                </li>
-                                                <li class="nav-item">
+                                            <ul class="nav nav-pills mt-3 ">
+                                               
+                                                <li class="nav-item ">
                                                     <button class="nav-link" data-bs-toggle="pill"
                                                         data-bs-target="#memberFormTab">Member Attendance</button>
+                                                </li>
+                                                 <li class="nav-item">
+                                                    <button class="nav-link active" data-bs-toggle="pill"
+                                                        data-bs-target="#staffFormTab">Staff Attendance</button>
                                                 </li>
                                             </ul>
 
@@ -731,16 +733,16 @@
                                                                 <label class="form-label">Select Staff Name</label>
                                                                 <select id="staffFullName" class="form-select" required>
                                                                     <option value="">-- Select Staff --</option>
-                                                                    <option>Shubham Khodke</option>
-                                                                    <option>pawan satpute</option>
-                                                                    <option>Aniket Wagh</option>
-                                                                    <option>Emily Rathi </option>
+                                                                   
+                                                                    <option>Vishal Kubde</option>
+                                                                    <option>Darshan Lakde</option>
+                                                                    <option>Emily Rathi</option>
+                                                                    <option>pawan Satpute</option>
+                                                                    <option>shree Patahak </option>
+                                                                    <option>Mayank Rahate</option>
                                                                     <option>Shivam Patil</option>
-                                                                    <option>Om Nandgirwar</option>
-                                                                    <option>Mithilesh pathak</option>
-                                                                    <option>Arjun thakre</option>
-                                                                    <option>Shreyas Gawande</option>
-                                                                    <option>Manish bhagat</option>
+                                                                    <option>dinesh Ade</option>
+                                                                    <option>Abhishek Amre</option>
                                                                 </select>
                                                             </div>
                                                             <div class="mb-3">
@@ -770,16 +772,17 @@
                                                                 <select id="memberFullName" class="form-select"
                                                                     required>
                                                                     <option value="">-- Select Member --</option>
-                                                                    <option>Shubham Khodke</option>
-                                                                    <option>pawan satpute</option>
-                                                                    <option>Aniket Wagh</option>
-                                                                    <option>Emily Rathi </option>
+                                                                    
+                                                                    <option>Vishal Kubde</option>
+                                                                    <option>Darshan Lakde</option>
+                                                                    <option>Emily Rathi</option>
+                                                                    <option>pawan Satpute</option>
+                                                                    <option>shree Patahak </option>
+                                                                    <option>Mayank Rahate</option>
                                                                     <option>Shivam Patil</option>
-                                                                    <option>Om Nandgirwar</option>
-                                                                    <option>Mithilesh pathak</option>
-                                                                    <option>Arjun thakre</option>
-                                                                    <option>Shreyas Gawande</option>
-                                                                    <option>Manish bhagat</option>
+                                                                    <option>dinesh Ade</option>
+                                                                    <option>Abhishek Amre</option>
+                                                                     
                                                                 </select>
                                                             </div>
                                                             <div class="mb-3">
@@ -808,7 +811,7 @@
                                                 <table class="table table-bordered table-striped">
                                                     <thead>
                                                         <tr>
-                                                            <th>Full Name</th>
+                                                            <th style="width: 150px;">Full Name</th>
                                                             <th>Attendance (1–30)</th>
                                                         </tr>
                                                     </thead>
@@ -822,7 +825,7 @@
                                                 <table class="table table-bordered table-striped">
                                                     <thead>
                                                         <tr>
-                                                            <th>Full Name</th>
+                                                            <th style="width: 150px;">Full Name</th>
                                                             <th>Attendance (1–30)</th>
                                                         </tr>
                                                     </thead>
@@ -840,7 +843,6 @@
                         </div>
                         <!-- end layout-wrapper -->
                     </div>
-                    <!-- end container-fluid -->
                 </div>
                 <!-- End Page-content -->
 
