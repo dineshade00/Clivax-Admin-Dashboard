@@ -11,7 +11,7 @@ function renderTable() {
         <td>₹${entry.amount}</td>
         <td>${entry.offer}</td>
         <td class="d-flex gap-2 justify-content-center flex-wrap">
-          <a href="add_manage_plan.html?index=${index}" class="btn btn-sm btn-primary">Edit</a>
+          <a href="manage-plan.html?index=${index}" class="btn btn-sm btn-primary">Edit</a>
           <button class="btn btn-sm btn-danger" onclick="deleteRow(${index})">Delete</button>
         </td>
       `;
