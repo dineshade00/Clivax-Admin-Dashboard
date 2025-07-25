@@ -8,6 +8,7 @@ let plans = {
   personal: { amount: "2499", offer: "Dedicated trainer & diet plan" },
 };
 
+
 // Merge custom plans from localStorage
 const storedPlans = JSON.parse(localStorage.getItem("customPlans") || "{}");
 plans = { ...plans, ...storedPlans };
