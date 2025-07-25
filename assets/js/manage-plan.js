@@ -31,7 +31,7 @@ function capitalize(str) {
 if (index === null || !data[index]) {
   if (data.length === 0) {
     alert("No membership data found.");
-    window.location.href = "view_plan.html";
+    window.location.href = "view-plan.html";
   } else {
     index = 0;
   }
