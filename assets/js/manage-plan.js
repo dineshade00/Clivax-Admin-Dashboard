@@ -69,5 +69,6 @@ document.getElementById("editForm").addEventListener("submit", function (e) {
   data[index] = updated;
   localStorage.setItem("memberships", JSON.stringify(data));
   alert("Updated successfully.");
-  window.location.href = "view_plan.html";
+  window.location.href = "view-plan.html";
+  
 });
