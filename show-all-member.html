@@ -37,6 +37,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44jKVadk2uNPnHzYUthhd8fjGPSSVU-NoQzXhGQzXLcWkLJKv5W4OnXhVwgyh4jsgSAoKw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+    @media print {
+        body * {
+            visibility: hidden;
+        }
+
+        #cardContentToPrint,
+        #cardContentToPrint * {
+            visibility: visible;
+        }
+
+        #cardContentToPrint {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+    }
+</style>
 </head>
 
 <style>
@@ -705,478 +725,489 @@
         <!-- Start right Content here -->
         <!-- ============================================================== -->
         <div class="main-content">
+        <div class="page-content">
+          <div class="container-fluid">
+            <!-- start page title -->
+            <div class="row">
+              <div class="col-12">
+                <div
+                  class="page-title-box d-flex align-items-center justify-content-between"
+                >
+                  <h4 class="mb-sm-0">Total Members</h4>
 
-            <div class="page-content">
-                <div class="container-fluid">
-
-                    <!-- start page title -->
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0">Total Members</h4>
-
-                                <div class="page-title-right">
-                                    <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                                        <li class="breadcrumb-item active">Total Members</li>
-                                    </ol>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end page title -->
-<div class="row">
-    <div class="col-12">
-        <div class="card">
-            <div class="card-header">
-                <h4 class="card-title">Total Member</h4>
-            </div>
-            <div class="card-body">
-                <table id="datatable-col-visiblility"
-                    class="table table-hover table-bordered table-striped dt-responsive nowrap"
-                    style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Photo</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Gender</th>
-                            <th>DOB</th>
-                            <th>Marital Status</th>
-                            <th>Contact</th>
-                            <th>Email</th>
-                            <th>Address</th>
-                            <th>City</th>
-                            <th>Pincode</th>
-                            <th>Type</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td><img src="path/to/photo1.jpg" alt="Photo" width="40" height="40" />
-                            </td>
-                            <td>Rahul</td>
-                            <td>Thakur</td>
-                            <td>Male</td>
-                            <td>2025-01-01</td>
-                            <td>Single</td>
-                            <td>2837462908</td>
-                            <td>rahulthakur@gmail.com</td>
-                            <td>Nagpur</td>
-                            <td>Nagpur</td>
-                            <td>440001</td>
-                            <td>1 month plan</td>
-                            <td><span class="badge bg-success">Active</span></td>
-                            <td>
-                                <a class="btn btn-sm btn-info view-card-btn" data-member-id="1">
-                                    <i class="fas fa-id-card"></i>
-                                </a>
-                                <a href="edit-member.html" class="btn btn-sm btn-primary">
-                                    <i class="fas fa-pen"></i>
-                                </a>
-                                <a class="btn btn-sm btn-danger delete-member-btn">
-                                    <i class="fas fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td><img src="path/to/photo2.jpg" alt="Photo" width="40" height="40" />
-                            </td>
-                            <td>Chetan</td>
-                            <td>Parate</td>
-                            <td>Male</td>
-                            <td>2025-02-02</td>
-                            <td>Married</td>
-                            <td>8383839202</td>
-                            <td>chetanparate@gmail.com</td>
-                            <td>Pune</td>
-                            <td>Pune</td>
-                            <td>411001</td>
-                            <td>1 month plan</td>
-                            <td><span class="badge bg-success">Active</span></td>
-                            <td>
-                                <a class="btn btn-sm btn-info view-card-btn" data-member-id="2">
-                                    <i class="fas fa-id-card"></i>
-                                </a>
-                                <a href="edit-member.html" class="btn btn-sm btn-primary">
-                                    <i class="fas fa-pen"></i>
-                                </a>
-                                <a class="btn btn-sm btn-danger delete-member-btn">
-                                    <i class="fas fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td><img src="path/to/photo3.jpg" alt="Photo" width="40" height="40" />
-                            </td>
-                            <td>Shyam</td>
-                            <td>Sharma</td>
-                            <td>Male</td>
-                            <td>2025-03-01</td>
-                            <td>Single</td>
-                            <td>3994023939</td>
-                            <td>shyamsharma@gmail.com</td>
-                            <td>medical square Nagpur</td>
-                            <td>Nagpur</td>
-                            <td>54000</td>
-                            <td>3 month plan</td>
-                            <td><span class="badge bg-danger">Inactive</span></td>
-                            <td>
-                                <a class="btn btn-sm btn-info view-card-btn" data-member-id="3">
-                                    <i class="fas fa-id-card"></i>
-                                </a>
-                                <a href="edit-member.html" class="btn btn-sm btn-primary">
-                                    <i class="fas fa-pen"></i>
-                                </a>
-                                <a class="btn btn-sm btn-danger delete-member-btn">
-                                    <i class="fas fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>4</td>
-                            <td><img src="path/to/photo2.jpg" alt="Photo" width="40" height="40" />
-                            </td>
-                            <td>Priya</td>
-                            <td>Sharma</td>
-                            <td>Female</td>
-                            <td>2025-05-12</td>
-                            <td>Married</td>
-                            <td>9847361820</td>
-                            <td>priyasharma@gmail.com</td>
-                            <td>Mumbai</td>
-                            <td>Mumbai</td>
-                            <td>400001</td>
-                            <td>3 month plan</td>
-                            <td><span class="badge bg-danger ">Inactive</span></td>
-                            <td>
-                                <a class="btn btn-sm btn-info view-card-btn" data-member-id="2">
-                                    <i class="fas fa-id-card"></i>
-                                </a>
-                                <a href="edit-member.html" class="btn btn-sm btn-primary">
-                                    <i class="fas fa-pen"></i>
-                                </a>
-                                <a class="btn btn-sm btn-danger delete-member-btn">
-                                    <i class="fas fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>5</td>
-                            <td><img src="path/to/photo3.jpg" alt="Photo" width="40" height="40" />
-                            </td>
-                            <td>Amit</td>
-                            <td>Verma</td>
-                            <td>Male</td>
-                            <td>2025-05-23</td>
-                            <td>Single</td>
-                            <td>7839201123</td>
-                            <td>amitverma@gmail.com</td>
-                            <td>Delhi</td>
-                            <td>Delhi</td>
-                            <td>110001</td>
-                            <td>6 month plan</td>
-                            <td><span class="badge bg-success">Active</span></td>
-                            <td>
-                                <a class="btn btn-sm btn-info view-card-btn" data-member-id="3">
-                                    <i class="fas fa-id-card"></i>
-                                </a>
-                                <a href="edit-member.html" class="btn btn-sm btn-primary">
-                                    <i class="fas fa-pen"></i>
-                                </a>
-                                <a class="btn btn-sm btn-danger delete-member-btn">
-                                    <i class="fas fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr>
-
-
-
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
-
-                    <div class="modal fade" id="membershipCardModal" tabindex="-1" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content" id="cardContentToPrint"
-                                style="padding: 20px; border-radius: 10px; background: linear-gradient(to right, #f7f7f7, #eaeaea);">
-                                <div class="modal-body text-center">
-                                    <div style="text-align: right; margin-bottom: 10px;">
-                                        <button class="btn btn-sm btn-secondary" onclick="window.print()">Print</button>
-                                    </div>
-                                    <div style="border: 2px solid #000; padding: 20px; position: relative;">
-                                        <div>
-                                            <h4><strong>OLYMPUS GYM</strong></h4>
-                                            <p><strong id="cardMemberId">#CA-xxxxx</strong></p>
-                                            <div
-                                                style="display: flex; justify-content: space-between; align-items: center; text-align: left;">
-                                                <div style="flex: 1; padding-right: 20px;">
-                                                    <p><strong id="cardName">Name</strong></p>
-                                                    <p id="cardAddress">Address</p>
-                                                    <p><strong>MEMBERSHIP:</strong> <span id="cardType">Type</span></p>
-                                                    <p><small>VALID TILL: <span id="cardValidTill">March 13,
-                                                                2025</span></small></p>
-                                                </div>
-                                                <div style="flex-shrink: 0;">
-                                                    <img src="/mnt/data/b736b69f-2b26-4143-be1a-bcb3ec5ab0c3.png"
-                                                        alt="Profile" width="100" style="border-radius: 10px;"
-                                                        id="cardPhoto" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end row -->
+                  <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                      <li class="breadcrumb-item">
+                        <a href="javascript: void(0);">Clivax</a>
+                      </li>
+                      <li class="breadcrumb-item active">Total Members</li>
+                    </ol>
+                  </div>
                 </div>
-                <!-- container-fluid -->
+              </div>
             </div>
-            <!-- End Page-content -->
+            <!-- end page title -->
 
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="card-title">Total Member</h4>
+                  </div>
+                  <div class="card-body">
+                    <table
+                      id="datatable-col-visiblility"
+                      class="table table-hover table-bordered table-striped dt-responsive nowrap"
+                      style="
+                        border-collapse: collapse;
+                        border-spacing: 0;
+                        width: 100%;
+                      "
+                    >
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Photo</th>
+                          <th>First Name</th>
+                          <th>Last Name</th>
+                          <th>Contact</th>
+                          <th>Email</th>
+                          <th>Type</th>
+                          <th>Status</th>
+                          <th>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody></tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="modal fade"
+              id="membershipCardModal"
+              tabindex="-1"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered">
+                <div
+                  class="modal-content"
+                  id="cardContentToPrint"
+                  style="
+                    padding: 20px;
+                    border-radius: 10px;
+                    background: linear-gradient(to right, #f7f7f7, #eaeaea);
+                  "
+                >
+                  <div class="modal-body text-center">
+                    <div style="text-align: right; margin-bottom: 10px">
+                      <button
+                        class="btn btn-sm btn-secondary"
+                        onclick="window.print()"
+                      >
+                        Print
+                      </button>
+                    </div>
+                    <div
+                      style="
+                        border: 2px solid #000;
+                        padding: 20px;
+                        position: relative;
+                      "
+                    >
+                      <div>
+                        <h4><strong>OLYMPUS GYM</strong></h4>
+                        <p><strong id="cardMemberId">#CA-xxxxx</strong></p>
+                        <div
+                          style="
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            text-align: left;
+                          "
+                        >
+                          <div style="flex: 1; padding-right: 20px">
+                            <p><strong id="cardName">Name</strong></p>
+                            <p id="cardAddress">Address</p>
+                            <p>
+                              <strong>MEMBERSHIP:</strong>
+                              <span id="cardType">Type</span>
+                            </p>
+                            <p>
+                              <small
+                                >VALID TILL:
+                                <span id="cardValidTill"
+                                  >March 13, 2025</span
+                                ></small
+                              >
+                            </p>
+                          </div>
+                          <div style="flex-shrink: 0">
+                            <img
+                              src="/mnt/data/b736b69f-2b26-4143-be1a-bcb3ec5ab0c3.png"
+                              alt="Profile"
+                              width="100"
+                              style="border-radius: 10px"
+                              id="cardPhoto"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="memberProfileSection" class="card" style="display: none">
+              <div class="card-header">
+                <h4 class="card-title">Member Profile</h4>
+              </div>
+              <div
+                class="card-body d-flex justify-content-between align-items-start"
+              >
+                <div class="row w-75">
+                  <div class="col-md-6">
+                    <p>
+                      <strong>Membership Number:</strong>
+                      <span id="profileMemberId"></span>
+                    </p>
+                    <p>
+                      <strong>Full Name:</strong>
+                      <span id="profileFullName"></span>
+                    </p>
+                    <p>
+                      <strong>Date of Birth:</strong>
+                      <span id="profileDOB"></span>
+                    </p>
+                    <p>
+                      <strong>Gender:</strong> <span id="profileGender"></span>
+                    </p>
+                    <p>
+                      <strong>Contact Number:</strong>
+                      <span id="profileContact"></span>
+                    </p>
+                    <p>
+                      <strong>Email:</strong> <span id="profileEmail"></span>
+                    </p>
+                  </div>
+                  <div class="col-md-6">
+                    <p>
+                      <strong>Address:</strong>
+                      <span id="profileAddress"></span>
+                    </p>
+                    <p>
+                      <strong>Pincode:</strong>
+                      <span id="profilePincode"></span>
+                    </p>
+                    <p>
+                      <strong>Membership Type:</strong>
+                      <span id="profileMembershipType"></span>
+                    </p>
+                    <p>
+                      <strong>Status:</strong> <span id="profileStatus"></span>
+                    </p>
+                  </div>
+                </div>
+                <div style="width: 150px">
+                  <img
+                    src="your-photo-path.png"
+                    alt="Profile Photo"
+                    style="width: 100%; border-radius: 5px"
+                    id="profilePhoto"
+                  />
+                </div>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-info" id="profileMembershipCardBtn">
+                  <i class="fa fa-id-card"></i> Membership Card
+                </button>
+              </div>
+            </div>
 
-          
+            <!-- end row -->
+          </div>
+          <!-- container-fluid -->
         </div>
-        <!-- end main content-->
-
+        <!-- End Page-content -->
+      </div>
+      <!-- end main content-->
     </div>
     <!-- END layout-wrapper -->
-       <footer class="footer">
-                <div class="container-fluid">
-                    <div class="row align-items-center">
-                        <div class="col-sm-6">
-                            <script>document.write(new Date().getFullYear())</script> © Clivax Gym.
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="text-sm-end d-none d-sm-block">
-                                Designed & Developed <i class="mdi mdi-heart text-danger"></i> by <a
-                                    href="https://kavyainfoweb.com/" target="_blank" class="text-muted">Kavya Infoweb
-                                    Pvt. Ltd.</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-sm-6">
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            © FitPro Gym.
+          </div>
+          <div class="col-sm-6">
+            <div class="text-sm-end d-none d-sm-block">
+              Designed & Developed <i class="mdi mdi-heart text-danger"></i> by
+              <a
+                href="https://kavyainfoweb.com/"
+                target="_blank"
+                class="text-muted"
+                >Kavya Infoweb Pvt. Ltd.</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-
-
-
-    <div class="custom-setting bg-primary pe-0 d-flex flex-column rounded-start">
-        <button type="button" class="btn btn-wide border-0 text-white fs-20 avatar-sm rounded-end-0"
-            id="light-dark-mode">
-            <i class="mdi mdi-brightness-7 align-middle"></i>
-            <i class="mdi mdi-white-balance-sunny align-middle"></i>
-        </button>
-        <!-- <button type="button" class="btn btn-wide border-0 text-white fs-20 avatar-sm" data-toggle="fullscreen">
-            <i class="mdi mdi-arrow-expand-all align-middle"></i>
-        </button>
-        <button type="button" class="btn btn-wide border-0 text-white fs-16 avatar-sm" id="layout-dir-btn">
-            <span>RTL</span>
-        </button> -->
+    <div
+      class="custom-setting bg-primary pe-0 d-flex flex-column rounded-start"
+    >
+      <button
+        type="button"
+        class="btn btn-wide border-0 text-white fs-20 avatar-sm rounded-end-0"
+        id="light-dark-mode"
+      >
+        <i class="mdi mdi-brightness-7 align-middle"></i>
+        <i class="mdi mdi-white-balance-sunny align-middle"></i>
+      </button>
     </div>
-
 
     <!-- Rightbar Sidebar -->
     <div class="offcanvas offcanvas-end" id="offcanvas-rightsidabar">
-        <div class="card h-100 rounded-0" data-simplebar="init">
-            <div class="card-header bg-light">
-                <h6 class="card-title text-uppercase">Activities</h6>
-                <div class="card-addon">
-                    <button class="btn btn-label-danger" data-bs-dismiss="offcanvas">
-                        <i class="fa fa-times"></i>
-                    </button>
-                </div>
+      <div class="card h-100 rounded-0" data-simplebar="init">
+        <div class="card-header bg-light">
+          <h6 class="card-title text-uppercase">Activities</h6>
+          <div class="card-addon">
+            <button class="btn btn-label-danger" data-bs-dismiss="offcanvas">
+              <i class="fa fa-times"></i>
+            </button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="">
+            <h3 class="card-title">Company summary</h3>
+            <div class="border rounded p-2">
+              <p class="text-muted mb-2">Server Load</p>
+              <h4 class="fs-16 mb-2">489</h4>
+              <div class="progress progress-sm" style="height: 4px">
+                <div class="progress-bar bg-success" style="width: 49.4%"></div>
+              </div>
+              <p class="text-muted mb-0 mt-1">49.4% <span>Avg</span></p>
             </div>
-            <div class="card-body">
-                <div class="">
-                    <h3 class="card-title">Company summary</h3>
-                    <div class="border rounded p-2">
-                        <p class="text-muted mb-2">Server Load</p>
-                        <h4 class="fs-16 mb-2">489</h4>
-                        <div class="progress progress-sm" style="height:4px;">
-                            <div class="progress-bar bg-success" style="width: 49.4%"></div>
-                        </div>
-                        <p class="text-muted mb-0 mt-1">49.4% <span>Avg</span></p>
-                    </div>
-                    <div class="border rounded p-2">
-                        <p class="text-muted mb-2">Members online</p>
-                        <h4 class="fs-16 mb-2">3,450</h4>
-                        <div class="progress progress-sm" style="height:4px;">
-                            <div class="progress-bar bg-danger" style="width: 34.6%"></div>
-                        </div>
-                        <p class="text-muted mb-0 mt-1">34.6% <span>Avg</span></p>
-                    </div>
-                    <div class="border rounded p-2">
-                        <p class="text-muted mb-2">Today's revenue</p>
-                        <h4 class="fs-16 mb-2">$18,390</h4>
-                        <div class="progress progress-sm" style="height:4px;">
-                            <div class="progress-bar bg-warning" style="width: 20%"></div>
-                        </div>
-                        <p class="text-muted mb-0 mt-1">$37,578 <span>Avg</span></p>
-                    </div>
-                    <div class="border rounded p-2">
-                        <p class="text-muted mb-2">Expected profit</p>
-                        <h4 class="fs-16 mb-2">$23,461</h4>
-                        <div class="progress progress-sm" style="height:4px;">
-                            <div class="progress-bar bg-info" style="width: 60%"></div>
-                        </div>
-                        <p class="text-muted mb-0 mt-1">$23,461 <span>Avg</span></p>
-                    </div>
-                </div>
-
-                <div class="mt-4">
-                    <h3 class="card-title">Latest log</h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-primary"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">12 new users registered</p>
-                                    <span class="text-muted">Just now</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-success"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">System shutdown <span
-                                            class="badge badge-label-success">pending</span></p>
-                                    <span class="text-muted">2 mins</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-primary"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">New invoice received</p>
-                                    <span class="text-muted">3 mins</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-danger"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">New order received <span
-                                            class="badge badge-label-danger">urgent</span></p>
-                                    <span class="text-muted">10 mins</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-warning"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">Production server down</p>
-                                    <span class="text-muted">1 hrs</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-info"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">System error <a href="#">check</a></p>
-                                    <span class="text-muted">2 hrs</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-secondary"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">DB overloaded 80%</p>
-                                    <span class="text-muted">5 hrs</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-success"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">Production server up</p>
-                                    <span class="text-muted">6 hrs</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-4">
-                    <h3 class="card-title">Upcoming activities</h3>
-                    <div class="timeline timeline-timed">
-                        <div class="timeline-item">
-                            <span class="timeline-time">10:00</span>
-                            <div class="timeline-pin"><i class="marker marker-circle text-primary"></i></div>
-                            <div class="timeline-content">
-                                <div>
-                                    <span>Meeting with</span>
-                                    <div class="avatar-group ms-2">
-                                        <div class="avatar avatar-circle">
-                                            <img src="assets/images/users/avatar-1.png" alt="Avatar image"
-                                                class="avatar-2xs" />
-                                        </div>
-                                        <div class="avatar avatar-circle">
-                                            <img src="assets/images/users/avatar-2.png" alt="Avatar image"
-                                                class="avatar-2xs" />
-                                        </div>
-                                        <div class="avatar avatar-circle">
-                                            <img src="assets/images/users/avatar-3.png" alt="Avatar image"
-                                                class="avatar-2xs" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-time">12:45</span>
-                            <div class="timeline-pin"><i class="marker marker-circle text-warning"></i></div>
-                            <div class="timeline-content">
-                                <p class="mb-0">Lorem ipsum dolor sit amit,consectetur eiusmdd tempor incididunt ut
-                                    labore et dolore magna elit enim at minim veniam quis nostrud</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-time">14:00</span>
-                            <div class="timeline-pin"><i class="marker marker-circle text-danger"></i></div>
-                            <div class="timeline-content">
-                                <p class="mb-0">Received a new feedback on <a href="#">GoFinance</a> App product.</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-time">15:20</span>
-                            <div class="timeline-pin"><i class="marker marker-circle text-success"></i></div>
-                            <div class="timeline-content">
-                                <p class="mb-0">Lorem ipsum dolor sit amit,consectetur eiusmdd tempor incididunt ut
-                                    labore et dolore magna.</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-time">17:00</span>
-                            <div class="timeline-pin"><i class="marker marker-circle text-info"></i></div>
-                            <div class="timeline-content">
-                                <p class="mb-0">Make Deposit <a href="#">USD 700</a> o ESL.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="border rounded p-2">
+              <p class="text-muted mb-2">Members online</p>
+              <h4 class="fs-16 mb-2">3,450</h4>
+              <div class="progress progress-sm" style="height: 4px">
+                <div class="progress-bar bg-danger" style="width: 34.6%"></div>
+              </div>
+              <p class="text-muted mb-0 mt-1">34.6% <span>Avg</span></p>
             </div>
-        </div> <!-- end card-->
+            <div class="border rounded p-2">
+              <p class="text-muted mb-2">Today's revenue</p>
+              <h4 class="fs-16 mb-2">$18,390</h4>
+              <div class="progress progress-sm" style="height: 4px">
+                <div class="progress-bar bg-warning" style="width: 20%"></div>
+              </div>
+              <p class="text-muted mb-0 mt-1">$37,578 <span>Avg</span></p>
+            </div>
+            <div class="border rounded p-2">
+              <p class="text-muted mb-2">Expected profit</p>
+              <h4 class="fs-16 mb-2">$23,461</h4>
+              <div class="progress progress-sm" style="height: 4px">
+                <div class="progress-bar bg-info" style="width: 60%"></div>
+              </div>
+              <p class="text-muted mb-0 mt-1">$23,461 <span>Avg</span></p>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <h3 class="card-title">Latest log</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-primary"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">12 new users registered</p>
+                    <span class="text-muted">Just now</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-success"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">
+                      System shutdown
+                      <span class="badge badge-label-success">pending</span>
+                    </p>
+                    <span class="text-muted">2 mins</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-primary"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">New invoice received</p>
+                    <span class="text-muted">3 mins</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-danger"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">
+                      New order received
+                      <span class="badge badge-label-danger">urgent</span>
+                    </p>
+                    <span class="text-muted">10 mins</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-warning"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">Production server down</p>
+                    <span class="text-muted">1 hrs</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-info"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">System error <a href="#">check</a></p>
+                    <span class="text-muted">2 hrs</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-secondary"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">DB overloaded 80%</p>
+                    <span class="text-muted">5 hrs</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-success"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">Production server up</p>
+                    <span class="text-muted">6 hrs</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <h3 class="card-title">Upcoming activities</h3>
+            <div class="timeline timeline-timed">
+              <div class="timeline-item">
+                <span class="timeline-time">10:00</span>
+                <div class="timeline-pin">
+                  <i class="marker marker-circle text-primary"></i>
+                </div>
+                <div class="timeline-content">
+                  <div>
+                    <span>Meeting with</span>
+                    <div class="avatar-group ms-2">
+                      <div class="avatar avatar-circle">
+                        <img
+                          src="assets/images/users/avatar-1.png"
+                          alt="Avatar image"
+                          class="avatar-2xs"
+                        />
+                      </div>
+                      <div class="avatar avatar-circle">
+                        <img
+                          src="assets/images/users/avatar-2.png"
+                          alt="Avatar image"
+                          class="avatar-2xs"
+                        />
+                      </div>
+                      <div class="avatar avatar-circle">
+                        <img
+                          src="assets/images/users/avatar-3.png"
+                          alt="Avatar image"
+                          class="avatar-2xs"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-time">12:45</span>
+                <div class="timeline-pin">
+                  <i class="marker marker-circle text-warning"></i>
+                </div>
+                <div class="timeline-content">
+                  <p class="mb-0">
+                    Lorem ipsum dolor sit amit,consectetur eiusmdd tempor
+                    incididunt ut labore et dolore magna elit enim at minim
+                    veniam quis nostrud
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-time">14:00</span>
+                <div class="timeline-pin">
+                  <i class="marker marker-circle text-danger"></i>
+                </div>
+                <div class="timeline-content">
+                  <p class="mb-0">
+                    Received a new feedback on <a href="#">GoFinance</a> App
+                    product.
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-time">15:20</span>
+                <div class="timeline-pin">
+                  <i class="marker marker-circle text-success"></i>
+                </div>
+                <div class="timeline-content">
+                  <p class="mb-0">
+                    Lorem ipsum dolor sit amit,consectetur eiusmdd tempor
+                    incididunt ut labore et dolore magna.
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-time">17:00</span>
+                <div class="timeline-pin">
+                  <i class="marker marker-circle text-info"></i>
+                </div>
+                <div class="timeline-content">
+                  <p class="mb-0">
+                    Make Deposit <a href="#">USD 700</a> o ESL.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end card-->
     </div>
 
     <!-- JAVASCRIPT -->
@@ -1203,119 +1234,213 @@
     <script src="assets/js/pages/datatables-advanced.init.js"></script>
 
     <script src="assets/js/app.js"></script>
-
-<script>
-    $(document).ready(function () {
-        var table = $('#datatable-col-visiblility').DataTable();
+    <script>
+      $(document).ready(function () {
+        var table = $("#datatable-col-visiblility").DataTable();
 
         // Function to load members from localStorage and populate the table
         function loadMembers() {
-            let members = JSON.parse(localStorage.getItem('members')) || [];
-            // Reassign IDs to ensure they are sequential
-            members = members.map((member, index) => ({ ...member, id: index + 1 }));
-            localStorage.setItem('members', JSON.stringify(members)); // Save re-sequenced IDs
-            
-            table.clear(); // Clear existing table data
+          let members = JSON.parse(localStorage.getItem("members")) || [];
+          // Reassign IDs to ensure they are sequential after deletions/additions
+          members = members.map((member, index) => ({
+            ...member,
+            id: index + 1,
+          }));
+          localStorage.setItem("members", JSON.stringify(members)); // Save re-sequenced IDs
 
-            members.forEach(member => {
-                const photoSrc = member.photoUrl;
-                const statusBadgeClass = member.status === 'Active' ? 'bg-success' : 'bg-danger';
-                table.row.add([
-                    member.id,
-                    `<img src="${photoSrc}" alt="Photo" width="40" height="40" />`,
-                    member.firstName,
-                    member.lastName,
-                    member.gender,
-                    member.dob,
-                    member.maritalStatus,
-                    member.contact,
-                    member.emailAddress,
-                    member.address,
-                    member.city,
-                    member.pincode,
-                    member.membership_type,
-                    `<span class="badge ${statusBadgeClass}">${member.status}</span>`,
-                    `
-                    <a class="btn btn-sm btn-info view-card-btn" data-member-id="${member.id}">
+          table.clear(); // Clear existing table data
+
+          members.forEach((member) => {
+            const photoSrc =
+              member.photoUrl ||
+              "https://via.placeholder.com/40/CCCCCC/888888?text=No+Photo"; // Placeholder if no photo
+            const statusBadgeClass =
+              member.status === "Active" ? "bg-success" : "bg-danger";
+            table.row.add([
+              member.id,
+              `<img src="${photoSrc}" alt="Photo" width="40" height="40" style="object-fit: cover; border-radius: 50%;" />`,
+              member.firstName,
+              member.lastName,
+              member.contact,
+              member.emailAddress,
+              member.membership_type,
+              `<span class="badge ${statusBadgeClass}">${member.status}</span>`,
+              `
+                    <a class="btn btn-sm btn-info view-card-btn" data-member-id="${member.id}" title="View Profile">
                         <i class="fas fa-id-card"></i>
                     </a>
-                    <a href="edit-member.html" class="btn btn-sm btn-primary">
+                    <a href="edit-member.html?id=${member.id}" class="btn btn-sm btn-primary" title="Edit Member">
                         <i class="fas fa-pen"></i>
                     </a>
-                    <a class="btn btn-sm btn-danger delete-member-btn" data-member-id="${member.id}">
+                    <a class="btn btn-sm btn-danger delete-member-btn" data-member-id="${member.id}" title="Delete Member">
                         <i class="fas fa-trash"></i>
                     </a>
-                    `
-                ]);
-            });
-            table.draw(false); // Draw the table with the new data
+                `,
+            ]);
+          });
+          table.draw(false); // Draw the table with the new data
         }
 
         // Call loadMembers on page load to populate the table from localStorage
         loadMembers();
 
-        $('#datatable-col-visiblility tbody').on('click', '.view-card-btn', function () {
-            var $row = $(this).closest('tr');
-            if ($row.hasClass('child')) {
-                $row = $row.prev();
-            }
-
-            var id = $(this).data('member-id'); // Get ID from data attribute
-            const members = JSON.parse(localStorage.getItem('members')) || [];
-            const member = members.find(m => m.id == id); // Find the member in localStorage
+        // Handle click on "view card" icon to show member profile
+        $("#datatable-col-visiblility tbody").on(
+          "click",
+          ".view-card-btn",
+          function () {
+            var id = $(this).data("member-id");
+            const members = JSON.parse(localStorage.getItem("members")) || [];
+            const member = members.find((m) => m.id == id);
 
             if (member) {
-                $('#cardMemberId').text('#CA-' + String(member.id).padStart(5, '0'));
-                $('#cardName').text(member.firstName + ' ' + member.lastName);
-                $('#cardAddress').text(member.address + ', ' + member.city);
-                $('#cardType').text(member.membership_type);
-                $('#cardPhoto').attr('src', member.photoUrl);
+              // Populate the Member Profile section
+              $("#profileMemberId").text(
+                "#CA-" + String(member.id).padStart(5, "0")
+              );
+              $("#profileFullName").text(
+                member.firstName + " " + member.lastName
+              );
+              $("#profileDOB").text(member.dob || "N/A");
+              $("#profileGender").text(member.gender || "N/A");
+              $("#profileContact").text(member.contact || "N/A");
+              $("#profileEmail").text(member.emailAddress || "N/A");
+              $("#profileAddress").text(
+                (member.address || "") + (member.city ? ", " + member.city : "")
+              );
+              $("#profilePincode").text(member.pincode || "N/A");
+              $("#profileMembershipType").text(member.membership_type || "N/A");
+              $("#profileStatus").text(member.status || "N/A");
+              $("#profilePhoto").attr(
+                "src",
+                member.photoUrl ||
+                  "https://via.placeholder.com/150/CCCCCC/888888?text=No+Photo"
+              );
 
-                // Calculate Valid Till date based on membership type
-                let validTillDate = new Date(member.dob); // Use DOB as a starting point, or consider membership start date
-                if (member.membership_type.includes('1 month')) {
-                    validTillDate.setMonth(validTillDate.getMonth() + 1);
-                } else if (member.membership_type.includes('3 month')) {
-                    validTillDate.setMonth(validTillDate.getMonth() + 3);
-                } else if (member.membership_type.includes('6 month')) {
-                    validTillDate.setMonth(validTillDate.getMonth() + 6);
-                }
-                $('#cardValidTill').text(validTillDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }));
+              // Show the Member Profile section and hide the Total Member table
+              $("#memberProfileSection").show();
+              $(".row:has(#datatable-col-visiblility)").hide(); // Hide the table container
 
-
-                var myCardModal = new bootstrap.Modal(document.getElementById('membershipCardModal'));
-                myCardModal.show();
+              // Optionally, scroll to the profile section
+              $("html, body").animate(
+                {
+                  scrollTop: $("#memberProfileSection").offset().top,
+                },
+                500
+              );
             }
+          }
+        );
+
+        // Handle click on "Membership Card" button within the profile section
+        $("#profileMembershipCardBtn").on("click", function () {
+          const memberIdString = $("#profileMemberId")
+            .text()
+            .replace("#CA-", "");
+          const memberId = parseInt(memberIdString);
+
+          const members = JSON.parse(localStorage.getItem("members")) || [];
+          const member = members.find((m) => m.id === memberId);
+
+          if (member) {
+            $("#cardMemberId").text(
+              "#CA-" + String(member.id).padStart(5, "0")
+            );
+            $("#cardName").text(member.firstName + " " + member.lastName);
+            $("#cardAddress").text(
+              member.address +
+                ", " +
+                member.city +
+                (member.pincode ? ", " + member.pincode : "")
+            );
+            $("#cardType").text(member.membership_type);
+            $("#cardPhoto").attr(
+              "src",
+              member.photoUrl ||
+                "https://via.placeholder.com/100/CCCCCC/888888?text=No+Photo"
+            );
+
+            let validTillDate = new Date(); // Start with current date for validity calculation
+            if (member.membership_start_date) {
+              // Assume you might store this
+              validTillDate = new Date(member.membership_start_date);
+            } else if (member.dob) {
+              // Fallback, though not ideal for membership validity
+              validTillDate = new Date(member.dob);
+            }
+
+            if (
+              member.membership_type &&
+              member.membership_type.includes("1 month")
+            ) {
+              validTillDate.setMonth(validTillDate.getMonth() + 1);
+            } else if (
+              member.membership_type &&
+              member.membership_type.includes("3 month")
+            ) {
+              validTillDate.setMonth(validTillDate.getMonth() + 3);
+            } else if (
+              member.membership_type &&
+              member.membership_type.includes("6 month")
+            ) {
+              validTillDate.setMonth(validTillDate.getMonth() + 6);
+            }
+            // If membership_type is not recognized or missing, validTillDate will be current/dob + 0 months
+            $("#cardValidTill").text(
+              validTillDate.toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })
+            );
+
+            var myCardModal = new bootstrap.Modal(
+              document.getElementById("membershipCardModal")
+            );
+            myCardModal.show();
+          }
         });
 
-        $('#datatable-col-visiblility tbody').on('click', '.delete-member-btn', function () {
-            var $row = $(this).closest('tr');
-            if ($row.hasClass('child')) {
-                $row = $row.prev();
+        // Handle delete member button click
+        $("#datatable-col-visiblility tbody").on(
+          "click",
+          ".delete-member-btn",
+          function () {
+            var $row = $(this).closest("tr");
+            if ($row.hasClass("child")) {
+              $row = $row.prev(); // Get the parent row if clicked on child row (responsive mode)
             }
 
-            var memberIdToDelete = $(this).data('member-id'); // Get ID from data attribute
-            var memberName = $row.find('td:eq(2)').text() + ' ' + $row.find('td:eq(3)').text();
+            var memberIdToDelete = $(this).data("member-id");
+            // Extracting name from the table cell directly
+            var firstName = $row.find("td:eq(2)").text();
+            var lastName = $row.find("td:eq(3)").text();
+            var memberName = firstName + " " + lastName;
 
-            if (confirm('Are you sure you want to delete ' + memberName + '?')) {
-                // Remove from localStorage
-                let members = JSON.parse(localStorage.getItem('members')) || [];
-                members = members.filter(member => member.id !== memberIdToDelete);
-                
-                // Reassign IDs to ensure they are sequential after deletion
-                members = members.map((member, index) => ({ ...member, id: index + 1 }));
+            if (
+              confirm("Are you sure you want to delete " + memberName + "?")
+            ) {
+              let members = JSON.parse(localStorage.getItem("members")) || [];
+              members = members.filter(
+                (member) => member.id !== memberIdToDelete
+              );
 
-                localStorage.setItem('members', JSON.stringify(members));
+              // Re-sequence IDs after deletion
+              members = members.map((member, index) => ({
+                ...member,
+                id: index + 1,
+              }));
 
-                // Reload the table to reflect the new sequential IDs
-                loadMembers(); 
-                alert(memberName + ' has been deleted successfully!');
+              localStorage.setItem("members", JSON.stringify(members));
+
+              loadMembers(); // Reload table data
+              alert(memberName + " has been deleted successfully!");
             } else {
-                alert('Deletion cancelled.');
+              alert("Deletion cancelled.");
             }
-        });
-    });
-</script>
-</body>
-
+          }
+        );
+      });
+    </script>
+  </body>
 </html>
