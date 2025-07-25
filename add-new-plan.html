@@ -673,60 +673,70 @@
         <!-- Left Sidebar End -->
 
         <!-- Start right Content here -->
-
-        <div class="main-content">
+ <div class="main-content">
             <div class="page-content">
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <h3 class="card-title">Membership Details</h3>
-                    </div>
-                    <div class="card-body">
-                        <form id="membershipForm">
-                            <div class="row g-3 align-items-end">
-                                <div class="col-12 col-md-4">
-                                    <label class="form-label">Membership Type</label>
-                                    <select class="form-select" id="membershipType" required onchange="updateDetails()">
-                                        <option value="" selected disabled>Select Type</option>
-                                        <option value="basic">Basic</option>
-                                        <option value="standard">Standard</option>
-                                        <option value="premium">Premium</option>
-                                        <option value="personal">Personal Training</option>
-                                    </select>
+                <div class="container-fluid custom-container py-4">
+                    <div class="card mb-4 ">
+                        <div class="card-header">
+                            <h3 class="card-title mb-0">Membership Details</h3>
+                        </div>
+                        <div class="card-body">
+                            <form id="membershipForm" method="get">
+                                <div class="row g-3 align-items-end">
+                                    <div class="col-12 col-md-4">
+                                        <label class="form-label">Membership Type</label>
+                                        <select type="text" class="form-select" id="membershipType" required
+                                            onchange="updateDetails()">
+                                            <option value="" selected disabled>Select Type</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 col-md-4">
+                                        <label class="form-label">Amount (INR)</label>
+                                        <input type="number" class="form-control" id="membershipAmount" readonly />
+                                    </div>
+                                    <div class="col-12 col-md-4">
+                                        <label class="form-label">Offer</label>
+                                        <input type="text" class="form-control" id="membershipOffer" readonly />
+                                    </div>
                                 </div>
-                                <div class="col-12 col-md-4">
-                                    <label class="form-label">Amount (INR)</label>
-                                    <input type="text" class="form-control" id="membershipAmount" readonly />
+                                <div
+                                    class="d-flex flex-column flex-md-row justify-content-start align-items-center gap-2 mt-4">
+                                    <button type="button" class="btn btn-primary btn-sm" onclick="showAddForm()">Add
+                                        Type</button>
+                                    <button type="submit" class="btn btn-outline-primary btn-sm">Add Membership</button>
                                 </div>
-                                <div class="col-12 col-md-4">
-                                    <label class="form-label">Offer</label>
-                                    <input type="text" class="form-control" id="membershipOffer" readonly />
-                                </div>
-                            </div>
-                            <div class="d-grid d-md-flex justify-content-md-end mt-4">
-                                <button type="submit" class="btn btn-primary">Add Membership</button>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Chart -->
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title mb-0">Membership Plan Pricing Chart</h4>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="membershipChart" height="100"></canvas>
-                    </div>
+                <!-- Custom Popup Form -->
+                <div class="custom-popup" id="addTypePopup">
+                    <form id="newTypeForm" method="get">
+                        <h5 class="mb-3">Add New Membership Type</h5>
+                        <input type="text" class="form-control" id="newType" placeholder="Membership Type" required />
+                        <input type="number" class="form-control" id="newAmount" placeholder="Amount (INR)" required />
+                        <input type="text" class="form-control" id="newOffer" placeholder="Offer" required />
+                        <div class="d-flex justify-content-between mt-3">
+                            <button type="submit" class="btn btn-success">Add</button>
+                            <button type="button" class="btn btn-secondary" onclick="hideAddForm()">Cancel</button>
+                        </div>
+                    </form>
                 </div>
 
 
             </div>
 
-            <!-- Chart.js CDN -->
 
 
-            ------------------------------------------------------
+
         </div>
+
+
+
+
+
+    </div>
 
     </div>
     <!-- end row -->
