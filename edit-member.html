@@ -23,20 +23,14 @@
     <link href="assets/libs/simplebar/simplebar.min.css" rel="stylesheet">
     <!-- App Css-->
     <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
- <style>
-        
-        .card {
-            margin-bottom: 20px;
-            border-radius: 0.5rem;
-            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-        }
-        .modal-header .text-center {
-            width: 100%;
-        }
-        .modal-header svg {
-            margin-bottom: 10px;
-        }
+   
+    <style>
+      .card-header {
+        color: white;
+      }
+      
     </style>
+
 </head>
 
 <body>
@@ -686,236 +680,420 @@
         <!-- ============================================================== -->
         <!-- Start right Content here -->
         <!-- ============================================================== -->
-        <div class="main-content">
+      <div class="main-content">
+        <div class="page-content">
+          <div class="container-fluid">
+            <!-- start page title -->
+            <div class="row">
+              <div class="col-12">
+                <div
+                  class="page-title-box d-flex align-items-center justify-content-between"
+                >
+                  <h4 class="mb-sm-0">Edit Member Details</h4>
 
-            <div class="page-content">
-                <div class="container-fluid">
-
-                    <!-- start page title -->
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0"> Edit Member Details </h4>
-
-                                <div class="page-title-right">
-                                    <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Clivax</a></li>
-                                        <li class="breadcrumb-item active"> Edit Member Details</li>
-                                    </ol>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end page title -->
-
-                     <div class="card">
+                  <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                      <li class="breadcrumb-item">
+                        <a href="javascript: void(0);">Clivax</a>
+                      </li>
+                      <li class="breadcrumb-item active">
+                        Edit Member Details
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end page title -->
+            <div class="container mt-0">
+              <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title"> Edit Member Details</h4>
+                  <h4 class="card-title">Edit Member Details</h4>
                 </div>
                 <div class="card-body">
-                    <form id="addMemberForm" action="#" class="custom-validation">
-                        <div class="row">
-                            <div class="col-md-4 mb-3">
-                                <label for="firstName">First Name</label>
-                                <div>
-                                    <input type="text" id="firstName" class="form-control" required
-                                        data-parsley-minlength="2" placeholder="Enter First Name" />
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label for="lastName">Last Name</label>
-                                <div>
-                                    <input type="text" id="lastName" class="form-control" required
-                                        data-parsley-minlength="2" placeholder="Enter Last Name" />
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label for="emailAddress">Email Address</label>
-                                <div>
-                                    <input type="email" id="emailAddress" class="form-control" required
-                                        data-parsley-type="email" placeholder="Enter Email Address" />
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label for="contact">Contact</label>
-                                <div>
-                                    <input type="tel" id="contact" class="form-control" required
-                                        pattern="[0-9]{10}" placeholder="Enter Contact No. (10 digits)"
-                                        title="Please enter a 10-digit number" />
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label for="gender">Gender</label>
-                                <div>
-                                    <select id="gender" class="form-select" name="gender" required>
-                                        <option value="">Select your gender</option>
-                                        <option value="Male">Male</option>
-                                        <option value="Female">Female</option>
-                                        <option value="Other">Other</option>
-                                    </select>
-                                </div>
-                            </div>
+                  <form
+                    id="editMemberForm"
+                    action="#"
+                    class="custom-validation"
+                    novalidate
+                  >
+                    <input
+                      type="hidden"
+                      id="memberIdToEdit"
+                      name="memberIdToEdit"
+                    />
 
-                            <div class="col-md-4 mb-3">
-                                <label for="dob">Date of Birth</label>
-                                <div>
-                                    <input type="date" id="dob" name="dob" class="form-control" required />
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 mb-3">
-                                <label for="maritalStatus">Marital Status</label>
-                                <div>
-                                    <select id="maritalStatus" class="form-select" name="maritalStatus" required>
-                                        <option value="">Select</option>
-                                        <option value="Single">Single</option>
-                                        <option value="Married">Married</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 mb-3">
-                                <label for="address">Address</label>
-                                <div>
-                                    <input type="text" id="address" name="address" class="form-control" required
-                                        placeholder="Enter your address" />
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 mb-3">
-                                <label for="city">City</label>
-                                <div>
-                                    <input type="text" id="city" name="city" class="form-control" required
-                                        placeholder="Enter City Name" />
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 mb-3">
-                                <label for="pincode">Pincode</label>
-                                <div>
-                                    <input type="number" id="pincode" class="form-control" required
-                                        pattern="[0-9]{6}" placeholder="Enter Pincode (6 digits)"
-                                        title="Please enter a 6-digit pincode" />
-                                </div>
-                            </div>
-
-                       
-
-                            <div class="col-md-4 mb-3">
-                                <label for="photo">Photo</label>
-                                <div>
-                                    <input type="file" id="photo" name="photo" class="form-control" accept="image/*" />
-                                  
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 mb-3">
-                                <label for="membership_type">Membership Type</label>
-                                <div>
-                                    <select id="membership_type" name="membership_type" class="form-select" required>
-                                        <option value="">Select Membership Type</option>
-                                        <option value="1 month plan">1 month plan - Rs. 500</option>
-                                        <option value="3 month plan">3 month plan - Rs. 1300</option>
-                                        <option value="6 month plan">6 month plan - Rs. 2000</option>
-                                    </select>
-                                </div>
-                            </div>
+                    <div class="row">
+                      <div class="col-md-4 mb-3">
+                        <label for="firstName" class="form-label"
+                          >First Name</label
+                        >
+                        <div>
+                          <input
+                            type="text"
+                            id="firstName"
+                            class="form-control"
+                            required
+                            minlength="2"
+                            placeholder="Enter First Name"
+                          />
+                          <div class="invalid-feedback">
+                            Please enter a first name (at least 2 characters).
+                          </div>
                         </div>
-                        <div class="mb-0">
-                            <div class="text-end">
-                                <button type="submit" class="btn btn-primary waves-effect waves-light me-1">
-                                   save Details
-                                </button>
-                            </div>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <label for="lastName" class="form-label"
+                          >Last Name</label
+                        >
+                        <div>
+                          <input
+                            type="text"
+                            id="lastName"
+                            class="form-control"
+                            required
+                            minlength="2"
+                            placeholder="Enter Last Name"
+                          />
+                          <div class="invalid-feedback">
+                            Please enter a last name (at least 2 characters).
+                          </div>
                         </div>
-                    </form>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <label for="emailAddress" class="form-label"
+                          >Email Address</label
+                        >
+                        <div>
+                          <input
+                            type="email"
+                            id="emailAddress"
+                            class="form-control"
+                            required
+                            placeholder="Enter Email Address"
+                          />
+                          <div class="invalid-feedback">
+                            Please enter a valid email address.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <label for="contact" class="form-label">Contact</label>
+                        <div>
+                          <input
+                            type="tel"
+                            id="contact"
+                            class="form-control"
+                            required
+                            pattern="[0-9]{10}"
+                            placeholder="Enter Contact No. (10 digits)"
+                            title="Please enter a 10-digit number"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);"
+                          />
+                          <div class="invalid-feedback">
+                            Please enter a 10-digit contact number.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <label for="gender" class="form-label">Gender</label>
+                        <div>
+                          <select
+                            id="gender"
+                            class="form-select"
+                            name="gender"
+                            required
+                          >
+                            <option value="">Select your gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                          </select>
+                          <div class="invalid-feedback">
+                            Please select your gender.
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 mb-3">
+                        <label for="dob" class="form-label"
+                          >Date of Birth</label
+                        >
+                        <div>
+                          <input
+                            type="date"
+                            id="dob"
+                            name="dob"
+                            class="form-control"
+                            required
+                          />
+                          <div class="invalid-feedback">
+                            Please select your date of birth.
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 mb-3">
+                        <label for="address" class="form-label">Address</label>
+                        <div>
+                          <input
+                            type="text"
+                            id="address"
+                            name="address"
+                            class="form-control"
+                            required
+                            placeholder="Enter your address"
+                          />
+                          <div class="invalid-feedback">
+                            Please enter your address.
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 mb-3">
+                        <label for="city" class="form-label">City</label>
+                        <div>
+                          <input
+                            type="text"
+                            id="city"
+                            name="city"
+                            class="form-control"
+                            required
+                            placeholder="Enter City Name"
+                          />
+                          <div class="invalid-feedback">
+                            Please enter your city.
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 mb-3">
+                        <label for="pincode" class="form-label">Pincode</label>
+                        <div>
+                          <input
+                            type="text"
+                            id="pincode"
+                            class="form-control"
+                            required
+                            pattern="[0-9]{6}"
+                            placeholder="Enter Pincode (6 digits)"
+                            title="Please enter a 6-digit number"
+                            maxlength="6"
+                          />
+                          <div class="invalid-feedback">
+                            Please enter a 6-digit pincode.
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 mb-3">
+                        <label for="photo" class="form-label">Photo</label>
+                        <div>
+                          <input
+                            type="file"
+                            id="photo"
+                            name="photo"
+                            class="form-control"
+                            accept=".jpg, .jpeg, .png"
+                          />
+                          <div class="invalid-feedback">
+                            Please upload a photo (only .jpg, .jpeg, .png
+                            formats allowed).
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 mb-3">
+                        <label for="membership_type" class="form-label"
+                          >Membership Type</label
+                        >
+                        <div>
+                          <select
+                            id="membership_type"
+                            name="membership_type"
+                            class="form-select"
+                            required
+                          >
+                            <option value="">Select Membership Type</option>
+                            <option value="1 month plan">
+                              1 month plan - Rs. 500
+                            </option>
+                            <option value="3 month plan">
+                              3 month plan - Rs. 1300
+                            </option>
+                            <option value="6 month plan">
+                              6 month plan - Rs. 2000
+                            </option>
+                          </select>
+                          <div class="invalid-feedback">
+                            Please select a membership type.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mb-0">
+                      <div class="text-end">
+                        <button
+                          type="submit"
+                          class="btn btn-primary waves-effect waves-light me-1"
+                        >
+                          Update Details
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-secondary waves-effect waves-light"
+                          onclick="window.history.back()"
+                        >
+                          Cancel
+                        </button>
+                      </div>
+                    </div>
+                  </form>
                 </div>
+              </div>
             </div>
-           
+          </div>
         </div>
-    </div>
-</div>
-
-<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header d-flex justify-content-center border-0 pb-0">
-                <div class="text-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="#28a745"
-                        class="bi bi-check-circle" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.423 5.514 7.567a.235.235 0 0 0-.02-.022A.5.5 0 0 1 5.5 7h5a.5.5 0 0 1 .47.53z" />
-                    </svg>
-                </div>
+      </div>
+      <div
+        class="modal fade"
+        id="successModal"
+        tabindex="-1"
+        aria-labelledby="successModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div
+              class="modal-header d-flex justify-content-center border-0 pb-0"
+            >
+              <div class="text-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="60"
+                  height="60"
+                  fill="#28a745"
+                  class="bi bi-check-circle"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                  />
+                  <path
+                    d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.423 5.514 7.567a.235.235 0 0 0-.02-.022A.5.5 0 0 1 5.5 7h5a.5.5 0 0 1 .47.53z"
+                  />
+                </svg>
+              </div>
             </div>
             <div class="modal-body text-center">
-                <h5 class="modal-title" id="successModalLabel">Success</h5>
-                <p>Member data saved successfully! </p>
+              <h5 class="modal-title" id="successModalLabel">Success</h5>
+              <p>Member data updated successfully!</p>
             </div>
-            <div class="modal-footer d-flex justify-content-center border-0 pt-0">
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+            <div
+              class="modal-footer d-flex justify-content-center border-0 pt-0"
+            >
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+              >
+                OK
+              </button>
             </div>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
 
-<div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header d-flex justify-content-center border-0 pb-0">
-                <div class="text-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="#dc3545"
-                        class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.5.5 0 0 1-1 .094l-.35-3.507z" />
-                    </svg>
-                </div>
+      <div
+        class="modal fade"
+        id="errorModal"
+        tabindex="-1"
+        aria-labelledby="errorModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div
+              class="modal-header d-flex justify-content-center border-0 pb-0"
+            >
+              <div class="text-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="60"
+                  height="60"
+                  fill="#dc3545"
+                  class="bi bi-exclamation-circle"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                  />
+                  <path
+                    d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.5.5 0 0 1-1 .094l-.35-3.507z"
+                  />
+                </svg>
+              </div>
             </div>
             <div class="modal-body text-center">
-                <h5 class="modal-title" id="errorModalLabel">Error</h5>
-                <p>Please fill in all required fields correctly.</p>
+              <h5 class="modal-title" id="errorModalLabel">Error</h5>
+              <p id="errorMessageText">
+                Please fill in all required fields correctly.
+              </p>
             </div>
-            <div class="modal-footer d-flex justify-content-center border-0 pt-0">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">OK</button>
+            <div
+              class="modal-footer d-flex justify-content-center border-0 pt-0"
+            >
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                OK
+              </button>
             </div>
-                    <!-- end row -->
-                </div>
-                <!-- container-fluid -->
-            </div>
-            <!-- End Page-content -->
-
-           
+          </div>
         </div>
-        <!-- end main content-->
+      </div>
 
+      <!-- end main content-->
     </div>
     <!-- END layout-wrapper -->
 
-   <footer class="footer">
-                    <div class="container-fluid">
-                        <div class="row align-items-center">
-                            <div class="col-sm-6">
-                                <script>document.write(new Date().getFullYear())</script> © Clivax Gym.
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="text-sm-end d-none d-sm-block">
-                                    Designed & Developed <i class="mdi mdi-heart text-danger"></i> by <a
-                                        href="https://kavyainfoweb.com/" target="_blank" class="text-muted">Kavya
-                                        Infoweb
-                                        Pvt. Ltd.</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-    <div class="custom-setting bg-primary pe-0 d-flex flex-column rounded-start">
-        <button type="button" class="btn btn-wide border-0 text-white fs-20 avatar-sm rounded-end-0"
-            id="light-dark-mode">
-            <i class="mdi mdi-brightness-7 align-middle"></i>
-            <i class="mdi mdi-white-balance-sunny align-middle"></i>
-        </button>
-        <!-- <button type="button" class="btn btn-wide border-0 text-white fs-20 avatar-sm" data-toggle="fullscreen">
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-sm-6">
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            © Clivax Gym.
+          </div>
+          <div class="col-sm-6">
+            <div class="text-sm-end d-none d-sm-block">
+              Designed & Developed <i class="mdi mdi-heart text-danger"></i> by
+              <a
+                href="https://kavyainfoweb.com/"
+                target="_blank"
+                class="text-muted"
+                >Kavya Infoweb Pvt. Ltd.</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div
+      class="custom-setting bg-primary pe-0 d-flex flex-column rounded-start"
+    >
+      <button
+        type="button"
+        class="btn btn-wide border-0 text-white fs-20 avatar-sm rounded-end-0"
+        id="light-dark-mode"
+      >
+        <i class="mdi mdi-brightness-7 align-middle"></i>
+        <i class="mdi mdi-white-balance-sunny align-middle"></i>
+      </button>
+      <!-- <button type="button" class="btn btn-wide border-0 text-white fs-20 avatar-sm" data-toggle="fullscreen">
             <i class="mdi mdi-arrow-expand-all align-middle"></i>
         </button>
         <button type="button" class="btn btn-wide border-0 text-white fs-16 avatar-sm" id="layout-dir-btn">
@@ -923,195 +1101,244 @@
         </button> -->
     </div>
 
-
     <!-- Rightbar Sidebar -->
     <div class="offcanvas offcanvas-end" id="offcanvas-rightsidabar">
-        <div class="card h-100 rounded-0" data-simplebar="init">
-            <div class="card-header bg-light">
-                <h6 class="card-title text-uppercase">Activities</h6>
-                <div class="card-addon">
-                    <button class="btn btn-label-danger" data-bs-dismiss="offcanvas">
-                        <i class="fa fa-times"></i>
-                    </button>
-                </div>
+      <div class="card h-100 rounded-0" data-simplebar="init">
+        <div class="card-header bg-light">
+          <h6 class="card-title text-uppercase">Activities</h6>
+          <div class="card-addon">
+            <button class="btn btn-label-danger" data-bs-dismiss="offcanvas">
+              <i class="fa fa-times"></i>
+            </button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="">
+            <h3 class="card-title">Company summary</h3>
+            <div class="border rounded p-2">
+              <p class="text-muted mb-2">Server Load</p>
+              <h4 class="fs-16 mb-2">489</h4>
+              <div class="progress progress-sm" style="height: 4px">
+                <div class="progress-bar bg-success" style="width: 49.4%"></div>
+              </div>
+              <p class="text-muted mb-0 mt-1">49.4% <span>Avg</span></p>
             </div>
-            <div class="card-body">
-                <div class="">
-                    <h3 class="card-title">Company summary</h3>
-                    <div class="border rounded p-2">
-                        <p class="text-muted mb-2">Server Load</p>
-                        <h4 class="fs-16 mb-2">489</h4>
-                        <div class="progress progress-sm" style="height:4px;">
-                            <div class="progress-bar bg-success" style="width: 49.4%"></div>
-                        </div>
-                        <p class="text-muted mb-0 mt-1">49.4% <span>Avg</span></p>
-                    </div>
-                    <div class="border rounded p-2">
-                        <p class="text-muted mb-2">Members online</p>
-                        <h4 class="fs-16 mb-2">3,450</h4>
-                        <div class="progress progress-sm" style="height:4px;">
-                            <div class="progress-bar bg-danger" style="width: 34.6%"></div>
-                        </div>
-                        <p class="text-muted mb-0 mt-1">34.6% <span>Avg</span></p>
-                    </div>
-                    <div class="border rounded p-2">
-                        <p class="text-muted mb-2">Today's revenue</p>
-                        <h4 class="fs-16 mb-2">$18,390</h4>
-                        <div class="progress progress-sm" style="height:4px;">
-                            <div class="progress-bar bg-warning" style="width: 20%"></div>
-                        </div>
-                        <p class="text-muted mb-0 mt-1">$37,578 <span>Avg</span></p>
-                    </div>
-                    <div class="border rounded p-2">
-                        <p class="text-muted mb-2">Expected profit</p>
-                        <h4 class="fs-16 mb-2">$23,461</h4>
-                        <div class="progress progress-sm" style="height:4px;">
-                            <div class="progress-bar bg-info" style="width: 60%"></div>
-                        </div>
-                        <p class="text-muted mb-0 mt-1">$23,461 <span>Avg</span></p>
-                    </div>
-                </div>
-
-                <div class="mt-4">
-                    <h3 class="card-title">Latest log</h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-primary"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">12 new users registered</p>
-                                    <span class="text-muted">Just now</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-success"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">System shutdown <span
-                                            class="badge badge-label-success">pending</span></p>
-                                    <span class="text-muted">2 mins</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-primary"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">New invoice received</p>
-                                    <span class="text-muted">3 mins</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-danger"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">New order received <span
-                                            class="badge badge-label-danger">urgent</span></p>
-                                    <span class="text-muted">10 mins</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-warning"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">Production server down</p>
-                                    <span class="text-muted">1 hrs</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-info"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">System error <a href="#">check</a></p>
-                                    <span class="text-muted">2 hrs</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-secondary"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">DB overloaded 80%</p>
-                                    <span class="text-muted">5 hrs</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-success"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">Production server up</p>
-                                    <span class="text-muted">6 hrs</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-4">
-                    <h3 class="card-title">Upcoming activities</h3>
-                    <div class="timeline timeline-timed">
-                        <div class="timeline-item">
-                            <span class="timeline-time">10:00</span>
-                            <div class="timeline-pin"><i class="marker marker-circle text-primary"></i></div>
-                            <div class="timeline-content">
-                                <div>
-                                    <span>Meeting with</span>
-                                    <div class="avatar-group ms-2">
-                                        <div class="avatar avatar-circle">
-                                            <img src="assets/images/users/avatar-1.png" alt="Avatar image"
-                                                class="avatar-2xs" />
-                                        </div>
-                                        <div class="avatar avatar-circle">
-                                            <img src="assets/images/users/avatar-2.png" alt="Avatar image"
-                                                class="avatar-2xs" />
-                                        </div>
-                                        <div class="avatar avatar-circle">
-                                            <img src="assets/images/users/avatar-3.png" alt="Avatar image"
-                                                class="avatar-2xs" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-time">12:45</span>
-                            <div class="timeline-pin"><i class="marker marker-circle text-warning"></i></div>
-                            <div class="timeline-content">
-                                <p class="mb-0">Lorem ipsum dolor sit amit,consectetur eiusmdd tempor incididunt ut
-                                    labore et dolore magna elit enim at minim veniam quis nostrud</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-time">14:00</span>
-                            <div class="timeline-pin"><i class="marker marker-circle text-danger"></i></div>
-                            <div class="timeline-content">
-                                <p class="mb-0">Received a new feedback on <a href="#">GoFinance</a> App product.</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-time">15:20</span>
-                            <div class="timeline-pin"><i class="marker marker-circle text-success"></i></div>
-                            <div class="timeline-content">
-                                <p class="mb-0">Lorem ipsum dolor sit amit,consectetur eiusmdd tempor incididunt ut
-                                    labore et dolore magna.</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-time">17:00</span>
-                            <div class="timeline-pin"><i class="marker marker-circle text-info"></i></div>
-                            <div class="timeline-content">
-                                <p class="mb-0">Make Deposit <a href="#">USD 700</a> o ESL.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="border rounded p-2">
+              <p class="text-muted mb-2">Members online</p>
+              <h4 class="fs-16 mb-2">3,450</h4>
+              <div class="progress progress-sm" style="height: 4px">
+                <div class="progress-bar bg-danger" style="width: 34.6%"></div>
+              </div>
+              <p class="text-muted mb-0 mt-1">34.6% <span>Avg</span></p>
             </div>
-        </div> <!-- end card-->
+            <div class="border rounded p-2">
+              <p class="text-muted mb-2">Today's revenue</p>
+              <h4 class="fs-16 mb-2">$18,390</h4>
+              <div class="progress progress-sm" style="height: 4px">
+                <div class="progress-bar bg-warning" style="width: 20%"></div>
+              </div>
+              <p class="text-muted mb-0 mt-1">$37,578 <span>Avg</span></p>
+            </div>
+            <div class="border rounded p-2">
+              <p class="text-muted mb-2">Expected profit</p>
+              <h4 class="fs-16 mb-2">$23,461</h4>
+              <div class="progress progress-sm" style="height: 4px">
+                <div class="progress-bar bg-info" style="width: 60%"></div>
+              </div>
+              <p class="text-muted mb-0 mt-1">$23,461 <span>Avg</span></p>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <h3 class="card-title">Latest log</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-primary"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">12 new users registered</p>
+                    <span class="text-muted">Just now</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-success"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">
+                      System shutdown
+                      <span class="badge badge-label-success">pending</span>
+                    </p>
+                    <span class="text-muted">2 mins</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-primary"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">New invoice received</p>
+                    <span class="text-muted">3 mins</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-danger"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">
+                      New order received
+                      <span class="badge badge-label-danger">urgent</span>
+                    </p>
+                    <span class="text-muted">10 mins</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-warning"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">Production server down</p>
+                    <span class="text-muted">1 hrs</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-info"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">System error <a href="#">check</a></p>
+                    <span class="text-muted">2 hrs</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-secondary"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">DB overloaded 80%</p>
+                    <span class="text-muted">5 hrs</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-success"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">Production server up</p>
+                    <span class="text-muted">6 hrs</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <h3 class="card-title">Upcoming activities</h3>
+            <div class="timeline timeline-timed">
+              <div class="timeline-item">
+                <span class="timeline-time">10:00</span>
+                <div class="timeline-pin">
+                  <i class="marker marker-circle text-primary"></i>
+                </div>
+                <div class="timeline-content">
+                  <div>
+                    <span>Meeting with</span>
+                    <div class="avatar-group ms-2">
+                      <div class="avatar avatar-circle">
+                        <img
+                          src="assets/images/users/avatar-1.png"
+                          alt="Avatar image"
+                          class="avatar-2xs"
+                        />
+                      </div>
+                      <div class="avatar avatar-circle">
+                        <img
+                          src="assets/images/users/avatar-2.png"
+                          alt="Avatar image"
+                          class="avatar-2xs"
+                        />
+                      </div>
+                      <div class="avatar avatar-circle">
+                        <img
+                          src="assets/images/users/avatar-3.png"
+                          alt="Avatar image"
+                          class="avatar-2xs"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-time">12:45</span>
+                <div class="timeline-pin">
+                  <i class="marker marker-circle text-warning"></i>
+                </div>
+                <div class="timeline-content">
+                  <p class="mb-0">
+                    Lorem ipsum dolor sit amit,consectetur eiusmdd tempor
+                    incididunt ut labore et dolore magna elit enim at minim
+                    veniam quis nostrud
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-time">14:00</span>
+                <div class="timeline-pin">
+                  <i class="marker marker-circle text-danger"></i>
+                </div>
+                <div class="timeline-content">
+                  <p class="mb-0">
+                    Received a new feedback on <a href="#">GoFinance</a> App
+                    product.
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-time">15:20</span>
+                <div class="timeline-pin">
+                  <i class="marker marker-circle text-success"></i>
+                </div>
+                <div class="timeline-content">
+                  <p class="mb-0">
+                    Lorem ipsum dolor sit amit,consectetur eiusmdd tempor
+                    incididunt ut labore et dolore magna.
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-time">17:00</span>
+                <div class="timeline-pin">
+                  <i class="marker marker-circle text-info"></i>
+                </div>
+                <div class="timeline-content">
+                  <p class="mb-0">
+                    Make Deposit <a href="#">USD 700</a> o ESL.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end card-->
     </div>
 
     <!-- JAVASCRIPT -->
@@ -1140,80 +1367,205 @@
     <!-- App js -->
     <script src="assets/js/app.js"></script>
 
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const addMemberForm = document.getElementById('addMemberForm');
-        const successModal = new bootstrap.Modal(document.getElementById('successModal'));
-        const errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const editMemberForm = document.getElementById("editMemberForm");
+        const memberIdToEditInput = document.getElementById("memberIdToEdit");
+        // Removed currentPhotoImg element as it's no longer displayed
+        const photoInput = document.getElementById("photo");
+        const successModal = new bootstrap.Modal(
+          document.getElementById("successModal")
+        );
+        const errorModal = new bootstrap.Modal(
+          document.getElementById("errorModal")
+        );
+        const errorMessageText = document.getElementById("errorMessageText");
 
-        addMemberForm.addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent the default form submission
+        // Function to get query parameters from the URL
+        function getQueryParam(param) {
+          const urlParams = new URLSearchParams(window.location.search);
+          return urlParams.get(param);
+        }
 
-            let allFieldsFilled = true;
-            const memberData = {}; // Object to store form data
+        // Get the member ID from the URL
+        const memberId = getQueryParam("id");
 
-            const requiredFields = addMemberForm.querySelectorAll('[required]');
+        // --- Load Member Data on Page Load ---
+        if (memberId) {
+          const members = JSON.parse(localStorage.getItem("members")) || [];
+          // IMPORTANT: Parse memberId as an integer for comparison
+          const member = members.find((m) => m.id === parseInt(memberId));
 
-            requiredFields.forEach(field => {
-                if (field.tagName === 'SELECT') {
-                    if (field.value === '') {
-                        allFieldsFilled = false;
-                    }
-                } else if (field.type === 'file') {
-                    // For demo, we'll use a placeholder URL for photo.
-                    // In a real app, you'd handle file uploads to a server.
-                    memberData.photoUrl = "https://via.placeholder.com/150/CCCCCC/888888?text=No+Photo";
-                } else {
-                    if (field.value.trim() === '') {
-                        allFieldsFilled = false;
-                    }
-                }
-                memberData[field.id] = field.value.trim();
-            });
+          if (member) {
+            // Pre-fill the form with member data
+            memberIdToEditInput.value = member.id;
+            document.getElementById("firstName").value = member.firstName || "";
+            document.getElementById("lastName").value = member.lastName || "";
+            document.getElementById("emailAddress").value =
+              member.emailAddress || "";
+            document.getElementById("contact").value = member.contact || "";
+            document.getElementById("gender").value = member.gender || "";
+            document.getElementById("dob").value = member.dob || "";
+            document.getElementById("address").value = member.address || "";
+            document.getElementById("city").value = member.city || "";
+            document.getElementById("pincode").value = member.pincode || "";
+            document.getElementById("membership_type").value =
+              member.membership_type || "";
 
-            if (allFieldsFilled) {
-                // Get existing members from localStorage or initialize an empty array
-                const members = JSON.parse(localStorage.getItem('members')) || [];
+            // The logic for displaying currentPhotoImg is removed as it's no longer needed.
+            // The photoUrl will still be loaded into localStorage if a photo was previously set.
+          } else {
+            // If member ID is in URL but member not found in localStorage
+            errorMessageText.textContent = "Member not found!";
+            errorModal.show();
+            errorModal._element.addEventListener(
+              "hidden.bs.modal",
+              function () {
+                window.location.href = "show-all-member.html"; // Redirect to show-all-member
+              },
+              { once: true }
+            );
+          }
+        } else {
+          // If no member ID is provided in the URL at all
+          errorMessageText.textContent =
+            "No member ID provided for editing. Redirecting...";
+          errorModal.show();
+          errorModal._element.addEventListener(
+            "hidden.bs.modal",
+            function () {
+              window.location.href = "show-all-member.html"; // Redirect to show-all-member
+            },
+            { once: true }
+          );
+        }
 
-                // Determine the next ID
-                const newId = members.length > 0 ? Math.max(...members.map(m => m.id)) + 1 : 1;
+        // --- Form Submission Handling ---
+        editMemberForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+          event.stopPropagation(); // Stop event propagation for Bootstrap validation
 
-                // Add photoUrl if not already set by file input (or if file input wasn't handled)
-                if (!memberData.photoUrl) {
-                    memberData.photoUrl = "https://via.placeholder.com/150/CCCCCC/888888?text=No+Photo";
-                }
+          let formIsValid = true;
+          const updatedMemberData = {};
 
-                const newMember = {
-                    id: newId,
-                    firstName: memberData.firstName,
-                    lastName: memberData.lastName,
-                    contact: memberData.contact,
-                    emailAddress: memberData.emailAddress,
-                    gender: memberData.gender,
-                    dob: memberData.dob,
-                    maritalStatus: memberData.maritalStatus,
-                    address: memberData.address,
-                    city: memberData.city,
-                    pincode: memberData.pincode,
-                    occupation: memberData.occupation,
-                    photoUrl: memberData.photoUrl,
-                    membership_type: memberData.membership_type,
-                    status: 'Active' // Default status for new members
-                };
-
-                members.push(newMember);
-                localStorage.setItem('members', JSON.stringify(members)); // Save updated array
-
-                successModal.show();
-                addMemberForm.reset();
-
+          // Manual validation for required fields
+          editMemberForm.querySelectorAll("[required]").forEach((field) => {
+            if (
+              field.value.trim() === "" ||
+              (field.tagName === "SELECT" && field.value === "")
+            ) {
+              field.classList.add("is-invalid");
+              formIsValid = false;
             } else {
-                errorModal.show();
+              field.classList.remove("is-invalid");
+              updatedMemberData[field.id] = field.value.trim();
             }
-        });
-    });
-</script>
-</body>
+          });
 
+          // Validate specific patterns (contact and pincode)
+          const contactField = document.getElementById("contact");
+          if (
+            !contactField.checkValidity() ||
+            contactField.value.length !== 10
+          ) {
+            contactField.classList.add("is-invalid");
+            formIsValid = false;
+          } else {
+            contactField.classList.remove("is-invalid");
+          }
+
+          const pincodeField = document.getElementById("pincode");
+          if (!pincodeField.checkValidity()) {
+            pincodeField.classList.add("is-invalid");
+            formIsValid = false;
+          } else {
+            pincodeField.classList.remove("is-invalid");
+          }
+
+          // Handle photo upload and format validation
+          if (photoInput.files.length > 0) {
+            const file = photoInput.files[0];
+            const fileType = file.type;
+            const validImageTypes = ["image/jpeg", "image/png"];
+
+            if (validImageTypes.includes(fileType)) {
+              const reader = new FileReader();
+              reader.onload = function (e) {
+                updatedMemberData.photoUrl = e.target.result;
+                saveMemberData(updatedMemberData, formIsValid);
+              };
+              reader.readAsDataURL(file);
+              photoInput.classList.remove("is-invalid");
+            } else {
+              photoInput.classList.add("is-invalid");
+              photoInput.nextElementSibling.textContent =
+                "Please upload a photo (only .jpg, .jpeg, .png formats allowed).";
+              formIsValid = false;
+              // Even if form is invalid due to photo, proceed to saveMemberData
+              // so the error modal can be displayed.
+              saveMemberData(updatedMemberData, formIsValid);
+            }
+          } else {
+            // If no new photo is selected, we need to ensure the existing photo URL (if any)
+            // is preserved from the member data when it was loaded.
+            // We need to retrieve the original member's photoUrl for this case.
+            const members = JSON.parse(localStorage.getItem("members")) || [];
+            const memberIdToUpdate = parseInt(memberIdToEditInput.value);
+            const member = members.find((m) => m.id === memberIdToUpdate);
+
+            updatedMemberData.photoUrl =
+              member && member.photoUrl
+                ? member.photoUrl
+                : "https://via.placeholder.com/150/CCCCCC/888888?text=No+Photo";
+            saveMemberData(updatedMemberData, formIsValid);
+          }
+        });
+
+        function saveMemberData(updatedMemberData, formIsValid) {
+          if (formIsValid) {
+            let members = JSON.parse(localStorage.getItem("members")) || [];
+            const memberIdToUpdate = parseInt(memberIdToEditInput.value);
+
+            const memberIndex = members.findIndex(
+              (m) => m.id === memberIdToUpdate
+            );
+
+            if (memberIndex !== -1) {
+              // Update the existing member
+              members[memberIndex] = {
+                ...members[memberIndex], // Keep existing properties not explicitly updated
+                firstName: updatedMemberData.firstName,
+                lastName: updatedMemberData.lastName,
+                contact: updatedMemberData.contact,
+                emailAddress: updatedMemberData.emailAddress,
+                gender: updatedMemberData.gender,
+                dob: updatedMemberData.dob,
+                address: updatedMemberData.address,
+                city: updatedMemberData.city,
+                pincode: updatedMemberData.pincode,
+                photoUrl: updatedMemberData.photoUrl,
+                membership_type: updatedMemberData.membership_type,
+                status: "Active", // Or set to active upon update
+              };
+
+              localStorage.setItem("members", JSON.stringify(members));
+              successModal.show();
+              // No redirection here. User stays on the edit page.
+            } else {
+              errorMessageText.textContent =
+                "Error: Member not found for update.";
+              errorModal.show();
+            }
+          } else {
+            errorMessageText.textContent =
+              errorMessageText.textContent === "" // If no specific error message set, use general
+                ? "Please fill in all required fields correctly."
+                : errorMessageText.textContent;
+            errorModal.show();
+          }
+        }
+      });
+    </script>
+  </body>
 </html>
