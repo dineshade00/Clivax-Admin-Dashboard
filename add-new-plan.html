@@ -664,78 +664,104 @@
         <!-- Start right Content here -->
  <div class="main-content">
             <div class="page-content">
-                <div class="container-fluid custom-container py-4">
-                    <div class="card mb-4 ">
-                        <div class="card-header">
-                            <h3 class="card-title mb-0">Membership Details</h3>
-                        </div>
-                        <div class="card-body">
-                            <form id="membershipForm" method="get">
-                                <div class="row g-3 align-items-end">
-                                    <div class="col-12 col-md-4">
-                                        <label class="form-label">Membership Type</label>
-                                        <select type="text" class="form-select" id="membershipType" required
-                                            onchange="updateDetails()">
-                                            <option value="" selected disabled>Select Type</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-12 col-md-4">
-                                        <label class="form-label">Amount (INR)</label>
-                                        <input type="number" class="form-control" id="membershipAmount" readonly />
-                                    </div>
-                                    <div class="col-12 col-md-4">
-                                        <label class="form-label">Offer</label>
-                                        <input type="text" class="form-control" id="membershipOffer" readonly />
-                                    </div>
-                                </div>
-                                <div
-                                    class="d-flex flex-column flex-md-row justify-content-start align-items-center gap-2 mt-4">
-                                    <button type="button" class="btn btn-primary btn-sm" onclick="showAddForm()">Add
-                                        Type</button>
-                                    <button type="submit" class="btn btn-outline-primary btn-sm">Add Membership</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                <div class="container-fluid px-3 px-md-4 py-4 w-100">
+     <div class="container-fluid">
+         <div class="mx-auto" style="max-width: 1000px;">
+        <h2 class="text-center mb-4 text-success">Diet Plan Management</h2>
 
-                <!-- Custom Popup Form -->
-                <div class="custom-popup" id="addTypePopup">
-                    <form id="newTypeForm" method="get">
-                        <h5 class="mb-3">Add New Membership Type</h5>
-                        <input type="text" class="form-control" id="newType" placeholder="Membership Type" required />
-                        <input type="number" class="form-control" id="newAmount" placeholder="Amount (INR)" required />
-                        <input type="text" class="form-control" id="newOffer" placeholder="Offer" required />
-                        <div class="d-flex justify-content-between mt-3">
-                            <button type="submit" class="btn btn-success">Add</button>
-                            <button type="button" class="btn btn-secondary" onclick="hideAddForm()">Cancel</button>
-                        </div>
-                    </form>
-                </div>
-
-
-            </div>
-
-
-
-
+        <!-- Add Button -->
+        <div class="mb-3 text-end" id="addBtnSection">
+          <button class="btn btn-green" onclick="showForm()">+ Add New Diet Plan</button>
         </div>
 
+        <!-- Add/Edit Diet Plan Form -->
+        <div class="card shadow-sm mb-4 d-none" id="dietFormCard">
+          <div class="card-header fw-bold" id="formTitle">Add New Diet Plan</div>
+          <div class="card-body">
+            <form id="dietForm">
+              <input type="hidden" id="editIndex" />
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <label class="form-label">Goal Type</label>
+                  <select class="form-select" id="goal" required>
+                    <option selected disabled>Select Goal</option>
+                    <option>Weight Loss</option>
+                    <option>Muscle Gain</option>
+                    <option>General Fitness</option>
+                  </select>
+                </div>
+                <div class="col-6 col-md-3">
+                  <label class="form-label">Start Date</label>
+                  <input type="date" class="form-control" id="startDate" required />
+                </div>
+                <div class="col-6 col-md-3">
+                  <label class="form-label">End Date</label>
+                  <input type="date" class="form-control" id="endDate" required />
+                </div>
+              </div>
 
+              <div class="row g-3 mt-2">
+                <div class="col-12 col-md-6">
+                  <label class="form-label">Breakfast</label>
+                  <textarea class="form-control" id="breakfast" rows="2" required></textarea>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label class="form-label">Lunch</label>
+                  <textarea class="form-control" id="lunch" rows="2" required></textarea>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label class="form-label">Dinner</label>
+                  <textarea class="form-control" id="dinner" rows="2" required></textarea>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label class="form-label">Snacks</label>
+                  <textarea class="form-control" id="snacks" rows="2"></textarea>
+                </div>
+              </div>
 
+              <div class="row g-3 mt-2">
+                <div class="col-12">
+                  <label class="form-label">Water Intake</label>
+                  <input type="text" class="form-control" id="water" placeholder="E.g., 3 Litres" />
+                </div>
+              </div>
 
+              <div class="d-flex flex-wrap gap-2 mt-4">
+                <button type="submit" class="btn btn-green">💾 Save Plan</button>
+                <button type="button" class="btn btn-secondary" onclick="hideForm()">← Back</button>
+              </div>
+            </form>
+          </div>
+        </div>
 
-    </div>
-
-    </div>
-    <!-- end row -->
-
-
-
-    <!-- RIGHT SIDE: Top Selling Products -->
-
-    </div>
-    <!-- end row -->
+        <!-- Diet Plan Table -->
+        <div class="card shadow-sm" id="dietTableCard">
+          <div class="card-header fw-bold">Saved Diet Plans</div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover w-100">
+                <thead class="table-success">
+                  <tr>
+                    <th>ID</th>
+                    <th>Goal Type</th>
+                    <th>Breakfast</th>
+                    <th>Lunch</th>
+                    <th>Dinner</th>
+                    <th>Snacks</th>
+                    <th>Water</th>
+                    <th>Duration</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="dietTbody">
+                  <!-- JS will populate here -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
     </div>
     <!-- end container-fluid -->
     </div>
