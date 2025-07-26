@@ -1,99 +1,103 @@
-let dietPlans = JSON.parse(localStorage.getItem("dietPlans")) || [];
+ const saveDietPlan = () => {
+                const goalType = document.getElementById('goalType').value;
+                const startDate = document.getElementById('startDate').value;
+                const endDate = document.getElementById('endDate').value;
+                const breakfast = document.getElementById('breakfast').value;
+                const lunch = document.getElementById('lunch').value;
+                const dinner = document.getElementById('dinner').value;
+                const snacks = document.getElementById('snacks').value;
+                const water = document.getElementById('water').value;
+                const editingIndex = document.getElementById('editingIndex').value;
 
-      document.getElementById("dietForm").addEventListener("submit", function (e) {
-        e.preventDefault();
+                if (!goalType || !startDate || !endDate) {
+                    alert('Please fill all required fields.');
+                    return;
+                }
 
-        const plan = {
-          goal: document.getElementById("goal").value,
-          startDate: document.getElementById("startDate").value,
-          endDate: document.getElementById("endDate").value,
-          breakfast: document.getElementById("breakfast").value,
-          lunch: document.getElementById("lunch").value,
-          dinner: document.getElementById("dinner").value,
-          snacks: document.getElementById("snacks").value,
-          water: document.getElementById("water").value,
-        };
+                const dietPlans = JSON.parse(localStorage.getItem('dietPlans') || '[]');
+                const plan = {
+                    goalType, breakfast, lunch, dinner, snacks, water,
+                    duration: formatDate(startDate) + ' - ' + formatDate(endDate)
+                };
 
-        const editIndex = document.getElementById("editIndex").value;
+                if (editingIndex === "") {
+                    dietPlans.push(plan);
+                } else {
+                    dietPlans[editingIndex] = plan;
+                    document.getElementById('editingIndex').value = "";
+                }
 
-        if (editIndex === "") {
-          dietPlans.push(plan);
-        } else {
-          dietPlans[editIndex] = plan;
-          document.getElementById("editIndex").value = "";
-        }
+                localStorage.setItem('dietPlans', JSON.stringify(dietPlans));
+                resetForm();
+                renderTable();
+                bootstrap.Tab.getOrCreateInstance(document.querySelector('[data-bs-target="#dietTableTab"]')).show();
+            };
 
-        localStorage.setItem("dietPlans", JSON.stringify(dietPlans));
-        renderTable();
-        hideForm();
-        this.reset();
-      });
+            const renderTable = () => {
+                const dietPlans = JSON.parse(localStorage.getItem('dietPlans') || '[]');
+                const tbody = document.getElementById('dietTableBody');
+                tbody.innerHTML = "";
 
-      function renderTable() {
-        const tbody = document.getElementById("dietTbody");
-        tbody.innerHTML = "";
+                dietPlans.forEach((plan, index) => {
+                    const row = `
+        <tr>
+          <td>${index + 1}</td>
+          <td>${plan.goalType}</td>
+          <td>${plan.breakfast}</td>
+          <td>${plan.lunch}</td>
+          <td>${plan.dinner}</td>
+          <td>${plan.snacks}</td>
+          <td>${plan.water}</td>
+          <td>${plan.duration}</td>
+          <td>
+            <button class="btn btn-primary btn-sm" onclick="editPlan(${index})">Edit</button>
+            <button class="btn btn-danger btn-sm" onclick="deletePlan(${index})">Delete</button>
+          </td>
+        </tr>
+      `;
+                    tbody.innerHTML += row;
+                });
+            };
 
-        dietPlans.forEach((plan, index) => {
-          const tr = document.createElement("tr");
-          tr.innerHTML = `
-            <td>${index + 1}</td>
-            <td>${plan.goal}</td>
-            <td>${plan.breakfast}</td>
-            <td>${plan.lunch}</td>
-            <td>${plan.dinner}</td>
-            <td>${plan.snacks}</td>
-            <td>${plan.water}</td>
-            <td>${formatDate(plan.startDate)} - ${formatDate(plan.endDate)}</td>
-            <td>
-              <button class="btn btn-sm btn-warning" onclick="editPlan(${index})">Edit</button>
-              <button class="btn btn-sm btn-danger" onclick="deletePlan(${index})">Delete</button>
-            </td>
-          `;
-          tbody.appendChild(tr);
-        });
-      }
+            const editPlan = (index) => {
+                const dietPlans = JSON.parse(localStorage.getItem('dietPlans') || '[]');
+                const plan = dietPlans[index];
+                document.getElementById('goalType').value = plan.goalType;
+                document.getElementById('breakfast').value = plan.breakfast;
+                document.getElementById('lunch').value = plan.lunch;
+                document.getElementById('dinner').value = plan.dinner;
+                document.getElementById('snacks').value = plan.snacks;
+                document.getElementById('water').value = plan.water;
+                document.getElementById('editingIndex').value = index;
+                bootstrap.Tab.getOrCreateInstance(document.querySelector('[data-bs-target="#addDietTab"]')).show();
+            };
 
-      function formatDate(date) {
-        const d = new Date(date);
-        return d.getDate().toString().padStart(2, "0") + "-" + d.toLocaleString("default", { month: "short" });
-      }
+            const deletePlan = (index) => {
+                if (confirm("Are you sure you want to delete this plan?")) {
+                    const dietPlans = JSON.parse(localStorage.getItem('dietPlans') || '[]');
+                    dietPlans.splice(index, 1);
+                    localStorage.setItem('dietPlans', JSON.stringify(dietPlans));
+                    renderTable();
+                }
+            };
 
-      function showForm() {
-        document.getElementById("dietFormCard").classList.remove("d-none");
-        document.getElementById("dietTableCard").classList.add("d-none");
-        document.getElementById("addBtnSection").classList.add("d-none");
-        document.getElementById("formTitle").textContent = "Add New Diet Plan";
-      }
+            const resetForm = () => {
+                document.getElementById('goalType').value = '';
+                document.getElementById('startDate').value = '';
+                document.getElementById('endDate').value = '';
+                document.getElementById('breakfast').value = '';
+                document.getElementById('lunch').value = '';
+                document.getElementById('dinner').value = '';
+                document.getElementById('snacks').value = '';
+                document.getElementById('water').value = '';
+                document.getElementById('editingIndex').value = '';
+            };
 
-      function hideForm() {
-        document.getElementById("dietFormCard").classList.add("d-none");
-        document.getElementById("dietTableCard").classList.remove("d-none");
-        document.getElementById("addBtnSection").classList.remove("d-none");
-        document.getElementById("dietForm").reset();
-        document.getElementById("editIndex").value = "";
-      }
+            const formatDate = (dateStr) => {
+                const options = { day: '2-digit', month: 'short' };
+                const date = new Date(dateStr);
+                return date.toLocaleDateString('en-GB', options).replace(/ /g, '-');
+            };
 
-      function editPlan(index) {
-        const plan = dietPlans[index];
-        document.getElementById("goal").value = plan.goal;
-        document.getElementById("startDate").value = plan.startDate;
-        document.getElementById("endDate").value = plan.endDate;
-        document.getElementById("breakfast").value = plan.breakfast;
-        document.getElementById("lunch").value = plan.lunch;
-        document.getElementById("dinner").value = plan.dinner;
-        document.getElementById("snacks").value = plan.snacks;
-        document.getElementById("water").value = plan.water;
-        document.getElementById("editIndex").value = index;
-        showForm();
-        document.getElementById("formTitle").textContent = "Edit Diet Plan";
-      }
-
-      function deletePlan(index) {
-        if (confirm("Are you sure you want to delete this plan?")) {
-          dietPlans.splice(index, 1);
-          localStorage.setItem("dietPlans", JSON.stringify(dietPlans));
-          renderTable();
-        }
-      }
-
-      renderTable();
+            // Initialize table on load
+            renderTable();
