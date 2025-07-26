@@ -24,7 +24,7 @@
     <!-- App Css-->
     <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="assets/css/add-new-plan.css">
+    <link rel="stylesheet" href="assets/css/diet-plan.css">
 </head>
 
 <body>
@@ -172,7 +172,7 @@
                                                 class="mdi mdi-account-check-outline align-middle dropdown-bullet me-2"></i>
                                             <span class="dropdown-content">Attendance</span>
                                         </a>
-                                        <a href="diet-plan.html" class="dropdown-item">
+                                        <a href="#" class="dropdown-item">
                                             <i class="mdi mdi-food-apple-outline align-middle dropdown-bullet me-2"></i>
                                             <span class="dropdown-content">Diet Plans</span>
                                         </a>
@@ -661,107 +661,81 @@
         </div>
         <!-- Left Sidebar End -->
 
-        <!-- Start right Content here -->
+               <!-- Start right Content here -->
  <div class="main-content">
             <div class="page-content">
-                <div class="container-fluid px-3 px-md-4 py-4 w-100">
-     <div class="container-fluid">
-         <div class="mx-auto" style="max-width: 1000px;">
-        <h2 class="text-center mb-4 text-success">Diet Plan Management</h2>
+                <div class="container-fluid custom-container py-4">
+                    <div class="card mb-4 ">
+                        <div class="card-header">
+                            <h3 class="card-title mb-0">Membership Details</h3>
+                        </div>
+                        <div class="card-body">
+                            <form id="membershipForm" method="get">
+                                <div class="row g-3 align-items-end">
+                                    <div class="col-12 col-md-4">
+                                        <label class="form-label">Membership Type</label>
+                                        <select type="text" class="form-select" id="membershipType" required
+                                            onchange="updateDetails()">
+                                            <option value="" selected disabled>Select Type</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 col-md-4">
+                                        <label class="form-label">Amount (INR)</label>
+                                        <input type="number" class="form-control" id="membershipAmount" readonly />
+                                    </div>
+                                    <div class="col-12 col-md-4">
+                                        <label class="form-label">Offer</label>
+                                        <input type="text" class="form-control" id="membershipOffer" readonly />
+                                    </div>
+                                </div>
+                                <div
+                                    class="d-flex flex-column flex-md-row justify-content-start align-items-center gap-2 mt-4">
+                                    <button type="button" class="btn btn-primary btn-sm" onclick="showAddForm()">Add
+                                        Type</button>
+                                    <button type="submit" class="btn btn-outline-primary btn-sm">Add Membership</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- Add Button -->
-        <div class="mb-3 text-end" id="addBtnSection">
-          <button class="btn btn-green" onclick="showForm()">+ Add New Diet Plan</button>
-        </div>
+                <!-- Custom Popup Form -->
+                <div class="custom-popup" id="addTypePopup">
+                    <form id="newTypeForm" method="get">
+                        <h5 class="mb-3">Add New Membership Type</h5>
+                        <input type="text" class="form-control" id="newType" placeholder="Membership Type" required />
+                        <input type="number" class="form-control" id="newAmount" placeholder="Amount (INR)" required />
+                        <input type="text" class="form-control" id="newOffer" placeholder="Offer" required />
+                        <div class="d-flex justify-content-between mt-3">
+                            <button type="submit" class="btn btn-success">Add</button>
+                            <button type="button" class="btn btn-secondary" onclick="hideAddForm()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
 
-        <!-- Add/Edit Diet Plan Form -->
-        <div class="card shadow-sm mb-4 d-none" id="dietFormCard">
-          <div class="card-header fw-bold" id="formTitle">Add New Diet Plan</div>
-          <div class="card-body">
-            <form id="dietForm">
-              <input type="hidden" id="editIndex" />
-              <div class="row g-3">
-                <div class="col-12 col-md-6">
-                  <label class="form-label">Goal Type</label>
-                  <select class="form-select" id="goal" required>
-                    <option selected disabled>Select Goal</option>
-                    <option>Weight Loss</option>
-                    <option>Muscle Gain</option>
-                    <option>General Fitness</option>
-                  </select>
-                </div>
-                <div class="col-6 col-md-3">
-                  <label class="form-label">Start Date</label>
-                  <input type="date" class="form-control" id="startDate" required />
-                </div>
-                <div class="col-6 col-md-3">
-                  <label class="form-label">End Date</label>
-                  <input type="date" class="form-control" id="endDate" required />
-                </div>
-              </div>
 
-              <div class="row g-3 mt-2">
-                <div class="col-12 col-md-6">
-                  <label class="form-label">Breakfast</label>
-                  <textarea class="form-control" id="breakfast" rows="2" required></textarea>
-                </div>
-                <div class="col-12 col-md-6">
-                  <label class="form-label">Lunch</label>
-                  <textarea class="form-control" id="lunch" rows="2" required></textarea>
-                </div>
-                <div class="col-12 col-md-6">
-                  <label class="form-label">Dinner</label>
-                  <textarea class="form-control" id="dinner" rows="2" required></textarea>
-                </div>
-                <div class="col-12 col-md-6">
-                  <label class="form-label">Snacks</label>
-                  <textarea class="form-control" id="snacks" rows="2"></textarea>
-                </div>
-              </div>
-
-              <div class="row g-3 mt-2">
-                <div class="col-12">
-                  <label class="form-label">Water Intake</label>
-                  <input type="text" class="form-control" id="water" placeholder="E.g., 3 Litres" />
-                </div>
-              </div>
-
-              <div class="d-flex flex-wrap gap-2 mt-4">
-                <button type="submit" class="btn btn-green">💾 Save Plan</button>
-                <button type="button" class="btn btn-secondary" onclick="hideForm()">← Back</button>
-              </div>
-            </form>
-          </div>
-        </div>
-
-        <!-- Diet Plan Table -->
-        <div class="card shadow-sm" id="dietTableCard">
-          <div class="card-header fw-bold">Saved Diet Plans</div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-bordered table-hover w-100">
-                <thead class="table-success">
-                  <tr>
-                    <th>ID</th>
-                    <th>Goal Type</th>
-                    <th>Breakfast</th>
-                    <th>Lunch</th>
-                    <th>Dinner</th>
-                    <th>Snacks</th>
-                    <th>Water</th>
-                    <th>Duration</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody id="dietTbody">
-                  <!-- JS will populate here -->
-                </tbody>
-              </table>
             </div>
-          </div>
+
+
+
+
         </div>
-      </div>
-     </div>
+
+
+
+
+
+    </div>
+
+    </div>
+    <!-- end row -->
+
+
+
+    <!-- RIGHT SIDE: Top Selling Products -->
+
+    </div>
+    <!-- end row -->
     </div>
     <!-- end container-fluid -->
     </div>
@@ -1016,3 +990,259 @@
 </body>
 
 </html>
+
+    </div>
+    <!-- end container-fluid -->
+    </div>
+    <!-- End Page-content -->
+
+     <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <div class="col-sm-6">
+                                <script>document.write(new Date().getFullYear())</script> © Clivax Gym.
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="text-sm-end d-none d-sm-block">
+                                    Designed & Developed <i class="mdi mdi-heart text-danger"></i> by <a
+                                        href="https://kavyainfoweb.com/" target="_blank" class="text-muted">Kavya
+                                        Infoweb
+                                        Pvt. Ltd.</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+
+    </div>
+    <!-- end main content-->
+    </div>
+    <!-- end layout-wrapper -->
+
+
+    <div class="custom-setting bg-primary pe-0 d-flex flex-column rounded-start">
+        <button type="button" class="btn btn-wide border-0 text-white fs-20 avatar-sm rounded-end-0"
+            id="light-dark-mode">
+            <i class="mdi mdi-brightness-7 align-middle"></i>
+            <i class="mdi mdi-white-balance-sunny align-middle"></i>
+        </button>
+        <!-- <button type="button" class="btn btn-wide border-0 text-white fs-20 avatar-sm" data-toggle="fullscreen">
+            <i class="mdi mdi-arrow-expand-all align-middle"></i>
+        </button>
+        <button type="button" class="btn btn-wide border-0 text-white fs-16 avatar-sm" id="layout-dir-btn">
+            <span>RTL</span>
+        </button> -->
+    </div>
+
+
+    <!-- Rightbar Sidebar -->
+    <div class="offcanvas offcanvas-end" id="offcanvas-rightsidabar">
+        <div class="card h-100 rounded-0" data-simplebar="init">
+            <div class="card-header bg-light">
+                <h6 class="card-title text-uppercase">Activities</h6>
+                <div class="card-addon">
+                    <button class="btn btn-label-danger" data-bs-dismiss="offcanvas">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="">
+                    <h3 class="card-title">Company summary</h3>
+                    <div class="border rounded p-2">
+                        <p class="text-muted mb-2">Server Load</p>
+                        <h4 class="fs-16 mb-2">489</h4>
+                        <div class="progress progress-sm" style="height:4px;">
+                            <div class="progress-bar bg-success" style="width: 49.4%"></div>
+                        </div>
+                        <p class="text-muted mb-0 mt-1">49.4% <span>Avg</span></p>
+                    </div>
+                    <div class="border rounded p-2">
+                        <p class="text-muted mb-2">Members online</p>
+                        <h4 class="fs-16 mb-2">3,450</h4>
+                        <div class="progress progress-sm" style="height:4px;">
+                            <div class="progress-bar bg-danger" style="width: 34.6%"></div>
+                        </div>
+                        <p class="text-muted mb-0 mt-1">34.6% <span>Avg</span></p>
+                    </div>
+                    <div class="border rounded p-2">
+                        <p class="text-muted mb-2">Today's revenue</p>
+                        <h4 class="fs-16 mb-2">$18,390</h4>
+                        <div class="progress progress-sm" style="height:4px;">
+                            <div class="progress-bar bg-warning" style="width: 20%"></div>
+                        </div>
+                        <p class="text-muted mb-0 mt-1">$37,578 <span>Avg</span></p>
+                    </div>
+                    <div class="border rounded p-2">
+                        <p class="text-muted mb-2">Expected profit</p>
+                        <h4 class="fs-16 mb-2">$23,461</h4>
+                        <div class="progress progress-sm" style="height:4px;">
+                            <div class="progress-bar bg-info" style="width: 60%"></div>
+                        </div>
+                        <p class="text-muted mb-0 mt-1">$23,461 <span>Avg</span></p>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <h3 class="card-title">Latest log</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-pin"><i class="marker marker-dot text-primary"></i></div>
+                            <div class="timeline-content">
+                                <div class="d-flex justify-content-between">
+                                    <p class="mb-0">12 new users registered</p>
+                                    <span class="text-muted">Just now</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-pin"><i class="marker marker-dot text-success"></i></div>
+                            <div class="timeline-content">
+                                <div class="d-flex justify-content-between">
+                                    <p class="mb-0">System shutdown <span
+                                            class="badge badge-label-success">pending</span></p>
+                                    <span class="text-muted">2 mins</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-pin"><i class="marker marker-dot text-primary"></i></div>
+                            <div class="timeline-content">
+                                <div class="d-flex justify-content-between">
+                                    <p class="mb-0">New invoice received</p>
+                                    <span class="text-muted">3 mins</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-pin"><i class="marker marker-dot text-danger"></i></div>
+                            <div class="timeline-content">
+                                <div class="d-flex justify-content-between">
+                                    <p class="mb-0">New order received <span
+                                            class="badge badge-label-danger">urgent</span></p>
+                                    <span class="text-muted">10 mins</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-pin"><i class="marker marker-dot text-warning"></i></div>
+                            <div class="timeline-content">
+                                <div class="d-flex justify-content-between">
+                                    <p class="mb-0">Production server down</p>
+                                    <span class="text-muted">1 hrs</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-pin"><i class="marker marker-dot text-info"></i></div>
+                            <div class="timeline-content">
+                                <div class="d-flex justify-content-between">
+                                    <p class="mb-0">System error <a href="#">check</a></p>
+                                    <span class="text-muted">2 hrs</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-pin"><i class="marker marker-dot text-secondary"></i></div>
+                            <div class="timeline-content">
+                                <div class="d-flex justify-content-between">
+                                    <p class="mb-0">DB overloaded 80%</p>
+                                    <span class="text-muted">5 hrs</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-pin"><i class="marker marker-dot text-success"></i></div>
+                            <div class="timeline-content">
+                                <div class="d-flex justify-content-between">
+                                    <p class="mb-0">Production server up</p>
+                                    <span class="text-muted">6 hrs</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <h3 class="card-title">Upcoming activities</h3>
+                    <div class="timeline timeline-timed">
+                        <div class="timeline-item">
+                            <span class="timeline-time">10:00</span>
+                            <div class="timeline-pin"><i class="marker marker-circle text-primary"></i></div>
+                            <div class="timeline-content">
+                                <div>
+                                    <span>Meeting with</span>
+                                    <div class="avatar-group ms-2">
+                                        <div class="avatar avatar-circle">
+                                            <img src="assets/images/users/avatar-1.png" alt="Avatar image"
+                                                class="avatar-2xs" />
+                                        </div>
+                                        <div class="avatar avatar-circle">
+                                            <img src="assets/images/users/avatar-2.png" alt="Avatar image"
+                                                class="avatar-2xs" />
+                                        </div>
+                                        <div class="avatar avatar-circle">
+                                            <img src="assets/images/users/avatar-3.png" alt="Avatar image"
+                                                class="avatar-2xs" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">12:45</span>
+                            <div class="timeline-pin"><i class="marker marker-circle text-warning"></i></div>
+                            <div class="timeline-content">
+                                <p class="mb-0">Lorem ipsum dolor sit amit,consectetur eiusmdd tempor incididunt ut
+                                    labore et dolore magna elit enim at minim veniam quis nostrud</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">14:00</span>
+                            <div class="timeline-pin"><i class="marker marker-circle text-danger"></i></div>
+                            <div class="timeline-content">
+                                <p class="mb-0">Received a new feedback on <a href="#">GoFinance</a> App product.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">15:20</span>
+                            <div class="timeline-pin"><i class="marker marker-circle text-success"></i></div>
+                            <div class="timeline-content">
+                                <p class="mb-0">Lorem ipsum dolor sit amit,consectetur eiusmdd tempor incididunt ut
+                                    labore et dolore magna.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">17:00</span>
+                            <div class="timeline-pin"><i class="marker marker-circle text-info"></i></div>
+                            <div class="timeline-content">
+                                <p class="mb-0">Make Deposit <a href="#">USD 700</a> o ESL.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- end card-->
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="assets/libs/jquery/jquery.min.js"></script>
+    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/metismenu/metisMenu.min.js"></script>
+    <script src="assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="assets/libs/node-waves/waves.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- apexcharts -->
+    <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+    <script src="assets/js/pages/dashboard.init.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/diet-plan.js"></script>
+</body>
+
+</html>
+
