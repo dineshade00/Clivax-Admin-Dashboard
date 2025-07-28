@@ -78,7 +78,7 @@ function viewProfile(id) {
         { time: "6 AM", session: "Endurance", focus: "Running" },
         { time: "6 PM", session: "Cardio", focus: "Aerobics" },
       ],
-      phone: "9970183749",
+      phone: "919970183749",
     },
     5: {
       name: "Smriti Patil",
@@ -96,7 +96,7 @@ function viewProfile(id) {
         { time: "7 AM", session: "Yoga", focus: "Flexibility" },
         { time: "5 PM", session: "Pilates", focus: "Core Strength" },
       ],
-      phone: "9370466337",
+      phone: "919370466337",
     },
     6: {
       name: "Shubham Raut",
