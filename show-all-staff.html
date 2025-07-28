@@ -1,208 +1,284 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-
+  <head>
     <meta charset="utf-8" />
     <title>Show All Staff | Clivax</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      content="Premium Multipurpose Admin & Dashboard Template"
+      name="description"
+    />
     <meta content="Codebucks" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
 
     <!-- DataTables -->
-    <link href="assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+    <link
+      href="assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
 
     <!-- buttons datatable -->
-    <link href="assets/libs/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet"
-        type="text/css" />
+    <link
+      href="assets/libs/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
 
     <!-- Responsive datatable examples -->
-    <link href="assets/libs/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet"
-        type="text/css" />
-
+    <link
+      href="assets/libs/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
 
     <!-- dark layout js -->
     <script src="assets/js/pages/layout.js"></script>
 
     <!-- Bootstrap Css -->
-    <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <link
+      href="assets/css/bootstrap.min.css"
+      id="bootstrap-style"
+      rel="stylesheet"
+      type="text/css"
+    />
     <!-- Icons Css -->
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- simplebar css -->
-    <link href="assets/libs/simplebar/simplebar.min.css" rel="stylesheet">
+    <link href="assets/libs/simplebar/simplebar.min.css" rel="stylesheet" />
     <!-- App Css-->
-    <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <link
+      href="assets/css/app.min.css"
+      id="app-style"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <!-- Begin page -->
     <div id="layout-wrapper">
+      <!-- Start topbar -->
+      <header id="page-topbar">
+        <div class="navbar-header">
+          <!-- Logo -->
 
+          <!-- Start Navbar-Brand -->
+          <div class="navbar-logo-box">
+            <a href="index.html" class="logo logo-dark">
+              <span class="logo-sm">
+                <img
+                  src="assets/images/logo-sm.png"
+                  alt="logo-sm-dark"
+                  height="20"
+                />
+              </span>
+              <span class="logo-lg">
+                <img
+                  src="assets/images/logo-dark.png"
+                  alt="logo-dark"
+                  height="18"
+                />
+              </span>
+            </a>
 
-        <!-- Start topbar -->
-        <header id="page-topbar">
-            <div class="navbar-header">
+            <a href="index.html" class="logo logo-light">
+              <span class="logo-sm">
+                <img
+                  src="assets/images/logo-sm.png"
+                  alt="logo-sm-light"
+                  height="20"
+                />
+              </span>
+              <span class="logo-lg">
+                <img
+                  src="assets/images/logo-light.png"
+                  alt="logo-light"
+                  height="18"
+                />
+              </span>
+            </a>
 
-                <!-- Logo -->
+            <button
+              type="button"
+              class="btn btn-sm top-icon sidebar-btn"
+              id="sidebar-btn"
+            >
+              <i class="mdi mdi-menu-open align-middle fs-19"></i>
+            </button>
+          </div>
+          <!-- End navbar brand -->
 
-                <!-- Start Navbar-Brand -->
-                <div class="navbar-logo-box">
-                    <a href="index.html" class="logo logo-dark">
-                        <span class="logo-sm">
-                            <img src="assets/images/logo-sm.png" alt="logo-sm-dark" height="20">
-                        </span>
-                        <span class="logo-lg">
-                            <img src="assets/images/logo-dark.png" alt="logo-dark" height="18">
-                        </span>
-                    </a>
+          <!-- Start menu -->
+          <div class="d-flex justify-content-between menu-sm px-3 ms-auto">
+            <div class="d-flex align-items-center gap-2">
+              <div class="dropdown d-none d-lg-block">
+                <button
+                  type="button"
+                  class="btn btn-primary btn-sm fs-14 d-inline"
+                  data-bs-toggle="dropdown"
+                >
+                  Gym Modules
+                  <i class="mdi mdi-chevron-down align-middle"></i>
+                </button>
+                <div
+                  class="dropdown-menu dropdown-menu-start dropdown-menu-animated"
+                >
+                  <!-- Inventory Manager -->
+                  <a href="equipment.html" class="dropdown-item">
+                    <div class="dropdown-icon">
+                      <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <span class="dropdown-content">Equipments</span>
+                    <div class="dropdown-addon">
+                      <span class="badge badge-warning rounded-pill">20</span>
+                    </div>
+                  </a>
 
-                    <a href="index.html" class="logo logo-light">
-                        <span class="logo-sm">
-                            <img src="assets/images/logo-sm.png" alt="logo-sm-light" height="20">
-                        </span>
-                        <span class="logo-lg">
-                            <img src="assets/images/logo-light.png" alt="logo-light" height="18">
-                        </span>
-                    </a>
+                  <!-- Invoice -->
+                  <a href="create-invoice.html" class="dropdown-item">
+                    <div class="dropdown-icon">
+                      <i class="fas fa-file-invoice"></i>
+                    </div>
+                    <span class="dropdown-content">Membership Invoice</span>
+                  </a>
 
-                    <button type="button" class="btn btn-sm top-icon sidebar-btn" id="sidebar-btn">
-                        <i class="mdi mdi-menu-open align-middle fs-19"></i>
-                    </button>
+                  <!-- Divider -->
+                  <div class="dropdown-divider"></div>
+
+                  <!-- My Account -->
+                  <a href="apps-contact.html" class="dropdown-item">
+                    <div class="dropdown-icon">
+                      <i class="fas fa-user-circle"></i>
+                    </div>
+                    <span class="dropdown-content">My Profile</span>
+                  </a>
                 </div>
-                <!-- End navbar brand -->
+              </div>
 
-                          <!-- Start menu -->
-                <div class="d-flex justify-content-between menu-sm px-3 ms-auto">
-                    <div class="d-flex align-items-center gap-2">
-                        <div class="dropdown d-none d-lg-block">
-                            <button type="button" class="btn btn-primary btn-sm fs-14 d-inline"
-                                data-bs-toggle="dropdown">
-                                Gym Modules
-                                <i class="mdi mdi-chevron-down align-middle"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-start dropdown-menu-animated">
-
-                                <!-- Inventory Manager -->
-                                <a href="equipment.html" class="dropdown-item">
-                                    <div class="dropdown-icon"><i class="fas fa-dumbbell"></i></div>
-                                    <span class="dropdown-content">Equipments</span>
-                                    <div class="dropdown-addon"><span class="badge badge-warning rounded-pill">20</span>
-                                    </div>
-                                </a>
-
-                              
-                                <!-- Invoice -->
-                                <a href="create-invoice.html" class="dropdown-item">
-                                    <div class="dropdown-icon"><i class="fas fa-file-invoice"></i></div>
-                                    <span class="dropdown-content">Membership Invoice</span>
-                                </a>
-
-                                <!-- Divider -->
-                                <div class="dropdown-divider"></div>
-
-                                <!-- My Account -->
-                                <a href="apps-contact.html" class="dropdown-item">
-                                    <div class="dropdown-icon"><i class="fas fa-user-circle"></i></div>
-                                    <span class="dropdown-content">My Profile</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="dropdown d-none d-lg-block">
-                            <button type="button" class="btn btn-primary btn-sm fs-14" data-bs-toggle="dropdown"
-                                aria-haspopup="false" aria-expanded="false">
-                                Features
-                                <i class="mdi mdi-chevron-down align-middle"></i>
-                            </button>
-                            <div
-                                class="dropdown-menu dropdown-menu-start dropdown-menu-lg-widest dropdown-menu-widest dropdown-menu-animated bg-primary-subtle overflow-hidden">
-                                <div class="dropdown-row justify-content-center">
-
-                                    <!-- Original Image (Unchanged) -->
-                                    <div class="p-2 menu-image">
-                                        <img src="assets/images/mega-menu.png" alt="mega-menu image" class="img-fluid"
-                                            style="height: 200px;">
-                                    </div>
-
-                                    <!-- Gym Welcome Section -->
-                                    <div class="dropdown-col">
-                                        <h2 class="">Welcome to Clivax Gym!</h2>
-                                        <p class="text-muted mb-0">
-                                            Track members, manage plans, monitor trainers, and streamline gym operations
-                                            with our digital gym
-                                            dashboard.
-                                        </p>
-                                        <div class="mt-3">
-                                            <a href="auth-login.html" class="btn btn-dark btn-wider">Admin Login</a>
-                                        </div>
-                                    </div>
-
-                                    <!-- Features Section -->
-                                    <div class="dropdown-col border-start border-primary border-opacity-50">
-                                        <h4 class="dropdown-header">Gym Features</h4>
-                                        <div class="grid-nav grid-nav-action">
-                                            <div class="grid-nav-row">
-                                                <a href="index.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="fas fa-chart-line"></i></div>
-                                                    <span class="grid-nav-content">Dashboard</span>
-                                                </a>
-                                                <a href="show-all-member.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="fas fa-user-friends"></i></div>
-                                                    <span class="grid-nav-content">Members</span>
-                                                </a>
-                                                <a href="renewals.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="fas fa-redo-alt"></i></div>
-                                                    <span class="grid-nav-content">Renewals</span>
-                                                </a>
-                                            </div>
-                                            <div class="grid-nav-row">
-                                                <a href="trainer-profile.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="fas fa-dumbbell"></i></div>
-                                                    <span class="grid-nav-content">Trainers</span>
-                                                </a>
-                                                <a href="view-plan.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="fas fa-id-card-alt"></i></div>
-                                                    <span class="grid-nav-content">Membership Plans</span>
-                                                </a>
-                                                <a href="revenue-report.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="fas fa-file-alt"></i></div>
-                                                    <span class="grid-nav-content">Reports</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Tools Section -->
-                                    <div class="dropdown-col border-start border-primary border-opacity-50">
-                                        <h4 class="dropdown-header">Quick Tools</h4>
-                                        <a href="attendance.html" class="dropdown-item">
-                                            <i
-                                                class="mdi mdi-account-check-outline align-middle dropdown-bullet me-2"></i>
-                                            <span class="dropdown-content">Attendance</span>
-                                        </a>
-                                        <a href="diet-plan.html" class="dropdown-item">
-                                            <i class="mdi mdi-food-apple-outline align-middle dropdown-bullet me-2"></i>
-                                            <span class="dropdown-content">Diet Plans</span>
-                                        </a>
-                                       
-                                        <a href="manage-staff.html" class="dropdown-item">
-                                            <i class="mdi mdi-account-tie align-middle dropdown-bullet me-2"></i>
-                                            <span class="dropdown-content">Staff Management</span>
-                                        </a>
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+              <div class="dropdown d-none d-lg-block">
+                <button
+                  type="button"
+                  class="btn btn-primary btn-sm fs-14"
+                  data-bs-toggle="dropdown"
+                  aria-haspopup="false"
+                  aria-expanded="false"
+                >
+                  Features
+                  <i class="mdi mdi-chevron-down align-middle"></i>
+                </button>
+                <div
+                  class="dropdown-menu dropdown-menu-start dropdown-menu-lg-widest dropdown-menu-widest dropdown-menu-animated bg-primary-subtle overflow-hidden"
+                >
+                  <div class="dropdown-row justify-content-center">
+                    <!-- Original Image (Unchanged) -->
+                    <div class="p-2 menu-image">
+                      <img
+                        src="assets/images/mega-menu.png"
+                        alt="mega-menu image"
+                        class="img-fluid"
+                        style="height: 200px"
+                      />
                     </div>
 
-                   <div class="d-flex align-items-center gap-2">
-             
+                    <!-- Gym Welcome Section -->
+                    <div class="dropdown-col">
+                      <h2 class="">Welcome to Clivax Gym!</h2>
+                      <p class="text-muted mb-0">
+                        Track members, manage plans, monitor trainers, and
+                        streamline gym operations with our digital gym
+                        dashboard.
+                      </p>
+                      <div class="mt-3">
+                        <a href="auth-login.html" class="btn btn-dark btn-wider"
+                          >Admin Login</a
+                        >
+                      </div>
+                    </div>
 
+                    <!-- Features Section -->
+                    <div
+                      class="dropdown-col border-start border-primary border-opacity-50"
+                    >
+                      <h4 class="dropdown-header">Gym Features</h4>
+                      <div class="grid-nav grid-nav-action">
+                        <div class="grid-nav-row">
+                          <a href="index.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-chart-line"></i>
+                            </div>
+                            <span class="grid-nav-content">Dashboard</span>
+                          </a>
+                          <a href="show-all-member.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-user-friends"></i>
+                            </div>
+                            <span class="grid-nav-content">Members</span>
+                          </a>
+                          <a href="renewals.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-redo-alt"></i>
+                            </div>
+                            <span class="grid-nav-content">Renewals</span>
+                          </a>
+                        </div>
+                        <div class="grid-nav-row">
+                          <a href="trainer-profile.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-dumbbell"></i>
+                            </div>
+                            <span class="grid-nav-content">Trainers</span>
+                          </a>
+                          <a href="view-plan.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-id-card-alt"></i>
+                            </div>
+                            <span class="grid-nav-content"
+                              >Membership Plans</span
+                            >
+                          </a>
+                          <a href="revenue-report.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-file-alt"></i>
+                            </div>
+                            <span class="grid-nav-content">Reports</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Tools Section -->
+                    <div
+                      class="dropdown-col border-start border-primary border-opacity-50"
+                    >
+                      <h4 class="dropdown-header">Quick Tools</h4>
+                      <a href="attendance.html" class="dropdown-item">
+                        <i
+                          class="mdi mdi-account-check-outline align-middle dropdown-bullet me-2"
+                        ></i>
+                        <span class="dropdown-content">Attendance</span>
+                      </a>
+                      <a href="diet-plan.html" class="dropdown-item">
+                        <i
+                          class="mdi mdi-food-apple-outline align-middle dropdown-bullet me-2"
+                        ></i>
+                        <span class="dropdown-content">Diet Plans</span>
+                      </a>
+
+                      <a href="manage-staff.html" class="dropdown-item">
+                        <i
+                          class="mdi mdi-account-tie align-middle dropdown-bullet me-2"
+                        ></i>
+                        <span class="dropdown-content">Staff Management</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-center gap-2">
               <!-- Start Notification -->
               <div class="dropdown d-inline-block">
                 <button
@@ -425,7 +501,9 @@
                             <div class="grid-nav-icon">
                               <i class="fas fa-dumbbell"></i>
                             </div>
-                            <span class="grid-nav-content">Trainer Profile</span>
+                            <span class="grid-nav-content"
+                              >Trainer Profile</span
+                            >
                           </a>
                           <a href="#" class="grid-nav-item">
                             <div class="grid-nav-icon">
@@ -470,570 +548,833 @@
               </div>
               <!-- End Profile -->
             </div>
-                </div>
-                <!-- End menu -->
-            </div>
-        </header>
-        <!-- End topbar -->
-       
-       
-        <!-- ========== Left Sidebar Start ========== -->
-        <div class="sidebar-left">
-
-            <div data-simplebar class="h-100">
-
-                <!--- Sidebar-menu -->
-                <div id="sidebar-menu">
-                    <!-- Left Menu Start -->
-                    <ul class="left-menu list-unstyled" id="side-menu">
-                        <li>
-                            <a href="index.html" class="">
-                                <i class="fas fa-desktop"></i>
-                                <span>Dashboard</span>
-                            </a>
-                        </li>
-
-                        <!-- <li class="menu-title">Elements</li> -->
-
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow ">
-                                <i class="fa fa-users"></i>
-                                <span>Member Management</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="add-new-member.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>Add New Member</a>
-                                </li>
-                                <li><a href="show-all-member.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>All Members</a>
-                                </li>
-                            </ul>
-                        </li>
-
-
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow ">
-                                <i class="fa fa-id-card-alt"></i>
-                                <span>Membership Plans</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li>
-                                    <a href="add-new-plan.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
-                                        Add New
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="view-plan.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
-                                        View Plan
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="manage-plan.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
-                                        Manage Plan
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow">
-                                <i class="fa fa-calendar-check"></i>
-                                <span>Session Management</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li>
-                                    <a href="live-session.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>Live Session
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="offline-session.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>Offline Session
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-
-
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow ">
-                                <i class="fa fa-user-tie"></i>
-                                <span>Staff Management</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                
-                                <li><a href="add-new-staff.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i> Add New</a>
-                                </li>
-                                <li><a href="manage-staff.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i> Manage Staff</a>
-                                </li>
-                                <li><a href="show-all-staff.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i> All Staff Members</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow ">
-                                <i class="fa fa-wallet"></i>
-                                <span>Account Management</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-
-                                <!-- Show All -->
-                                <li>
-                                    <a href="add-new-account.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>Add New Account
-                                    </a>
-                                </li>
-
-                                <!-- Show All -->
-                                <li>
-                                    <a href="show-all-account.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i> All Accounts
-                                    </a>
-                                </li>
-
-                                <!-- Member Invoices with dropdown -->
-                                <li>
-                                    <a href="create-invoice.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i> Create Invoices
-                                    </a>
-                                </li>
-
-                                <!-- Payment History -->
-                                <li>
-                                    <a href="pyments.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i> Payment History
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="renewals.html">
-                                <i class="fa fa-sync-alt"></i>
-                                <span>Renewals</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="attendance.html">
-                                <i class="fa fa-calendar-check"></i>
-                                <span>Attendance</span>
-                            </a>
-                        </li>
-
-                        <li>
-                           <a href="javascript: void(0);" class="has-arrow">
-                              <i class="fa fa-chart-pie"></i>
-                              <span>Reports</span>
-                          </a>
-                            <ul class="sub-menu" aria-expanded="false">
-
-                                <!-- GYM-RELATED REPORTS -->
-                                <li>
-                                    <a href="membership-report.html">
-                                        <i class="mdi mdi-account-group-outline align-middle"></i> Membership Report
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="revenue-report.html">
-                                        <i class="mdi mdi-currency-inr align-middle"></i> Revenue Report
-                                    </a>
-                                </li>
-                              
-
-                                <!-- Existing Chart Pages -->
-
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="settings.html">
-                                <i class="fas fa-cog"></i>
-                                <span>Settings</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="auth-login.html">
-                                <i class="fas fa-sign-out-alt"></i>
-                                <span>Logout</span>
-                            </a>
-                        </li>
-
-
-                    </ul>
-                </div>
-                <!-- Sidebar -->
-            </div>
+          </div>
+          <!-- End menu -->
         </div>
-        <!-- Left Sidebar End -->
+      </header>
+      <!-- End topbar -->
 
-        <!-- ============================================================== -->
-        <!-- Start right Content here -->
-        <!-- ============================================================== -->
-        <div class="main-content">
+      <!-- ========== Left Sidebar Start ========== -->
+      <div class="sidebar-left">
+        <div data-simplebar class="h-100">
+          <!--- Sidebar-menu -->
+          <div id="sidebar-menu">
+            <!-- Left Menu Start -->
+            <ul class="left-menu list-unstyled" id="side-menu">
+              <li>
+                <a href="index.html" class="">
+                  <i class="fas fa-desktop"></i>
+                  <span>Dashboard</span>
+                </a>
+              </li>
 
-            <div class="page-content">
-                <div class="container-fluid">
+              <!-- <li class="menu-title">Elements</li> -->
 
-                    <!-- start page title -->
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0">Show All Staff</h4>
+              <li>
+                <a href="javascript: void(0);" class="has-arrow">
+                  <i class="fa fa-users"></i>
+                  <span>Member Management</span>
+                </a>
+                <ul class="sub-menu" aria-expanded="false">
+                  <li>
+                    <a href="add-new-member.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i
+                      >Add New Member</a
+                    >
+                  </li>
+                  <li>
+                    <a href="show-all-member.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i
+                      >All Members</a
+                    >
+                  </li>
+                </ul>
+              </li>
 
-                                <div class="page-title-right">
-                                    <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                        <li class="breadcrumb-item active">Show All Staff</li>
-                                    </ol>
-                                </div>
+              <li>
+                <a href="javascript: void(0);" class="has-arrow">
+                  <i class="fa fa-id-card-alt"></i>
+                  <span>Membership Plans</span>
+                </a>
+                <ul class="sub-menu" aria-expanded="false">
+                  <li>
+                    <a href="add-new-plan.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      Add New
+                    </a>
+                  </li>
+                  <li>
+                    <a href="view-plan.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      View Plan
+                    </a>
+                  </li>
+                  <li>
+                    <a href="manage-plan.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      Manage Plan
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="javascript: void(0);" class="has-arrow">
+                  <i class="fa fa-calendar-check"></i>
+                  <span>Session Management</span>
+                </a>
+                <ul class="sub-menu" aria-expanded="false">
+                  <li>
+                    <a href="live-session.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i
+                      >Live Session
+                    </a>
+                  </li>
+                  <li>
+                    <a href="offline-session.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i
+                      >Offline Session
+                    </a>
+                  </li>
+                </ul>
+              </li>
 
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end page title -->
+              <li>
+                <a href="javascript: void(0);" class="has-arrow">
+                  <i class="fa fa-user-tie"></i>
+                  <span>Staff Management</span>
+                </a>
+                <ul class="sub-menu" aria-expanded="false">
+                  <li>
+                    <a href="add-new-staff.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      Add New</a
+                    >
+                  </li>
+                  <li>
+                    <a href="manage-staff.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      Manage Staff</a
+                    >
+                  </li>
+                  <li>
+                    <a href="show-all-staff.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      All Staff Members</a
+                    >
+                  </li>
+                </ul>
+              </li>
 
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="card-title">Show All Staff</h4>
-                                </div>
-                                <div class="card-body">
-                                    <table id="datatable-col-visiblility"
-                                        class="table table-hover table-bordered table-striped dt-responsive nowrap"
-                                        style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                        <thead>
-                                            <tr>
-                                                <th>Staff Id</th>
-                                                <th>Profile</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Contact</th>
-                                                <th>Email</th>
-                                               
-                                                <th>Job Post</th>
-                                                
-                                                <th>Action</th>
+              <li>
+                <a href="javascript: void(0);" class="has-arrow">
+                  <i class="fa fa-wallet"></i>
+                  <span>Account Management</span>
+                </a>
+                <ul class="sub-menu" aria-expanded="false">
+                  <!-- Show All -->
+                  <li>
+                    <a href="add-new-account.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i
+                      >Add New Account
+                    </a>
+                  </li>
 
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>GYM01</td>
-                                                <td><img src="assets/images/staff/111.jpeg" alt="Rahul Sharma"
-                                                        class="rounded-circle" width="50" height="50"
-                                                        style="cursor:pointer" onclick="openProfileModal(this)"
-                                                        data-id="GYM01" data-img="assets/images/staff/111.jpeg"
-                                                        data-name="Rahul Sharma" data-contact="9876543210"
-                                                        data-email="rahul.sharma@gymfit.in" data-age="29"
-                                                        data-job="Personal Trainer" data-shift="6:00 AM – 2:00 PM">
-                                                </td>
-                                                <td>Rahul</td>
-                                                <td>Sharma</td>
-                                                <td>9876543210</td>
-                                                <td> rahul.sharma@gymfit.in</td>
-                                             
-                                                <td>Personal Trainer</td>
-                                                
-                                                <td>
+                  <!-- Show All -->
+                  <li>
+                    <a href="show-all-account.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      All Accounts
+                    </a>
+                  </li>
 
-                                                    <button class="btn btn-info btn-sm me-1">Edit</button>
-                                                    <button class="btn btn-danger btn-sm">Delete</button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>GYM02</td>
-                                                <td><img src="assets/images/staff/gym front desk executive.webp"
-                                                        alt="Pooja Nair" class="rounded-circle" width="50" height="50">
-                                                </td>
-                                                <td>Pooja</td>
-                                                <td>Nair</td>
-                                                <td>9123456789 </td>
-                                                <td> pooja.nair@gymfit.in</td>
-                                               
-                                                <td>Front Desk Executive</td>
-                                               
-                                                <td>
-                                                    <button class="btn btn-info btn-sm me-1">Edit</button>
-                                                    <button class="btn btn-danger btn-sm">Delete</button>
-                                                </td>
+                  <!-- Member Invoices with dropdown -->
+                  <li>
+                    <a href="create-invoice.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      Create Invoices
+                    </a>
+                  </li>
 
-                                            </tr>
-                                            <tr>
-                                                <td>GYM03</td>
-                                                <td><img src="assets/images/staff/fd3f9bdf-5aa3-4545-a23e-24f4c8ef1b08.jpg"
-                                                        alt="Vikram Mehta" class="rounded-circle" width="50"
-                                                        height="50"></td>
-                                                <td>Vikram </td>
-                                                <td> Mehta</td>
-                                                <td>9988776655</td>
-                                                <td>vikram.mehta@gymfit.in</td>
-                                              
-                                                <td>Zumba Instructor</td>
-                                               
-                                                <td>
-                                                    <button class="btn btn-info btn-sm me-1">Edit</button>
-                                                    <button class="btn btn-danger btn-sm">Delete</button>
-                                                </td>
+                  <!-- Payment History -->
+                  <li>
+                    <a href="pyments.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      Payment History
+                    </a>
+                  </li>
+                </ul>
+              </li>
 
-                                            </tr>
-                                            <tr>
-                                                <td>GYM04</td>
-                                                <td><img src="assets/images/staff/confident-senior-indian-female-fitness-train.jpg"
-                                                        alt="Neha Kapoor" class="rounded-circle" width="50" height="50">
-                                                </td>
-                                                <td>Neha </td>
-                                                <td>Kapoor</td>
-                                                <td>9012345678</td>
-                                                <td>neha.kapoor@gymfit.in</td>
-                                               
-                                                <td>Nutritionist</td>
-                                              
-                                                <td>
-                                                    <button class="btn btn-info btn-sm me-1">Edit</button>
-                                                    <button class="btn btn-danger btn-sm">Delete</button>
-                                                </td>
+              <li>
+                <a href="renewals.html">
+                  <i class="fa fa-sync-alt"></i>
+                  <span>Renewals</span>
+                </a>
+              </li>
 
-                                            </tr>
-                                            <tr>
-                                                <td>GYM05</td>
-                                                <td><img src="assets/images/staff/6524e5ae-fc0e-41a1-bc74-edf38cabfa0d.jpg"
-                                                        alt="Amit Verma" class="rounded-circle" width="50" height="50">
-                                                </td>
-                                                <td>Amit </td>
-                                                <td>Verma</td>
-                                                <td>8899776655 </td>
-                                                <td>amit.verma@gymfit.in</td>
-                                               
-                                                <td>Strength Coach</td>
-                                               
-                                                <td>
-                                                    <button class="btn btn-info btn-sm me-1">Edit</button>
-                                                    <button class="btn btn-danger btn-sm">Delete</button>
-                                                </td>
+              <li>
+                <a href="attendance.html">
+                  <i class="fa fa-calendar-check"></i>
+                  <span>Attendance</span>
+                </a>
+              </li>
 
-                                            </tr>
-                                            <tr>
-                                                <td>GYM06</td>
-                                                <td><img src="assets/images/staff/gym receptionist.jpg"
-                                                        alt="Simran Kaur" class="rounded-circle" width="50" height="50">
-                                                </td>
-                                                <td>Simran </td>
-                                                <td>Kaur</td>
-                                                <td>9765432109 </td>
-                                                <td> simran.kaur@gymfit.in</td>
-                                               
-                                                <td>Receptionist</td>
-                                              
-                                                <td>
-                                                    <button class="btn btn-info btn-sm me-1">Edit</button>
-                                                    <button class="btn btn-danger btn-sm">Delete</button>
-                                                </td>
+              <li>
+                <a href="javascript: void(0);" class="has-arrow">
+                  <i class="fa fa-chart-pie"></i>
+                  <span>Reports</span>
+                </a>
+                <ul class="sub-menu" aria-expanded="false">
+                  <!-- GYM-RELATED REPORTS -->
+                  <li>
+                    <a href="membership-report.html">
+                      <i class="mdi mdi-account-group-outline align-middle"></i>
+                      Membership Report
+                    </a>
+                  </li>
+                  <li>
+                    <a href="revenue-report.html">
+                      <i class="mdi mdi-currency-inr align-middle"></i> Revenue
+                      Report
+                    </a>
+                  </li>
 
-                                            </tr>
-                                            <tr>
-                                                <td>GYM07</td>
-                                                <td><img src="assets/images/staff/98c189a9-7430-401c-a4b3-4cf16851e7fd.jpg"
-                                                        alt="Manish Gupta" class="rounded-circle" width="50"
-                                                        height="50"></td>
-                                                <td>Manish </td>
-                                                <td>Gupta</td>
-                                                <td>9345678901</td>
-                                                <td>manish.gupta@gymfit.in</td>
-                                               
-                                                <td>Floor Manager</td>
-                                               
-                                                <td>
-                                                    <button class="btn btn-info btn-sm me-1">Edit</button>
-                                                    <button class="btn btn-danger btn-sm">Delete</button>
-                                                </td>
+                  <!-- Existing Chart Pages -->
+                </ul>
+              </li>
 
-                                            </tr>
-                                            <tr>
-                                                <td>GYM08</td>
-                                                <td><img src="assets/images/staff/yoga instructoir.jpg"
-                                                        alt="Shruti Desai" class="rounded-circle" width="50"
-                                                        height="50"></td>
-                                                <td>Shruti </td>
-                                                <td>Desai</td>
-                                                <td> 9812345678 </td>
-                                                <td>shruti.desai@gymfit.in</td>
-                                              
-                                                <td>Yoga Instructor</td>
-                                              
-                                                <td>
-                                                    <button class="btn btn-info btn-sm me-1">Edit</button>
-                                                    <button class="btn btn-danger btn-sm">Delete</button>
-                                                </td>
-
-                                            </tr>
-                                            <tr>
-                                                <td>GYM09</td>
-                                                <td><img src="assets/images/staff/download (11).jpg" alt="Karan Joshi"
-                                                        class="rounded-circle" width="50" height="50"></td>
-                                                <td>Karan </td>
-                                                <td>Joshi</td>
-                                                <td>9090909090 </td>
-                                                <td>karan.joshi@gymfit.in</td>
-                                              
-                                                <td>CrossFit Coach</td>
-                                              
-                                                <td>
-                                                    <button class="btn btn-info btn-sm me-1">Edit</button>
-                                                    <button class="btn btn-danger btn-sm">Delete</button>
-                                                </td>
-
-                                            </tr>
-                                            <tr>
-                                                <td>GYM10</td>
-                                                <td><img src="assets/images/staff/gym customer support.webp"
-                                                        alt="Ankita Mishra" class="rounded-circle" width="50"
-                                                        height="50"></td>
-                                                <td>Ankita</td>
-                                                <td>Sharma </td>
-
-                                                <td>9356789012</td>
-                                                <td>ankita.Sharma@gymfit.in</td>
-                                              
-                                                <td>Customer Support</td>
-                                               
-                                                <td>
-
-                                                    <button class="btn btn-info btn-sm me-1">Edit</button>
-                                                    <button class="btn btn-danger btn-sm">Delete</button>
-                                                </td>
-
-
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div> <!-- end col -->
-                    </div>
-
-                    <!-- end row -->
-                </div>
-                <!-- container-fluid -->
-            </div>
-
-            <!-- a -->
-
-
-            <!-- Popup -->
-            <!-- Profile Info Modal -->
-            <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel"
-                aria-hidden="true" style="padding-top: 18px;">
-                <div class="modal-dialog modal-dialog-centered" style="width: 700px; max-width: 100%;">
-                    <div class="modal-content">
-                        <div class="modal-header bg-primary text-white">
-                            <h5 class="modal-title" id="profileModalLabel">Staff Profile</h5>
-                            <button type="button" class="btn-close bg-white" data-bs-dismiss="modal"
-                                aria-label="Close"></button>
-                        </div>
-
-                        <div class="modal-body">
-                            <div class="row align-items-start">
-                                <!-- Profile Image on Left -->
-                                <div class="col-md-4 text-center mb-3">
-                                    <img id="modalProfileImage" src="" alt="Profile Image"
-                                        class="img-thumbnail rounded-circle" width="140" height="140">
-                                </div>
-
-                                <!-- Staff Info in Two Columns -->
-                                <!-- Staff Info in Two Columns with Label and Value Side by Side -->
-                                <div class="col-md-8">
-                                    <div class="row">
-                                        <div class="col-sm-6 mb-2 d-flex">
-                                            <strong class="me-2">Staff ID:</strong>
-                                            <span id="modalStaffId"></span>
-                                        </div>
-                                        <div class="col-sm-6 mb-2 d-flex">
-                                            <strong class="me-2">Name:</strong>
-                                            <span id="modalName"></span>
-                                        </div>
-                                        <div class="col-sm-6 mb-2 d-flex">
-                                            <strong class="me-2">Contact:</strong>
-                                            <span id="modalContact"></span>
-                                        </div>
-                                        <div class="col-sm-6 mb-2 d-flex">
-                                            <strong class="me-2">Email:</strong>
-                                            <span id="modalEmail"></span>
-                                        </div>
-                                        <div class="col-sm-6 mb-2 d-flex">
-                                            <strong class="me-2">Age:</strong>
-                                            <span id="modalAge"></span>
-                                        </div>
-                                        <div class="col-sm-6 mb-2 d-flex">
-                                            <strong class="me-2">Job Post:</strong>
-                                            <span id="modalJobPost"></span>
-                                        </div>
-                                        <div class="col-sm-6 mb-2 d-flex">
-                                            <strong class="me-2">Shift Time:</strong>
-                                            <span id="modalShiftTime"></span>
-                                        </div>
-                                        <button class="btn btn-outline-success"
-                                            style="text-align: center ;width: 80px;margin-top: 30px;margin-left: 80px;">Print
-                                            Id</button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <!-- b -->
-            <!-- popup end here -->
-
-
-            <!-- End Page-content -->
-            <footer class="footer">
-                <div class="container-fluid">
-                    <div class="row align-items-center">
-                        <div class="col-sm-6">
-                            <script>document.write(new Date().getFullYear())</script> © Clivax Gym.
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="text-sm-end d-none d-sm-block">
-                                Designed & Developed <i class="mdi mdi-heart text-danger"></i> by <a
-                                    href="https://kavyainfoweb.com/" target="_blank" class="text-muted">Kavya Infoweb
-                                    Pvt. Ltd.</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-
+              <li>
+                <a href="settings.html">
+                  <i class="fas fa-cog"></i>
+                  <span>Settings</span>
+                </a>
+              </li>
+              <li>
+                <a href="auth-login.html">
+                  <i class="fas fa-sign-out-alt"></i>
+                  <span>Logout</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- Sidebar -->
         </div>
-        <!-- end main content-->
+      </div>
+      <!-- Left Sidebar End -->
 
+      <!-- ============================================================== -->
+      <!-- Start right Content here -->
+      <!-- ============================================================== -->
+      <div class="main-content">
+        <div class="page-content">
+          <div class="container-fluid">
+            <!-- start page title -->
+            <div class="row">
+              <div class="col-12">
+                <div
+                  class="page-title-box d-flex align-items-center justify-content-between"
+                >
+                  <h4 class="mb-sm-0">Show All Staff</h4>
+
+                  <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                      <li class="breadcrumb-item">
+                        <a href="index.html">Home</a>
+                      </li>
+                      <li class="breadcrumb-item active">Show All Staff</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end page title -->
+
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="card-title">Show All Staff</h4>
+                  </div>
+                  <div class="card-body">
+                    <table
+                      id="datatable-col-visiblility"
+                      class="table table-hover table-bordered table-striped dt-responsive nowrap"
+                      style="
+                        border-collapse: collapse;
+                        border-spacing: 0;
+                        width: 100%;
+                      "
+                    >
+                      <thead>
+                        <tr>
+                          <th>Staff Id</th>
+                          <th>Profile</th>
+                          <th>First Name</th>
+                          <th>Last Name</th>
+                          <th>Contact</th>
+                          <th>Email</th>
+
+                          <th>Job Post</th>
+
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>GYM01</td>
+                          <td>
+                            <img
+                              src="assets/images/staff/111.jpeg"
+                              alt="Rahul Sharma"
+                              class="rounded-circle"
+                              width="50"
+                              height="50"
+                              style="cursor: pointer"
+                              onclick="openProfileModal(this)"
+                              data-id="GYM01"
+                              data-img="assets/images/staff/111.jpeg"
+                              data-name="Rahul Sharma"
+                              data-contact="9876543210"
+                              data-email="rahul.sharma@gymfit.in"
+                              data-age="29"
+                              data-job="Personal Trainer"
+                              data-shift="6:00 AM – 2:00 PM"
+                            />
+                          </td>
+                          <td>Rahul</td>
+                          <td>Sharma</td>
+                          <td>9876543210</td>
+                          <td>rahul.sharma@gymfit.in</td>
+
+                          <td>Personal Trainer</td>
+
+                          <td>
+                            <button class="btn btn-info btn-sm me-1">
+                              <a
+                                href="manage-staff.html"
+                                class="text-white"
+                                onclick='setEditStaffData({
+     staffId: "GYM01",
+     firstName: "Rahul",
+     lastName: "Sharma",
+     email: "rahul.sharma@gymfit.in",
+     contact: "9876543210",
+     jobPost: "Personal Trainer",
+     joiningDate: "2023-01-01"
+   })'
+                                >Edit</a
+                              >
+                            </button>
+                            <button class="btn btn-danger btn-sm">
+                              Delete
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>GYM02</td>
+                          <td>
+                            <img
+                              src="assets/images/staff/gym front desk executive.webp"
+                              alt="Pooja Nair"
+                              class="rounded-circle"
+                              width="50"
+                              height="50"
+                            />
+                          </td>
+                          <td>Pooja</td>
+                          <td>Nair</td>
+                          <td>9123456789</td>
+                          <td>pooja.nair@gymfit.in</td>
+
+                          <td>Front Desk Executive</td>
+
+                          <td>
+                            <button class="btn btn-info btn-sm me-1">
+                              <a
+                                href="manage-staff.html"
+                                class="text-white"
+                                onclick='setEditStaffData({
+     staffId: "GYM02",
+     firstName: "Pooja",
+     lastName: "Nair",
+     email: "pooja.nair@gymfit.in",
+     contact: "9123456789",
+     jobPost: "Front Desk Executive",
+     joiningDate: "2023-01-01"
+   })'
+                                >Edit</a
+                              >
+                            </button>
+                            <button class="btn btn-danger btn-sm">
+                              Delete
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>GYM03</td>
+                          <td>
+                            <img
+                              src="assets/images/staff/fd3f9bdf-5aa3-4545-a23e-24f4c8ef1b08.jpg"
+                              alt="Vikram Mehta"
+                              class="rounded-circle"
+                              width="50"
+                              height="50"
+                            />
+                          </td>
+                          <td>Vikram</td>
+                          <td>Mehta</td>
+                          <td>9988776655</td>
+                          <td>vikram.mehta@gymfit.in</td>
+
+                          <td>Zumba Instructor</td>
+
+                          <td>
+                            <button class="btn btn-info btn-sm me-1">
+                              <a
+                                href="manage-staff.html"
+                                class="text-white"
+                                onclick='setEditStaffData({
+     staffId: "GYM03",
+     firstName: "Vikram",
+     lastName: "Mehta",
+     email: "vikram.mehta@gymfit.in",
+     contact: "9988776655",
+     jobPost: "Zumba Instructor",
+     joiningDate: "2023-01-01"
+   })'
+                                >Edit</a
+                              >
+                            </button>
+                            <button class="btn btn-danger btn-sm">
+                              Delete
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>GYM04</td>
+                          <td>
+                            <img
+                              src="assets/images/staff/confident-senior-indian-female-fitness-train.jpg"
+                              alt="Neha Kapoor"
+                              class="rounded-circle"
+                              width="50"
+                              height="50"
+                            />
+                          </td>
+                          <td>Neha</td>
+                          <td>Kapoor</td>
+                          <td>9012345678</td>
+                          <td>neha.kapoor@gymfit.in</td>
+
+                          <td>Nutritionist</td>
+
+                          <td>
+                            <button class="btn btn-info btn-sm me-1">
+                              <a
+                                href="manage-staff.html"
+                                class="text-white"
+                                onclick='setEditStaffData({
+     staffId: "GYM04",
+     firstName: "Neha",
+     lastName: "Kapoor",
+     email: "neha.kapoor@gymfit.in",
+     contact: "9012345678",
+     jobPost: "Nutritionist",
+     joiningDate: "2023-01-01"
+   })'
+                                >Edit</a
+                              >
+                            </button>
+                            <button class="btn btn-danger btn-sm">
+                              Delete
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>GYM05</td>
+                          <td>
+                            <img
+                              src="assets/images/staff/6524e5ae-fc0e-41a1-bc74-edf38cabfa0d.jpg"
+                              alt="Amit Verma"
+                              class="rounded-circle"
+                              width="50"
+                              height="50"
+                            />
+                          </td>
+                          <td>Amit</td>
+                          <td>Verma</td>
+                          <td>8899776655</td>
+                          <td>amit.verma@gymfit.in</td>
+
+                          <td>Strength Coach</td>
+
+                          <td>
+                            <button class="btn btn-info btn-sm me-1">
+                              <a
+                                href="manage-staff.html"
+                                class="text-white"
+                                onclick='setEditStaffData({
+     staffId: "GYM05",
+     firstName: "Amit",
+     lastName: "Verma",
+     email: "amit.verma@gymfit.in",
+     contact: "8899776655",
+     jobPost: "Strength Coach",
+     joiningDate: "2023-01-01"
+   })'
+                                >Edit</a
+                              >
+                            </button>
+                            <button class="btn btn-danger btn-sm">
+                              Delete
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>GYM06</td>
+                          <td>
+                            <img
+                              src="assets/images/staff/gym receptionist.jpg"
+                              alt="Simran Kaur"
+                              class="rounded-circle"
+                              width="50"
+                              height="50"
+                            />
+                          </td>
+                          <td>Simran</td>
+                          <td>Kaur</td>
+                          <td>9765432109</td>
+                          <td>simran.kaur@gymfit.in</td>
+
+                          <td>Receptionist</td>
+
+                          <td>
+                            <button class="btn btn-info btn-sm me-1">
+                              <a href="manage-staff.html" class="text-white"
+                                >Edit</a
+                              >
+                            </button>
+                            <button class="btn btn-danger btn-sm">
+                              Delete
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>GYM07</td>
+                          <td>
+                            <img
+                              src="assets/images/staff/98c189a9-7430-401c-a4b3-4cf16851e7fd.jpg"
+                              alt="Manish Gupta"
+                              class="rounded-circle"
+                              width="50"
+                              height="50"
+                            />
+                          </td>
+                          <td>Manish</td>
+                          <td>Gupta</td>
+                          <td>9345678901</td>
+                          <td>manish.gupta@gymfit.in</td>
+
+                          <td>Floor Manager</td>
+
+                          <td>
+                            <button class="btn btn-info btn-sm me-1">
+                              <a
+                                href="manage-staff.html"
+                                class="text-white"
+                                onclick='setEditStaffData({
+     staffId: "GYM07",
+     firstName: "Manish",
+     lastName: "gupta",
+     email: "manish.gupta@gymfit.in",
+     contact: "9345678901",
+     jobPost: "Floor Manager",
+     joiningDate: "2023-01-01"
+   })'
+                                >Edit</a
+                              >
+                            </button>
+                            <button class="btn btn-danger btn-sm">
+                              Delete
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>GYM08</td>
+                          <td>
+                            <img
+                              src="assets/images/staff/yoga instructoir.jpg"
+                              alt="Shruti Desai"
+                              class="rounded-circle"
+                              width="50"
+                              height="50"
+                            />
+                          </td>
+                          <td>Shruti</td>
+                          <td>Desai</td>
+                          <td>9812345678</td>
+                          <td>shruti.desai@gymfit.in</td>
+
+                          <td>Yoga Instructor</td>
+
+                          <td>
+                            <button class="btn btn-info btn-sm me-1">
+                              <a
+                                href="manage-staff.html"
+                                class="text-white"
+                                onclick='setEditStaffData({
+     staffId: "GYM08",
+     firstName: "Shruti",
+     lastName: "Desai",
+     email: "shruti.desai@gymfit.in",
+     contact: "9812345678",
+     jobPost: "Yoga Instructor",
+     joiningDate: "2023-01-01"
+   })'
+                                >Edit</a
+                              >
+                            </button>
+                            <button class="btn btn-danger btn-sm">
+                              Delete
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>GYM09</td>
+                          <td>
+                            <img
+                              src="assets/images/staff/download (11).jpg"
+                              alt="Karan Joshi"
+                              class="rounded-circle"
+                              width="50"
+                              height="50"
+                            />
+                          </td>
+                          <td>Karan</td>
+                          <td>Joshi</td>
+                          <td>9090909090</td>
+                          <td>karan.joshi@gymfit.in</td>
+
+                          <td>CrossFit Coach</td>
+
+                          <td>
+                            <button class="btn btn-info btn-sm me-1">
+                              <a
+                                href="manage-staff.html"
+                                class="text-white"
+                                onclick='setEditStaffData({
+     staffId: "GYM09",
+     firstName: "Karan",
+     lastName: "Joshi",
+     email: "karan.joshi@gymfit.in",
+     contact: "9090909090",
+     jobPost: "CrossFit Coach",
+     joiningDate: "2023-01-01"
+   })'
+                                >Edit</a
+                              >
+                            </button>
+                            <button class="btn btn-danger btn-sm">
+                              Delete
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>GYM10</td>
+                          <td>
+                            <img
+                              src="assets/images/staff/gym customer support.webp"
+                              alt="Ankita Mishra"
+                              class="rounded-circle"
+                              width="50"
+                              height="50"
+                            />
+                          </td>
+                          <td>Ankita</td>
+                          <td>Sharma</td>
+
+                          <td>9356789012</td>
+                          <td>ankita.Sharma@gymfit.in</td>
+
+                          <td>Customer Support</td>
+
+                          <td>
+                            <button class="btn btn-info btn-sm me-1">
+                              <a
+                                href="manage-staff.html"
+                                class="text-white"
+                                onclick='setEditStaffData({
+     staffId: "GYM10",
+     firstName: "Ankita ",
+     lastName: "Sharma",
+     email: "ankita.Sharma@gymfit.in",
+     contact: "9356789012",
+     jobPost: "Customer Support",
+     joiningDate: "2023-01-01"
+   })'
+                                >Edit</a
+                              >
+                            </button>
+                            <button class="btn btn-danger btn-sm">
+                              Delete
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- end col -->
+            </div>
+
+            <!-- end row -->
+          </div>
+          <!-- container-fluid -->
+        </div>
+
+        <!-- a -->
+
+        <!-- Popup -->
+        <!-- Profile Info Modal -->
+        <div
+          class="modal fade"
+          id="profileModal"
+          tabindex="-1"
+          aria-labelledby="profileModalLabel"
+          aria-hidden="true"
+          style="padding-top: 18px"
+        >
+          <div
+            class="modal-dialog modal-dialog-centered"
+            style="width: 700px; max-width: 100%"
+          >
+            <div class="modal-content">
+              <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="profileModalLabel">
+                  Staff Profile
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close bg-white"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+
+              <div class="modal-body">
+                <div class="row align-items-start">
+                  <!-- Profile Image on Left -->
+                  <div class="col-md-4 text-center mb-3">
+                    <img
+                      id="modalProfileImage"
+                      src=""
+                      alt="Profile Image"
+                      class="img-thumbnail rounded-circle"
+                      width="140"
+                      height="140"
+                    />
+                  </div>
+
+                  <!-- Staff Info in Two Columns -->
+                  <!-- Staff Info in Two Columns with Label and Value Side by Side -->
+                  <div class="col-md-8">
+                    <div class="row">
+                      <div class="col-sm-6 mb-2 d-flex">
+                        <strong class="me-2">Staff ID:</strong>
+                        <span id="modalStaffId"></span>
+                      </div>
+                      <div class="col-sm-6 mb-2 d-flex">
+                        <strong class="me-2">Name:</strong>
+                        <span id="modalName"></span>
+                      </div>
+                      <div class="col-sm-6 mb-2 d-flex">
+                        <strong class="me-2">Contact:</strong>
+                        <span id="modalContact"></span>
+                      </div>
+                      <div class="col-sm-6 mb-2 d-flex">
+                        <strong class="me-2">Email:</strong>
+                        <span id="modalEmail"></span>
+                      </div>
+                      <div class="col-sm-6 mb-2 d-flex">
+                        <strong class="me-2">Age:</strong>
+                        <span id="modalAge"></span>
+                      </div>
+                      <div class="col-sm-6 mb-2 d-flex">
+                        <strong class="me-2">Job Post:</strong>
+                        <span id="modalJobPost"></span>
+                      </div>
+                      <div class="col-sm-6 mb-2 d-flex">
+                        <strong class="me-2">Shift Time:</strong>
+                        <span id="modalShiftTime"></span>
+                      </div>
+                      <button
+                        class="btn btn-outline-success"
+                        style="
+                          text-align: center;
+                          width: 80px;
+                          margin-top: 30px;
+                          margin-left: 80px;
+                        "
+                      >
+                        Print Id
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- b -->
+        <!-- popup end here -->
+
+        <!-- End Page-content -->
+        <footer class="footer">
+          <div class="container-fluid">
+            <div class="row align-items-center">
+              <div class="col-sm-6">
+                <script>
+                  document.write(new Date().getFullYear());
+                </script>
+                © Clivax Gym.
+              </div>
+              <div class="col-sm-6">
+                <div class="text-sm-end d-none d-sm-block">
+                  Designed & Developed
+                  <i class="mdi mdi-heart text-danger"></i> by
+                  <a
+                    href="https://kavyainfoweb.com/"
+                    target="_blank"
+                    class="text-muted"
+                    >Kavya Infoweb Pvt. Ltd.</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <!-- end main content-->
     </div>
 
     <!-- a -->
 
-
     <!-- b -->
     <!-- END layout-wrapper -->
 
-
-    <div class="custom-setting bg-primary pe-0 d-flex flex-column rounded-start">
-        <button type="button" class="btn btn-wide border-0 text-white fs-20 avatar-sm rounded-end-0"
-            id="light-dark-mode">
-            <i class="mdi mdi-brightness-7 align-middle"></i>
-            <i class="mdi mdi-white-balance-sunny align-middle"></i>
-        </button>
-        <!-- <button type="button" class="btn btn-wide border-0 text-white fs-20 avatar-sm" data-toggle="fullscreen">
+    <div
+      class="custom-setting bg-primary pe-0 d-flex flex-column rounded-start"
+    >
+      <button
+        type="button"
+        class="btn btn-wide border-0 text-white fs-20 avatar-sm rounded-end-0"
+        id="light-dark-mode"
+      >
+        <i class="mdi mdi-brightness-7 align-middle"></i>
+        <i class="mdi mdi-white-balance-sunny align-middle"></i>
+      </button>
+      <!-- <button type="button" class="btn btn-wide border-0 text-white fs-20 avatar-sm" data-toggle="fullscreen">
             <i class="mdi mdi-arrow-expand-all align-middle"></i>
         </button>
         <button type="button" class="btn btn-wide border-0 text-white fs-16 avatar-sm" id="layout-dir-btn">
@@ -1041,195 +1382,244 @@
         </button> -->
     </div>
 
-
     <!-- Rightbar Sidebar -->
     <div class="offcanvas offcanvas-end" id="offcanvas-rightsidabar">
-        <div class="card h-100 rounded-0" data-simplebar="init">
-            <div class="card-header bg-light">
-                <h6 class="card-title text-uppercase">Activities</h6>
-                <div class="card-addon">
-                    <button class="btn btn-label-danger" data-bs-dismiss="offcanvas">
-                        <i class="fa fa-times"></i>
-                    </button>
-                </div>
+      <div class="card h-100 rounded-0" data-simplebar="init">
+        <div class="card-header bg-light">
+          <h6 class="card-title text-uppercase">Activities</h6>
+          <div class="card-addon">
+            <button class="btn btn-label-danger" data-bs-dismiss="offcanvas">
+              <i class="fa fa-times"></i>
+            </button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="">
+            <h3 class="card-title">Company summary</h3>
+            <div class="border rounded p-2">
+              <p class="text-muted mb-2">Server Load</p>
+              <h4 class="fs-16 mb-2">489</h4>
+              <div class="progress progress-sm" style="height: 4px">
+                <div class="progress-bar bg-success" style="width: 49.4%"></div>
+              </div>
+              <p class="text-muted mb-0 mt-1">49.4% <span>Avg</span></p>
             </div>
-            <div class="card-body">
-                <div class="">
-                    <h3 class="card-title">Company summary</h3>
-                    <div class="border rounded p-2">
-                        <p class="text-muted mb-2">Server Load</p>
-                        <h4 class="fs-16 mb-2">489</h4>
-                        <div class="progress progress-sm" style="height:4px;">
-                            <div class="progress-bar bg-success" style="width: 49.4%"></div>
-                        </div>
-                        <p class="text-muted mb-0 mt-1">49.4% <span>Avg</span></p>
-                    </div>
-                    <div class="border rounded p-2">
-                        <p class="text-muted mb-2">Members online</p>
-                        <h4 class="fs-16 mb-2">3,450</h4>
-                        <div class="progress progress-sm" style="height:4px;">
-                            <div class="progress-bar bg-danger" style="width: 34.6%"></div>
-                        </div>
-                        <p class="text-muted mb-0 mt-1">34.6% <span>Avg</span></p>
-                    </div>
-                    <div class="border rounded p-2">
-                        <p class="text-muted mb-2">Today's revenue</p>
-                        <h4 class="fs-16 mb-2">$18,390</h4>
-                        <div class="progress progress-sm" style="height:4px;">
-                            <div class="progress-bar bg-warning" style="width: 20%"></div>
-                        </div>
-                        <p class="text-muted mb-0 mt-1">$37,578 <span>Avg</span></p>
-                    </div>
-                    <div class="border rounded p-2">
-                        <p class="text-muted mb-2">Expected profit</p>
-                        <h4 class="fs-16 mb-2">$23,461</h4>
-                        <div class="progress progress-sm" style="height:4px;">
-                            <div class="progress-bar bg-info" style="width: 60%"></div>
-                        </div>
-                        <p class="text-muted mb-0 mt-1">$23,461 <span>Avg</span></p>
-                    </div>
-                </div>
-
-                <div class="mt-4">
-                    <h3 class="card-title">Latest log</h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-primary"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">12 new users registered</p>
-                                    <span class="text-muted">Just now</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-success"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">System shutdown <span
-                                            class="badge badge-label-success">pending</span></p>
-                                    <span class="text-muted">2 mins</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-primary"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">New invoice received</p>
-                                    <span class="text-muted">3 mins</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-danger"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">New order received <span
-                                            class="badge badge-label-danger">urgent</span></p>
-                                    <span class="text-muted">10 mins</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-warning"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">Production server down</p>
-                                    <span class="text-muted">1 hrs</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-info"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">System error <a href="#">check</a></p>
-                                    <span class="text-muted">2 hrs</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-secondary"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">DB overloaded 80%</p>
-                                    <span class="text-muted">5 hrs</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-success"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">Production server up</p>
-                                    <span class="text-muted">6 hrs</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-4">
-                    <h3 class="card-title">Upcoming activities</h3>
-                    <div class="timeline timeline-timed">
-                        <div class="timeline-item">
-                            <span class="timeline-time">10:00</span>
-                            <div class="timeline-pin"><i class="marker marker-circle text-primary"></i></div>
-                            <div class="timeline-content">
-                                <div>
-                                    <span>Meeting with</span>
-                                    <div class="avatar-group ms-2">
-                                        <div class="avatar avatar-circle">
-                                            <img src="assets/images/users/avatar-1.png" alt="Avatar image"
-                                                class="avatar-2xs" />
-                                        </div>
-                                        <div class="avatar avatar-circle">
-                                            <img src="assets/images/users/avatar-2.png" alt="Avatar image"
-                                                class="avatar-2xs" />
-                                        </div>
-                                        <div class="avatar avatar-circle">
-                                            <img src="assets/images/users/avatar-3.png" alt="Avatar image"
-                                                class="avatar-2xs" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-time">12:45</span>
-                            <div class="timeline-pin"><i class="marker marker-circle text-warning"></i></div>
-                            <div class="timeline-content">
-                                <p class="mb-0">Lorem ipsum dolor sit amit,consectetur eiusmdd tempor incididunt ut
-                                    labore et dolore magna elit enim at minim veniam quis nostrud</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-time">14:00</span>
-                            <div class="timeline-pin"><i class="marker marker-circle text-danger"></i></div>
-                            <div class="timeline-content">
-                                <p class="mb-0">Received a new feedback on <a href="#">GoFinance</a> App product.</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-time">15:20</span>
-                            <div class="timeline-pin"><i class="marker marker-circle text-success"></i></div>
-                            <div class="timeline-content">
-                                <p class="mb-0">Lorem ipsum dolor sit amit,consectetur eiusmdd tempor incididunt ut
-                                    labore et dolore magna.</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-time">17:00</span>
-                            <div class="timeline-pin"><i class="marker marker-circle text-info"></i></div>
-                            <div class="timeline-content">
-                                <p class="mb-0">Make Deposit <a href="#">USD 700</a> o ESL.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="border rounded p-2">
+              <p class="text-muted mb-2">Members online</p>
+              <h4 class="fs-16 mb-2">3,450</h4>
+              <div class="progress progress-sm" style="height: 4px">
+                <div class="progress-bar bg-danger" style="width: 34.6%"></div>
+              </div>
+              <p class="text-muted mb-0 mt-1">34.6% <span>Avg</span></p>
             </div>
-        </div> <!-- end card-->
+            <div class="border rounded p-2">
+              <p class="text-muted mb-2">Today's revenue</p>
+              <h4 class="fs-16 mb-2">$18,390</h4>
+              <div class="progress progress-sm" style="height: 4px">
+                <div class="progress-bar bg-warning" style="width: 20%"></div>
+              </div>
+              <p class="text-muted mb-0 mt-1">$37,578 <span>Avg</span></p>
+            </div>
+            <div class="border rounded p-2">
+              <p class="text-muted mb-2">Expected profit</p>
+              <h4 class="fs-16 mb-2">$23,461</h4>
+              <div class="progress progress-sm" style="height: 4px">
+                <div class="progress-bar bg-info" style="width: 60%"></div>
+              </div>
+              <p class="text-muted mb-0 mt-1">$23,461 <span>Avg</span></p>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <h3 class="card-title">Latest log</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-primary"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">12 new users registered</p>
+                    <span class="text-muted">Just now</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-success"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">
+                      System shutdown
+                      <span class="badge badge-label-success">pending</span>
+                    </p>
+                    <span class="text-muted">2 mins</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-primary"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">New invoice received</p>
+                    <span class="text-muted">3 mins</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-danger"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">
+                      New order received
+                      <span class="badge badge-label-danger">urgent</span>
+                    </p>
+                    <span class="text-muted">10 mins</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-warning"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">Production server down</p>
+                    <span class="text-muted">1 hrs</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-info"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">System error <a href="#">check</a></p>
+                    <span class="text-muted">2 hrs</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-secondary"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">DB overloaded 80%</p>
+                    <span class="text-muted">5 hrs</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-success"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">Production server up</p>
+                    <span class="text-muted">6 hrs</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <h3 class="card-title">Upcoming activities</h3>
+            <div class="timeline timeline-timed">
+              <div class="timeline-item">
+                <span class="timeline-time">10:00</span>
+                <div class="timeline-pin">
+                  <i class="marker marker-circle text-primary"></i>
+                </div>
+                <div class="timeline-content">
+                  <div>
+                    <span>Meeting with</span>
+                    <div class="avatar-group ms-2">
+                      <div class="avatar avatar-circle">
+                        <img
+                          src="assets/images/users/avatar-1.png"
+                          alt="Avatar image"
+                          class="avatar-2xs"
+                        />
+                      </div>
+                      <div class="avatar avatar-circle">
+                        <img
+                          src="assets/images/users/avatar-2.png"
+                          alt="Avatar image"
+                          class="avatar-2xs"
+                        />
+                      </div>
+                      <div class="avatar avatar-circle">
+                        <img
+                          src="assets/images/users/avatar-3.png"
+                          alt="Avatar image"
+                          class="avatar-2xs"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-time">12:45</span>
+                <div class="timeline-pin">
+                  <i class="marker marker-circle text-warning"></i>
+                </div>
+                <div class="timeline-content">
+                  <p class="mb-0">
+                    Lorem ipsum dolor sit amit,consectetur eiusmdd tempor
+                    incididunt ut labore et dolore magna elit enim at minim
+                    veniam quis nostrud
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-time">14:00</span>
+                <div class="timeline-pin">
+                  <i class="marker marker-circle text-danger"></i>
+                </div>
+                <div class="timeline-content">
+                  <p class="mb-0">
+                    Received a new feedback on <a href="#">GoFinance</a> App
+                    product.
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-time">15:20</span>
+                <div class="timeline-pin">
+                  <i class="marker marker-circle text-success"></i>
+                </div>
+                <div class="timeline-content">
+                  <p class="mb-0">
+                    Lorem ipsum dolor sit amit,consectetur eiusmdd tempor
+                    incididunt ut labore et dolore magna.
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-time">17:00</span>
+                <div class="timeline-pin">
+                  <i class="marker marker-circle text-info"></i>
+                </div>
+                <div class="timeline-content">
+                  <p class="mb-0">
+                    Make Deposit <a href="#">USD 700</a> o ESL.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end card-->
     </div>
 
     <!-- JAVASCRIPT -->
@@ -1257,8 +1647,66 @@
 
     <script src="assets/js/app.js"></script>
     <script src="assets/js/staff.js"></script>
+    <!-- deletre functionality script -->
+    <script>
+      // Attach event listener after DOM is loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        // Select all delete buttons
+        const deleteButtons = document.querySelectorAll(".btn-danger");
 
+        deleteButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const row = this.closest("tr");
+            if (row) {
+              row.remove();
+            }
+          });
+        });
+      });
+    </script>
 
-</body>
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        const staffList = JSON.parse(localStorage.getItem("staffList") || "[]");
+        const tbody = document.querySelector(
+          "#datatable-col-visiblility tbody"
+        );
 
+        staffList.forEach((staff) => {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+        <td>${staff.staffId}</td>
+        <td>
+          <img src="${staff.photo}" alt="${staff.firstName} ${staff.lastName}"
+            class="rounded-circle" width="50" height="50" />
+        </td>
+        <td>${staff.firstName}</td>
+        <td>${staff.lastName}</td>
+        <td>${staff.contact}</td>
+        <td>${staff.email}</td>
+        <td>${staff.jobPost}</td>
+        <td>
+          <button class="btn btn-info btn-sm me-1">
+            <a href="manage-staff.html" class="text-white">Edit</a>
+          </button>
+          <button class="btn btn-danger btn-sm">Delete</button>
+        </td>
+      `;
+          tbody.appendChild(tr);
+        });
+      });
+    </script>
+
+    <!-- aa -->
+
+    <script>
+      function setEditStaffData(data) {
+        localStorage.setItem("editStaffData", JSON.stringify(data));
+      }
+    </script>
+
+    <!-- bb -->
+
+    <!-- end here -->
+  </body>
 </html>
