@@ -1,28 +1,19 @@
 function viewProfile(id) {
-  let trainers = {
+  const trainers = {
     1: {
       name: "Rahul Singh",
       role: "Strength Trainer",
       status: "Active",
       image: "assets/images/trainer1.jpg",
       noOfClients: "35",
-      sessionsPerDay: "8",
+      sessionsPerDay: "6",
       performance: "95%",
-      salary: "₹27000",
-      about:
-        "Rahul is an experienced strength trainer specialized in weightlifting and endurance training.",
+      salary: "₹27499",
+      about: "Rahul is an experienced strength trainer specialized in weightlifting and endurance training.",
       specializations: ["Strength Training", "Weightlifting"],
       schedule: [
-        {
-          time: "8 AM",
-          session: "Strength Training",
-          focus: "Upper Body",
-        },
-        {
-          time: "6 PM",
-          session: "Strength Training",
-          focus: "Lower Body",
-        },
+        { time: "8 AM", session: "Strength Training", focus: "Upper Body" },
+        { time: "6 PM", session: "Strength Training", focus: "Lower Body" },
       ],
       phone: "9373197246",
     },
@@ -31,12 +22,11 @@ function viewProfile(id) {
       role: "Weight Loss Specialist",
       status: "Active",
       image: "assets/images/trainer2.jpg",
-      noOfClients: "30",
-      sessionsPerDay: "5",
+      noOfClients: "45",
+      sessionsPerDay: "8",
       performance: "90%",
-      salary: "₹25000",
-      about:
-        "Sneha specializes in customized weight loss programs and cardio workouts.",
+      salary: "₹24499",
+      about: "Sneha specializes in customized weight loss programs and cardio workouts.",
       specializations: ["Weight Loss", "Cardio", "Diet Planning"],
       schedule: [
         { time: "9 AM", session: "Cardio Session", focus: "HIIT" },
@@ -49,12 +39,11 @@ function viewProfile(id) {
       role: "Full Body Workout Expert",
       status: "Active",
       image: "assets/images/trainer3.jpg",
-       noOfClients: "55",
-      sessionsPerDay: "9",
-      performance: "85%",
-      salary: "₹35000",
-      about:
-        "Sameer focuses on functional and full body workout programs for all fitness levels.",
+      noOfClients: "49",
+      sessionsPerDay: "10",
+      performance: "94%",
+      salary: "₹29499",
+      about: "Sameer focuses on functional and full body workout programs for all fitness levels.",
       specializations: ["Full Body Workouts", "HIIT", "Mobility"],
       schedule: [
         { time: "7 AM", session: "Full Body", focus: "Strength" },
@@ -67,48 +56,45 @@ function viewProfile(id) {
       role: "Cardio & Endurance Coach",
       status: "Active",
       image: "assets/images/trainer4.jpg",
-        noOfClients: "40",
+      noOfClients: "30",
       sessionsPerDay: "7",
-      performance: "90%",
-      salary: "₹29000",
-      about:
-        "Virat is passionate about cardio and endurance training for improving stamina.",
+      performance: "89%",
+      salary: "₹24999",
+      about: "Virat is passionate about cardio and endurance training for improving stamina.",
       specializations: ["Cardio", "Endurance Training"],
       schedule: [
         { time: "6 AM", session: "Endurance", focus: "Running" },
         { time: "6 PM", session: "Cardio", focus: "Aerobics" },
       ],
-      phone: "918800112244",
+      phone: "919970183749",
     },
     5: {
       name: "Smriti Patil",
       role: "Yoga & Pilates Instructor",
       status: "Active",
       image: "assets/images/trainer5.jpg",
-       noOfClients: "25",
-      sessionsPerDay: "4",
-      performance: "96%",
-      salary: "₹20000",
-      about:
-        "Smriti brings 6 years of expertise in Yoga and Pilates for body flexibility and wellness.",
+      noOfClients: "39",
+      sessionsPerDay: "6",
+      performance: "89%",
+      salary: "₹20099",
+      about: "Smriti brings 6 years of expertise in Yoga and Pilates for body flexibility and wellness.",
       specializations: ["Yoga", "Pilates", "Meditation"],
       schedule: [
         { time: "7 AM", session: "Yoga", focus: "Flexibility" },
         { time: "5 PM", session: "Pilates", focus: "Core Strength" },
       ],
-      phone: "917622334455",
+      phone: "919370466337",
     },
     6: {
       name: "Shubham Raut",
       role: "Functional Training Specialist",
       status: "Active",
       image: "assets/images/trainer6.jpg",
-       noOfClients: "31",
-      sessionsPerDay: "8",
-      performance: "93%",
-      salary: "₹26000",
-      about:
-        "Shubham is an expert in functional training techniques for overall body strength.",
+      noOfClients: "89",
+      sessionsPerDay: "21",
+      performance: "95%",
+      salary: "₹37499",
+      about: "Shubham is an expert in functional training techniques for overall body strength.",
       specializations: ["Functional Training", "Strength Conditioning"],
       schedule: [
         { time: "8 AM", session: "Functional", focus: "Core Stability" },
@@ -121,10 +107,10 @@ function viewProfile(id) {
       role: "Yoga & Zumba Expert",
       status: "Active",
       image: "assets/images/trainer7.jpg",
-       noOfClients: "60",
-      sessionsPerDay: "10",
-      performance: "98%",
-      salary: "₹55000",
+      noOfClients: "25",
+      sessionsPerDay: "8",
+      performance: "91%",
+      salary: "₹21499",
       about: "Rohini combines Yoga and Zumba for a balanced fitness approach.",
       specializations: ["Yoga", "Zumba", "Dance Fitness"],
       schedule: [
@@ -138,12 +124,11 @@ function viewProfile(id) {
       role: "Aerobics & Strength Trainer",
       status: "Active",
       image: "assets/images/trainer8.jpg",
-       noOfClients: "90",
-      sessionsPerDay: "12",
-      performance: "94%",
-      salary: "₹65000",
-      about:
-        "Shrikant focuses on aerobics and strength training for better cardiovascular health.",
+      noOfClients: "43",
+      sessionsPerDay: "9",
+      performance: "83%",
+      salary: "₹20499",
+      about: "Shrikant focuses on aerobics and strength training for better cardiovascular health.",
       specializations: ["Aerobics", "Strength Training"],
       schedule: [
         { time: "7 AM", session: "Aerobics", focus: "Cardio" },
@@ -156,12 +141,11 @@ function viewProfile(id) {
       role: "Beginner Program Coach",
       status: "Active",
       image: "assets/images/trainer9.jpg",
-        noOfClients: "56",
-      sessionsPerDay: "9",
-      performance: "95%",
-      salary: "₹30000",
-      about:
-        "Lokesh specializes in beginner programs and basic strength building.",
+      noOfClients: "30",
+      sessionsPerDay: "10",
+      performance: "90%",
+      salary: "₹27000",
+      about: "Lokesh specializes in beginner programs and basic strength building.",
       specializations: ["Beginner Training", "Basic Strength"],
       schedule: [
         { time: "8 AM", session: "Beginner", focus: "Form Training" },
@@ -175,8 +159,6 @@ function viewProfile(id) {
   window.location.href = "trainer.html";
 }
 
-///////////////
-
 const trainer = JSON.parse(localStorage.getItem("selectedTrainer"));
 
 if (trainer) {
@@ -185,7 +167,7 @@ if (trainer) {
   document.getElementById("trainerStatus").textContent = trainer.status;
   document.getElementById("trainerImage").src = trainer.image;
   document.getElementById("noOfClients").textContent = trainer.noOfClients;
-  document.getElementById("sessionPerDay").textContent = trainer.sessionsPerDay;
+  document.getElementById("sessionsPerDay").textContent = trainer.sessionsPerDay;
   document.getElementById("performance").textContent = trainer.performance;
   document.getElementById("salary").textContent = trainer.salary;
   document.getElementById("aboutText").textContent = trainer.about;
@@ -225,8 +207,6 @@ sendWhatsappBtn.addEventListener("click", () => {
     const whatsappURL = `https://wa.me/${trainer.phone}?text=${encodedMessage}`;
     window.open(whatsappURL, "_blank");
   } else {
-    alert(
-      "Please enter a message or ensure trainer phone number is available."
-    );
+    alert("Please enter a message or ensure trainer phone number is available.");
   }
 });
