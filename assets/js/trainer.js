@@ -1,5 +1,5 @@
 function viewProfile(id) {
-  let trainers = {
+  const trainers = {
     1: {
       name: "Rahul Singh",
       role: "Strength Trainer",
@@ -8,21 +8,12 @@ function viewProfile(id) {
       noOfClient: "35",
       noOfSessionsPerWeek: "6",
       performance: "95%",
-      salary: "<p>₹</p> 27499",
-      about:
-        "Rahul is an experienced strength trainer specialized in weightlifting and endurance training.",
+      salary: "₹27499",
+      about: "Rahul is an experienced strength trainer specialized in weightlifting and endurance training.",
       specializations: ["Strength Training", "Weightlifting"],
       schedule: [
-        {
-          time: "8 AM",
-          session: "Strength Training",
-          focus: "Upper Body",
-        },
-        {
-          time: "6 PM",
-          session: "Strength Training",
-          focus: "Lower Body",
-        },
+        { time: "8 AM", session: "Strength Training", focus: "Upper Body" },
+        { time: "6 PM", session: "Strength Training", focus: "Lower Body" },
       ],
       phone: "9373197246",
     },
@@ -35,8 +26,7 @@ function viewProfile(id) {
       noOfSessionsPerWeek: "8",
       performance: "90%",
       salary: "₹24499",
-      about:
-        "Sneha specializes in customized weight loss programs and cardio workouts.",
+      about: "Sneha specializes in customized weight loss programs and cardio workouts.",
       specializations: ["Weight Loss", "Cardio", "Diet Planning"],
       schedule: [
         { time: "9 AM", session: "Cardio Session", focus: "HIIT" },
@@ -53,8 +43,7 @@ function viewProfile(id) {
       noOfSessionsPerWeek: "10",
       performance: "94%",
       salary: "₹29499",
-      about:
-        "Sameer focuses on functional and full body workout programs for all fitness levels.",
+      about: "Sameer focuses on functional and full body workout programs for all fitness levels.",
       specializations: ["Full Body Workouts", "HIIT", "Mobility"],
       schedule: [
         { time: "7 AM", session: "Full Body", focus: "Strength" },
@@ -71,8 +60,7 @@ function viewProfile(id) {
       noOfSessionsPerWeek: "7",
       performance: "89%",
       salary: "₹24999",
-      about:
-        "Virat is passionate about cardio and endurance training for improving stamina.",
+      about: "Virat is passionate about cardio and endurance training for improving stamina.",
       specializations: ["Cardio", "Endurance Training"],
       schedule: [
         { time: "6 AM", session: "Endurance", focus: "Running" },
@@ -89,8 +77,7 @@ function viewProfile(id) {
       noOfSessionsPerWeek: "6",
       performance: "89%",
       salary: "₹20099",
-      about:
-        "Smriti brings 6 years of expertise in Yoga and Pilates for body flexibility and wellness.",
+      about: "Smriti brings 6 years of expertise in Yoga and Pilates for body flexibility and wellness.",
       specializations: ["Yoga", "Pilates", "Meditation"],
       schedule: [
         { time: "7 AM", session: "Yoga", focus: "Flexibility" },
@@ -107,8 +94,7 @@ function viewProfile(id) {
       noOfSessionsPerWeek: "21",
       performance: "95%",
       salary: "₹37499",
-      about:
-        "Shubham is an expert in functional training techniques for overall body strength.",
+      about: "Shubham is an expert in functional training techniques for overall body strength.",
       specializations: ["Functional Training", "Strength Conditioning"],
       schedule: [
         { time: "8 AM", session: "Functional", focus: "Core Stability" },
@@ -121,7 +107,7 @@ function viewProfile(id) {
       role: "Yoga & Zumba Expert",
       status: "Active",
       image: "assets/images/trainer7.jpg",
-       noOfClient: "25",
+      noOfClient: "25",
       noOfSessionsPerWeek: "8",
       performance: "91%",
       salary: "₹21499",
@@ -138,12 +124,11 @@ function viewProfile(id) {
       role: "Aerobics & Strength Trainer",
       status: "Active",
       image: "assets/images/trainer8.jpg",
-     noOfClient: "43",
+      noOfClient: "43",
       noOfSessionsPerWeek: "9",
       performance: "83%",
       salary: "₹20499",
-      about:
-        "Shrikant focuses on aerobics and strength training for better cardiovascular health.",
+      about: "Shrikant focuses on aerobics and strength training for better cardiovascular health.",
       specializations: ["Aerobics", "Strength Training"],
       schedule: [
         { time: "7 AM", session: "Aerobics", focus: "Cardio" },
@@ -160,8 +145,7 @@ function viewProfile(id) {
       noOfSessionsPerWeek: "10",
       performance: "90%",
       salary: "₹27000",
-      about:
-        "Lokesh specializes in beginner programs and basic strength building.",
+      about: "Lokesh specializes in beginner programs and basic strength building.",
       specializations: ["Beginner Training", "Basic Strength"],
       schedule: [
         { time: "8 AM", session: "Beginner", focus: "Form Training" },
@@ -175,8 +159,6 @@ function viewProfile(id) {
   window.location.href = "trainer.html";
 }
 
-///////////////
-
 const trainer = JSON.parse(localStorage.getItem("selectedTrainer"));
 
 if (trainer) {
@@ -185,12 +167,9 @@ if (trainer) {
   document.getElementById("trainerStatus").textContent = trainer.status;
   document.getElementById("trainerImage").src = trainer.image;
   document.getElementById("clientLoad").textContent = trainer.clientLoad;
-  document.getElementById("sessionUtilization").textContent =
-    trainer.sessionUtilization;
-  document.getElementById("clientRetention").textContent =
-    trainer.clientRetention;
-  document.getElementById("monthlyRevenue").textContent =
-    trainer.monthlyRevenue;
+  document.getElementById("sessionUtilization").textContent = trainer.sessionUtilization;
+  document.getElementById("clientRetention").textContent = trainer.clientRetention;
+  document.getElementById("monthlyRevenue").textContent = trainer.monthlyRevenue;
   document.getElementById("aboutText").textContent = trainer.about;
 
   const specializationsDiv = document.getElementById("specializations");
@@ -228,8 +207,6 @@ sendWhatsappBtn.addEventListener("click", () => {
     const whatsappURL = `https://wa.me/${trainer.phone}?text=${encodedMessage}`;
     window.open(whatsappURL, "_blank");
   } else {
-    alert(
-      "Please enter a message or ensure trainer phone number is available."
-    );
+    alert("Please enter a message or ensure trainer phone number is available.");
   }
 });
