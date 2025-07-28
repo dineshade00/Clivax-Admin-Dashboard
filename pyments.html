@@ -23,6 +23,8 @@
     <link href="assets/libs/simplebar/simplebar.min.css" rel="stylesheet">
     <!-- App Css-->
     <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <link href="assets/css/pyment.css" rel="stylesheet">
+   
 
 </head>
 
@@ -63,7 +65,7 @@
                 </div>
                 <!-- End navbar brand -->
 
-                          <!-- Start menu -->
+                <!-- Start menu -->
                 <div class="d-flex justify-content-between menu-sm px-3 ms-auto">
                     <div class="d-flex align-items-center gap-2">
                         <div class="dropdown d-none d-lg-block">
@@ -81,7 +83,7 @@
                                     <div class="dropdown-addon"><span class="badge badge-warning rounded-pill">20</span>
                                     </div>
                                 </a>
-                                
+
                                 <!-- Invoice -->
                                 <a href="create-invoice.html" class="dropdown-item">
                                     <div class="dropdown-icon"><i class="fas fa-file-invoice"></i></div>
@@ -185,283 +187,251 @@
                         </div>
                     </div>
 
-                   <div class="d-flex align-items-center gap-2">
-            
+                    <div class="d-flex align-items-center gap-2">
 
-              <!-- Start Notification -->
-              <div class="dropdown d-inline-block">
-                <button
-                  type="button"
-                  class="btn btn-sm top-icon"
-                  id="page-header-notifications-dropdown"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <i class="fas fa-bell align-middle"></i>
-                  <span class="btn-marker"
-                    ><i class="marker marker-dot text-danger"></i
-                  ></span>
-                </button>
-                <div
-                  class="dropdown-menu dropdown-menu-lg dropdown-menu-md dropdown-menu-end p-0"
-                  aria-labelledby="page-header-notifications-dropdown"
-                >
-                  <div class="p-3 bg-info">
-                    <div class="row align-items-center">
-                      <div class="col">
-                        <h6 class="text-white m-0">
-                          <i class="far fa-bell me-2"></i> Notifications
-                        </h6>
-                      </div>
-                      <div class="col-auto">
-                        <a href="#!" class="badge bg-info-subtle text-info">
-                          6+</a
-                        >
-                      </div>
+
+                        <!-- Start Notification -->
+                        <div class="dropdown d-inline-block">
+                            <button type="button" class="btn btn-sm top-icon" id="page-header-notifications-dropdown"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-bell align-middle"></i>
+                                <span class="btn-marker"><i class="marker marker-dot text-danger"></i></span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-md dropdown-menu-end p-0"
+                                aria-labelledby="page-header-notifications-dropdown">
+                                <div class="p-3 bg-info">
+                                    <div class="row align-items-center">
+                                        <div class="col">
+                                            <h6 class="text-white m-0">
+                                                <i class="far fa-bell me-2"></i> Notifications
+                                            </h6>
+                                        </div>
+                                        <div class="col-auto">
+                                            <a href="#!" class="badge bg-info-subtle text-info">
+                                                6+</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-simplebar style="max-height: 230px">
+                                    <a href="#" class="text-reset notification-item">
+                                        <div class="d-flex">
+                                            <div class="avatar avatar-xs avatar-label-success me-3">
+                                                <span class="rounded fs-16">
+                                                    <i class="mdi mdi-account-plus-outline"></i>
+                                                </span>
+                                            </div>
+                                            <div class="flex-1">
+                                                <h6 class="mb-1">New member registered</h6>
+                                                <div class="fs-12 text-muted">
+                                                    <p class="mb-0">
+                                                        <i class="mdi mdi-clock-outline"></i> 5 min ago
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <i class="mdi mdi-chevron-right align-middle ms-2"></i>
+                                        </div>
+                                    </a>
+
+                                    <a href="#" class="text-reset notification-item">
+                                        <div class="d-flex">
+                                            <div class="avatar avatar-xs avatar-label-warning me-3">
+                                                <span class="rounded fs-16">
+                                                    <i class="mdi mdi-alarm"></i>
+                                                </span>
+                                            </div>
+                                            <div class="flex-1">
+                                                <h6 class="mb-1">Session missed by trainer</h6>
+                                                <div class="fs-12 text-muted">
+                                                    <p class="mb-0">
+                                                        <i class="mdi mdi-clock-outline"></i> 30 min ago
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <i class="mdi mdi-chevron-right align-middle ms-2"></i>
+                                        </div>
+                                    </a>
+
+                                    <a href="#" class="text-reset notification-item">
+                                        <div class="d-flex">
+                                            <div class="avatar avatar-xs avatar-label-danger me-3">
+                                                <span class="rounded fs-16">
+                                                    <i class="mdi mdi-cash-clock"></i>
+                                                </span>
+                                            </div>
+                                            <div class="flex-1">
+                                                <h6 class="mb-1">Payment due for member ID #1023</h6>
+                                                <div class="fs-12 text-muted">
+                                                    <p class="mb-0">
+                                                        <i class="mdi mdi-clock-outline"></i> 2 hours ago
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <i class="mdi mdi-chevron-right align-middle ms-2"></i>
+                                        </div>
+                                    </a>
+
+                                    <a href="#" class="text-reset notification-item">
+                                        <div class="d-flex">
+                                            <div class="avatar avatar-xs avatar-label-info me-3">
+                                                <span class="rounded fs-16">
+                                                    <i class="mdi mdi-calendar-check-outline"></i>
+                                                </span>
+                                            </div>
+                                            <div class="flex-1">
+                                                <h6 class="mb-1">
+                                                    Today’s session starts in 30 minutes
+                                                </h6>
+                                                <div class="fs-12 text-muted">
+                                                    <p class="mb-0">
+                                                        <i class="mdi mdi-clock-outline"></i> 3 hours ago
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <i class="mdi mdi-chevron-right align-middle ms-2"></i>
+                                        </div>
+                                    </a>
+
+                                    <a href="#" class="text-reset notification-item">
+                                        <div class="d-flex">
+                                            <div class="avatar avatar-xs avatar-label-secondary me-3">
+                                                <span class="rounded fs-16">
+                                                    <i class="mdi mdi-update"></i>
+                                                </span>
+                                            </div>
+                                            <div class="flex-1">
+                                                <h6 class="mb-1">Member plan updated (ID #1008)</h6>
+                                                <div class="fs-12 text-muted">
+                                                    <p class="mb-0">
+                                                        <i class="mdi mdi-clock-outline"></i> Yesterday
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <i class="mdi mdi-chevron-right align-middle ms-2"></i>
+                                        </div>
+                                    </a>
+
+                                    <a href="#" class="text-reset notification-item">
+                                        <div class="d-flex">
+                                            <div class="avatar avatar-xs avatar-label-primary me-3">
+                                                <span class="rounded fs-16">
+                                                    <i class="mdi mdi-lock-reset"></i>
+                                                </span>
+                                            </div>
+                                            <div class="flex-1">
+                                                <h6 class="mb-1">Admin password changed</h6>
+                                                <div class="fs-12 text-muted">
+                                                    <p class="mb-0">
+                                                        <i class="mdi mdi-clock-outline"></i> 2 days ago
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <i class="mdi mdi-chevron-right align-middle ms-2"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="p-2 border-top">
+                                    <div class="d-grid">
+                                        <a class="btn btn-sm btn-link font-size-14 text-center"
+                                            href="javascript:void(0)">
+                                            <i class="mdi mdi-arrow-right-circle me-1"></i> View
+                                            More..
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Notification -->
+
+                        <!-- Start Profile -->
+                        <div class="dropdown d-inline-block">
+                            <button type="button" class="btn btn-sm top-icon p-0" id="page-header-user-dropdown"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img class="rounded avatar-2xs p-0" src="assets/images/users/avatar-6.png"
+                                    alt="Header Avatar" />
+                            </button>
+                            <div
+                                class="dropdown-menu dropdown-menu-wide dropdown-menu-end dropdown-menu-animated overflow-hidden py-0">
+                                <div class="card border-0">
+                                    <div class="card-header bg-primary rounded-0">
+                                        <div class="rich-list-item w-100 p-0">
+                                            <div class="rich-list-prepend">
+                                                <div class="avatar avatar-label-light avatar-circle">
+                                                    <div class="avatar-display">
+                                                        <i class="fas fa-user-circle"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="rich-list-content">
+                                                <h3 class="rich-list-title text-white">Admin</h3>
+                                                <span class="rich-list-subtitle text-white">info@kavyainfoweb.com</span>
+                                            </div>
+                                            <div class="rich-list-append">
+                                                <span class="badge badge-label-light fs-6">6+</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-body p-0">
+                                        <div class="grid-nav grid-nav-flush grid-nav-action grid-nav-no-rounded">
+                                            <div class="grid-nav-row">
+                                                <a href="apps-contact.html" class="grid-nav-item">
+                                                    <div class="grid-nav-icon">
+                                                        <i class="fas fa-user-edit"></i>
+                                                    </div>
+                                                    <span class="grid-nav-content">My Profile</span>
+                                                </a>
+                                                <a href="trainer-profile.html" class="grid-nav-item">
+                                                    <div class="grid-nav-icon">
+                                                        <i class="fas fa-dumbbell"></i>
+                                                    </div>
+                                                    <span class="grid-nav-content">Trainer Profile</span>
+                                                </a>
+                                                <a href="#" class="grid-nav-item">
+                                                    <div class="grid-nav-icon">
+                                                        <i class="fas fa-running"></i>
+                                                    </div>
+                                                    <span class="grid-nav-content">Workout Logs</span>
+                                                </a>
+                                            </div>
+
+                                            <div class="grid-nav-row">
+                                                <a href="live-session.html" class="grid-nav-item">
+                                                    <div class="grid-nav-icon">
+                                                        <i class="far fa-calendar-check"></i>
+                                                    </div>
+                                                    <span class="grid-nav-content">Session Calendar</span>
+                                                </a>
+                                                <a href="diet-plan.html" class="grid-nav-item">
+                                                    <div class="grid-nav-icon">
+                                                        <i class="fas fa-apple-alt"></i>
+                                                    </div>
+                                                    <span class="grid-nav-content">Diet Notes</span>
+                                                </a>
+                                                <a href="#" class="grid-nav-item">
+                                                    <div class="grid-nav-icon">
+                                                        <i class="far fa-bell"></i>
+                                                    </div>
+                                                    <span class="grid-nav-content">Notifications</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-footer card-footer-bordered rounded-0">
+                                        <a href="auth-login.html" class="btn btn-label-danger">Sign out</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Profile -->
                     </div>
-                  </div>
-                  <div data-simplebar style="max-height: 230px">
-                    <a href="#" class="text-reset notification-item">
-                      <div class="d-flex">
-                        <div class="avatar avatar-xs avatar-label-success me-3">
-                          <span class="rounded fs-16">
-                            <i class="mdi mdi-account-plus-outline"></i>
-                          </span>
-                        </div>
-                        <div class="flex-1">
-                          <h6 class="mb-1">New member registered</h6>
-                          <div class="fs-12 text-muted">
-                            <p class="mb-0">
-                              <i class="mdi mdi-clock-outline"></i> 5 min ago
-                            </p>
-                          </div>
-                        </div>
-                        <i class="mdi mdi-chevron-right align-middle ms-2"></i>
-                      </div>
-                    </a>
-
-                    <a href="#" class="text-reset notification-item">
-                      <div class="d-flex">
-                        <div class="avatar avatar-xs avatar-label-warning me-3">
-                          <span class="rounded fs-16">
-                            <i class="mdi mdi-alarm"></i>
-                          </span>
-                        </div>
-                        <div class="flex-1">
-                          <h6 class="mb-1">Session missed by trainer</h6>
-                          <div class="fs-12 text-muted">
-                            <p class="mb-0">
-                              <i class="mdi mdi-clock-outline"></i> 30 min ago
-                            </p>
-                          </div>
-                        </div>
-                        <i class="mdi mdi-chevron-right align-middle ms-2"></i>
-                      </div>
-                    </a>
-
-                    <a href="#" class="text-reset notification-item">
-                      <div class="d-flex">
-                        <div class="avatar avatar-xs avatar-label-danger me-3">
-                          <span class="rounded fs-16">
-                            <i class="mdi mdi-cash-clock"></i>
-                          </span>
-                        </div>
-                        <div class="flex-1">
-                          <h6 class="mb-1">Payment due for member ID #1023</h6>
-                          <div class="fs-12 text-muted">
-                            <p class="mb-0">
-                              <i class="mdi mdi-clock-outline"></i> 2 hours ago
-                            </p>
-                          </div>
-                        </div>
-                        <i class="mdi mdi-chevron-right align-middle ms-2"></i>
-                      </div>
-                    </a>
-
-                    <a href="#" class="text-reset notification-item">
-                      <div class="d-flex">
-                        <div class="avatar avatar-xs avatar-label-info me-3">
-                          <span class="rounded fs-16">
-                            <i class="mdi mdi-calendar-check-outline"></i>
-                          </span>
-                        </div>
-                        <div class="flex-1">
-                          <h6 class="mb-1">
-                            Today’s session starts in 30 minutes
-                          </h6>
-                          <div class="fs-12 text-muted">
-                            <p class="mb-0">
-                              <i class="mdi mdi-clock-outline"></i> 3 hours ago
-                            </p>
-                          </div>
-                        </div>
-                        <i class="mdi mdi-chevron-right align-middle ms-2"></i>
-                      </div>
-                    </a>
-
-                    <a href="#" class="text-reset notification-item">
-                      <div class="d-flex">
-                        <div
-                          class="avatar avatar-xs avatar-label-secondary me-3"
-                        >
-                          <span class="rounded fs-16">
-                            <i class="mdi mdi-update"></i>
-                          </span>
-                        </div>
-                        <div class="flex-1">
-                          <h6 class="mb-1">Member plan updated (ID #1008)</h6>
-                          <div class="fs-12 text-muted">
-                            <p class="mb-0">
-                              <i class="mdi mdi-clock-outline"></i> Yesterday
-                            </p>
-                          </div>
-                        </div>
-                        <i class="mdi mdi-chevron-right align-middle ms-2"></i>
-                      </div>
-                    </a>
-
-                    <a href="#" class="text-reset notification-item">
-                      <div class="d-flex">
-                        <div class="avatar avatar-xs avatar-label-primary me-3">
-                          <span class="rounded fs-16">
-                            <i class="mdi mdi-lock-reset"></i>
-                          </span>
-                        </div>
-                        <div class="flex-1">
-                          <h6 class="mb-1">Admin password changed</h6>
-                          <div class="fs-12 text-muted">
-                            <p class="mb-0">
-                              <i class="mdi mdi-clock-outline"></i> 2 days ago
-                            </p>
-                          </div>
-                        </div>
-                        <i class="mdi mdi-chevron-right align-middle ms-2"></i>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="p-2 border-top">
-                    <div class="d-grid">
-                      <a
-                        class="btn btn-sm btn-link font-size-14 text-center"
-                        href="javascript:void(0)"
-                      >
-                        <i class="mdi mdi-arrow-right-circle me-1"></i> View
-                        More..
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End Notification -->
-
-              <!-- Start Profile -->
-              <div class="dropdown d-inline-block">
-                <button
-                  type="button"
-                  class="btn btn-sm top-icon p-0"
-                  id="page-header-user-dropdown"
-                  data-bs-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  <img
-                    class="rounded avatar-2xs p-0"
-                    src="assets/images/users/avatar-6.png"
-                    alt="Header Avatar"
-                  />
-                </button>
-                <div
-                  class="dropdown-menu dropdown-menu-wide dropdown-menu-end dropdown-menu-animated overflow-hidden py-0"
-                >
-                  <div class="card border-0">
-                    <div class="card-header bg-primary rounded-0">
-                      <div class="rich-list-item w-100 p-0">
-                        <div class="rich-list-prepend">
-                          <div class="avatar avatar-label-light avatar-circle">
-                            <div class="avatar-display">
-                              <i class="fas fa-user-circle"></i>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="rich-list-content">
-                          <h3 class="rich-list-title text-white">Admin</h3>
-                          <span class="rich-list-subtitle text-white"
-                            >info@kavyainfoweb.com</span
-                          >
-                        </div>
-                        <div class="rich-list-append">
-                          <span class="badge badge-label-light fs-6">6+</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="card-body p-0">
-                      <div
-                        class="grid-nav grid-nav-flush grid-nav-action grid-nav-no-rounded"
-                      >
-                        <div class="grid-nav-row">
-                          <a href="apps-contact.html" class="grid-nav-item">
-                            <div class="grid-nav-icon">
-                              <i class="fas fa-user-edit"></i>
-                            </div>
-                            <span class="grid-nav-content">My Profile</span>
-                          </a>
-                          <a href="trainer-profile.html" class="grid-nav-item">
-                            <div class="grid-nav-icon">
-                              <i class="fas fa-dumbbell"></i>
-                            </div>
-                            <span class="grid-nav-content">Trainer Profile</span>
-                          </a>
-                          <a href="#" class="grid-nav-item">
-                            <div class="grid-nav-icon">
-                              <i class="fas fa-running"></i>
-                            </div>
-                            <span class="grid-nav-content">Workout Logs</span>
-                          </a>
-                        </div>
-
-                        <div class="grid-nav-row">
-                          <a href="live-session.html" class="grid-nav-item">
-                            <div class="grid-nav-icon">
-                              <i class="far fa-calendar-check"></i>
-                            </div>
-                            <span class="grid-nav-content"
-                              >Session Calendar</span
-                            >
-                          </a>
-                          <a href="diet-plan.html" class="grid-nav-item">
-                            <div class="grid-nav-icon">
-                              <i class="fas fa-apple-alt"></i>
-                            </div>
-                            <span class="grid-nav-content">Diet Notes</span>
-                          </a>
-                          <a href="#" class="grid-nav-item">
-                            <div class="grid-nav-icon">
-                              <i class="far fa-bell"></i>
-                            </div>
-                            <span class="grid-nav-content">Notifications</span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="card-footer card-footer-bordered rounded-0">
-                      <a href="auth-login.html" class="btn btn-label-danger"
-                        >Sign out</a
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End Profile -->
-            </div>
                 </div>
                 <!-- End menu -->
             </div>
         </header>
         <!-- End topbar -->
 
-      
+
         <!-- ========== Left Sidebar Start ========== -->
         <div class="sidebar-left">
 
@@ -549,7 +519,7 @@
                                 <span>Staff Management</span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                
+
                                 <li><a href="add-new-staff.html">
                                         <i class="mdi mdi-checkbox-blank-circle align-middle"></i> Add New</a>
                                 </li>
@@ -616,8 +586,8 @@
 
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">
-                                  <i class="fa fa-chart-pie"></i>
-                                  <span>Reports</span>
+                                <i class="fa fa-chart-pie"></i>
+                                <span>Reports</span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
 
@@ -632,7 +602,7 @@
                                         <i class="mdi mdi-currency-inr align-middle"></i> Revenue Report
                                     </a>
                                 </li>
-                               
+
 
                                 <!-- Existing Chart Pages -->
 
@@ -719,15 +689,18 @@
                                             <th style="background-color: #38C66C;">Amount (₹)</th>
                                             <th style="background-color: #38C66C;">Salary Date</th>
                                             <th style="background-color: #38C66C;">Payment Mode</th>
+                                            <th style="background-color: #38C66C;">Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="staffHistoryBody" style="text-align: left;">
+                                    <tbody id="staffHistoryBody" style="text-align: center;">
                                         <!-- Dynamic entries will appear here -->
                                     </tbody>
                                 </table>
                                 <div class="text-end mt-3">
-                                    <button class="btn btn-outline-primary" onclick="printSection('staffHistory')">🖨️
-                                        Print Staff History</button>
+                                    <button id="printStaffBtn" class="btn btn-outline-primary"
+                                        onclick="printSection('staffHistory')">
+                                        🖨️ Print All Staff History
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -748,9 +721,10 @@
                                             <th style="background-color: #38C66C;">Membership Type</th>
                                             <th style="background-color: #38C66C;">Amount (₹)</th>
                                             <th style="background-color: #38C66C;">Billing Date</th>
+                                            <th style="background-color: #38C66C;">Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="memberHistoryBody" style="text-align: left;">
+                                    <tbody id="memberHistoryBody" style="text-align: center;">
                                         <!-- Dynamic entries will appear here -->
                                     </tbody>
                                 </table>
