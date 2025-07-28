@@ -693,126 +693,121 @@
 
 
 
+
 <div class="card">
-    <div class="card-header">
-        <h4 class="card-title">Add New Staff Member</h4>
-    </div>
-    <div class="card-body">
-        <form action="#" class="custom-validation">
-            <div class="row">
-                <div class="col-md-4 mb-3">
-                    <label>First Name</label>
-                    <div>
-                        <input type="text" class="form-control" required data-parsley-minlength="6" placeholder="Enter First Name" />
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <label>Last Name</label>
-                    <div>
-                        <input type="text" class="form-control" required data-parsley-maxlength="6" placeholder="Enter Last Name" />
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <label>Email Address</label>
-                    <div>
-                        <input type="text" class="form-control" required data-parsley-length="[5,10]" placeholder="Enter Email Address" />
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <label>Contact</label>
-                    <div>
-                        <input type="number" class="form-control" required data-parsley-min="6" placeholder="Enter Contact No." max-length="10" />
-                    </div>
-                </div>
-  <div class="col-md-4 mb-3">
-    <label>Gender</label>
-    <div>
-        <select class="form-select" name="gender" required>
-            <option value="default">Enter Your Gender</option>
-            <option value="female">Male </option>
-            <option value="male">Female</option>
-             <option value="male">Other</option>
-          
-        </select>
-    </div>
+  <div class="card-header">
+    <h4 class="card-title">Add New Staff Member</h4>
+  </div>
+  <div class="card-body">
+    <form action="#" class="custom-validation">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label>First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter First Name"
+            required
+            minlength="2"
+          />
+        </div>
+        <div class="col-md-4 mb-3">
+          <label>Last Name</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter Last Name"
+            required
+            minlength="2"
+          />
+        </div>
+        <div class="col-md-4 mb-3">
+          <label>Email Address</label>
+          <input
+            type="email"
+            class="form-control"
+            placeholder="Enter Email Address"
+            required
+          />
+        </div>
+        <div class="col-md-4 mb-3">
+          <label>Contact</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter Contact No."
+            required
+            pattern="[0-9]{10}"
+            maxlength="10"
+            title="Enter exactly 10 digits"
+          />
+        </div>
+        <div class="col-md-4 mb-3">
+          <label>Joining Date</label>
+          <input
+            type="date"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="col-md-4 mb-3">
+          <label>Job Post</label>
+          <select class="form-select" name="jobPost" required>
+            <option value="">Select Your Role</option>
+            <option>Fitness Trainer</option>
+            <option>Receptionist</option>
+            <option>Yoga Instructor</option>
+            <option>Strength And Conditioning Coach</option>
+            <option>Cross Fit Coach</option>
+            <option>Nutritionist</option>
+            <option>Wellness Coach</option>
+          </select>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label>Photo</label>
+          <input
+            type="file"
+            class="form-control"
+            required
+            accept="image/*"
+          />
+        </div>
+        <div class="col-md-4 mb-3">
+          <label>Aadhar No.</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter Aadhar No."
+            required
+            pattern="[0-9]{12}"
+            maxlength="12"
+            title="Enter 12 digit Aadhar number"
+          />
+        </div>
+        <div class="col-md-4 mb-3">
+          <label>Pincode</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter Pincode"
+            required
+            pattern="[0-9]{6}"
+            maxlength="6"
+            title="Enter 6 digit pincode"
+          />
+        </div>
+      </div>
+      <div class="mb-0 text-end">
+        <button
+          type="submit"
+          class="btn btn-primary waves-effect waves-light me-1"
+        >
+          Add New
+        </button>
+      </div>
+    </form>
+  </div>
 </div>
-
-                  <div class="col-md-4 mb-3">
-                    <label>City Name </label>
-                    <div>
-                        <input type="text" class="form-control" required data-parsley-pattern="#[A-Fa-f0-9]{6}" placeholder="Enter City Name" />
-                    </div>
-                </div>
-
-                
-                <div class="col-md-4 mb-3">
-                    <label>Joining Date</label>
-                    <div>
-                        <input type="number" class="form-control" required data-parsley-pattern="#[A-Fa-f0-9]{6}" placeholder="Enter Joining Date" />
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-    <label>Job Post</label>
-    <div>
-        <select class="form-select" name="gender" required>
-            <option value="default">Select Your Roll</option>
-            <option value="female">Fitness Trainer</option>
-            <option value="male">Receptionist</option>
-            <option value="female">Yoga Instructor</option>
-             <option value="female">Strength And Conditioning Coach</option>
-              <option value="female">Cross Fit Coach</option>
-               <option value="female">Nutritionist</option>
-               <option value="female">Wellness Coach</option>
-        </select>
-    </div>
-</div>
-  <div class="col-md-4 mb-3">
-    <label>Marritial Status</label>
-    <div>
-        <select class="form-select" name="gender" required>
-            <option value="default">Enter Your Marritial Status</option>
-            <option value="female">Married </option>
-            <option value="male">Unmarried</option>
-          
-        </select>
-    </div>
-</div>
-
-
-
-                
-                <div class="col-md-4 mb-3">
-                    <label>Photo</label>
-                    <div>
-                        <input type="file" class="form-control" required data-parsley-pattern="#[A-Fa-f0-9]{6}" placeholder="Choose File" />
-                    </div>
-                </div>
-              
-                 <div class="col-md-4 mb-3">
-                    <label>Adhar No.</label>
-                    <div>
-                        <input type="number" class="form-control" required data-parsley-pattern="#[A-Fa-f0-9]{6}" placeholder="Enter Adhar No." />
-                    </div>
-                </div>
-                 <div class="col-md-4 mb-3">
-                    <label>Pincode</label>
-                    <div>
-                        <input type="number" class="form-control" required data-parsley-pattern="#[A-Fa-f0-9]{6}" placeholder="Enter Pincode" />
-                    </div>
-                </div>
-            </div>
-            <div class="mb-0">
-                <div class="text-end">
-                    <button type="submit" class="btn btn-primary waves-effect waves-light me-1">
-                        Add New
-                    </button>
-                   
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-
 
       <!-- ################################################################## -->
 
