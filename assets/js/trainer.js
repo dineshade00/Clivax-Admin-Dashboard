@@ -8,7 +8,7 @@ function viewProfile(id) {
       noOfClient: "35",
       noOfSessionsPerWeek: "6",
       performance: "95%",
-      salary: "\u20B9 27499",
+      salary: "<p>₹</p> 27499",
       about:
         "Rahul is an experienced strength trainer specialized in weightlifting and endurance training.",
       specializations: ["Strength Training", "Weightlifting"],
