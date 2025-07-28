@@ -771,83 +771,101 @@
                 </div>
               </div>
             </div>
-            <div
-              class="modal fade"
-              id="membershipCardModal"
-              tabindex="-1"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog modal-dialog-centered">
-                <div
-                  class="modal-content"
-                  id="cardContentToPrint"
-                  style="
-                    padding: 20px;
-                    border-radius: 10px;
-                    background: linear-gradient(to right, #f7f7f7, #eaeaea);
-                  "
-                >
-                  <div class="modal-body text-center" style="color: black">
-                    <div style="text-align: right; margin-bottom: 10px">
-                      <button
-                        class="btn btn-sm btn-secondary"
-                        onclick="window.print()"
-                      >
-                        Print
-                      </button>
-                    </div>
-                    <div
-                      style="
-                        border: 2px solid #000;
-                        border-radius: 10px;
-                        padding: 20px;
-                        position: relative;
-                      "
+                 <div
+                      class="modal fade"
+                      id="membershipCardModal"
+                      tabindex="-1"
+                      aria-hidden="true"
                     >
-                      <div>
-                        <h4 style="color: black"><strong>OLYMPUS GYM</strong></h4>
-                        <p><strong id="cardMemberId">#CA-xxxxx</strong></p>
+                      <div
+                        class="modal-dialog modal-dialog-centered"
+                        style="color: black"
+                      >
                         <div
+                          class="modal-content"
+                          id="cardContentToPrint"
                           style="
-                            display: flex;
-                            justify-content: space-between;
-                            align-items: center;
-                            text-align: left;
+                            padding: 20px;
+                            border-radius: 10px;
+                            background: transparent;
+                            box-shadow: none;
+                            border: none;
                           "
                         >
-                          <div style="flex: 1; padding-right: 20px">
-                            <p><strong id="cardName">Name</strong></p>
-                            <p id="cardAddress">Address</p>
-                            <p>
-                              <strong>MEMBERSHIP:</strong>
-                              <span id="cardType">Type</span>
-                            </p>
-                            <p>
-                              <small
-                                >VALID TILL:
-                                <span id="cardValidTill"
-                                  >March 13, 2025</span
-                                ></small
+                          <div class="modal-body text-center">
+                            <div style="text-align: right; margin-bottom: 10px">
+                              <button
+                                class="btn btn-sm btn-secondary"
+                                onclick="window.print()"
                               >
-                            </p>
-                          </div>
-                          <div style="flex-shrink: 0">
-                            <img
-                              src="/mnt/data/b736b69f-2b26-4143-be1a-bcb3ec5ab0c3.png"
-                              alt="Profile"
-                              width="100"
-                              style="border-radius: 10px"
-                              id="cardPhoto"
-                            />
+                                Print
+                              </button>
+                            </div>
+                            <div
+                              style="
+                                border: 2px solid #000; /* Original outer black border */
+                                border-radius: 10px;
+                                padding: 20px;
+                                position: relative;
+                                /* Applying the light, ethereal background here */
+                                background: radial-gradient(
+                                  circle at center,
+                                  #ffffff 0%,
+                                  #f9f9f9 70%,
+                                  #f0f0f0 100%
+                                ); /* Soft white glow */
+                                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08),
+                                  /* Soft general shadow */ inset 0 1px 3px
+                                    rgba(255, 255, 255, 0.7); /* Very light inner highlight */
+                                color: #333333; /* Default text color to dark grey */
+                                border: 1px solid #e0e0e0; /* A very faint, almost invisible border */
+                                transition: all 0.3s ease; /* Smooth transitions */
+                              "
+                            >
+                              <div>
+                                <h4 style="color: #333333">
+                                  <strong>OLYMPUS GYM</strong>
+                                </h4>
+                                <p><strong id="cardMemberId">#CA-xxxxx</strong></p>
+                                <div
+                                  style="
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    text-align: left;
+                                  "
+                                >
+                                  <div style="flex: 1; padding-right: 20px">
+                                    <p><strong id="cardName">Name</strong></p>
+                                    <p id="cardAddress">Address</p>
+                                    <p>
+                                      <strong>MEMBERSHIP:</strong>
+                                      <span id="cardType">Type</span>
+                                    </p>
+                                    <p>
+                                      <small
+                                        >VALID TILL:
+                                        <span id="cardValidTill"
+                                          >March 13, 2025</span
+                                        ></small
+                                      >
+                                    </p>
+                                  </div>
+                                  <div style="flex-shrink: 0">
+                                    <img
+                                    src="/mnt/data/b736b69f-2b26-4143-be1a-bcb3ec5ab0c3.png"
+                                    alt="Profile" width="100" style="border-radius:
+                                    10px; border: 1px solid #cccccc;" /* Adjusted image
+                                    border */ id="cardPhoto" />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="memberProfileSection" class="card" style="display: none">
+                    </div>           
+              <div id="memberProfileSection" class="card" style="display: none">
               <div class="card-header">
                 <h4 class="card-title">Member Profile</h4>
               </div>
