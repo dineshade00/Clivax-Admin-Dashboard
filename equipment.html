@@ -789,6 +789,9 @@
                 >
                   <h4 class="mb-sm-0">Show All Equipments</h4>
                   <div class="page-title-right">
+                    <p style="padding-top: 15px; font-size: 14px">
+                      <a href="index.html">Home</a> >> Equipment
+                    </p>
                     <button id="toggleFormBtn" class="btn btn-success">
                       Add Equipment
                     </button>
@@ -798,6 +801,7 @@
             </div>
 
             <!-- Add Equipment Form -->
+            <!-- Your existing form (unchanged) -->
             <div class="row" id="addEquipmentForm" style="display: none">
               <div class="col-12">
                 <div class="card">
@@ -818,6 +822,7 @@
                         <div class="col-md-4 mb-3">
                           <label>Category</label>
                           <select class="form-control">
+                            <option value="">Select Category</option>
                             <option>Cardio</option>
                             <option>Strength</option>
                             <option>Flexibility</option>
@@ -838,6 +843,7 @@
                         <div class="col-md-4 mb-3">
                           <label>Status</label>
                           <select class="form-control">
+                            <option value="">Select Status</option>
                             <option>Active</option>
                             <option>Under Maintenance</option>
                             <option>Inactive</option>
@@ -870,6 +876,42 @@
               </div>
             </div>
 
+            <!-- ✅ Add CSS for red border on invalid fields -->
+            <style>
+              .is-invalid {
+                border-color: red !important;
+              }
+            </style>
+
+            <!-- ✅ Add JavaScript for validation (at bottom of HTML or in <script> block) -->
+            <script>
+              document.addEventListener("DOMContentLoaded", function () {
+                const form = document.querySelector("#addEquipmentForm form");
+
+                form.addEventListener("submit", function (e) {
+                  e.preventDefault();
+
+                  let isValid = true;
+                  const inputs = form.querySelectorAll("input, select");
+
+                  inputs.forEach((input) => {
+                    if (input.value.trim() === "") {
+                      input.classList.add("is-invalid");
+                      isValid = false;
+                    } else {
+                      input.classList.remove("is-invalid");
+                    }
+                  });
+
+                  if (isValid) {
+                    alert("Form submitted successfully!");
+                    // Replace the below line with your own form submission logic if needed
+                    // form.submit();
+                  }
+                });
+              });
+            </script>
+
             <!-- Equipment Tabs -->
             <ul class="nav nav-tabs mb-3" role="tablist">
               <li class="nav-item" role="presentation">
@@ -892,6 +934,17 @@
                   role="tab"
                 >
                   Machinary
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  data-bs-toggle="tab"
+                  data-bs-target="#maintenance"
+                  type="button"
+                  role="tab"
+                >
+                  Maintainance
                 </button>
               </li>
               <li class="nav-item" role="presentation">
@@ -937,7 +990,7 @@
                           <td>EQ001</td>
                           <td>
                             <img
-                              src="assets/images/equipment/treadmill.png"
+                              src="assets/images/tradmill.img.jpeg"
                               width="50"
                             />
                           </td>
@@ -957,7 +1010,7 @@
                           <td>EQ002</td>
                           <td>
                             <img
-                              src="assets/images/equipment/legpress.png"
+                              src="assets/images/legpressmachine.img.jpeg"
                               width="50"
                             />
                           </td>
@@ -977,7 +1030,7 @@
                           <td>EQ003</td>
                           <td>
                             <img
-                              src="assets/images/equipment/rowing.png"
+                              src="assets/images/rowing machine.img.jpeg"
                               width="50"
                             />
                           </td>
