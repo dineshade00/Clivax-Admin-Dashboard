@@ -47,6 +47,33 @@
       rel="stylesheet"
       type="text/css"
     />
+    <!-- ADD THIS IN HEAD -->
+    <style>
+      @media print {
+        body * {
+          visibility: hidden;
+        }
+
+        #printable-report,
+        #printable-report * {
+          visibility: visible;
+        }
+
+        #printable-report {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+        }
+
+        /* Hide pagination, entries info, and print button during print */
+        .dataTables_info,
+        .dataTables_paginate,
+        .print-btn {
+          display: none !important;
+        }
+      }
+    </style>
   </head>
 
   <body>
@@ -102,133 +129,175 @@
           </div>
           <!-- End navbar brand -->
 
-                   <!-- Start menu -->
-                <div class="d-flex justify-content-between menu-sm px-3 ms-auto">
-                    <div class="d-flex align-items-center gap-2">
-                        <div class="dropdown d-none d-lg-block">
-                            <button type="button" class="btn btn-primary btn-sm fs-14 d-inline"
-                                data-bs-toggle="dropdown">
-                                Gym Modules
-                                <i class="mdi mdi-chevron-down align-middle"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-start dropdown-menu-animated">
+          <!-- Start menu -->
+          <div class="d-flex justify-content-between menu-sm px-3 ms-auto">
+            <div class="d-flex align-items-center gap-2">
+              <div class="dropdown d-none d-lg-block">
+                <button
+                  type="button"
+                  class="btn btn-primary btn-sm fs-14 d-inline"
+                  data-bs-toggle="dropdown"
+                >
+                  Gym Modules
+                  <i class="mdi mdi-chevron-down align-middle"></i>
+                </button>
+                <div
+                  class="dropdown-menu dropdown-menu-start dropdown-menu-animated"
+                >
+                  <!-- Inventory Manager -->
+                  <a href="equipment.html" class="dropdown-item">
+                    <div class="dropdown-icon">
+                      <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <span class="dropdown-content">Equipments</span>
+                    <div class="dropdown-addon">
+                      <span class="badge badge-warning rounded-pill">20</span>
+                    </div>
+                  </a>
 
-                                <!-- Inventory Manager -->
-                                <a href="equipment.html" class="dropdown-item">
-                                    <div class="dropdown-icon"><i class="fas fa-dumbbell"></i></div>
-                                    <span class="dropdown-content">Equipments</span>
-                                    <div class="dropdown-addon"><span class="badge badge-warning rounded-pill">20</span>
-                                    </div>
-                                </a>
+                  <!-- Invoice -->
+                  <a href="create-invoice.html" class="dropdown-item">
+                    <div class="dropdown-icon">
+                      <i class="fas fa-file-invoice"></i>
+                    </div>
+                    <span class="dropdown-content">Membership Invoice</span>
+                  </a>
 
-                                <!-- Invoice -->
-                                <a href="create-invoice.html" class="dropdown-item">
-                                    <div class="dropdown-icon"><i class="fas fa-file-invoice"></i></div>
-                                    <span class="dropdown-content">Membership Invoice</span>
-                                </a>
+                  <!-- Divider -->
+                  <div class="dropdown-divider"></div>
 
-                                <!-- Divider -->
-                                <div class="dropdown-divider"></div>
+                  <!-- My Account -->
+                  <a href="apps-contact.html" class="dropdown-item">
+                    <div class="dropdown-icon">
+                      <i class="fas fa-user-circle"></i>
+                    </div>
+                    <span class="dropdown-content">My Profile</span>
+                  </a>
+                </div>
+              </div>
 
-                                <!-- My Account -->
-                                <a href="apps-contact.html" class="dropdown-item">
-                                    <div class="dropdown-icon"><i class="fas fa-user-circle"></i></div>
-                                    <span class="dropdown-content">My Profile</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="dropdown d-none d-lg-block">
-                            <button type="button" class="btn btn-primary btn-sm fs-14" data-bs-toggle="dropdown"
-                                aria-haspopup="false" aria-expanded="false">
-                                Features
-                                <i class="mdi mdi-chevron-down align-middle"></i>
-                            </button>
-                            <div
-                                class="dropdown-menu dropdown-menu-start dropdown-menu-lg-widest dropdown-menu-widest dropdown-menu-animated bg-primary-subtle overflow-hidden">
-                                <div class="dropdown-row justify-content-center">
-
-                                    <!-- Original Image (Unchanged) -->
-                                    <div class="p-2 menu-image">
-                                        <img src="assets/images/mega-menu.png" alt="mega-menu image" class="img-fluid"
-                                            style="height: 200px;">
-                                    </div>
-
-                                    <!-- Gym Welcome Section -->
-                                    <div class="dropdown-col">
-                                        <h2 class="">Welcome to Clivax Gym!</h2>
-                                        <p class="text-muted mb-0">
-                                            Track members, manage plans, monitor trainers, and streamline gym operations
-                                            with our digital gym
-                                            dashboard.
-                                        </p>
-                                        <div class="mt-3">
-                                            <a href="auth-login.html" class="btn btn-dark btn-wider">Admin Login</a>
-                                        </div>
-                                    </div>
-
-                                    <!-- Features Section -->
-                                    <div class="dropdown-col border-start border-primary border-opacity-50">
-                                        <h4 class="dropdown-header">Gym Features</h4>
-                                        <div class="grid-nav grid-nav-action">
-                                            <div class="grid-nav-row">
-                                                <a href="index.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="fas fa-chart-line"></i></div>
-                                                    <span class="grid-nav-content">Dashboard</span>
-                                                </a>
-                                                <a href="show-all-member.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="fas fa-user-friends"></i></div>
-                                                    <span class="grid-nav-content">Members</span>
-                                                </a>
-                                                <a href="renewals.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="fas fa-redo-alt"></i></div>
-                                                    <span class="grid-nav-content">Renewals</span>
-                                                </a>
-                                            </div>
-                                            <div class="grid-nav-row">
-                                                <a href="trainer-profile.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="fas fa-dumbbell"></i></div>
-                                                    <span class="grid-nav-content">Trainers</span>
-                                                </a>
-                                                <a href="view-plan.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="fas fa-id-card-alt"></i></div>
-                                                    <span class="grid-nav-content">Membership Plans</span>
-                                                </a>
-                                                <a href="revenue-report.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="fas fa-file-alt"></i></div>
-                                                    <span class="grid-nav-content">Reports</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Tools Section -->
-                                    <div class="dropdown-col border-start border-primary border-opacity-50">
-                                        <h4 class="dropdown-header">Quick Tools</h4>
-                                        <a href="attendance.html" class="dropdown-item">
-                                            <i
-                                                class="mdi mdi-account-check-outline align-middle dropdown-bullet me-2"></i>
-                                            <span class="dropdown-content">Attendance</span>
-                                        </a>
-                                        <a href="diet-plan.html" class="dropdown-item">
-                                            <i class="mdi mdi-food-apple-outline align-middle dropdown-bullet me-2"></i>
-                                            <span class="dropdown-content">Diet Plans</span>
-                                        </a>
-                                       
-                                        <a href="manage-staff.html" class="dropdown-item">
-                                            <i class="mdi mdi-account-tie align-middle dropdown-bullet me-2"></i>
-                                            <span class="dropdown-content">Staff Management</span>
-                                        </a>
-                                      
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+              <div class="dropdown d-none d-lg-block">
+                <button
+                  type="button"
+                  class="btn btn-primary btn-sm fs-14"
+                  data-bs-toggle="dropdown"
+                  aria-haspopup="false"
+                  aria-expanded="false"
+                >
+                  Features
+                  <i class="mdi mdi-chevron-down align-middle"></i>
+                </button>
+                <div
+                  class="dropdown-menu dropdown-menu-start dropdown-menu-lg-widest dropdown-menu-widest dropdown-menu-animated bg-primary-subtle overflow-hidden"
+                >
+                  <div class="dropdown-row justify-content-center">
+                    <!-- Original Image (Unchanged) -->
+                    <div class="p-2 menu-image">
+                      <img
+                        src="assets/images/mega-menu.png"
+                        alt="mega-menu image"
+                        class="img-fluid"
+                        style="height: 200px"
+                      />
                     </div>
 
-                   <div class="d-flex align-items-center gap-2">
-             
+                    <!-- Gym Welcome Section -->
+                    <div class="dropdown-col">
+                      <h2 class="">Welcome to Clivax Gym!</h2>
+                      <p class="text-muted mb-0">
+                        Track members, manage plans, monitor trainers, and
+                        streamline gym operations with our digital gym
+                        dashboard.
+                      </p>
+                      <div class="mt-3">
+                        <a href="auth-login.html" class="btn btn-dark btn-wider"
+                          >Admin Login</a
+                        >
+                      </div>
+                    </div>
 
+                    <!-- Features Section -->
+                    <div
+                      class="dropdown-col border-start border-primary border-opacity-50"
+                    >
+                      <h4 class="dropdown-header">Gym Features</h4>
+                      <div class="grid-nav grid-nav-action">
+                        <div class="grid-nav-row">
+                          <a href="index.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-chart-line"></i>
+                            </div>
+                            <span class="grid-nav-content">Dashboard</span>
+                          </a>
+                          <a href="show-all-member.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-user-friends"></i>
+                            </div>
+                            <span class="grid-nav-content">Members</span>
+                          </a>
+                          <a href="renewals.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-redo-alt"></i>
+                            </div>
+                            <span class="grid-nav-content">Renewals</span>
+                          </a>
+                        </div>
+                        <div class="grid-nav-row">
+                          <a href="trainer-profile.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-dumbbell"></i>
+                            </div>
+                            <span class="grid-nav-content">Trainers</span>
+                          </a>
+                          <a href="view-plan.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-id-card-alt"></i>
+                            </div>
+                            <span class="grid-nav-content"
+                              >Membership Plans</span
+                            >
+                          </a>
+                          <a href="revenue-report.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-file-alt"></i>
+                            </div>
+                            <span class="grid-nav-content">Reports</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Tools Section -->
+                    <div
+                      class="dropdown-col border-start border-primary border-opacity-50"
+                    >
+                      <h4 class="dropdown-header">Quick Tools</h4>
+                      <a href="attendance.html" class="dropdown-item">
+                        <i
+                          class="mdi mdi-account-check-outline align-middle dropdown-bullet me-2"
+                        ></i>
+                        <span class="dropdown-content">Attendance</span>
+                      </a>
+                      <a href="diet-plan.html" class="dropdown-item">
+                        <i
+                          class="mdi mdi-food-apple-outline align-middle dropdown-bullet me-2"
+                        ></i>
+                        <span class="dropdown-content">Diet Plans</span>
+                      </a>
+
+                      <a href="manage-staff.html" class="dropdown-item">
+                        <i
+                          class="mdi mdi-account-tie align-middle dropdown-bullet me-2"
+                        ></i>
+                        <span class="dropdown-content">Staff Management</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-center gap-2">
               <!-- Start Notification -->
               <div class="dropdown d-inline-block">
                 <button
@@ -451,7 +520,9 @@
                             <div class="grid-nav-icon">
                               <i class="fas fa-dumbbell"></i>
                             </div>
-                            <span class="grid-nav-content">Trainer Profile</span>
+                            <span class="grid-nav-content"
+                              >Trainer Profile</span
+                            >
                           </a>
                           <a href="#" class="grid-nav-item">
                             <div class="grid-nav-icon">
@@ -496,11 +567,11 @@
               </div>
               <!-- End Profile -->
             </div>
-                </div>
-                <!-- End menu -->
-            </div>
-        </header>
-        <!-- End topbar -->
+          </div>
+          <!-- End menu -->
+        </div>
+      </header>
+      <!-- End topbar -->
 
       <!-- ========== Left Sidebar Start ========== -->
       <!-- ========== Left Sidebar Start ========== -->
@@ -593,7 +664,7 @@
                   <span>Staff Management</span>
                 </a>
                 <ul class="sub-menu" aria-expanded="false">
-                   <li>
+                  <li>
                     <a href="ui-card-draggable.html">
                       <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
                       Add New</a
@@ -699,7 +770,6 @@
                       Report
                     </a>
                   </li>
-                
 
                   <!-- Existing Chart Pages -->
                 </ul>
@@ -771,7 +841,6 @@
                           Total Revenue
                         </p>
                         <h5 class="mb-0 fw-bold fs-4">₹2,25,000</h5>
-
                         <div class="d-flex align-items-center mt-2">
                           <i class="mdi mdi-menu-up text-success"></i>
                           <span class="text-success ms-1"
@@ -779,7 +848,6 @@
                           >
                         </div>
                       </div>
-
                       <div
                         class="rounded-circle bg-light d-flex align-items-center justify-content-center"
                         style="width: 56px; height: 56px"
@@ -799,7 +867,6 @@
                           Monthly Recurring Revenue
                         </p>
                         <h5 class="mb-0 fw-bold fs-4">₹75,000</h5>
-
                         <div class="d-flex align-items-center mt-2">
                           <i class="mdi mdi-menu-up text-success"></i>
                           <span class="text-success ms-1"
@@ -807,7 +874,6 @@
                           >
                         </div>
                       </div>
-
                       <div
                         class="rounded-circle bg-light d-flex align-items-center justify-content-center"
                         style="width: 56px; height: 56px"
@@ -825,7 +891,6 @@
                       <div>
                         <p class="text-muted text-truncate mb-2">New Members</p>
                         <h5 class="mb-0 fw-bold fs-4">42</h5>
-
                         <div class="d-flex align-items-center mt-2">
                           <i class="mdi mdi-menu-up text-success"></i>
                           <span class="text-success ms-1"
@@ -833,7 +898,6 @@
                           >
                         </div>
                       </div>
-
                       <div
                         class="rounded-circle bg-light d-flex align-items-center justify-content-center"
                         style="width: 56px; height: 56px"
@@ -855,7 +919,6 @@
                           Average Revenue Per User
                         </p>
                         <h5 class="mb-0 fw-bold fs-4">₹55.2</h5>
-
                         <div class="d-flex align-items-center mt-2">
                           <i class="mdi mdi-menu-down text-danger"></i>
                           <span class="text-danger ms-1"
@@ -863,7 +926,6 @@
                           >
                         </div>
                       </div>
-
                       <div
                         class="rounded-circle bg-light d-flex align-items-center justify-content-center"
                         style="width: 56px; height: 56px"
@@ -873,223 +935,251 @@
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="card-body">
-                <h5 class="card-title mb-3">Revenue Trends (vs Last Year)</h5>
-                <div class="card-body">
-                  <div
-                    id="area_chart_spline"
-                    data-colors='["--bs-primary", "--bs-warning"]'
-                    class="apex-charts"
-                    dir="ltr"
-                  ></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-xxl-12">
-                <div class="row">
-                  <!-- Chart Container -->
-                  <div class="col-xl-6">
-                    <div class="card" style="height: 430px">
-                      <div class="card-header">
-                        <h4 class="card-title mb-0">Revenue Sources</h4>
-                      </div>
-                      <!-- end card header -->
-
-                      <div class="card-body">
-                        <div
-                          id="simple_dount_chart"
-                          data-colors='["--bs-primary", "--bs-success", "--bs-warning", "--bs-danger", "--bs-info"]'
-                          class="apex-charts"
-                          dir="ltr"
-                        ></div>
-                      </div>
-                      <!-- end card-body -->
+                <!-- Date Range Picker + Button Section -->
+                <hr />
+                <div class="row mt-3">
+                  <div class="card-header">
+                    <div class="card-icon">
+                      <i class="fas fa-file-alt fs-14 text-muted"></i>
                     </div>
-                    <!-- end card -->
+                    <h4 class="card-title mb-0">Generate Detailed Report</h4>
                   </div>
 
-                  <div class="col-xl-6">
-                    <div class="card" style="height: 430px">
-                      <div class="card-header">
-                        <div style="display: flex; flex-direction: column">
-                          <h4 class="card-title mb-0">
-                            Membership wise Revenue
-                          </h4>
-                        </div>
-                      </div>
-                      <!-- end card header -->
-
-                      <div class="card-body">
-                        <div
-                          id="simple_pie_chart"
-                          data-colors='["--bs-primary", "--bs-success", "--bs-warning", "--bs-danger", "--bs-info"]'
-                          class="apex-charts"
-                          dir="ltr"
-                        ></div>
-                      </div>
-                      <!-- end card-body -->
-                    </div>
-                    <!-- end card -->
+                  <div class="col-md-4 mb-2 mt-4">
+                    <label
+                      for="fromDate"
+                      class="form-label text-muted fw-semibold"
+                      >From</label
+                    >
+                    <input
+                      type="date"
+                      class="form-control border-primary"
+                      id="fromDate"
+                      max=""
+                    />
                   </div>
-
-                  <!-- end col -->
+                  <div class="col-md-4 mb-2 mt-4">
+                    <label
+                      for="toDate"
+                      class="form-label text-muted fw-semibold"
+                      >To</label
+                    >
+                    <input
+                      type="date"
+                      class="form-control border-primary"
+                      id="toDate"
+                      max=""
+                    />
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Revenue by Membership Tier</h3>
-                <div class="card-addon dropdown">
+
+                <div class="col-md-4 mt-4">
                   <button
-                    class="btn btn-label-secondary btn-sm dropdown-toggle"
-                    data-bs-toggle="dropdown"
+                    class="btn btn-primary w-100 shadow-sm fw-semibold"
+                    onclick="showReportTable()"
                   >
-                    <i class="fas fa-filter fs-12 align-middle ms-1"></i>
+                    Generate Report
                   </button>
-                  <div
-                    class="dropdown-menu dropdown-menu-end dropdown-menu-animated"
-                  >
-                    <a class="dropdown-item" href="#">
-                      <div class="dropdown-icon">
-                        <i class="fa fa-poll"></i>
-                      </div>
-                      <span class="dropdown-content">Today</span>
-                    </a>
+                </div>
 
-                    <a class="dropdown-item" href="#">
-                      <div class="dropdown-icon">
-                        <i class="fa fa-chart-line"></i>
+                <!-- Report Table Section (Initially Hidden) -->
+                <div id="printable-report">
+                  <div
+                    id="reportTableContainer"
+                    class="mt-4"
+                    style="display: none"
+                  >
+                    <div class="table-responsive shadow-sm">
+                      <table
+                        id="datatable"
+                        class="table table-hover table-bordered table-striped dt-responsive nowrap"
+                        style="
+                          border-collapse: collapse;
+                          border-spacing: 0;
+                          width: 100%;
+                        "
+                      >
+                        <thead>
+                          <tr>
+                            <th>Id</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Membership Type</th>
+                            <th>Total Amount</th>
+                            <th>Date</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>001</td>
+                            <td>Rishabh</td>
+                            <td>Deshmukh</td>
+                            <td>1 Month Plan</td>
+                            <td>1800</td>
+                            <td>01/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>002</td>
+                            <td>Sneha</td>
+                            <td>Patil</td>
+                            <td>3 Month Plan</td>
+                            <td>4500</td>
+                            <td>05/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>003</td>
+                            <td>Arjun</td>
+                            <td>Mehta</td>
+                            <td>6 Month Plan</td>
+                            <td>8000</td>
+                            <td>10/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>004</td>
+                            <td>Kavya</td>
+                            <td>Sharma</td>
+                            <td>1 Month Plan</td>
+                            <td>1800</td>
+                            <td>12/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>005</td>
+                            <td>Rahul</td>
+                            <td>Kumar</td>
+                            <td>12 Month Plan</td>
+                            <td>15000</td>
+                            <td>14/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>006</td>
+                            <td>Aisha</td>
+                            <td>Khan</td>
+                            <td>3 Month Plan</td>
+                            <td>4500</td>
+                            <td>16/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>007</td>
+                            <td>Mohit</td>
+                            <td>Singh</td>
+                            <td>1 Month Plan</td>
+                            <td>1800</td>
+                            <td>18/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>008</td>
+                            <td>Neha</td>
+                            <td>Joshi</td>
+                            <td>6 Month Plan</td>
+                            <td>8000</td>
+                            <td>20/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>009</td>
+                            <td>Dev</td>
+                            <td>Verma</td>
+                            <td>1 Month Plan</td>
+                            <td>1800</td>
+                            <td>22/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>010</td>
+                            <td>Ishita</td>
+                            <td>Desai</td>
+                            <td>12 Month Plan</td>
+                            <td>15000</td>
+                            <td>24/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>011</td>
+                            <td>Ravi</td>
+                            <td>Nair</td>
+                            <td>3 Month Plan</td>
+                            <td>4500</td>
+                            <td>26/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>012</td>
+                            <td>Tanvi</td>
+                            <td>Kapoor</td>
+                            <td>1 Month Plan</td>
+                            <td>1800</td>
+                            <td>27/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>013</td>
+                            <td>Aman</td>
+                            <td>Saxena</td>
+                            <td>6 Month Plan</td>
+                            <td>8000</td>
+                            <td>28/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>014</td>
+                            <td>Priya</td>
+                            <td>Aggarwal</td>
+                            <td>12 Month Plan</td>
+                            <td>15000</td>
+                            <td>29/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>015</td>
+                            <td>Yash</td>
+                            <td>Reddy</td>
+                            <td>1 Month Plan</td>
+                            <td>1800</td>
+                            <td>30/05/2025</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <!-- Print Button -->
+                      <div class="text-end mt-3 mb-3">
+                        <button
+                          class="btn btn-outline-primary print-btn"
+                          onclick="printReport()"
+                        >
+                          <i class="fa fa-print fs-14 text-muted"></i>
+                          Print Report
+                        </button>
                       </div>
-                      <span class="dropdown-content">This Week</span>
-                    </a>
-                    <a class="dropdown-item" href="#">
-                      <div class="dropdown-icon">
-                        <i class="fa fa-chart-line"></i>
-                      </div>
-                      <span class="dropdown-content">This Month</span>
-                    </a>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table text-nowrap mb-0">
-                    <thead>
-                      <tr>
-                        <th>Tier</th>
-                        <th>Membership Price</th>
-                        <th>Active Members</th>
-                        <th>Monthly Reccuring Revenue</th>
-                        <th>Average Revenue Per User</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="align-middle">1 Month Plan</td>
-                        <td class="align-middle">₹500</td>
-                        <td class="align-middle">260</td>
-                        <td class="align-middle">₹56000</td>
-                        <td class="align-middle">₹215</td>
-                      </tr>
-
-                      <tr>
-                        <td class="align-middle">3 Months Plan</td>
-                        <td class="align-middle">₹1500</td>
-                        <td class="align-middle">140</td>
-                        <td class="align-middle">₹210,000</td>
-                        <td class="align-middle">₹450</td>
-                      </tr>
-                      <tr>
-                        <td class="align-middle">6 Months Plan</td>
-                        <td class="align-middle">₹2900</td>
-                        <td class="align-middle">300</td>
-                        <td class="align-middle">₹560000</td>
-                        <td class="align-middle">₹800</td>
-                      </tr>
-                      <tr>
-                        <td class="align-middle">1 Year Plan</td>
-                        <td class="align-middle">₹4999</td>
-                        <td class="align-middle">180</td>
-                        <td class="align-middle">₹860000</td>
-                        <td class="align-middle">₹650</td>
-                      </tr>
-                      <tr>
-                        <td class="align-middle">
-                          6 Months Plan + Nurtition Plan
-                        </td>
-                        <td class="align-middle">₹3999</td>
-                        <td class="align-middle">56</td>
-                        <td class="align-middle">₹160000</td>
-                        <td class="align-middle">₹390</td>
-                      </tr>
-                      <tr>
-                        <td class="align-middle">1 Year Plan + Nurtition</td>
-                        <td class="align-middle">₹7699</td>
-                        <td class="align-middle">43</td>
-                        <td class="align-middle">₹560000</td>
-                        <td class="align-middle">₹520</td>
-                      </tr>
-                      <tr>
-                        <td class="align-middle">Premium Membership</td>
-                        <td class="align-middle">₹9999</td>
-                        <td class="align-middle">35</td>
-                        <td class="align-middle">₹340000</td>
-                        <td class="align-middle">₹1000</td>
-                      </tr>
-                      <tr>
-                        <td class="align-middle">Couple Plan</td>
-                        <td class="align-middle">₹6899</td>
-                        <td class="align-middle">15</td>
-                        <td class="align-middle">₹180000</td>
-                        <td class="align-middle">₹900</td>
-                      </tr>
-                      <tr>
-                        <td class="align-middle">Group Membership</td>
-                        <td class="align-middle">₹6499</td>
-                        <td class="align-middle">56</td>
-                        <td class="align-middle">₹135000</td>
-                        <td class="align-middle">₹480</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
             </div>
           </div>
         </div>
-        <!-- end container-fluid -->
       </div>
-      <!-- End Page-content -->
+      <!-- end container-fluid -->
+    </div>
+    <!-- End Page-content -->
 
-      <footer class="footer">
-        <div class="container-fluid">
-          <div class="row align-items-center">
-            <div class="col-sm-6">
-              <script>
-                document.write(new Date().getFullYear());
-              </script>
-             © Clivax Gym.
-            </div>
-            <div class="col-sm-6">
-              <div class="text-sm-end d-none d-sm-block">
-                Designed & Developed
-                <i class="mdi mdi-heart text-danger"></i> by
-                <a
-                  href="https://kavyainfoweb.com/"
-                  target="_blank"
-                  class="text-muted"
-                  >Kavya Infoweb Pvt. Ltd.</a
-                >
-              </div>
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-sm-6">
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            © Clivax Gym.
+          </div>
+          <div class="col-sm-6">
+            <div class="text-sm-end d-none d-sm-block">
+              Designed & Developed
+              <i class="mdi mdi-heart text-danger"></i> by
+              <a
+                href="https://kavyainfoweb.com/"
+                target="_blank"
+                class="text-muted"
+                >Kavya Infoweb Pvt. Ltd.</a
+              >
             </div>
           </div>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
+
     <!-- end main content-->
 
     <!-- end layout-wrapper -->
@@ -1105,323 +1195,6 @@
         <i class="mdi mdi-brightness-7 align-middle"></i>
         <i class="mdi mdi-white-balance-sunny align-middle"></i>
       </button>
-      <button
-        type="button"
-        class="btn btn-wide border-0 text-white fs-20 avatar-sm"
-        data-toggle="fullscreen"
-      >
-        <i class="mdi mdi-arrow-expand-all align-middle"></i>
-      </button>
-      <button
-        type="button"
-        class="btn btn-wide border-0 text-white fs-16 avatar-sm"
-        id="layout-dir-btn"
-      >
-        <span>RTL</span>
-      </button>
-    </div>
-
-    <!-- Rightbar Sidebar -->
-    <div class="offcanvas offcanvas-end" id="offcanvas-rightsidabar">
-      <div class="card h-100 rounded-0" data-simplebar="init">
-        <div class="card-header bg-light">
-          <h6 class="card-title text-uppercase">Activities</h6>
-          <div class="card-addon">
-            <button class="btn btn-label-danger" data-bs-dismiss="offcanvas">
-              <i class="fa fa-times"></i>
-            </button>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="">
-            <h3 class="card-title">Company summary</h3>
-            <div class="border rounded p-2">
-              <p class="text-muted mb-2">Server Load</p>
-              <h4 class="fs-16 mb-2">489</h4>
-              <div class="progress progress-sm" style="height: 4px">
-                <div class="progress-bar bg-success" style="width: 49.4%"></div>
-              </div>
-              <p class="text-muted mb-0 mt-1">49.4% <span>Avg</span></p>
-            </div>
-            <div class="border rounded p-2">
-              <p class="text-muted mb-2">Members online</p>
-              <h4 class="fs-16 mb-2">3,450</h4>
-              <div class="progress progress-sm" style="height: 4px">
-                <div class="progress-bar bg-danger" style="width: 34.6%"></div>
-              </div>
-              <p class="text-muted mb-0 mt-1">34.6% <span>Avg</span></p>
-            </div>
-            <div class="border rounded p-2">
-              <p class="text-muted mb-2">Today's revenue</p>
-              <h4 class="fs-16 mb-2">$18,390</h4>
-              <div class="progress progress-sm" style="height: 4px">
-                <div class="progress-bar bg-warning" style="width: 20%"></div>
-              </div>
-              <p class="text-muted mb-0 mt-1">$37,578 <span>Avg</span></p>
-            </div>
-            <div class="border rounded p-2">
-              <p class="text-muted mb-2">Expected profit</p>
-              <h4 class="fs-16 mb-2">$23,461</h4>
-              <div class="progress progress-sm" style="height: 4px">
-                <div class="progress-bar bg-info" style="width: 60%"></div>
-              </div>
-              <p class="text-muted mb-0 mt-1">$23,461 <span>Avg</span></p>
-            </div>
-          </div>
-
-          <div class="mt-4">
-            <h3 class="card-title">Latest log</h3>
-            <div class="timeline">
-              <div class="timeline-item">
-                <div class="timeline-pin">
-                  <i class="marker marker-dot text-primary"></i>
-                </div>
-                <div class="timeline-content">
-                  <div class="d-flex justify-content-between">
-                    <p class="mb-0">12 new users registered</p>
-                    <span class="text-muted">Just now</span>
-                  </div>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-pin">
-                  <i class="marker marker-dot text-success"></i>
-                </div>
-                <div class="timeline-content">
-                  <div class="d-flex justify-content-between">
-                    <p class="mb-0">
-                      System shutdown
-                      <span class="badge badge-label-success">pending</span>
-                    </p>
-                    <span class="text-muted">2 mins</span>
-                  </div>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-pin">
-                  <i class="marker marker-dot text-primary"></i>
-                </div>
-                <div class="timeline-content">
-                  <div class="d-flex justify-content-between">
-                    <p class="mb-0">New invoice received</p>
-                    <span class="text-muted">3 mins</span>
-                  </div>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-pin">
-                  <i class="marker marker-dot text-danger"></i>
-                </div>
-                <div class="timeline-content">
-                  <div class="d-flex justify-content-between">
-                    <p class="mb-0">
-                      New order received
-                      <span class="badge badge-label-danger">urgent</span>
-                    </p>
-                    <span class="text-muted">10 mins</span>
-                  </div>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-pin">
-                  <i class="marker marker-dot text-warning"></i>
-                </div>
-                <div class="timeline-content">
-                  <div class="d-flex justify-content-between">
-                    <p class="mb-0">Production server down</p>
-                    <span class="text-muted">1 hrs</span>
-                  </div>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-pin">
-                  <i class="marker marker-dot text-info"></i>
-                </div>
-                <div class="timeline-content">
-                  <div class="d-flex justify-content-between">
-                    <p class="mb-0">System error <a href="#">check</a></p>
-                    <span class="text-muted">2 hrs</span>
-                  </div>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-pin">
-                  <i class="marker marker-dot text-secondary"></i>
-                </div>
-                <div class="timeline-content">
-                  <div class="d-flex justify-content-between">
-                    <p class="mb-0">DB overloaded 80%</p>
-                    <span class="text-muted">5 hrs</span>
-                  </div>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-pin">
-                  <i class="marker marker-dot text-success"></i>
-                </div>
-                <div class="timeline-content">
-                  <div class="d-flex justify-content-between">
-                    <p class="mb-0">Production server up</p>
-                    <span class="text-muted">6 hrs</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-4">
-            <h3 class="card-title">Upcoming activities</h3>
-            <div class="timeline timeline-timed">
-              <div class="timeline-item">
-                <span class="timeline-time">10:00</span>
-                <div class="timeline-pin">
-                  <i class="marker marker-circle text-primary"></i>
-                </div>
-                <div class="timeline-content">
-                  <div>
-                    <span>Meeting with</span>
-                    <div class="avatar-group ms-2">
-                      <div class="avatar avatar-circle">
-                        <img
-                          src="assets/images/users/avatar-1.png"
-                          alt="Avatar image"
-                          class="avatar-2xs"
-                        />
-                      </div>
-                      <div class="avatar avatar-circle">
-                        <img
-                          src="assets/images/users/avatar-2.png"
-                          alt="Avatar image"
-                          class="avatar-2xs"
-                        />
-                      </div>
-                      <div class="avatar avatar-circle">
-                        <img
-                          src="assets/images/users/avatar-3.png"
-                          alt="Avatar image"
-                          class="avatar-2xs"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <span class="timeline-time">12:45</span>
-                <div class="timeline-pin">
-                  <i class="marker marker-circle text-warning"></i>
-                </div>
-                <div class="timeline-content">
-                  <p class="mb-0">
-                    Lorem ipsum dolor sit amit,consectetur eiusmdd tempor
-                    incididunt ut labore et dolore magna elit enim at minim
-                    veniam quis nostrud
-                  </p>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <span class="timeline-time">14:00</span>
-                <div class="timeline-pin">
-                  <i class="marker marker-circle text-danger"></i>
-                </div>
-                <div class="timeline-content">
-                  <p class="mb-0">
-                    Received a new feedback on <a href="#">GoFinance</a> App
-                    product.
-                  </p>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <span class="timeline-time">15:20</span>
-                <div class="timeline-pin">
-                  <i class="marker marker-circle text-success"></i>
-                </div>
-                <div class="timeline-content">
-                  <p class="mb-0">
-                    Lorem ipsum dolor sit amit,consectetur eiusmdd tempor
-                    incididunt ut labore et dolore magna.
-                  </p>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <span class="timeline-time">17:00</span>
-                <div class="timeline-pin">
-                  <i class="marker marker-circle text-info"></i>
-                </div>
-                <div class="timeline-content">
-                  <p class="mb-0">
-                    Make Deposit <a href="#">USD 700</a> o ESL.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- end card-->
-    </div>
-
-    <!-- Trainer Profile Modal -->
-    <div
-      class="modal fade"
-      id="trainerModal"
-      tabindex="-1"
-      aria-labelledby="trainerModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content shadow-lg">
-          <div class="modal-header">
-            <h5 class="modal-title" id="trainerModalLabel">Trainer Profile</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-
-          <div class="modal-body">
-            <div class="row g-4 align-items-center">
-              <div class="col-md-4 text-center">
-                <img
-                  id="trainerPhoto"
-                  class="img-fluid rounded-circle border shadow-sm"
-                  style="width: 200px; height: 220px; object-fit: fill"
-                  alt="Trainer photo"
-                />
-              </div>
-
-              <div class="col-md-8">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">
-                    <strong>Name:</strong> <span id="modalTrainerName"></span>
-                  </li>
-                  <li class="list-group-item">
-                    <strong>Age:</strong> <span id="modalTrainerAge"></span>
-                  </li>
-                  <li class="list-group-item">
-                    <strong>Gender:</strong>
-                    <span id="modalTrainerGender"></span>
-                  </li>
-                  <li class="list-group-item">
-                    <strong>Expertise:</strong>
-                    <span id="modalTrainerExpertise"></span>
-                  </li>
-                  <li class="list-group-item">
-                    <strong>Experience:</strong>
-                    <span id="modalTrainerExperience"></span>
-                  </li>
-                  <li class="list-group-item">
-                    <strong>Sessions Conducted:</strong>
-                    <span id="modalTrainerSessions"></span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
     <!-- JAVASCRIPT -->
