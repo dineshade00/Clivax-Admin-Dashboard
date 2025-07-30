@@ -843,7 +843,7 @@
                                                             <th>Trainer Name</th>
                                                             <th>Total Members Assigned</th>
                                                             <th>View Members</th>
-                                                            
+
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -957,109 +957,69 @@
                     </div>
                     <!-- end row -->
 
-<!-- Gym Revenue Section -->
-<section class="gym-revenue-section py-4">
-  <div class="container-fluid">
-    <div class="card shadow-sm border-0">
-      <div class="card-body">
-        <!-- Top Filters -->
-        <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
-          <h5 class="card-title text-success mb-2">Gym Revenue Analytics</h5>
-          <div class="d-flex flex-wrap gap-2 align-items-center">
-            <label class="form-label mb-0">From:</label>
-            <input type="date" class="form-control form-control-sm" id="revenueFromDate">
-            <label class="form-label mb-0">To:</label>
-            <input type="date" class="form-control form-control-sm" id="revenueToDate">
-            <button class="btn btn-success btn-sm" id="filterBtn">Show Weekly</button>
-          </div>
-        </div>
+                    <!-- Gym Revenue Section -->
+                    <section class="gym-revenue-section py-4">
+                        <div class="container-fluid">
+                            <div class="card shadow-sm border-0">
+                                <div class="card-body">
+                                    <!-- Top Filters -->
+                                    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+                                        <h5 class="card-title text-success mb-2">Gym Revenue Analytics</h5>
+                                        <div class="d-flex flex-wrap gap-2 align-items-center">
+                                            <label class="form-label mb-0">From:</label>
+                                            <input type="date" class="form-control form-control-sm"
+                                                id="revenueFromDate">
+                                            <label class="form-label mb-0">To:</label>
+                                            <input type="date" class="form-control form-control-sm" id="revenueToDate">
+                                            <button class="btn btn-success btn-sm" id="filterBtn">Show Weekly</button>
+                                        </div>
+                                    </div>
 
-        <!-- Timeframe Buttons -->
-        <div class="btn-group mb-3" role="group">
-          <button class="btn btn-outline-success btn-sm range-btn" data-range="2M">Last 2 Months</button>
-          <button class="btn btn-outline-success btn-sm range-btn" data-range="3M">Last 3 Months</button>
-          <button class="btn btn-outline-success btn-sm range-btn" data-range="4M">Last 4 Months</button>
-          <button class="btn btn-outline-success btn-sm range-btn" data-range="6M">Last 6 Months</button>
-          <button class="btn btn-outline-success btn-sm range-btn" data-range="1Y">Last 1 Year</button>
-        </div>
+                                    <!-- Timeframe Buttons -->
+                                    <div class="btn-group mb-3" role="group">
+                                        <button class="btn btn-outline-success btn-sm range-btn" data-range="2M">Last 2
+                                            Months</button>
+                                        <button class="btn btn-outline-success btn-sm range-btn" data-range="3M">Last 3
+                                            Months</button>
+                                        <button class="btn btn-outline-success btn-sm range-btn" data-range="4M">Last 4
+                                            Months</button>
+                                        <button class="btn btn-outline-success btn-sm range-btn" data-range="6M">Last 6
+                                            Months</button>
+                                        <button class="btn btn-outline-success btn-sm range-btn" data-range="1Y">Last 1
+                                            Year</button>
+                                    </div>
 
-        <!-- Chart -->
-        <canvas id="revenueBarChart" height="90"></canvas>
+                                    <!-- Chart -->
+                                    <canvas id="revenueBarChart" height="90"></canvas>
 
-        <!-- Revenue Stats -->
-        <div class="row text-center mt-4">
-          <div class="col-md-4 mb-3">
-            <h6 class="text-muted">Total Revenue</h6>
-            <h4 class="text-success fw-bold" id="totalRevenue">₹0</h4>
-          </div>
-          <div class="col-md-4 mb-3">
-            <h6 class="text-muted">Average per Period</h6>
-            <h4 class="text-info fw-bold" id="avgRevenue">₹0</h4>
-          </div>
-          <div class="col-md-4 mb-3">
-            <h6 class="text-muted">Highest Earning</h6>
-            <h4 class="text-danger fw-bold" id="maxRevenue">₹0</h4>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+                                    <!-- Revenue Stats -->
+                                    <div class="row text-center mt-4">
+                                        <div class="col-md-4 mb-3">
+                                            <h6 class="text-muted">Total Revenue</h6>
+                                            <h4 class="text-success fw-bold" id="totalRevenue">₹0</h4>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <h6 class="text-muted">Average per Period</h6>
+                                            <h4 class="text-info fw-bold" id="avgRevenue">₹0</h4>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <h6 class="text-muted">Highest Earning</h6>
+                                            <h4 class="text-danger fw-bold" id="maxRevenue">₹0</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
 
 
-
-<!-- Gym Revenue Section -->
-<section class="gym-revenue-section py-4">
-  <div class="container-fluid">
-    <div class="card shadow-sm border-0">
-      <div class="card-body">
-        <!-- Top Filters -->
-        <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
-          <h5 class="card-title text-success mb-2">Gym Revenue Analytics</h5>
-          <div class="d-flex flex-wrap gap-2 align-items-center">
-            <label class="form-label mb-0">From:</label>
-            <input type="date" class="form-control form-control-sm" id="revenueFromDate">
-            <label class="form-label mb-0">To:</label>
-            <input type="date" class="form-control form-control-sm" id="revenueToDate">
-            <button class="btn btn-success btn-sm" id="filterBtn">Show Weekly</button>
-          </div>
-        </div>
-
-        <!-- Timeframe Buttons -->
-        <div class="btn-group mb-3" role="group">
-          <button class="btn btn-outline-success btn-sm range-btn" data-range="2M">Last 2 Months</button>
-          <button class="btn btn-outline-success btn-sm range-btn" data-range="3M">Last 3 Months</button>
-          <button class="btn btn-outline-success btn-sm range-btn" data-range="4M">Last 4 Months</button>
-          <button class="btn btn-outline-success btn-sm range-btn" data-range="6M">Last 6 Months</button>
-          <button class="btn btn-outline-success btn-sm range-btn" data-range="1Y">Last 1 Year</button>
-        </div>
-
-        <!-- Chart -->
-        <canvas id="revenueBarChart" height="90"></canvas>
-
-        <!-- Revenue Stats -->
-        <div class="row text-center mt-4">
-          <div class="col-md-4 mb-3">
-            <h6 class="text-muted">Total Revenue</h6>
-            <h4 class="text-success fw-bold" id="totalRevenue">₹0</h4>
-          </div>
-          <div class="col-md-4 mb-3">
-            <h6 class="text-muted">Average per Period</h6>
-            <h4 class="text-info fw-bold" id="avgRevenue">₹0</h4>
-          </div>
-          <div class="col-md-4 mb-3">
-            <h6 class="text-muted">Highest Earning</h6>
-            <h4 class="text-danger fw-bold" id="maxRevenue">₹0</h4>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 
 
                     <!-- end row -->
+
+
+
                 </div>
                 <!-- end container-fluid -->
             </div>
@@ -1302,13 +1262,13 @@
 
 
     <!-- apexcharts -->
-    <script src="assets/libs/apexcharts/apexcharts.min.js"></script>    
-                     <!-- Chart.js CDN -->
+    <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+    <!-- Chart.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script src="assets/js/pages/dashboard.init.js"></script>
-<!-- Chart.js CDN -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- App js -->
     <script src="assets/js/app.js"></script>
@@ -1344,237 +1304,139 @@
             });
         });
     </script>
-    
-<!-- Chart Script -->
-<script>
-  const ctx = document.getElementById('revenueBarChart').getContext('2d');
 
-  let revenueChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: [],
-      datasets: [{
-        label: 'Revenue (₹)',
-        data: [],
-        backgroundColor: '#38c66c',
-        borderRadius: 5,
-        barPercentage: 0.4, // column width reduced
-        categoryPercentage: 0.5,
-      }]
-    },
-    options: {
-      responsive: true,
-      scales: {
-        y: {
-          beginAtZero: true,
-          ticks: {
-            callback: value => '₹' + value
-          }
+    <!-- Chart Script -->
+    <script>
+        const ctx = document.getElementById('revenueBarChart').getContext('2d');
+
+        let revenueChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'Revenue (₹)',
+                    data: [],
+                    backgroundColor: '#38c66c',
+                    borderRadius: 5,
+                    barPercentage: 0.4,
+                    categoryPercentage: 0.5,
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: value => '₹' + value
+                        }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: context => '₹' + context.parsed.y
+                        }
+                    }
+                }
+            }
+        });
+
+        const monthlyRevenue = {
+            'Jan': 105000, 'Feb': 97000, 'Mar': 112000, 'Apr': 128000,
+            'May': 122000, 'Jun': 119000, 'Jul': 134000, 'Aug': 110000,
+            'Sep': 98000, 'Oct': 126000, 'Nov': 124000, 'Dec': 143000
+        };
+
+        function updateChart(labels, data) {
+            // Adjust bar width dynamically
+            let count = labels.length;
+            let barP = 0.4, catP = 0.5;
+            if (count >= 10) {
+                barP = 0.25;
+                catP = 0.4;
+            } else if (count >= 6) {
+                barP = 0.3;
+                catP = 0.45;
+            }
+
+            revenueChart.data.labels = labels;
+            revenueChart.data.datasets[0].data = data;
+            revenueChart.data.datasets[0].barPercentage = barP;
+            revenueChart.data.datasets[0].categoryPercentage = catP;
+            revenueChart.update();
+
+            const total = data.reduce((a, b) => a + b, 0);
+            const avg = Math.round(total / data.length);
+            const max = Math.max(...data);
+
+            document.getElementById('totalRevenue').innerText = '₹' + total.toLocaleString();
+            document.getElementById('avgRevenue').innerText = '₹' + avg.toLocaleString();
+            document.getElementById('maxRevenue').innerText = '₹' + max.toLocaleString();
         }
-      },
-      plugins: {
-        legend: { display: false },
-        tooltip: {
-          callbacks: {
-            label: context => '₹' + context.parsed.y
-          }
+
+        function generateWeeklyRevenue(fromDate, toDate) {
+            const weeks = [];
+            const labels = [];
+            const oneWeek = 7 * 24 * 60 * 60 * 1000;
+            let current = new Date(fromDate);
+            let weekCount = 1;
+
+            while (current < toDate) {
+                const next = new Date(current.getTime() + oneWeek);
+                labels.push(`Week ${weekCount++}`);
+                weeks.push(Math.floor(25000 + Math.random() * 20000)); // Dummy data
+                current = next;
+            }
+
+            return { labels, data: weeks };
         }
-      }
-    }
-  });
 
-  // Sample Monthly Revenue Data
-  const monthlyRevenue = {
-    'Jan': 105000, 'Feb': 97000, 'Mar': 112000, 'Apr': 128000,
-    'May': 122000, 'Jun': 119000, 'Jul': 134000, 'Aug': 110000,
-    'Sep': 98000, 'Oct': 126000, 'Nov': 124000, 'Dec': 143000
-  };
+        // Range Buttons
+        document.querySelectorAll('.range-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const range = btn.dataset.range;
+                let selectedMonths = [];
 
-  // Weekly Dummy Data
-  const weeklyRevenue = [27000, 32000, 25000, 36000];
+                switch (range) {
+                    case '2M': selectedMonths = ['Jun', 'Jul']; break;
+                    case '3M': selectedMonths = ['May', 'Jun', 'Jul']; break;
+                    case '4M': selectedMonths = ['Apr', 'May', 'Jun', 'Jul']; break;
+                    case '6M': selectedMonths = ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']; break;
+                    case '1Y': selectedMonths = Object.keys(monthlyRevenue); break;
+                }
 
-  function updateChart(labels, data) {
-    revenueChart.data.labels = labels;
-    revenueChart.data.datasets[0].data = data;
-    revenueChart.update();
+                const revenueValues = selectedMonths.map(month => monthlyRevenue[month]);
+                updateChart(selectedMonths, revenueValues);
+            });
+        });
 
-    const total = data.reduce((a, b) => a + b, 0);
-    const avg = Math.round(total / data.length);
-    const max = Math.max(...data);
+        // Weekly Filter
+        document.getElementById('filterBtn').addEventListener('click', () => {
+            const fromVal = document.getElementById('revenueFromDate').value;
+            const toVal = document.getElementById('revenueToDate').value;
 
-    document.getElementById('totalRevenue').innerText = '₹' + total.toLocaleString();
-    document.getElementById('avgRevenue').innerText = '₹' + avg.toLocaleString();
-    document.getElementById('maxRevenue').innerText = '₹' + max.toLocaleString();
-  }
+            if (!fromVal || !toVal) {
+                alert('Please select both From and To dates.');
+                return;
+            }
 
-  // Timeframe Button Event
-  document.querySelectorAll('.range-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const range = btn.dataset.range;
-      let selectedMonths = [];
+            const fromDate = new Date(fromVal);
+            const toDate = new Date(toVal);
 
-      switch (range) {
-        case '2M': selectedMonths = ['Jun', 'Jul']; break;
-        case '3M': selectedMonths = ['May', 'Jun', 'Jul']; break;
-        case '4M': selectedMonths = ['Apr', 'May', 'Jun', 'Jul']; break;
-        case '6M': selectedMonths = ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']; break;
-        case '1Y': selectedMonths = Object.keys(monthlyRevenue); break;
-      }
+            if (fromDate >= toDate) {
+                alert('Please select a valid date range.');
+                return;
+            }
 
-      const revenueValues = selectedMonths.map(month => monthlyRevenue[month]);
-      updateChart(selectedMonths, revenueValues);
-    });
-  });
+            const { labels, data } = generateWeeklyRevenue(fromDate, toDate);
+            updateChart(labels, data);
+        });
 
-  // From – To Filter Button
-  document.getElementById('filterBtn').addEventListener('click', () => {
-    const fromDate = new Date(document.getElementById('revenueFromDate').value);
-    const toDate = new Date(document.getElementById('revenueToDate').value);
-
-    if (fromDate && toDate && fromDate < toDate) {
-      updateChart(['Week 1', 'Week 2', 'Week 3', 'Week 4'], weeklyRevenue);
-    } else {
-      alert('Please select a valid date range.');
-    }
-  });
-
-  // Load default (last 3 months)
-  document.querySelector('[data-range="3M"]').click();
-</script>
-
-
-<!-- Chart Script -->
-<script>
-  const ctx = document.getElementById('revenueBarChart').getContext('2d');
-
-  let revenueChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: [],
-      datasets: [{
-        label: 'Revenue (₹)',
-        data: [],
-        backgroundColor: '#38c66c',
-        borderRadius: 5,
-        barPercentage: 0.4,
-        categoryPercentage: 0.5,
-      }]
-    },
-    options: {
-      responsive: true,
-      scales: {
-        y: {
-          beginAtZero: true,
-          ticks: {
-            callback: value => '₹' + value
-          }
-        }
-      },
-      plugins: {
-        legend: { display: false },
-        tooltip: {
-          callbacks: {
-            label: context => '₹' + context.parsed.y
-          }
-        }
-      }
-    }
-  });
-
-  const monthlyRevenue = {
-    'Jan': 105000, 'Feb': 97000, 'Mar': 112000, 'Apr': 128000,
-    'May': 122000, 'Jun': 119000, 'Jul': 134000, 'Aug': 110000,
-    'Sep': 98000, 'Oct': 126000, 'Nov': 124000, 'Dec': 143000
-  };
-
-  function updateChart(labels, data) {
-    // Adjust bar width dynamically
-    let count = labels.length;
-    let barP = 0.4, catP = 0.5;
-    if (count >= 10) {
-      barP = 0.25;
-      catP = 0.4;
-    } else if (count >= 6) {
-      barP = 0.3;
-      catP = 0.45;
-    }
-
-    revenueChart.data.labels = labels;
-    revenueChart.data.datasets[0].data = data;
-    revenueChart.data.datasets[0].barPercentage = barP;
-    revenueChart.data.datasets[0].categoryPercentage = catP;
-    revenueChart.update();
-
-    const total = data.reduce((a, b) => a + b, 0);
-    const avg = Math.round(total / data.length);
-    const max = Math.max(...data);
-
-    document.getElementById('totalRevenue').innerText = '₹' + total.toLocaleString();
-    document.getElementById('avgRevenue').innerText = '₹' + avg.toLocaleString();
-    document.getElementById('maxRevenue').innerText = '₹' + max.toLocaleString();
-  }
-
-  function generateWeeklyRevenue(fromDate, toDate) {
-    const weeks = [];
-    const labels = [];
-    const oneWeek = 7 * 24 * 60 * 60 * 1000;
-    let current = new Date(fromDate);
-    let weekCount = 1;
-
-    while (current < toDate) {
-      const next = new Date(current.getTime() + oneWeek);
-      labels.push(`Week ${weekCount++}`);
-      weeks.push(Math.floor(25000 + Math.random() * 20000)); // Dummy data
-      current = next;
-    }
-
-    return { labels, data: weeks };
-  }
-
-  // Range Buttons
-  document.querySelectorAll('.range-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const range = btn.dataset.range;
-      let selectedMonths = [];
-
-      switch (range) {
-        case '2M': selectedMonths = ['Jun', 'Jul']; break;
-        case '3M': selectedMonths = ['May', 'Jun', 'Jul']; break;
-        case '4M': selectedMonths = ['Apr', 'May', 'Jun', 'Jul']; break;
-        case '6M': selectedMonths = ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']; break;
-        case '1Y': selectedMonths = Object.keys(monthlyRevenue); break;
-      }
-
-      const revenueValues = selectedMonths.map(month => monthlyRevenue[month]);
-      updateChart(selectedMonths, revenueValues);
-    });
-  });
-
-  // Weekly Filter
-  document.getElementById('filterBtn').addEventListener('click', () => {
-    const fromVal = document.getElementById('revenueFromDate').value;
-    const toVal = document.getElementById('revenueToDate').value;
-
-    if (!fromVal || !toVal) {
-      alert('Please select both From and To dates.');
-      return;
-    }
-
-    const fromDate = new Date(fromVal);
-    const toDate = new Date(toVal);
-
-    if (fromDate >= toDate) {
-      alert('Please select a valid date range.');
-      return;
-    }
-
-    const { labels, data } = generateWeeklyRevenue(fromDate, toDate);
-    updateChart(labels, data);
-  });
-
-  // Load Default Chart
-  document.querySelector('[data-range="3M"]').click();
-</script>
+        // Load Default Chart
+        document.querySelector('[data-range="3M"]').click();
+    </script>
 
 </body>
 
