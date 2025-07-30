@@ -1,0 +1,80 @@
+ <script>
+      // Disable future dates
+      const today = new Date().toISOString().split("T")[0];
+      document.getElementById("fromDate").max = today;
+      document.getElementById("toDate").max = today;
+
+      // Show the report table only if both dates are selected
+      function showReportTable() {
+        const fromDate = document.getElementById("fromDate").value;
+        const toDate = document.getElementById("toDate").value;
+
+        if (fromDate && toDate) {
+          document.getElementById("reportTableContainer").style.display =
+            "block";
+        } else {
+          document.getElementById("reportTableContainer").style.display =
+            "none";
+          alert("Please select both From and To dates to generate the report.");
+        }
+      }
+
+      function printReport() {
+        window.print();
+      }
+
+      $(document).ready(function () {
+        $("#datatable").DataTable({
+          searching: false,
+          lengthChange: false,
+          paging: false, // <--- Pagination removed
+          language: {
+            paginate: {
+              previous: "<i class='mdi mdi-chevron-left'>",
+              next: "<i class='mdi mdi-chevron-right'>",
+            },
+          },
+          drawCallback: function () {
+            $(".dataTables_paginate > .pagination").addClass("pagination");
+          },
+        });
+
+        // Other table initializations (if not in use, they can be removed later)
+        $("#scroll-sidebar-datatable").DataTable({
+          scrollY: "350px",
+          scrollCollapse: true,
+          paging: true,
+          searching: false,
+          lengthChange: false,
+          language: {
+            paginate: {
+              previous: "<i class='mdi mdi-chevron-left'>",
+              next: "<i class='mdi mdi-chevron-right'>",
+            },
+          },
+          drawCallback: function () {
+            $(".dataTables_paginate > .pagination").addClass("pagination");
+          },
+        });
+
+        $("#alternative-page-datatable").DataTable({
+          pagingType: "full_numbers",
+          searching: false,
+          lengthChange: false,
+          drawCallback: function () {
+            $(".dataTables_paginate > .pagination").addClass("pagination"),
+              $(".dataTables_length select").addClass(
+                "form-select form-select-sm"
+              );
+          },
+        });
+
+        $("#datatable-1").DataTable({
+          responsive: true,
+          searching: false,
+          lengthChange: false,
+        });
+
+        $(".dataTables_length select").addClass("form-select form-select-sm");
+      });
+    </script>
