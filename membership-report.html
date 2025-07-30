@@ -646,368 +646,496 @@
         <!-- Left Sidebar End -->
     <!-- Start right Content here -->
         <!-- ============================================================== -->
-        <div class="main-content">
-            <div class="page-content">
-                <div class="container-fluid">
-                    <div class="row">
+       <div class="main-content">
+        <div class="page-content">
+          <div class="container-fluid">
+            <!-- start page title -->
+            <div class="row">
+              <div class="col-12">
+                <div
+                  class="page-title-box d-flex align-items-center justify-content-between"
+                >
+                  <h4 class="mb-sm-0">Membership Report</h4>
 
-
-                        <div class="col-12">
-                            <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0">Membership Report</h4>
-
-                                <div class="page-title-right">
-                                    <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                        <li class="breadcrumb-item active">Membership Report</li>
-                                    </ol>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-
-                  <div class="row mb-4 align-items-end">
-                        <div class="col-md-4">
-                            <label for="rangePicker" class="form-label">Select Date</label>
-                            <div class="input-group">
-                                <input type="text" class="form-control" id="fromDate" placeholder="MM/YYYY">
-                                <span class="input-group-text">to</span>
-                                <input type="text" class="form-control" id="toDate" placeholder="MM/YYYY">
-                            </div>
-                        </div>
-
-                        <div class="col-md-auto">
-                            <button type="button" class="btn btn-primary" id="generateReportBtn">Generate
-                                Report</button>
-                        </div>
-                    </div>
-
-
-
-
-                    <div class="row">
-
-                        <div class="col-xl-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="card-title mb-0">Yearly Active and Inactive</h4>
-                                </div>
-                                <div class="card-body">
-                                    <div id="line_chart_datalabel" data-colors='["--bs-primary", "--bs-danger"]'
-                                        class="apex-charts" dir="ltr"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-6">
-                            <div class="card" style="height: 430px;">
-                                <div class="card-header">
-                                    <h4 class="card-title mb-0">Plans and Members</h4>
-                                </div>
-                                <div class="card-body">
-                                    <div id="simple_pie_chart"
-                                        data-colors='["--bs-primary", "--bs-success", "--bs-warning", "--bs-danger", "--bs-info"]'
-                                        class="apex-charts" dir="ltr"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-6">
-                            <div class="card" style="height: 430px;">
-                                <div class="card-header">
-                                    <h4 class="card-title mb-0">Plan Wise Status</h4>
-                                </div>
-                                <div class="card-body">
-                                    <div id="basic_radar" data-colors='["--bs-success", "--bs-warning", "--bs-danger"]'
-                                        class="apex-charts" dir="ltr"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end main-content -->
-
-                    <footer class="footer">
-                        <div class="container-fluid">
-                            <div class="row align-items-center">
-                                <div class="col-sm-6">
-                                    <script>document.write(new Date().getFullYear())</script>© Clivax Gym.
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="text-sm-end d-none d-sm-block">
-                                        Designed & Developed <i class="mdi mdi-heart text-danger"></i> by <a
-                                            href="https://kavyainfoweb.com/" target="_blank" class="text-muted">Kavya
-                                            Infoweb
-                                            Pvt. Ltd.</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </footer>
-
+                  <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                      <li class="breadcrumb-item">
+                        <a href="index.html">Home</a>
+                      </li>
+                      <li class="breadcrumb-item active">Membersip Reports</li>
+                    </ol>
+                  </div>
                 </div>
-                <!-- end layout-wrapper -->
+              </div>
+            </div>
+            <!-- end page title -->
 
-
-                <div class="custom-setting bg-primary pe-0 d-flex flex-column rounded-start">
-                    <button type="button" class="btn btn-wide border-0 text-white fs-20 avatar-sm rounded-end-0"
-                        id="light-dark-mode">
-                        <i class="mdi mdi-brightness-7 align-middle"></i>
-                        <i class="mdi mdi-white-balance-sunny align-middle"></i>
-                    </button>
-                  
+            <div class="row mt-3">
+              <div class="col-sm-4 col-lg-2">
+                <label class="col-form-label text-sm-end">Select Date</label>
+              </div>
+              <div class="col-sm-5 col-lg-4" style="margin-left: -10%">
+                <div class="mb-2">
+                  <div class="input-group input-daterange">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="From"
+                      id="fromDate"
+                    />
+                    <span class="input-group-text">
+                      <i class="fa fa-ellipsis-h"></i>
+                    </span>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="To"
+                      id="toDate"
+                    />
+                  </div>
                 </div>
+              </div>
+              <div class="col-md-auto">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  id="generateReportBtn"
+                >
+                  Generate Report
+                </button>
+              </div>
+            </div>
 
+            <div class="row" id="membershipReportTable" style="display: none">
+              <div class="col-12">
+                <div class="card">
+                  <div
+                    class="card-header d-flex justify-content-between align-items-center"
+                  >
+                    <h4 class="card-title mb-0">Membership Reports</h4>
+                    <div>
+                      <button
+                        class="btn btn-outline-primary me-2"
+                        id="filterAllBtn"
+                      >
+                        All
+                      </button>
+                      <button
+                        class="btn btn-outline-success me-2"
+                        id="filterActiveBtn"
+                      >
+                        Active
+                      </button>
+                      <button
+                        class="btn btn-outline-danger me-2"
+                        id="filterExpiredBtn"
+                      >
+                        Expired
+                      </button>
 
-                <!-- Rightbar Sidebar -->
-                <div class="offcanvas offcanvas-end" id="offcanvas-rightsidabar">
-                    <div class="card h-100 rounded-0" data-simplebar="init">
-                        <div class="card-header bg-light">
-                            <h6 class="card-title text-uppercase">Activities</h6>
-                            <div class="card-addon">
-                                <button class="btn btn-label-danger" data-bs-dismiss="offcanvas">
-                                    <i class="fa fa-times"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="">
-                                <h3 class="card-title">Company summary</h3>
-                                <div class="border rounded p-2">
-                                    <p class="text-muted mb-2">Server Load</p>
-                                    <h4 class="fs-16 mb-2">489</h4>
-                                    <div class="progress progress-sm" style="height:4px;">
-                                        <div class="progress-bar bg-success" style="width: 49.4%"></div>
-                                    </div>
-                                    <p class="text-muted mb-0 mt-1">49.4% <span>Avg</span></p>
-                                </div>
-                                <div class="border rounded p-2">
-                                    <p class="text-muted mb-2">Members online</p>
-                                    <h4 class="fs-16 mb-2">3,450</h4>
-                                    <div class="progress progress-sm" style="height:4px;">
-                                        <div class="progress-bar bg-danger" style="width: 34.6%"></div>
-                                    </div>
-                                    <p class="text-muted mb-0 mt-1">34.6% <span>Avg</span></p>
-                                </div>
-                                <div class="border rounded p-2">
-                                    <p class="text-muted mb-2">Today's revenue</p>
-                                    <h4 class="fs-16 mb-2">$18,390</h4>
-                                    <div class="progress progress-sm" style="height:4px;">
-                                        <div class="progress-bar bg-warning" style="width: 20%"></div>
-                                    </div>
-                                    <p class="text-muted mb-0 mt-1">$37,578 <span>Avg</span></p>
-                                </div>
-                                <div class="border rounded p-2">
-                                    <p class="text-muted mb-2">Expected profit</p>
-                                    <h4 class="fs-16 mb-2">$23,461</h4>
-                                    <div class="progress progress-sm" style="height:4px;">
-                                        <div class="progress-bar bg-info" style="width: 60%"></div>
-                                    </div>
-                                    <p class="text-muted mb-0 mt-1">$23,461 <span>Avg</span></p>
-                                </div>
-                            </div>
-
-                            <div class="mt-4">
-                                <h3 class="card-title">Latest log</h3>
-                                <div class="timeline">
-                                    <div class="timeline-item">
-                                        <div class="timeline-pin"><i class="marker marker-dot text-primary"></i></div>
-                                        <div class="timeline-content">
-                                            <div class="d-flex justify-content-between">
-                                                <p class="mb-0">12 new users registered</p>
-                                                <span class="text-muted">Just now</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="timeline-item">
-                                        <div class="timeline-pin"><i class="marker marker-dot text-success"></i></div>
-                                        <div class="timeline-content">
-                                            <div class="d-flex justify-content-between">
-                                                <p class="mb-0">System shutdown <span
-                                                        class="badge badge-label-success">pending</span></p>
-                                                <span class="text-muted">2 mins</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="timeline-item">
-                                        <div class="timeline-pin"><i class="marker marker-dot text-primary"></i></div>
-                                        <div class="timeline-content">
-                                            <div class="d-flex justify-content-between">
-                                                <p class="mb-0">New invoice received</p>
-                                                <span class="text-muted">3 mins</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="timeline-item">
-                                        <div class="timeline-pin"><i class="marker marker-dot text-danger"></i></div>
-                                        <div class="timeline-content">
-                                            <div class="d-flex justify-content-between">
-                                                <p class="mb-0">New order received <span
-                                                        class="badge badge-label-danger">urgent</span></p>
-                                                <span class="text-muted">10 mins</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="timeline-item">
-                                        <div class="timeline-pin"><i class="marker marker-dot text-warning"></i></div>
-                                        <div class="timeline-content">
-                                            <div class="d-flex justify-content-between">
-                                                <p class="mb-0">Production server down</p>
-                                                <span class="text-muted">1 hrs</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="timeline-item">
-                                        <div class="timeline-pin"><i class="marker marker-dot text-info"></i></div>
-                                        <div class="timeline-content">
-                                            <div class="d-flex justify-content-between">
-                                                <p class="mb-0">System error <a href="#">check</a></p>
-                                                <span class="text-muted">2 hrs</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="timeline-item">
-                                        <div class="timeline-pin"><i class="marker marker-dot text-secondary"></i></div>
-                                        <div class="timeline-content">
-                                            <div class="d-flex justify-content-between">
-                                                <p class="mb-0">DB overloaded 80%</p>
-                                                <span class="text-muted">5 hrs</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="timeline-item">
-                                        <div class="timeline-pin"><i class="marker marker-dot text-success"></i></div>
-                                        <div class="timeline-content">
-                                            <div class="d-flex justify-content-between">
-                                                <p class="mb-0">Production server up</p>
-                                                <span class="text-muted">6 hrs</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mt-4">
-                                <h3 class="card-title">Upcoming activities</h3>
-                                <div class="timeline timeline-timed">
-                                    <div class="timeline-item">
-                                        <span class="timeline-time">10:00</span>
-                                        <div class="timeline-pin"><i class="marker marker-circle text-primary"></i>
-                                        </div>
-                                        <div class="timeline-content">
-                                            <div>
-                                                <span>Meeting with</span>
-                                                <div class="avatar-group ms-2">
-                                                    <div class="avatar avatar-circle">
-                                                        <img src="assets/images/users/avatar-1.png" alt="Avatar image"
-                                                            class="avatar-2xs" />
-                                                    </div>
-                                                    <div class="avatar avatar-circle">
-                                                        <img src="assets/images/users/avatar-2.png" alt="Avatar image"
-                                                            class="avatar-2xs" />
-                                                    </div>
-                                                    <div class="avatar avatar-circle">
-                                                        <img src="assets/images/users/avatar-3.png" alt="Avatar image"
-                                                            class="avatar-2xs" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="timeline-item">
-                                        <span class="timeline-time">12:45</span>
-                                        <div class="timeline-pin"><i class="marker marker-circle text-warning"></i>
-                                        </div>
-                                        <div class="timeline-content">
-                                            <p class="mb-0">Lorem ipsum dolor sit amit,consectetur eiusmdd tempor
-                                                incididunt
-                                                ut
-                                                labore et dolore magna elit enim at minim veniam quis nostrud</p>
-                                        </div>
-                                    </div>
-                                    <div class="timeline-item">
-                                        <span class="timeline-time">14:00</span>
-                                        <div class="timeline-pin"><i class="marker marker-circle text-danger"></i></div>
-                                        <div class="timeline-content">
-                                            <p class="mb-0">Received a new feedback on <a href="#">GoFinance</a> App
-                                                product.</p>
-                                        </div>
-                                    </div>
-                                    <div class="timeline-item">
-                                        <span class="timeline-time">15:20</span>
-                                        <div class="timeline-pin"><i class="marker marker-circle text-success"></i>
-                                        </div>
-                                        <div class="timeline-content">
-                                            <p class="mb-0">Lorem ipsum dolor sit amit,consectetur eiusmdd tempor
-                                                incididunt
-                                                ut
-                                                labore et dolore magna.</p>
-                                        </div>
-                                    </div>
-                                    <div class="timeline-item">
-                                        <span class="timeline-time">17:00</span>
-                                        <div class="timeline-pin"><i class="marker marker-circle text-info"></i></div>
-                                        <div class="timeline-content">
-                                            <p class="mb-0">Make Deposit <a href="#">USD 700</a> o ESL.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- end card-->
+                      <button
+                        class="btn btn-outline-dark"
+                        onclick="printTable()"
+                      >
+                        Print
+                      </button>
+                    </div>
+                  </div>
+                  <div class="card-body" id="printableTable">
+                    <table
+                      id="datatable"
+                      class="table table-hover table-bordered table-striped dt-responsive nowrap"
+                      style="width: 100%"
+                    >
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>First Name</th>
+                          <th>Last Name</th>
+                          <th>Membership Type</th>
+                          <th>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody></tbody>
+                    </table>
+                  </div>
                 </div>
+              </div>
+            </div>
 
-                <!-- JAVASCRIPT -->
-                <script src="assets/libs/jquery/jquery.min.js"></script>
-                <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-                <script src="assets/libs/metismenu/metisMenu.min.js"></script>
-                <script src="assets/libs/simplebar/simplebar.min.js"></script>
-                <script src="assets/libs/node-waves/waves.min.js"></script>
+            <!-- end row -->
+          </div>
+          <!-- container-fluid -->
+        </div>
+        <!-- End Page-content -->
+      </div>
+      <!-- end main content-->
+    </div>
+    <!-- END layout-wrapper -->
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-sm-6">
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            © Clivax Gym.
+          </div>
+          <div class="col-sm-6">
+            <div class="text-sm-end d-none d-sm-block">
+              Designed & Developed <i class="mdi mdi-heart text-danger"></i> by
+              <a
+                href="https://kavyainfoweb.com/"
+                target="_blank"
+                class="text-muted"
+                >Kavya Infoweb Pvt. Ltd.</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-                <script src="assets/js/app.js"></script>
+    <div
+      class="custom-setting bg-primary pe-0 d-flex flex-column rounded-start"
+    >
+      <button
+        type="button"
+        class="btn btn-wide border-0 text-white fs-20 avatar-sm rounded-end-0"
+        id="light-dark-mode"
+      >
+        <i class="mdi mdi-brightness-7 align-middle"></i>
+        <i class="mdi mdi-white-balance-sunny align-middle"></i>
+      </button>
+    </div>
 
-                 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-                <script
-                    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+  
 
-                <!-- apexcharts -->
-                <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+    <!-- JAVASCRIPT -->
+    <script src="assets/libs/jquery/jquery.min.js"></script>
+    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/metismenu/metisMenu.min.js"></script>
+    <script src="assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="assets/libs/node-waves/waves.min.js"></script>
 
-                <!-- radarcharts init -->
-<!--                 <script src="assets/js/pages/apexcharts-radar.init.js"></script> -->
-                <!-- apexcharts -->
-                <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+    <!-- Required datatable js -->
+    <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
 
-                <!-- piecharts init -->
-<!--                 <script src="assets/js/pages/apexcharts-pie.init.js"></script> -->
-                <!-- apexcharts -->
-                <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
-                 <script src="assets/js/membership-report.js"></script>
+    <!-- buttons examples -->
+    <script src="assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="assets/libs/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
+    <script src="assets/libs/datatables.net-buttons/js/buttons.colVis.min.js"></script>
 
-                <script src="https://apexcharts.com/samples/assets/stock-prices.js"></script>
+    <!-- Responsive examples -->
+    <script src="assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="assets/libs/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
 
-                <!-- linecharts init -->
-<!--                 <script src="assets/js/pages/apexcharts-line.init.js"></script> -->
-                <!-- linecharts init -->
-              
+    <!-- Datatable init js -->
+    <script src="assets/js/pages/datatables-advanced.init.js"></script>
 
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="assets/js/pages/form-datepicker.init.js"></script>
 
-                <script
-                  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-                  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-                  crossorigin="anonymous"
-                ></script>
-                
-                <script>
-                    $('#fromDate, #toDate').datepicker({
-                        format: "mm/yyyy",
-                        startView: "months",
-                        minViewMode: "months",
-                        autoclose: true
-                    });
-                </script>
-</body>
+    <!-- Bootstrap Datepicker -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.10.0/dist/css/bootstrap-datepicker.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.10.0/dist/js/bootstrap-datepicker.min.js"></script>
 
+    <script src="assets/js/app.js"></script>
+
+    <script>
+      function printTable() {
+        const printContents =
+          document.getElementById("printableTable").innerHTML;
+        const originalContents = document.body.innerHTML;
+
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+        location.reload(); // Reload to restore JS state and event bindings
+      }
+
+      $(document).ready(function () {
+        $(".input-daterange").datepicker({
+          todayBtn: "linked",
+          format: "mm/dd/yyyy",
+          autoclose: true,
+          endDate: "today", // This line prevents future dates from being selected
+        });
+
+        let dataTable = $("#datatable").DataTable({
+          language: {
+            paginate: {
+              previous: "<i class='mdi mdi-chevron-left'>",
+              next: "<i class='mdi mdi-chevron-right'>",
+            },
+          },
+          drawCallback: function () {
+            $(".dataTables_paginate > .pagination").addClass("pagination");
+          },
+          data: [],
+          columns: [
+            { data: "id" },
+            { data: "firstName" },
+            { data: "lastName" },
+            { data: "membershipType" },
+            {
+              data: "status",
+              render: function (data, type, row) {
+                let badgeClass = data === "Active" ? "bg-success" : "bg-danger";
+                return `<span class="badge ${badgeClass}">${data}</span>`;
+              },
+            },
+          ],
+          responsive: true, // Ensure responsive is enabled
+        });
+
+        // Force DataTables to recalculate its responsive layout on window resize
+        // This helps ensure the table expands fully when moving from mobile to desktop view
+        $(window).on("resize", function () {
+          if (dataTable.responsive) {
+            // Check if responsive extension is available
+            dataTable.responsive.recalc();
+          }
+        });
+
+        // Also trigger recalculation on initial load
+        if (dataTable.responsive) {
+          dataTable.responsive.recalc();
+        }
+
+        const allDummyData = [
+          {
+            id: 1,
+            firstName: "Tiger",
+            lastName: "Nixon",
+            membershipType: "Premium",
+            status: "Active",
+            registrationDate: "01/15/2024",
+          },
+          {
+            id: 2,
+            firstName: "Garrett",
+            lastName: "Winters",
+            membershipType: "Standard",
+            status: "Active",
+            registrationDate: "02/20/2024",
+          },
+          {
+            id: 3,
+            firstName: "Ashton",
+            lastName: "Cox",
+            membershipType: "Basic",
+            status: "Expired",
+            registrationDate: "03/10/2024",
+          },
+          {
+            id: 4,
+            firstName: "Cedric",
+            lastName: "Kelly",
+            membershipType: "Premium",
+            status: "Active",
+            registrationDate: "04/01/2024",
+          },
+          {
+            id: 5,
+            firstName: "Airi",
+            lastName: "Satou",
+            membershipType: "Standard",
+            status: "Active",
+            registrationDate: "05/05/2024",
+          },
+          {
+            id: 6,
+            firstName: "Brielle",
+            lastName: "Williamson",
+            membershipType: "Premium",
+            status: "Expired",
+            registrationDate: "06/25/2024",
+          },
+          {
+            id: 7,
+            firstName: "Herrod",
+            lastName: "Chandler",
+            membershipType: "Basic",
+            status: "Active",
+            registrationDate: "07/12/2024",
+          },
+          {
+            id: 8,
+            firstName: "Rhona",
+            lastName: "Davidson",
+            membershipType: "Premium",
+            status: "Active",
+            registrationDate: "08/18/2024",
+          },
+          {
+            id: 9,
+            firstName: "Colleen",
+            lastName: "Hurst",
+            membershipType: "Standard",
+            status: "Expired",
+            registrationDate: "09/03/2024",
+          },
+          {
+            id: 10,
+            firstName: "Sonya",
+            lastName: "Frost",
+            membershipType: "Premium",
+            status: "Active",
+            registrationDate: "10/30/2024",
+          },
+          {
+            id: 11,
+            firstName: "Jena",
+            lastName: "Gaines",
+            membershipType: "Basic",
+            status: "Active",
+            registrationDate: "11/01/2024",
+          },
+          {
+            id: 12,
+            firstName: "Quinn",
+            lastName: "Flynn",
+            membershipType: "Standard",
+            status: "Expired",
+            registrationDate: "12/14/2024",
+          },
+          {
+            id: 13,
+            firstName: "Charde",
+            lastName: "Marshall",
+            membershipType: "Premium",
+            status: "Active",
+            registrationDate: "01/01/2025",
+          },
+          {
+            id: 14,
+            firstName: "Haley",
+            lastName: "Kennedy",
+            membershipType: "Basic",
+            status: "Active",
+            registrationDate: "02/10/2025",
+          },
+          {
+            id: 15,
+            firstName: "Tatyana",
+            lastName: "Fitzpatrick",
+            membershipType: "Standard",
+            status: "Expired",
+            registrationDate: "03/22/2025",
+          },
+          {
+            id: 16,
+            firstName: "Michael",
+            lastName: "Silva",
+            membershipType: "Premium",
+            status: "Active",
+            registrationDate: "04/05/2025",
+          },
+          {
+            id: 17,
+            firstName: "Paul",
+            lastName: "Byrd",
+            membershipType: "Basic",
+            status: "Active",
+            registrationDate: "05/19/2025",
+          },
+          {
+            id: 18,
+            firstName: "Gloria",
+            lastName: "Little",
+            membershipType: "Standard",
+            status: "Expired",
+            registrationDate: "06/01/2025",
+          },
+          {
+            id: 19,
+            firstName: "Bradley",
+            lastName: "Greer",
+            membershipType: "Premium",
+            status: "Active",
+            registrationDate: "07/15/2025",
+          },
+          {
+            id: 20,
+            firstName: "Dai",
+            lastName: "Rios",
+            membershipType: "Basic",
+            status: "Expired",
+            registrationDate: "07/28/2025",
+          },
+        ];
+
+        function filterData(data, fromDateStr, toDateStr) {
+          let filtered = data;
+
+          if (fromDateStr && toDateStr) {
+            const fromDate = new Date(fromDateStr);
+            const toDate = new Date(toDateStr);
+            toDate.setHours(23, 59, 59, 999); // Set to end of the day
+
+            filtered = filtered.filter((row) => {
+              const registrationDate = new Date(row.registrationDate);
+              return registrationDate >= fromDate && registrationDate <= toDate;
+            });
+          }
+
+          return filtered;
+        }
+
+        let lastFilteredData = [];
+
+        $("#generateReportBtn").on("click", function () {
+          const fromDate = $("#fromDate").val();
+          const toDate = $("#toDate").val();
+
+          if (fromDate && toDate) {
+            $("#membershipReportTable").show();
+            lastFilteredData = filterData(allDummyData, fromDate, toDate);
+            dataTable.clear().rows.add(lastFilteredData).draw();
+            // After drawing, ensure responsive recalculation
+            if (dataTable.responsive) {
+              dataTable.responsive.recalc();
+            }
+          } else {
+            alert("Please select both From Date and To Date.");
+          }
+        });
+
+        $("#filterActiveBtn").on("click", function () {
+          const activeData = lastFilteredData.filter(
+            (row) => row.status === "Active"
+          );
+          dataTable.clear().rows.add(activeData).draw();
+          // After drawing, ensure responsive recalculation
+          if (dataTable.responsive) {
+            dataTable.responsive.recalc();
+          }
+        });
+
+        $("#filterExpiredBtn").on("click", function () {
+          const expiredData = lastFilteredData.filter(
+            (row) => row.status === "Expired"
+          );
+          dataTable.clear().rows.add(expiredData).draw();
+          // After drawing, ensure responsive recalculation
+          if (dataTable.responsive) {
+            dataTable.responsive.recalc();
+          }
+        });
+
+        $("#filterAllBtn").on("click", function () {
+          dataTable.clear().rows.add(lastFilteredData).draw();
+          // After drawing, ensure responsive recalculation
+          if (dataTable.responsive) {
+            dataTable.responsive.recalc();
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
