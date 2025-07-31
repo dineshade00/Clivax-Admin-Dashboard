@@ -23,7 +23,11 @@
     <link href="assets/libs/simplebar/simplebar.min.css" rel="stylesheet">
     <!-- App Css-->
     <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
-
+    <style>
+        .combined-slider::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -692,8 +696,8 @@
                                         <div class="col-sm-4">
                                             <div class="d-flex justify-content-between align-content-end shadow-lg p-3">
                                                 <div>
-                                                    <p class="text-muted text-truncate mb-2">Membership Types</p>
-                                                    <h5 class="mb-0">20 Plans</h5>
+                                                    <p class="text-muted text-truncate mb-2">Member Expiring Soon</p>
+                                                    <h5 class="mb-0">20 Member</h5>
                                                 </div>
                                                 <div class="text-success float-end">
                                                     <i class="mdi mdi-menu-up"> </i>3.0%
@@ -740,7 +744,7 @@
                                         <div class="col-sm-4 mt-3">
                                             <div class="d-flex justify-content-between align-content-end shadow-lg p-3">
                                                 <div>
-                                                    <p class="text-muted text-truncate mb-2">Expired Memberships</p>
+                                                    <p class="text-muted text-truncate mb-2">Expired Member</p>
                                                     <h5 class="mb-0">32</h5>
                                                 </div>
                                                 <div class="text-danger float-end">
@@ -824,6 +828,138 @@
                                 </div>
                             </div>
                             <!-- end row -->
+                            <!-- Birthday Dashboard Section -->
+                            <section class="birthday-dashboard-section py-3" style="background-color: #f8f9fa;">
+                                <div class="container">
+                                    <!-- Calendar and Buttons -->
+                                    <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <label for="birthdayDate" class="form-label fw-bold text-secondary mb-0">📅
+                                                Check Birthdays:</label>
+                                            <input type="date" id="birthdayDate" class="form-control"
+                                                style="width: 200px;">
+                                            <button class="btn btn-sm btn-outline-info"
+                                                id="searchDateBtn">Search</button>
+                                        </div>
+                                        <div class="d-flex gap-2 mt-2 mt-md-0">
+                                            <button id="toggleTodayBtn" class="btn btn-sm btn-primary fw-bold">🎂
+                                                Today's Birthdays</button>
+                                            <button id="toggleUpcomingBtn"
+                                                class="btn btn-sm btn-outline-secondary fw-bold">📆 Upcoming
+                                                Birthdays</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Birthday Cards Section -->
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="card shadow">
+                                                <div class="card-header bg-primary text-white">🎉 Birthdays</div>
+                                                <div class="card-body overflow-hidden">
+                                                    <!-- Sliders -->
+                                                    <div id="todaySlider"
+                                                        class="combined-slider d-flex gap-3 overflow-auto flex-nowrap mb-2"
+                                                        style="display:none;"></div>
+                                                    <div id="upcomingSlider"
+                                                        class="combined-slider d-flex gap-3 overflow-auto flex-nowrap mb-2"
+                                                        style="display:none;"></div>
+                                                    <div id="searchedSlider"
+                                                        class="combined-slider d-flex gap-3 overflow-auto flex-nowrap mb-2"
+                                                        style="display:none;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- Popup Modal -->
+                            <div class="modal fade" id="birthdayPopup" tabindex="-1">
+                                <div class="modal-dialog modal-lg modal-dialog-centered">
+                                    <div class="modal-content">
+
+                                        <div class="modal-header">
+                                            <h5 class="modal-title text-danger">🎉 Birthday Wishes <span
+                                                    class="emoji">🎊</span></h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button onclick="sendCombinedWhatsAppWishes()" class="btn btn-success">Send
+                                                Wishes to All 🎉</button>
+                                        </div>
+                                        <div class="modal-body d-flex flex-wrap gap-3" id="popupBirthdayContainer">
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+                            <!-- Gym Revenue Section -->
+                            <section class="gym-revenue-section py-4">
+                                <div class="container-fluid">
+                                    <div class="card shadow-sm border-0">
+                                        <div class="card-body">
+                                            <!-- Top Filters -->
+                                            <div
+                                                class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+                                                <h5 class="card-title text-success mb-2">Gym Revenue Analytics</h5>
+                                                <div class="d-flex flex-wrap gap-2 align-items-center">
+                                                    <label class="form-label mb-0">From:</label>
+                                                    <input type="date" class="form-control form-control-sm"
+                                                        id="revenueFromDate">
+                                                    <label class="form-label mb-0">To:</label>
+                                                    <input type="date" class="form-control form-control-sm"
+                                                        id="revenueToDate">
+                                                    <button class="btn btn-success btn-sm" id="filterBtn">Show
+                                                        Weekly</button>
+                                                </div>
+                                            </div>
+
+                                            <!-- Timeframe Buttons -->
+                                            <div class="btn-group mb-3" role="group">
+                                                <button class="btn btn-outline-success btn-sm range-btn"
+                                                    data-range="2M">Last 2
+                                                    Months</button>
+                                                <button class="btn btn-outline-success btn-sm range-btn"
+                                                    data-range="3M">Last 3
+                                                    Months</button>
+                                                <button class="btn btn-outline-success btn-sm range-btn"
+                                                    data-range="4M">Last 4
+                                                    Months</button>
+                                                <button class="btn btn-outline-success btn-sm range-btn"
+                                                    data-range="6M">Last 6
+                                                    Months</button>
+                                                <button class="btn btn-outline-success btn-sm range-btn"
+                                                    data-range="1Y">Last 1
+                                                    Year</button>
+                                            </div>
+
+                                            <!-- Chart -->
+                                            <canvas id="revenueBarChart" height="90"></canvas>
+
+                                            <!-- Revenue Stats -->
+                                            <div class="row text-center mt-4">
+                                                <div class="col-md-4 mb-3">
+                                                    <h6 class="text-muted">Total Revenue</h6>
+                                                    <h4 class="text-success fw-bold" id="totalRevenue">₹0</h4>
+                                                </div>
+                                                <div class="col-md-4 mb-3">
+                                                    <h6 class="text-muted">Average per Period</h6>
+                                                    <h4 class="text-info fw-bold" id="avgRevenue">₹0</h4>
+                                                </div>
+                                                <div class="col-md-4 mb-3">
+                                                    <h6 class="text-muted">Highest Earning</h6>
+                                                    <h4 class="text-danger fw-bold" id="maxRevenue">₹0</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
 
 
                             <div class="row">
@@ -957,66 +1093,10 @@
                     </div>
                     <!-- end row -->
 
-                    <!-- Gym Revenue Section -->
-                    <section class="gym-revenue-section py-4">
-                        <div class="container-fluid">
-                            <div class="card shadow-sm border-0">
-                                <div class="card-body">
-                                    <!-- Top Filters -->
-                                    <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
-                                        <h5 class="card-title text-success mb-2">Gym Revenue Analytics</h5>
-                                        <div class="d-flex flex-wrap gap-2 align-items-center">
-                                            <label class="form-label mb-0">From:</label>
-                                            <input type="date" class="form-control form-control-sm"
-                                                id="revenueFromDate">
-                                            <label class="form-label mb-0">To:</label>
-                                            <input type="date" class="form-control form-control-sm" id="revenueToDate">
-                                            <button class="btn btn-success btn-sm" id="filterBtn">Show Weekly</button>
-                                        </div>
-                                    </div>
-
-                                    <!-- Timeframe Buttons -->
-                                    <div class="btn-group mb-3" role="group">
-                                        <button class="btn btn-outline-success btn-sm range-btn" data-range="2M">Last 2
-                                            Months</button>
-                                        <button class="btn btn-outline-success btn-sm range-btn" data-range="3M">Last 3
-                                            Months</button>
-                                        <button class="btn btn-outline-success btn-sm range-btn" data-range="4M">Last 4
-                                            Months</button>
-                                        <button class="btn btn-outline-success btn-sm range-btn" data-range="6M">Last 6
-                                            Months</button>
-                                        <button class="btn btn-outline-success btn-sm range-btn" data-range="1Y">Last 1
-                                            Year</button>
-                                    </div>
-
-                                    <!-- Chart -->
-                                    <canvas id="revenueBarChart" height="90"></canvas>
-
-                                    <!-- Revenue Stats -->
-                                    <div class="row text-center mt-4">
-                                        <div class="col-md-4 mb-3">
-                                            <h6 class="text-muted">Total Revenue</h6>
-                                            <h4 class="text-success fw-bold" id="totalRevenue">₹0</h4>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <h6 class="text-muted">Average per Period</h6>
-                                            <h4 class="text-info fw-bold" id="avgRevenue">₹0</h4>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <h6 class="text-muted">Highest Earning</h6>
-                                            <h4 class="text-danger fw-bold" id="maxRevenue">₹0</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-
-
 
 
                     <!-- end row -->
+
 
 
 
@@ -1437,6 +1517,167 @@
         // Load Default Chart
         document.querySelector('[data-range="3M"]').click();
     </script>
+
+
+    <script>
+        const birthdayData = [
+
+            {
+                name: 'Rohan Mehra', type: 'Staff', date: '2025-07-31', img: 'https://randomuser.me/api/portraits/men/11.jpg'
+            },
+            {
+                name: 'Sneha Joshi', type: 'Member', date: '2025-07-31', img: 'https://randomuser.me/api/portraits/men/11.jpg'
+            },
+            {
+                name: 'Arjun Yadav', type: 'Staff', date: '2025-07-31', img: 'https://randomuser.me/api/portraits/men/11.jpg'
+            },
+            {
+                name: 'Simran Kaur', type: 'Member', date: '2025-07-31', img: 'https://randomuser.me/api/portraits/men/11.jpg'
+            },
+            {
+                name: 'Vikas Jain', type: 'Staff', date: '2025-07-31', img: 'https://randomuser.me/api/portraits/men/11.jpg'
+            },
+            {
+                name: 'Riya Kapoor', type: 'Member', date: '2025-07-31', img: 'https://randomuser.me/api/portraits/men/11.jpg'
+            },
+            {
+                name: 'Tushar Roy', type: 'Staff', date: '2025-07-31', img: 'https://randomuser.me/api/portraits/men/11.jpg'
+            },
+            {
+                name: 'Kunal Singh', type: 'Member', date: '2025-08-03', img: 'https://randomuser.me/api/portraits/men/11.jpg'
+            },
+            {
+                name: 'Preeti Sharma', type: 'Staff', date: '2025-08-04', img: 'https://randomuser.me/api/portraits/men/11.jpg'
+            },
+            {
+                name: 'Ankit Verma', type: 'Member', date: '2025-08-08', img: 'https://randomuser.me/api/portraits/men/11.jpg'
+            },
+            {
+                name: 'Meena Kumari', type: 'Staff', date: '2025-08-10', img: 'https://randomuser.me/api/portraits/men/11.jpg'
+            },
+            {
+                name: 'Sunil Dutt', type: 'Member', date: '2025-08-12', img: 'https://randomuser.me/api/portraits/men/11.jpg'
+            },
+            {
+                name: 'Payal Rathore', type: 'Staff', date: '2025-08-15', img: 'https://randomuser.me/api/portraits/men/11.jpg'
+            },
+            {
+                name: 'Tarun Goel', type: 'Member', date: '2025-08-18', img: 'https://randomuser.me/api/portraits/men/11.jpg'
+            },
+            {
+                name: 'Diksha Rana', type: 'Staff', date: '2025-08-21', img: 'https://randomuser.me/api/portraits/men/11.jpg'
+            },
+            {
+                name: 'Mohan Das', type: 'Member', date: '2025-08-25', img: 'https://randomuser.me/api/portraits/men/11.jpg'
+            },
+            {
+                name: 'Alka Jain', type: 'Staff', date: '2025-08-28', img: 'https://randomuser.me/api/portraits/men/11.jpg'
+            }
+        ];
+
+        const todaySlider = document.getElementById('todaySlider');
+        const upcomingSlider = document.getElementById('upcomingSlider');
+        const searchedSlider = document.getElementById('searchedSlider');
+
+        const today = new Date().toISOString().slice(0, 10);
+        const thisMonth = new Date().getMonth();
+        let currentBirthdayList = [];
+
+        const renderSlider = (data, container) => {
+            container.innerHTML = '';
+            data.forEach((person) => {
+                const card = document.createElement('div');
+                card.className = 'card p-2 text-center';
+                card.style.minWidth = '180px';
+                card.innerHTML = `
+        <img src="https://via.placeholder.com/100" class="rounded-circle mx-auto" height="80" alt="">
+        <h6 class="mt-2 mb-0">${person.name}</h6>
+        <small class="text-muted">${person.type}</small>
+        <div class="text-danger">🎂 ${new Date(person.date).toDateString()}</div>
+      `;
+                container.appendChild(card);
+            });
+            startAutoScroll(container);
+        };
+
+        const startAutoScroll = (slider) => {
+            let scrollAmount = 0;
+            setInterval(() => {
+                if (slider.scrollWidth > slider.clientWidth) {
+                    scrollAmount += 1;
+                    if (scrollAmount >= slider.scrollWidth - slider.clientWidth) scrollAmount = 0;
+                    slider.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+                }
+            }, 40);
+        };
+
+        const showOnlySlider = (target) => {
+            [todaySlider, upcomingSlider, searchedSlider].forEach(s => s.style.display = 'none');
+            target.style.display = 'flex';
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const todays = birthdayData.filter(b => b.date === today);
+            if (todays.length > 0) {
+                showOnlySlider(todaySlider);
+                renderSlider(todays, todaySlider);
+                showPopup(todays);
+            }
+        });
+
+        document.getElementById('toggleTodayBtn').addEventListener('click', () => {
+            const todays = birthdayData.filter(b => b.date === today);
+            showOnlySlider(todaySlider);
+            renderSlider(todays, todaySlider);
+            showPopup(todays);
+        });
+
+        document.getElementById('toggleUpcomingBtn').addEventListener('click', () => {
+            const upcoming = birthdayData.filter(b => {
+                const bday = new Date(b.date);
+                return bday > new Date(today) && bday.getMonth() === thisMonth;
+            });
+            showOnlySlider(upcomingSlider);
+            renderSlider(upcoming, upcomingSlider);
+        });
+
+        document.getElementById('searchDateBtn').addEventListener('click', () => {
+            const selected = document.getElementById('birthdayDate').value;
+            const matches = birthdayData.filter(b => b.date === selected);
+            showOnlySlider(searchedSlider);
+            renderSlider(matches, searchedSlider);
+            showPopup(matches);
+        });
+
+        function showPopup(birthdays) {
+            const popup = new bootstrap.Modal(document.getElementById("birthdayPopup"));
+            const container = document.getElementById("popupBirthdayContainer");
+            container.innerHTML = '';
+            currentBirthdayList = birthdays;
+            birthdays.forEach((person) => {
+                const card = document.createElement('div');
+                card.className = 'card p-3 text-center shadow-sm';
+                card.style.width = '200px';
+                card.innerHTML = `
+        <img src="https://via.placeholder.com/100" class="rounded-circle mx-auto" height="80" alt="">
+        <h6 class="mt-2 mb-0">${person.name}</h6>
+        <small class="text-muted">${person.type}</small>
+        <p class="text-success">🎂 Happy Birthday!</p>
+      `;
+                container.appendChild(card);
+            });
+            popup.show();
+        }
+
+        function sendCombinedWhatsAppWishes() {
+            const names = currentBirthdayList.map(p => p.name).join(', ');
+            const msg = `🎉 Wishing a very Happy Birthday to ${names}! Have a fantastic day! 🎂🥳🎈`;
+            window.open(`https://wa.me/919999999999?text=${encodeURIComponent(msg)}`, '_blank');
+            const popup = bootstrap.Modal.getInstance(document.getElementById("birthdayPopup"));
+            popup.hide();
+        }
+    </script>
+
 
 </body>
 
