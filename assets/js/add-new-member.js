@@ -1,324 +1,289 @@
-    
-      $(document).ready(function () {
-        var table = $("#datatable-col-visiblility").DataTable();
+ 
+      document.addEventListener("DOMContentLoaded", function () {
+        const addMemberForm = document.getElementById("addMemberForm");
+        const proceedToPaymentBtn = document.getElementById(
+          "proceedToPaymentBtn"
+        );
+        const addMemberBtn = document.getElementById("addMemberBtn");
+        const successModal = new bootstrap.Modal(
+          document.getElementById("successModal")
+        );
+        const errorModal = new bootstrap.Modal(
+          document.getElementById("errorModal")
+        );
+        const paymentModal = new bootstrap.Modal(
+          document.getElementById("paymentModal")
+        );
+        const photoInput = document.getElementById("photo");
+        const paymentOptions = document.querySelectorAll(".payment-option");
 
-        function loadMembers() {
-          let members = JSON.parse(localStorage.getItem("members")) || [];
+        const amountPaidInput = document.getElementById("amount_paid");
+        const dueAmountInput = document.getElementById("due_amount");
+        const membershipTypeSelect = document.getElementById("membership_type");
+        const joiningDateInput = document.getElementById("joining_date");
+        const expiryDateInput = document.getElementById("expiry_date");
 
-          members = members.map((member, index) => ({
-            ...member,
-            id: index + 1,
-          }));
-          localStorage.setItem("members", JSON.stringify(members));
+        const membershipPrices = {
+          "1 month plan": 500,
+          "3 month plan": 1300,
+          "6 month plan": 2000,
+        };
 
-          table.clear();
-
-          members.forEach((member) => {
-            const photoSrc =
-              member.photoUrl ||
-              "https://via.placeholder.com/40/CCCCCC/888888?text=No+Photo";
-            const statusBadgeClass =
-              member.status === "Active" ? "bg-success" : "bg-danger";
-
-            const dueAmount = parseFloat(member.due_amount || 0);
-            const actions = `
-        <a class="btn btn-sm btn-info view-card-btn" data-member-id="${
-          member.id
-        }" title="View Profile">
-          <i class="fas fa-id-card"></i>
-        </a>
-        <a href="edit-member.html?id=${
-          member.id
-        }" class="btn btn-sm btn-primary" title="Edit Member">
-          <i class="fas fa-pen"></i>
-        </a>
-        <a class="btn btn-sm btn-danger delete-member-btn" data-member-id="${
-          member.id
-        }" title="Delete Member">
-          <i class="fas fa-trash"></i>
-        </a>
-        ${
-          dueAmount > 0
-            ? `<button class="btn btn-sm btn-warning pay-due-btn" data-member-id="${member.id}" title="Pay Due">
-                <i class="fas fa-rupee-sign"></i> Pay Due
-              </button>`
-            : ""
+        function updateDueAmount() {
+          const selectedPlan = membershipTypeSelect.value;
+          const paidAmount = parseFloat(amountPaidInput.value) || 0;
+          const price = membershipPrices[selectedPlan] || 0;
+          const dueAmount = Math.max(price - paidAmount, 0);
+          dueAmountInput.value = dueAmount;
         }
-      `;
 
-            table.row.add([
-              member.id,
-              `<img src="${photoSrc}" alt="Photo" width="40" height="40" style="object-fit: cover; border-radius: 50%;" />`,
-              member.firstName,
-              member.lastName,
-              member.emailAddress,
-              member.membership_type,
-              "₹" + (member.due_amount || 0),
-              `<span class="badge ${statusBadgeClass}">${member.status}</span>`,
-              actions,
-            ]);
+        function calculateExpiryDate() {
+          const joiningDate = joiningDateInput.value;
+          const membership = membershipTypeSelect.value;
+
+          if (!joiningDate || !membership) {
+            expiryDateInput.value = "";
+            return;
+          }
+
+          const date = new Date(joiningDate);
+          if (membership.includes("1 month")) {
+            date.setMonth(date.getMonth() + 1);
+          } else if (membership.includes("3 month")) {
+            date.setMonth(date.getMonth() + 3);
+          } else if (membership.includes("6 month")) {
+            date.setMonth(date.getMonth() + 6);
+          }
+          expiryDateInput.value = date.toISOString().split("T")[0];
+        }
+
+        membershipTypeSelect.addEventListener("change", () => {
+          updateDueAmount();
+          calculateExpiryDate();
+        });
+
+        amountPaidInput.addEventListener("input", updateDueAmount);
+        joiningDateInput.addEventListener("change", calculateExpiryDate);
+
+        photoInput.addEventListener("change", function () {
+          if (this.files.length > 0) {
+            const file = this.files[0];
+            const fileSize = file.size;
+            const maxSize = 40 * 1024;
+            const allowedTypes = ["image/jpeg", "image/png"];
+
+            let isValid = true;
+            if (fileSize > maxSize) {
+              this.classList.add("is-invalid");
+              this.nextElementSibling.textContent = "Photo size exceeds 40 KB.";
+              isValid = false;
+            } else if (!allowedTypes.includes(file.type)) {
+              this.classList.add("is-invalid");
+              this.nextElementSibling.textContent = "Only JPG or PNG allowed.";
+              isValid = false;
+            } else {
+              this.classList.remove("is-invalid");
+            }
+
+            if (!isValid) {
+              this.value = "";
+            }
+          } else {
+            this.classList.remove("is-invalid");
+          }
+        });
+
+        proceedToPaymentBtn.addEventListener("click", function (event) {
+          event.preventDefault();
+          let allFieldsFilled = true;
+          const requiredFields = addMemberForm.querySelectorAll(
+            "[required]:not(#photo)"
+          );
+
+          requiredFields.forEach((field) => {
+            if (
+              field.value.trim() === "" ||
+              (field.tagName === "SELECT" && field.value === "")
+            ) {
+              field.classList.add("is-invalid");
+              allFieldsFilled = false;
+            } else {
+              field.classList.remove("is-invalid");
+            }
           });
 
-          table.draw(false);
-        }
-
-        loadMembers();
-
-        $("#datatable-col-visiblility tbody").on(
-          "click",
-          ".view-card-btn",
-          function () {
-            var id = $(this).data("member-id");
-            const members = JSON.parse(localStorage.getItem("members")) || [];
-            const member = members.find((m) => m.id == id);
-
-            if (member) {
-              $("#profileMemberId").text(
-                "#CA-" + String(member.id).padStart(5, "0")
-              );
-              $("#profileFullName").text(
-                member.firstName + " " + member.lastName
-              );
-              $("#profileDOB").text(member.dob || "N/A");
-              $("#profileGender").text(member.gender || "N/A");
-              $("#profileContact").text(member.contact || "N/A");
-              $("#profileEmail").text(member.emailAddress || "N/A");
-              $("#profileAddress").text(
-                (member.address || "") + (member.city ? ", " + member.city : "")
-              );
-              $("#profilePincode").text(member.pincode || "N/A");
-              $("#profileMembershipType").text(member.membership_type || "N/A");
-              $("#profileStatus").text(member.status || "N/A");
-              $("#profilePhoto").attr(
-                "src",
-                member.photoUrl ||
-                  "https://via.placeholder.com/150/CCCCCC/888888?text=No+Photo"
-              );
-
-              $("#profileAmountPaid").text(member.amount_paid || "₹0");
-              $("#profileDueAmount").text(member.due_amount || "₹0");
-              $("#profileJoiningDate").text(member.joining_date || "N/A");
-              $("#profileExpiryDate").text(member.expiry_date || "N/A"); // This line already exists
-
-              $("#memberProfileSection").show();
-              $(".row:has(#datatable-col-visiblility)").hide();
-
-              $("html, body").animate(
-                {
-                  scrollTop: $("#memberProfileSection").offset().top,
-                },
-                500
-              );
+          if (photoInput.files.length > 0) {
+            const file = photoInput.files[0];
+            const fileSize = file.size;
+            const maxSize = 40 * 1024;
+            const allowedTypes = ["image/jpeg", "image/png"];
+            if (fileSize > maxSize || !allowedTypes.includes(file.type)) {
+              allFieldsFilled = false;
             }
           }
-        );
 
-        $("#profileMembershipCardBtn").on("click", function () {
-          const memberIdString = $("#profileMemberId")
-            .text()
-            .replace("#CA-", "");
-          const memberId = parseInt(memberIdString);
-          const members = JSON.parse(localStorage.getItem("members")) || [];
-          const member = members.find((m) => m.id === memberId);
+          const contactField = document.getElementById("contact");
+          if (contactField.value.length !== 10) {
+            contactField.classList.add("is-invalid");
+            allFieldsFilled = false;
+          }
 
-          if (member) {
-            $("#cardMemberId").text(
-              "#CA-" + String(member.id).padStart(5, "0")
-            );
-            $("#cardName").text(member.firstName + " " + member.lastName);
-            $("#cardAddress").text(
-              member.address +
-                ", " +
-                member.city +
-                (member.pincode ? ", " + member.pincode : "")
-            );
-            $("#cardType").text(member.membership_type);
-            $("#cardPhoto").attr(
-              "src",
-              member.photoUrl ||
-                "https://via.placeholder.com/100/CCCCCC/888888?text=No+Photo"
-            );
+          const pincodeField = document.getElementById("pincode");
+          if (pincodeField.value.length !== 6) {
+            pincodeField.classList.add("is-invalid");
+            allFieldsFilled = false;
+          }
 
-            // --- START OF MODIFICATION ---
-            let validTillDisplay = "N/A";
-            if (member.expiry_date) {
-              // If expiry_date exists, use it directly
-              validTillDisplay = new Date(
-                member.expiry_date
-              ).toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              });
-            } else {
-              // Fallback to existing calculation if expiry_date is not present
-              let validTillDate = new Date();
-              if (member.membership_start_date) {
-                validTillDate = new Date(member.membership_start_date);
-              } else if (member.dob) {
-                validTillDate = new Date(member.dob);
-              }
-
-              if (member.membership_type?.includes("1 month")) {
-                validTillDate.setMonth(validTillDate.getMonth() + 1);
-              } else if (member.membership_type?.includes("3 month")) {
-                validTillDate.setMonth(validTillDate.getMonth() + 3);
-              } else if (member.membership_type?.includes("6 month")) {
-                validTillDate.setMonth(validTillDate.getMonth() + 6);
-              }
-              validTillDisplay = validTillDate.toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              });
-            }
-            $("#cardValidTill").text(validTillDisplay);
-            // --- END OF MODIFICATION ---
-
-            var myCardModal = new bootstrap.Modal(
-              document.getElementById("membershipCardModal")
-            );
-            myCardModal.show();
+          if (allFieldsFilled) {
+            paymentModal.show();
+          } else {
+            errorModal.show();
           }
         });
 
-        $("#datatable-col-visiblility tbody").on(
-          "click",
-          ".delete-member-btn",
-          function () {
-            var $row = $(this).closest("tr");
-            if ($row.hasClass("child")) {
-              $row = $row.prev();
-            }
+        paymentOptions.forEach((button) => {
+          button.addEventListener("click", function () {
+            const paymentMethod = this.dataset.paymentMethod;
+            setTimeout(() => {
+              alert("Payment successful with " + paymentMethod + "!");
+              isPaymentSuccessful = true;
+              paymentModal.hide();
+              proceedToPaymentBtn.style.display = "none";
+              addMemberBtn.style.display = "inline-block";
+            }, 1000);
+          });
+        });
 
-            var memberIdToDelete = $(this).data("member-id");
-            var firstName = $row.find("td:eq(2)").text();
-            var lastName = $row.find("td:eq(3)").text();
-            var memberName = firstName + " " + lastName;
+        addMemberForm.addEventListener("submit", function (event) {
+          event.preventDefault();
 
+          if (!isPaymentSuccessful) {
+            errorModal.show();
+            return;
+          }
+
+          let allFieldsFilled = true;
+          const memberData = {};
+          const requiredFields = addMemberForm.querySelectorAll(
+            "[required]:not(#photo)"
+          );
+
+          requiredFields.forEach((field) => {
             if (
-              confirm("Are you sure you want to delete " + memberName + "?")
+              field.value.trim() === "" ||
+              (field.tagName === "SELECT" && field.value === "")
             ) {
-              let members = JSON.parse(localStorage.getItem("members")) || [];
-              members = members.filter(
-                (member) => member.id !== memberIdToDelete
-              );
-
-              members = members.map((member, index) => ({
-                ...member,
-                id: index + 1,
-              }));
-
-              localStorage.setItem("members", JSON.stringify(members));
-              loadMembers();
-              alert(memberName + " has been deleted successfully!");
+              field.classList.add("is-invalid");
+              allFieldsFilled = false;
             } else {
-              alert("Deletion cancelled.");
+              field.classList.remove("is-invalid");
             }
-          }
-        );
-
-        // Pay Due Button Click
-        $("#datatable-col-visiblility tbody").on(
-          "click",
-          ".pay-due-btn",
-          function () {
-            const memberId = $(this).data("member-id");
-            const members = JSON.parse(localStorage.getItem("members")) || [];
-            const member = members.find((m) => m.id == memberId);
-
-            if (member) {
-              $("#payDueMemberId").val(member.id);
-              $("#payDueMembershipType").val(member.membership_type || "N/A");
-
-              const amountPaid = parseFloat(member.amount_paid) || 0;
-              const dueAmount = parseFloat(member.due_amount) || 0;
-
-              $("#payDueTotalAmount").val("₹" + (amountPaid + dueAmount));
-              $("#payDueAmountPaid").val("₹" + amountPaid);
-              $("#payDueAmount").val("₹" + dueAmount);
-
-              new bootstrap.Modal(
-                document.getElementById("payDueModal")
-              ).show();
+            if (field.id) {
+              memberData[field.id] = field.value.trim();
             }
-          }
-        );
+          });
 
-        // Pay Due Submit
-        $("#payDueForm").on("submit", function (e) {
-          e.preventDefault();
-          const memberId = parseInt($("#payDueMemberId").val());
-          let members = JSON.parse(localStorage.getItem("members")) || [];
+          memberData.amount_paid = amountPaidInput.value.trim();
+          memberData.due_amount = dueAmountInput.value.trim();
+          memberData.joining_date = joiningDateInput.value.trim();
+          memberData.expiry_date = expiryDateInput.value.trim();
 
-          const memberIndex = members.findIndex((m) => m.id === memberId);
-          if (memberIndex !== -1) {
-            members[memberIndex].amount_paid += members[memberIndex].due_amount;
-            members[memberIndex].due_amount = 0;
-            localStorage.setItem("members", JSON.stringify(members));
-            loadMembers();
+          if (photoInput.files.length > 0) {
+            const file = photoInput.files[0];
+            const fileSize = file.size;
+            const maxSize = 40 * 1024;
+            const allowedTypes = ["image/jpeg", "image/png"];
 
-            bootstrap.Modal.getInstance(
-              document.getElementById("payDueModal")
-            ).hide();
-            alert("Due Amount Paid Successfully!!!");
+            if (fileSize > maxSize || !allowedTypes.includes(file.type)) {
+              photoInput.classList.add("is-invalid");
+              allFieldsFilled = false;
+            } else {
+              const reader = new FileReader();
+              reader.onload = function (e) {
+                memberData.photoUrl = e.target.result;
+                finalizeMemberAddition(memberData, allFieldsFilled);
+              };
+              reader.readAsDataURL(file);
+            }
+          } else {
+            memberData.photoUrl =
+              "https://via.placeholder.com/150/CCCCCC/888888?text=No+Photo";
+            finalizeMemberAddition(memberData, allFieldsFilled);
           }
         });
-      });
 
-      function calculateExpiringDate(joiningDateStr, membershipType) {
-        if (!joiningDateStr || !membershipType) return "N/A";
+        function finalizeMemberAddition(memberData, allFieldsFilled) {
+          if (allFieldsFilled) {
+            const members = JSON.parse(localStorage.getItem("members")) || [];
+            const newId =
+              members.length > 0
+                ? Math.max(...members.map((m) => m.id)) + 1
+                : 1;
 
-        const joiningDate = new Date(joiningDateStr);
-        let monthsToAdd = 0;
+            const newMember = {
+              id: newId,
+              firstName: memberData.firstName,
+              lastName: memberData.lastName,
+              contact: memberData.contact,
+              emailAddress: memberData.emailAddress,
+              gender: memberData.gender,
+              dob: memberData.dob,
+              address: memberData.address,
+              city: memberData.city,
+              pincode: memberData.pincode,
+              photoUrl: memberData.photoUrl,
+              membership_type: memberData.membership_type,
+              amount_paid: memberData.amount_paid,
+              due_amount: memberData.due_amount,
+              joining_date: memberData.joining_date, // ✅ Added
+              expiry_date: memberData.expiry_date, // ✅ Added
+              status: "Active",
+            };
 
-        if (membershipType.includes("1 month")) monthsToAdd = 1;
-        else if (membershipType.includes("3 month")) monthsToAdd = 3;
-        else if (membershipType.includes("6 month")) monthsToAdd = 6;
+            members.push(newMember);
+            localStorage.setItem("members", JSON.stringify(members));
 
-        const expiringDate = new Date(joiningDate);
-        expiringDate.setMonth(expiringDate.getMonth() + monthsToAdd);
+            if ($.fn.DataTable.isDataTable("#datatable-col-visiblility")) {
+              const table = $("#datatable-col-visiblility").DataTable();
+              const statusBadgeClass =
+                newMember.status === "Active" ? "bg-success" : "bg-danger";
 
-        return expiringDate.toISOString().split("T")[0];
-      }
+              table.row
+                .add([
+                  newMember.id,
+                  `<img src="${newMember.photoUrl}" alt="Photo" width="40" height="40" class="rounded-circle"/>`,
+                  newMember.firstName,
+                  newMember.lastName,
+                  newMember.gender,
+                  newMember.dob,
+                  newMember.contact,
+                  newMember.emailAddress,
+                  newMember.address,
+                  newMember.city,
+                  newMember.pincode,
+                  newMember.membership_type,
+                  `<span class="badge ${statusBadgeClass}">${newMember.status}</span>`,
+                  `
+            <a href="edit-member.html?id=${newMember.id}" class="btn btn-sm btn-primary">
+              <i class="fas fa-pen"></i>
+            </a>
+            <a class="btn btn-sm btn-danger delete-member-btn" data-id="${newMember.id}">
+              <i class="fas fa-trash"></i>
+            </a>
+          `,
+                ])
+                .draw(false);
+            }
 
-      function populateMemberProfile(member) {
-        document.getElementById("profileMemberId").innerText = member.id || "";
-        document.getElementById("profileFullName").innerText = `${
-          member.first_name || ""
-        } ${member.last_name || ""}`;
-        document.getElementById("profileDOB").innerText = member.dob || "";
-        document.getElementById("profileGender").innerText =
-          member.gender || "";
-        document.getElementById("profileContact").innerText =
-          member.contact || "";
-        document.getElementById("profileEmail").innerText = member.email || "";
-        document.getElementById("profileAddress").innerText =
-          member.address || "";
-
-        // Right column details
-        document.getElementById("profilePincode").innerText =
-          member.pincode || "";
-        document.getElementById("profileMembershipType").innerText =
-          member.membership_type || "";
-        document.getElementById("profileStatus").innerText =
-          member.status || "";
-        document.getElementById("profileAmountPaid").innerText =
-          member.amount_paid || "0";
-        document.getElementById("profileDueAmount").innerText =
-          member.due_amount || "0";
-
-        // Joining and Expiry Date
-        document.getElementById("profileJoiningDate").innerText =
-          member.joining_date || "";
-        document.getElementById("profileExpiryDate").innerText =
-          member.expiry_date || ""; // This is for the profile section
-      }
-
-      // Back to Members button
-      $("#backToMembersBtn").on("click", function () {
-        $("#memberProfileSection").hide();
-        $(".row:has(#datatable-col-visiblility)").show();
-        $("html, body").animate({ scrollTop: 0 }, 300);
+            successModal.show();
+            addMemberForm.reset();
+            isPaymentSuccessful = false;
+            proceedToPaymentBtn.style.display = "inline-block";
+            addMemberBtn.style.display = "none";
+            dueAmountInput.value = "";
+          } else {
+            errorModal.show();
+          }
+        }
       });
     
