@@ -1670,12 +1670,17 @@
         }
 
         function sendCombinedWhatsAppWishes() {
+            if (currentBirthdayList.length === 0) return; // 🚫 Do nothing if no birthday
+
             const names = currentBirthdayList.map(p => p.name).join(', ');
-            const msg = `🎉 Wishing a very Happy Birthday to ${names}! Have a fantastic day! 🎂🥳🎈`;
+            const msg = `🎉 Clivax Gym wishes a very Happy Birthday to ${names}! 🎂🥳 Stay strong and fabulous! 💪`;
+
             window.open(`https://wa.me/919999999999?text=${encodeURIComponent(msg)}`, '_blank');
+
             const popup = bootstrap.Modal.getInstance(document.getElementById("birthdayPopup"));
             popup.hide();
         }
+
     </script>
 
 
