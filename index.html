@@ -1,1140 +1,1381 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-
+  <head>
     <meta charset="utf-8" />
-    <title>Dashboard | Clivax - Admin Dashboard</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <title>Show All Staff | Clivax</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      content="Premium Multipurpose Admin & Dashboard Template"
+      name="description"
+    />
     <meta content="Codebucks" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
 
+    <!-- DataTables -->
+    <link
+      href="assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- buttons datatable -->
+    <link
+      href="assets/libs/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Responsive datatable examples -->
+    <link
+      href="assets/libs/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
 
     <!-- dark layout js -->
     <script src="assets/js/pages/layout.js"></script>
 
     <!-- Bootstrap Css -->
-    <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <link
+      href="assets/css/bootstrap.min.css"
+      id="bootstrap-style"
+      rel="stylesheet"
+      type="text/css"
+    />
     <!-- Icons Css -->
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- simplebar css -->
-    <link href="assets/libs/simplebar/simplebar.min.css" rel="stylesheet">
+    <link href="assets/libs/simplebar/simplebar.min.css" rel="stylesheet" />
     <!-- App Css-->
-    <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
-    <style>
-        .combined-slider::-webkit-scrollbar {
-            display: none;
-        }
-    </style>
-</head>
+    <link
+      href="assets/css/app.min.css"
+      id="app-style"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
 
-<body>
-
+  <body>
+    <!-- Begin page -->
     <div id="layout-wrapper">
+      <!-- Start topbar -->
+      <header id="page-topbar">
+        <div class="navbar-header">
+          <!-- Logo -->
 
+          <!-- Start Navbar-Brand -->
+          <div class="navbar-logo-box">
+            <a href="index.html" class="logo logo-dark">
+              <span class="logo-sm">
+                <img
+                  src="assets/images/logo-sm.png"
+                  alt="logo-sm-dark"
+                  height="20"
+                />
+              </span>
+              <span class="logo-lg">
+                <img
+                  src="assets/images/logo-dark.png"
+                  alt="logo-dark"
+                  height="18"
+                />
+              </span>
+            </a>
 
-        <!-- Start topbar -->
-        <header id="page-topbar">
-            <div class="navbar-header">
+            <a href="index.html" class="logo logo-light">
+              <span class="logo-sm">
+                <img
+                  src="assets/images/logo-sm.png"
+                  alt="logo-sm-light"
+                  height="20"
+                />
+              </span>
+              <span class="logo-lg">
+                <img
+                  src="assets/images/logo-light.png"
+                  alt="logo-light"
+                  height="18"
+                />
+              </span>
+            </a>
 
-                <!-- Logo -->
+            <button
+              type="button"
+              class="btn btn-sm top-icon sidebar-btn"
+              id="sidebar-btn"
+            >
+              <i class="mdi mdi-menu-open align-middle fs-19"></i>
+            </button>
+          </div>
+          <!-- End navbar brand -->
 
-                <!-- Start Navbar-Brand -->
-                <div class="navbar-logo-box">
-                    <a href="index.html" class="logo logo-dark">
-                        <span class="logo-sm">
-                            <img src="assets/images/logo-sm.png" alt="logo-sm-dark" height="20">
-                        </span>
-                        <span class="logo-lg">
-                            <img src="assets/images/logo-dark.png" alt="logo-dark" height="18">
-                        </span>
-                    </a>
+          <!-- Start menu -->
+          <div class="d-flex justify-content-between menu-sm px-3 ms-auto">
+            <div class="d-flex align-items-center gap-2">
+              <div class="dropdown d-none d-lg-block">
+                <button
+                  type="button"
+                  class="btn btn-primary btn-sm fs-14 d-inline"
+                  data-bs-toggle="dropdown"
+                >
+                  Gym Modules
+                  <i class="mdi mdi-chevron-down align-middle"></i>
+                </button>
+                <div
+                  class="dropdown-menu dropdown-menu-start dropdown-menu-animated"
+                >
+                  <!-- Inventory Manager -->
+                  <a href="equipment.html" class="dropdown-item">
+                    <div class="dropdown-icon">
+                      <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <span class="dropdown-content">Equipments</span>
+                    <div class="dropdown-addon">
+                      <span class="badge badge-warning rounded-pill">20</span>
+                    </div>
+                  </a>
 
-                    <a href="index.html" class="logo logo-light">
-                        <span class="logo-sm">
-                            <img src="assets/images/logo-sm.png" alt="logo-sm-light" height="20">
-                        </span>
-                        <span class="logo-lg">
-                            <img src="assets/images/logo-light.png" alt="logo-light" height="18">
-                        </span>
-                    </a>
+                  <!-- Invoice -->
+                  <a href="create-invoice.html" class="dropdown-item">
+                    <div class="dropdown-icon">
+                      <i class="fas fa-file-invoice"></i>
+                    </div>
+                    <span class="dropdown-content">Membership Invoice</span>
+                  </a>
 
-                    <button type="button" class="btn btn-sm top-icon sidebar-btn" id="sidebar-btn">
-                        <i class="mdi mdi-menu-open align-middle fs-19"></i>
-                    </button>
+                  <!-- Divider -->
+                  <div class="dropdown-divider"></div>
+
+                  <!-- My Account -->
+                  <a href="apps-contact.html" class="dropdown-item">
+                    <div class="dropdown-icon">
+                      <i class="fas fa-user-circle"></i>
+                    </div>
+                    <span class="dropdown-content">My Profile</span>
+                  </a>
                 </div>
-                <!-- End navbar brand -->
+              </div>
 
-                <!-- Start menu -->
-                <div class="d-flex justify-content-between menu-sm px-3 ms-auto">
-                    <div class="d-flex align-items-center gap-2">
-                        <div class="dropdown d-none d-lg-block">
-                            <button type="button" class="btn btn-primary btn-sm fs-14 d-inline"
-                                data-bs-toggle="dropdown">
-                                Gym Modules
-                                <i class="mdi mdi-chevron-down align-middle"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-start dropdown-menu-animated">
-
-                                <!-- Inventory Manager -->
-                                <a href="equipment.html" class="dropdown-item">
-                                    <div class="dropdown-icon"><i class="fas fa-dumbbell"></i></div>
-                                    <span class="dropdown-content">Equipments</span>
-                                    <div class="dropdown-addon"><span class="badge badge-warning rounded-pill">20</span>
-                                    </div>
-                                </a>
-
-                                <!-- Invoice -->
-                                <a href="create-invoice.html" class="dropdown-item">
-                                    <div class="dropdown-icon"><i class="fas fa-file-invoice"></i></div>
-                                    <span class="dropdown-content">Membership Invoice</span>
-                                </a>
-
-                                <!-- Divider -->
-                                <div class="dropdown-divider"></div>
-
-                                <!-- My Account -->
-                                <a href="apps-contact.html" class="dropdown-item">
-                                    <div class="dropdown-icon"><i class="fas fa-user-circle"></i></div>
-                                    <span class="dropdown-content">My Profile</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="dropdown d-none d-lg-block">
-                            <button type="button" class="btn btn-primary btn-sm fs-14" data-bs-toggle="dropdown"
-                                aria-haspopup="false" aria-expanded="false">
-                                Features
-                                <i class="mdi mdi-chevron-down align-middle"></i>
-                            </button>
-                            <div
-                                class="dropdown-menu dropdown-menu-start dropdown-menu-lg-widest dropdown-menu-widest dropdown-menu-animated bg-primary-subtle overflow-hidden">
-                                <div class="dropdown-row justify-content-center">
-
-                                    <!-- Original Image (Unchanged) -->
-                                    <div class="p-2 menu-image">
-                                        <img src="assets/images/mega-menu.png" alt="mega-menu image" class="img-fluid"
-                                            style="height: 200px;">
-                                    </div>
-
-                                    <!-- Gym Welcome Section -->
-                                    <div class="dropdown-col">
-                                        <h2 class="">Welcome to Clivax Gym!</h2>
-                                        <p class="text-muted mb-0">
-                                            Track members, manage plans, monitor trainers, and streamline gym operations
-                                            with our digital gym
-                                            dashboard.
-                                        </p>
-                                        <div class="mt-3">
-                                            <a href="auth-login.html" class="btn btn-dark btn-wider">Admin Login</a>
-                                        </div>
-                                    </div>
-
-                                    <!-- Features Section -->
-                                    <div class="dropdown-col border-start border-primary border-opacity-50">
-                                        <h4 class="dropdown-header">Gym Features</h4>
-                                        <div class="grid-nav grid-nav-action">
-                                            <div class="grid-nav-row">
-                                                <a href="index.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="fas fa-chart-line"></i></div>
-                                                    <span class="grid-nav-content">Dashboard</span>
-                                                </a>
-                                                <a href="show-all-member.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="fas fa-user-friends"></i></div>
-                                                    <span class="grid-nav-content">Members</span>
-                                                </a>
-                                                <a href="renewals.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="fas fa-redo-alt"></i></div>
-                                                    <span class="grid-nav-content">Renewals</span>
-                                                </a>
-                                            </div>
-                                            <div class="grid-nav-row">
-                                                <a href="trainer-profile.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="fas fa-dumbbell"></i></div>
-                                                    <span class="grid-nav-content">Trainers</span>
-                                                </a>
-                                                <a href="view-plan.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="fas fa-id-card-alt"></i></div>
-                                                    <span class="grid-nav-content">Membership Plans</span>
-                                                </a>
-                                                <a href="revenue-report.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="fas fa-file-alt"></i></div>
-                                                    <span class="grid-nav-content">Reports</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Tools Section -->
-                                    <div class="dropdown-col border-start border-primary border-opacity-50">
-                                        <h4 class="dropdown-header">Quick Tools</h4>
-                                        <a href="attendance.html" class="dropdown-item">
-                                            <i
-                                                class="mdi mdi-account-check-outline align-middle dropdown-bullet me-2"></i>
-                                            <span class="dropdown-content">Attendance</span>
-                                        </a>
-                                        <a href="diet-plan.html" class="dropdown-item">
-                                            <i class="mdi mdi-food-apple-outline align-middle dropdown-bullet me-2"></i>
-                                            <span class="dropdown-content">Diet Plans</span>
-                                        </a>
-                                        <a href="manage-staff.html" class="dropdown-item">
-                                            <i class="mdi mdi-account-tie align-middle dropdown-bullet me-2"></i>
-                                            <span class="dropdown-content">Staff Management</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+              <div class="dropdown d-none d-lg-block">
+                <button
+                  type="button"
+                  class="btn btn-primary btn-sm fs-14"
+                  data-bs-toggle="dropdown"
+                  aria-haspopup="false"
+                  aria-expanded="false"
+                >
+                  Features
+                  <i class="mdi mdi-chevron-down align-middle"></i>
+                </button>
+                <div
+                  class="dropdown-menu dropdown-menu-start dropdown-menu-lg-widest dropdown-menu-widest dropdown-menu-animated bg-primary-subtle overflow-hidden"
+                >
+                  <div class="dropdown-row justify-content-center">
+                    <!-- Original Image (Unchanged) -->
+                    <div class="p-2 menu-image">
+                      <img
+                        src="assets/images/mega-menu.png"
+                        alt="mega-menu image"
+                        class="img-fluid"
+                        style="height: 200px"
+                      />
                     </div>
 
-                    <div class="d-flex align-items-center gap-2">
-
-                        <!-- Start Notification -->
-                        <div class="dropdown d-inline-block">
-                            <button type="button" class="btn btn-sm top-icon" id="page-header-notifications-dropdown"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-bell align-middle"></i>
-                                <span class="btn-marker"><i class="marker marker-dot text-danger"></i></span>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-md dropdown-menu-end p-0"
-                                aria-labelledby="page-header-notifications-dropdown">
-                                <div class="p-3 bg-info">
-                                    <div class="row align-items-center">
-                                        <div class="col">
-                                            <h6 class="text-white m-0">
-                                                <i class="far fa-bell me-2"></i> Notifications
-                                            </h6>
-                                        </div>
-                                        <div class="col-auto">
-                                            <a href="#!" class="badge bg-info-subtle text-info">
-                                                6+</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div data-simplebar style="max-height: 230px">
-                                    <a href="#" class="text-reset notification-item">
-                                        <div class="d-flex">
-                                            <div class="avatar avatar-xs avatar-label-success me-3">
-                                                <span class="rounded fs-16">
-                                                    <i class="mdi mdi-account-plus-outline"></i>
-                                                </span>
-                                            </div>
-                                            <div class="flex-1">
-                                                <h6 class="mb-1">New member registered</h6>
-                                                <div class="fs-12 text-muted">
-                                                    <p class="mb-0">
-                                                        <i class="mdi mdi-clock-outline"></i> 5 min ago
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <i class="mdi mdi-chevron-right align-middle ms-2"></i>
-                                        </div>
-                                    </a>
-
-                                    <a href="#" class="text-reset notification-item">
-                                        <div class="d-flex">
-                                            <div class="avatar avatar-xs avatar-label-warning me-3">
-                                                <span class="rounded fs-16">
-                                                    <i class="mdi mdi-alarm"></i>
-                                                </span>
-                                            </div>
-                                            <div class="flex-1">
-                                                <h6 class="mb-1">Session missed by trainer</h6>
-                                                <div class="fs-12 text-muted">
-                                                    <p class="mb-0">
-                                                        <i class="mdi mdi-clock-outline"></i> 30 min ago
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <i class="mdi mdi-chevron-right align-middle ms-2"></i>
-                                        </div>
-                                    </a>
-
-                                    <a href="#" class="text-reset notification-item">
-                                        <div class="d-flex">
-                                            <div class="avatar avatar-xs avatar-label-danger me-3">
-                                                <span class="rounded fs-16">
-                                                    <i class="mdi mdi-cash-clock"></i>
-                                                </span>
-                                            </div>
-                                            <div class="flex-1">
-                                                <h6 class="mb-1">Payment due for member ID #1023</h6>
-                                                <div class="fs-12 text-muted">
-                                                    <p class="mb-0">
-                                                        <i class="mdi mdi-clock-outline"></i> 2 hours ago
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <i class="mdi mdi-chevron-right align-middle ms-2"></i>
-                                        </div>
-                                    </a>
-
-                                    <a href="#" class="text-reset notification-item">
-                                        <div class="d-flex">
-                                            <div class="avatar avatar-xs avatar-label-info me-3">
-                                                <span class="rounded fs-16">
-                                                    <i class="mdi mdi-calendar-check-outline"></i>
-                                                </span>
-                                            </div>
-                                            <div class="flex-1">
-                                                <h6 class="mb-1">
-                                                    Today’s session starts in 30 minutes
-                                                </h6>
-                                                <div class="fs-12 text-muted">
-                                                    <p class="mb-0">
-                                                        <i class="mdi mdi-clock-outline"></i> 3 hours ago
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <i class="mdi mdi-chevron-right align-middle ms-2"></i>
-                                        </div>
-                                    </a>
-
-                                    <a href="#" class="text-reset notification-item">
-                                        <div class="d-flex">
-                                            <div class="avatar avatar-xs avatar-label-secondary me-3">
-                                                <span class="rounded fs-16">
-                                                    <i class="mdi mdi-update"></i>
-                                                </span>
-                                            </div>
-                                            <div class="flex-1">
-                                                <h6 class="mb-1">Member plan updated (ID #1008)</h6>
-                                                <div class="fs-12 text-muted">
-                                                    <p class="mb-0">
-                                                        <i class="mdi mdi-clock-outline"></i> Yesterday
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <i class="mdi mdi-chevron-right align-middle ms-2"></i>
-                                        </div>
-                                    </a>
-
-                                    <a href="#" class="text-reset notification-item">
-                                        <div class="d-flex">
-                                            <div class="avatar avatar-xs avatar-label-primary me-3">
-                                                <span class="rounded fs-16">
-                                                    <i class="mdi mdi-lock-reset"></i>
-                                                </span>
-                                            </div>
-                                            <div class="flex-1">
-                                                <h6 class="mb-1">Admin password changed</h6>
-                                                <div class="fs-12 text-muted">
-                                                    <p class="mb-0">
-                                                        <i class="mdi mdi-clock-outline"></i> 2 days ago
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <i class="mdi mdi-chevron-right align-middle ms-2"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="p-2 border-top">
-                                    <div class="d-grid">
-                                        <a class="btn btn-sm btn-link font-size-14 text-center"
-                                            href="javascript:void(0)">
-                                            <i class="mdi mdi-arrow-right-circle me-1"></i> View
-                                            More..
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Notification -->
-
-                        <!-- Start Profile -->
-                        <div class="dropdown d-inline-block">
-                            <button type="button" class="btn btn-sm top-icon p-0" id="page-header-user-dropdown"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="rounded avatar-2xs p-0" src="assets/images/users/avatar-6.png"
-                                    alt="Header Avatar" />
-                            </button>
-                            <div
-                                class="dropdown-menu dropdown-menu-wide dropdown-menu-end dropdown-menu-animated overflow-hidden py-0">
-                                <div class="card border-0">
-                                    <div class="card-header bg-primary rounded-0">
-                                        <div class="rich-list-item w-100 p-0">
-                                            <div class="rich-list-prepend">
-                                                <div class="avatar avatar-label-light avatar-circle">
-                                                    <div class="avatar-display">
-                                                        <i class="fas fa-user-circle"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rich-list-content">
-                                                <h3 class="rich-list-title text-white">Admin</h3>
-                                                <span class="rich-list-subtitle text-white">info@kavyainfoweb.com</span>
-                                            </div>
-                                            <div class="rich-list-append">
-                                                <span class="badge badge-label-light fs-6">6+</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card-body p-0">
-                                        <div class="grid-nav grid-nav-flush grid-nav-action grid-nav-no-rounded">
-                                            <div class="grid-nav-row">
-                                                <a href="apps-contact.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon">
-                                                        <i class="fas fa-user-edit"></i>
-                                                    </div>
-                                                    <span class="grid-nav-content">My Profile</span>
-                                                </a>
-                                                <a href="trainer-profile.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon">
-                                                        <i class="fas fa-dumbbell"></i>
-                                                    </div>
-                                                    <span class="grid-nav-content">Trainer Profile</span>
-                                                </a>
-                                                <a href="#" class="grid-nav-item">
-                                                    <div class="grid-nav-icon">
-                                                        <i class="fas fa-running"></i>
-                                                    </div>
-                                                    <span class="grid-nav-content">Workout Logs</span>
-                                                </a>
-                                            </div>
-
-                                            <div class="grid-nav-row">
-                                                <a href="live-session.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon">
-                                                        <i class="far fa-calendar-check"></i>
-                                                    </div>
-                                                    <span class="grid-nav-content">Session Calendar</span>
-                                                </a>
-                                                <a href="diet-plan.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon">
-                                                        <i class="fas fa-apple-alt"></i>
-                                                    </div>
-                                                    <span class="grid-nav-content">Diet Notes</span>
-                                                </a>
-                                                <a href="#" class="grid-nav-item">
-                                                    <div class="grid-nav-icon">
-                                                        <i class="far fa-bell"></i>
-                                                    </div>
-                                                    <span class="grid-nav-content">Notifications</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card-footer card-footer-bordered rounded-0">
-                                        <a href="auth-login.html" class="btn btn-label-danger">Sign out</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Profile -->
+                    <!-- Gym Welcome Section -->
+                    <div class="dropdown-col">
+                      <h2 class="">Welcome to Clivax Gym!</h2>
+                      <p class="text-muted mb-0">
+                        Track members, manage plans, monitor trainers, and
+                        streamline gym operations with our digital gym
+                        dashboard.
+                      </p>
+                      <div class="mt-3">
+                        <a href="auth-login.html" class="btn btn-dark btn-wider"
+                          >Admin Login</a
+                        >
+                      </div>
                     </div>
+
+                    <!-- Features Section -->
+                    <div
+                      class="dropdown-col border-start border-primary border-opacity-50"
+                    >
+                      <h4 class="dropdown-header">Gym Features</h4>
+                      <div class="grid-nav grid-nav-action">
+                        <div class="grid-nav-row">
+                          <a href="index.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-chart-line"></i>
+                            </div>
+                            <span class="grid-nav-content">Dashboard</span>
+                          </a>
+                          <a href="show-all-member.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-user-friends"></i>
+                            </div>
+                            <span class="grid-nav-content">Members</span>
+                          </a>
+                          <a href="renewals.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-redo-alt"></i>
+                            </div>
+                            <span class="grid-nav-content">Renewals</span>
+                          </a>
+                        </div>
+                        <div class="grid-nav-row">
+                          <a href="trainer-profile.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-dumbbell"></i>
+                            </div>
+                            <span class="grid-nav-content">Trainers</span>
+                          </a>
+                          <a href="view-plan.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-id-card-alt"></i>
+                            </div>
+                            <span class="grid-nav-content"
+                              >Membership Plans</span
+                            >
+                          </a>
+                          <a href="revenue-report.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-file-alt"></i>
+                            </div>
+                            <span class="grid-nav-content">Reports</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Tools Section -->
+                    <div
+                      class="dropdown-col border-start border-primary border-opacity-50"
+                    >
+                      <h4 class="dropdown-header">Quick Tools</h4>
+                      <a href="attendance.html" class="dropdown-item">
+                        <i
+                          class="mdi mdi-account-check-outline align-middle dropdown-bullet me-2"
+                        ></i>
+                        <span class="dropdown-content">Attendance</span>
+                      </a>
+                      <a href="diet-plan.html" class="dropdown-item">
+                        <i
+                          class="mdi mdi-food-apple-outline align-middle dropdown-bullet me-2"
+                        ></i>
+                        <span class="dropdown-content">Diet Plans</span>
+                      </a>
+
+                      <a href="manage-staff.html" class="dropdown-item">
+                        <i
+                          class="mdi mdi-account-tie align-middle dropdown-bullet me-2"
+                        ></i>
+                        <span class="dropdown-content">Staff Management</span>
+                      </a>
+                    </div>
+                  </div>
                 </div>
-                <!-- End menu -->
+              </div>
             </div>
-        </header>
-        <!-- End topbar -->
-        <!-- ========== Left Sidebar Start ========== -->
-        <div class="sidebar-left">
 
-            <div data-simplebar class="h-100">
-
-                <!--- Sidebar-menu -->
-                <div id="sidebar-menu">
-                    <!-- Left Menu Start -->
-                    <ul class="left-menu list-unstyled" id="side-menu">
-                        <li>
-                            <a href="index.html" class="">
-                                <i class="fas fa-desktop"></i>
-                                <span>Dashboard</span>
-                            </a>
-                        </li>
-
-                        <!-- <li class="menu-title">Elements</li> -->
-
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow ">
-                                <i class="fa fa-users"></i>
-                                <span>Member Management</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="add-new-member.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>Add New Member</a>
-                                </li>
-                                <li><a href="show-all-member.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>All Members</a>
-                                </li>
-                            </ul>
-                        </li>
-
-
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow ">
-                                <i class="fa fa-id-card-alt"></i>
-                                <span>Membership Plans</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li>
-                                    <a href="add-new-plan.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
-                                        Add New
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="view-plan.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
-                                        View Plan
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="manage-plan.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
-                                        Manage Plan
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow">
-                                <i class="fa fa-calendar-check"></i>
-                                <span>Session Management</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li>
-                                    <a href="live-session.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>Live Session
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="offline-session.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>Offline Session
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-
-
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow ">
-                                <i class="fa fa-user-tie"></i>
-                                <span>Staff Management</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-
-                                <li><a href="add-new-staff.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i> Add New</a>
-                                </li>
-                                <li><a href="show-all-staff.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i> All Staff Members</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow ">
-                                <i class="fa fa-wallet"></i>
-                                <span>Account Management</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-
-                                <!-- Show All -->
-                                <li>
-                                    <a href="add-new-account.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>Add New Account
-                                    </a>
-                                </li>
-
-                                <!-- Show All -->
-                                <li>
-                                    <a href="show-all-account.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i> All Accounts
-                                    </a>
-                                </li>
-
-                                <!-- Member Invoices with dropdown -->
-                                <li>
-                                    <a href="create-invoice.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i> Create Invoices
-                                    </a>
-                                </li>
-
-                                <!-- Payment History -->
-                                <li>
-                                    <a href="pyments.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i> Payment History
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="renewals.html">
-                                <i class="fa fa-sync-alt"></i>
-                                <span>Renewals</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="attendance.html">
-                                <i class="fa fa-calendar-check"></i>
-                                <span>Attendance</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow">
-                                <i class="fa fa-chart-pie"></i>
-                                <span>Reports</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-
-                                <!-- GYM-RELATED REPORTS -->
-                                <li>
-                                    <a href="membership-report.html">
-                                        <i class="mdi mdi-account-group-outline align-middle"></i> Membership Report
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="revenue-report.html">
-                                        <i class="mdi mdi-currency-inr align-middle"></i> Revenue Report
-                                    </a>
-                                </li>
-
-
-                                <!-- Existing Chart Pages -->
-
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="settings.html">
-                                <i class="fas fa-cog"></i>
-                                <span>Settings</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="auth-login.html">
-                                <i class="fas fa-sign-out-alt"></i>
-                                <span>Logout</span>
-                            </a>
-                        </li>
-
-
-                    </ul>
+            <div class="d-flex align-items-center gap-2">
+              <!--Start App Search-->
+              <form class="app-search d-none d-lg-block">
+                <div class="position-relative">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Search..."
+                  />
+                  <span class="fab fa-sistrix fs-17 align-middle"></span>
                 </div>
-                <!-- Sidebar -->
-            </div>
-        </div>
-        <!-- Left Sidebar End -->
+              </form>
+              <!--End App Search-->
 
-
-        <!-- Start right Content here -->
-
-        <div class="main-content">
-            <div class="page-content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <div>
-                                    <h4 class="fs-16 fw-semibold mb-1 mb-md-2">Good Morning, <span
-                                            class="text-primary">Dinesh!</span></h4>
-                                    <p class="text-muted mb-0">
-                                        Your gym’s energy, captured in today’s updates.
-                                    </p>
-
-                                </div>
-                                <div class="page-title-right">
-                                    <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Clivax</a></li>
-                                        <li class="breadcrumb-item active">Dashboard</li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--    end row -->
-
-                    <div class="row">
-                        <div class="col-xxl-9">
-                            <div class="card">
-                                <div class="card-header">
-                                    <div class="card-icon">
-                                        <i class="fas fa-cart-plus fs-14 text-muted"></i>
-                                    </div>
-                                    <h4 class="card-title mb-0">Overall Sales</h4>
-                                    <div class="dropdown card-addon">
-                                        <a href="#" class="dropdown-toggle arrow-none card-drop"
-                                            data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="mdi mdi-dots-sidebar"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-end">
-                                            <!-- item-->
-                                            <a href="javascript:void(0);" class="dropdown-item">Sales Report</a>
-                                            <!-- item-->
-                                            <a href="javascript:void(0);" class="dropdown-item">Export Report</a>
-                                            <!-- item-->
-                                            <a href="javascript:void(0);" class="dropdown-item">Profit</a>
-                                            <!-- item-->
-                                            <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <div class="d-flex justify-content-between align-content-end shadow-lg p-3">
-                                                <div>
-                                                    <p class="text-muted text-truncate mb-2">Total Members</p>
-                                                    <h5 class="mb-0">1,240</h5>
-                                                </div>
-                                                <div class="text-success float-end">
-                                                    <i class="mdi mdi-menu-up"> </i>1.2%
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-4">
-                                            <div class="d-flex justify-content-between align-content-end shadow-lg p-3">
-                                                <div>
-                                                    <p class="text-muted text-truncate mb-2">Member Expiring Soon</p>
-                                                    <h5 class="mb-0">20 Member</h5>
-                                                </div>
-                                                <div class="text-success float-end">
-                                                    <i class="mdi mdi-menu-up"> </i>3.0%
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-4">
-                                            <div class="d-flex justify-content-between align-content-end shadow-lg p-3">
-                                                <div>
-                                                    <p class="text-muted text-truncate mb-2">Total Revenue</p>
-                                                    <h5 class="mb-0">₹15,75,000</h5>
-                                                </div>
-                                                <div class="text-success float-end">
-                                                    <i class="mdi mdi-menu-up"> </i>2.5%
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-4 mt-3">
-                                            <div class="d-flex justify-content-between align-content-end shadow-lg p-3">
-                                                <div>
-                                                    <p class="text-muted text-truncate mb-2">Active Trainers</p>
-                                                    <h5 class="mb-0">15</h5>
-                                                </div>
-                                                <div class="text-success float-end">
-                                                    <i class="mdi mdi-menu-up"> </i>1.5%
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-4 mt-3">
-                                            <div class="d-flex justify-content-between align-content-end shadow-lg p-3">
-                                                <div>
-                                                    <p class="text-muted text-truncate mb-2">Total Equipment</p>
-                                                    <h5 class="mb-0">85</h5>
-                                                </div>
-                                                <div class="text-success float-end">
-                                                    <i class="mdi mdi-menu-up"> </i>0.9%
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-4 mt-3">
-                                            <div class="d-flex justify-content-between align-content-end shadow-lg p-3">
-                                                <div>
-                                                    <p class="text-muted text-truncate mb-2">Expired Member</p>
-                                                    <h5 class="mb-0">32</h5>
-                                                </div>
-                                                <div class="text-danger float-end">
-                                                    <i class="mdi mdi-menu-down"> </i>1.1%
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                            <div class="row">
-                                <!-- Total Balance -->
-                                <div class="col-xl-4">
-                                    <div class="card bg-danger-subtle"
-                                        style="background: url('assets/images/dashboard/dashboard-shape-1.png'); background-repeat: no-repeat; background-position: bottom center;">
-                                        <div class="card-body">
-                                            <div class="d-flex">
-                                                <div class="avatar avatar-sm avatar-label-danger">
-                                                    <i class="mdi mdi-buffer mt-1"></i>
-                                                </div>
-                                                <div class="ms-3">
-                                                    <p class="text-danger mb-1">Total Balance</p>
-                                                    <h4 class="mb-0">₹11,90,452.55</h4>
-                                                </div>
-                                            </div>
-                                            <div class="hstack gap-2 mt-3">
-                                                <button class="btn btn-light">Transfer</button>
-                                                <button class="btn btn-info">Request</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Active Memberships -->
-                                <div class="col-xl-4">
-                                    <div class="card bg-success-subtle"
-                                        style="background: url('assets/images/dashboard/dashboard-shape-2.png'); background-repeat: no-repeat; background-position: bottom center;">
-                                        <div class="card-body">
-                                            <div class="d-flex">
-                                                <div class="avatar avatar-sm avatar-label-success">
-                                                    <i class="mdi mdi-account-multiple mt-1"></i>
-                                                </div>
-                                                <div class="ms-3">
-                                                    <p class="text-success mb-1">Active Memberships</p>
-                                                    <h4 class="mb-0">120 Members</h4>
-                                                </div>
-                                            </div>
-                                            <div class="mt-3 mb-2">
-                                                <p class="mb-0">4 expiring soon</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Sessions Completed -->
-                                <div class="col-xl-4">
-                                    <div class="card bg-info-subtle"
-                                        style="background: url('assets/images/dashboard/dashboard-shape-3.png'); background-repeat: no-repeat; background-position: bottom center;">
-                                        <div class="card-body">
-                                            <div class="d-flex">
-                                                <div class="avatar avatar-sm avatar-label-info">
-                                                    <i class="mdi mdi-dumbbell mt-1"></i>
-                                                </div>
-                                                <div class="ms-3">
-                                                    <p class="text-info mb-1">Total Sessions Completed</p>
-                                                    <h4 class="mb-0">72</h4>
-                                                </div>
-                                            </div>
-                                            <div class="mt-3 mb-2">
-                                                <p class="mb-0">
-                                                    <span class="text-primary me-2 fs-14">
-                                                        <i class="fas fa-caret-up me-1"></i>3.4%
-                                                    </span>
-                                                    last month
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end row -->
-                            <!-- Birthday Dashboard Section -->
-                            <section class="birthday-dashboard-section py-3" style="background-color: #f8f9fa;">
-                                <div class="container">
-                                    <!-- Calendar and Buttons -->
-                                    <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
-                                        <div class="d-flex align-items-center gap-2">
-                                            <label for="birthdayDate" class="form-label fw-bold text-secondary mb-0">📅
-                                                Check Birthdays:</label>
-                                            <input type="date" id="birthdayDate" class="form-control"
-                                                style="width: 200px;">
-                                            <button class="btn btn-sm btn-outline-info"
-                                                id="searchDateBtn">Search</button>
-                                        </div>
-                                        <div class="d-flex gap-2 mt-2 mt-md-0">
-                                            <button id="toggleTodayBtn" class="btn btn-sm btn-primary fw-bold">🎂
-                                                Today's Birthdays</button>
-                                            <button id="toggleUpcomingBtn"
-                                                class="btn btn-sm btn-outline-secondary fw-bold">📆 Upcoming
-                                                Birthdays</button>
-                                        </div>
-                                    </div>
-
-                                    <!-- Birthday Cards Section -->
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="card shadow">
-                                                <div class="card-header bg-primary text-white">🎉 Birthdays</div>
-                                                <div class="card-body overflow-hidden">
-                                                    <!-- Sliders -->
-                                                    <div id="todaySlider"
-                                                        class="combined-slider d-flex gap-3 overflow-auto flex-nowrap mb-2"
-                                                        style="display:none;"></div>
-                                                    <div id="upcomingSlider"
-                                                        class="combined-slider d-flex gap-3 overflow-auto flex-nowrap mb-2"
-                                                        style="display:none;"></div>
-                                                    <div id="searchedSlider"
-                                                        class="combined-slider d-flex gap-3 overflow-auto flex-nowrap mb-2"
-                                                        style="display:none;"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-
-                            <!-- Popup Modal -->
-                            <div class="modal fade" id="birthdayPopup" tabindex="-1">
-                                <div class="modal-dialog modal-lg modal-dialog-centered">
-                                    <div class="modal-content">
-
-                                        <div class="modal-header">
-                                            <h5 class="modal-title text-danger">🎉 Birthday Wishes <span
-                                                    class="emoji">🎊</span></h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button onclick="sendCombinedWhatsAppWishes()" class="btn btn-success">Send
-                                                Wishes to All 🎉</button>
-                                        </div>
-                                        <div class="modal-body d-flex flex-wrap gap-3" id="popupBirthdayContainer">
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
-
-                            <!-- Gym Revenue Section -->
-                            <section class="gym-revenue-section py-4">
-                                <div class="container-fluid">
-                                    <div class="card shadow-sm border-0">
-                                        <div class="card-body">
-                                            <!-- Top Filters -->
-                                            <div
-                                                class="d-flex flex-wrap justify-content-between align-items-center mb-4">
-                                                <h5 class="card-title text-success mb-2">Gym Revenue Analytics</h5>
-                                                <div class="d-flex flex-wrap gap-2 align-items-center">
-                                                    <label class="form-label mb-0">From:</label>
-                                                    <input type="date" class="form-control form-control-sm"
-                                                        id="revenueFromDate">
-                                                    <label class="form-label mb-0">To:</label>
-                                                    <input type="date" class="form-control form-control-sm"
-                                                        id="revenueToDate">
-                                                    <button class="btn btn-success btn-sm" id="filterBtn">Show
-                                                        Weekly</button>
-                                                </div>
-                                            </div>
-
-                                            <!-- Timeframe Buttons -->
-                                            <div class="btn-group mb-3" role="group">
-                                                <button class="btn btn-outline-success btn-sm range-btn"
-                                                    data-range="2M">Last 2
-                                                    Months</button>
-                                                <button class="btn btn-outline-success btn-sm range-btn"
-                                                    data-range="3M">Last 3
-                                                    Months</button>
-                                                <button class="btn btn-outline-success btn-sm range-btn"
-                                                    data-range="4M">Last 4
-                                                    Months</button>
-                                                <button class="btn btn-outline-success btn-sm range-btn"
-                                                    data-range="6M">Last 6
-                                                    Months</button>
-                                                <button class="btn btn-outline-success btn-sm range-btn"
-                                                    data-range="1Y">Last 1
-                                                    Year</button>
-                                            </div>
-
-                                            <!-- Chart -->
-                                            <canvas id="revenueBarChart" height="90"></canvas>
-
-                                            <!-- Revenue Stats -->
-                                            <div class="row text-center mt-4">
-                                                <div class="col-md-4 mb-3">
-                                                    <h6 class="text-muted">Total Revenue</h6>
-                                                    <h4 class="text-success fw-bold" id="totalRevenue">₹0</h4>
-                                                </div>
-                                                <div class="col-md-4 mb-3">
-                                                    <h6 class="text-muted">Average per Period</h6>
-                                                    <h4 class="text-info fw-bold" id="avgRevenue">₹0</h4>
-                                                </div>
-                                                <div class="col-md-4 mb-3">
-                                                    <h6 class="text-muted">Highest Earning</h6>
-                                                    <h4 class="text-danger fw-bold" id="maxRevenue">₹0</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-
-
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="card" style="max-height: 500px; overflow-y: auto;" data-simplebar>
-                                        <div class="card-header">
-                                            <div class="card-icon text-muted">
-                                                <i class="fas fa-chalkboard-teacher fs-14"></i>
-                                            </div>
-                                            <h3 class="card-title">Trainer-wise Member Assignment</h3>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="table-responsive">
-                                                <table class="table table-bordered text-nowrap mb-0">
-                                                    <thead class="table-light">
-                                                        <tr>
-                                                            <th>Trainer Name</th>
-                                                            <th>Total Members Assigned</th>
-                                                            <th>View Members</th>
-
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td class="align-middle"><i
-                                                                    class="mdi mdi-account-tie text-primary me-2"></i>Ravi
-                                                                Shankar</td>
-                                                            <td class="align-middle">56 Members</td>
-                                                            <td class="align-middle">
-                                                                <details>
-                                                                    <summary
-                                                                        class="btn btn-sm btn-outline-primary toggle-btn">
-                                                                        Show</summary>
-                                                                    <ul class="mb-0 mt-2 ps-3">
-                                                                        <li>Rohit Sharma</li>
-                                                                        <li>Vikram Pawar</li>
-                                                                        <li>Neeraj Mehta</li>
-                                                                        <li>Anjali Chauhan</li>
-                                                                        <li>Arjun Kale</li>
-                                                                    </ul>
-                                                                </details>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="align-middle"><i
-                                                                    class="mdi mdi-account-tie text-success me-2"></i>Priya
-                                                                Deshmukh</td>
-                                                            <td class="align-middle">36 Members</td>
-                                                            <td class="align-middle">
-                                                                <details>
-                                                                    <summary
-                                                                        class="btn btn-sm btn-outline-primary toggle-btn">
-                                                                        Show</summary>
-                                                                    <ul class="mb-0 mt-2 ps-3">
-                                                                        <li>Neha Kulkarni</li>
-                                                                        <li>Rahul More</li>
-                                                                        <li>Shruti Patil</li>
-                                                                        <li>Amit Thorat</li>
-                                                                    </ul>
-                                                                </details>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="align-middle"><i
-                                                                    class="mdi mdi-account-tie text-info me-2"></i>Amit
-                                                                Kale</td>
-                                                            <td class="align-middle">43 Members</td>
-                                                            <td class="align-middle">
-                                                                <details>
-                                                                    <summary
-                                                                        class="btn btn-sm btn-outline-primary toggle-btn">
-                                                                        Show</summary>
-                                                                    <ul class="mb-0 mt-2 ps-3">
-                                                                        <li>Akash Verma</li>
-                                                                        <li>Meera Joshi</li>
-                                                                        <li>Sagar Desai</li>
-                                                                    </ul>
-                                                                </details>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="align-middle"><i
-                                                                    class="mdi mdi-account-tie text-warning me-2"></i>Sneha
-                                                                Jadhav</td>
-                                                            <td class="align-middle">22 Members</td>
-                                                            <td class="align-middle">
-                                                                <details>
-                                                                    <summary
-                                                                        class="btn btn-sm btn-outline-primary toggle-btn">
-                                                                        Show</summary>
-                                                                    <ul class="mb-0 mt-2 ps-3">
-                                                                        <li>Sneha Patil</li>
-                                                                        <li>Kunal Shinde</li>
-                                                                        <li>Payal Jain</li>
-                                                                    </ul>
-                                                                </details>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="align-middle"><i
-                                                                    class="mdi mdi-account-tie text-danger me-2"></i>Deepak
-                                                                Joshi</td>
-                                                            <td class="align-middle">40 Members</td>
-                                                            <td class="align-middle">
-                                                                <details>
-                                                                    <summary
-                                                                        class="btn btn-sm btn-outline-primary toggle-btn">
-                                                                        Show</summary>
-                                                                    <ul class="mb-0 mt-2 ps-3">
-                                                                        <li>Ramesh Tiwari</li>
-                                                                        <li>Shalini Gokhale</li>
-                                                                        <li>Pratik Ghosh</li>
-                                                                        <li>Varsha Yadav</li>
-                                                                    </ul>
-                                                                </details>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-
-
-
-                    </div>
-                    <!-- end row -->
-
-
-
-                    <!-- end row -->
-
-
-
-
-                </div>
-                <!-- end container-fluid -->
-            </div>
-            <!-- End Page-content -->
-
-            <footer class="footer">
-                <div class="container-fluid">
+              <!-- Start Notification -->
+              <div class="dropdown d-inline-block">
+                <button
+                  type="button"
+                  class="btn btn-sm top-icon"
+                  id="page-header-notifications-dropdown"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-bell align-middle"></i>
+                  <span class="btn-marker"
+                    ><i class="marker marker-dot text-danger"></i
+                  ></span>
+                </button>
+                <div
+                  class="dropdown-menu dropdown-menu-lg dropdown-menu-md dropdown-menu-end p-0"
+                  aria-labelledby="page-header-notifications-dropdown"
+                >
+                  <div class="p-3 bg-info">
                     <div class="row align-items-center">
-                        <div class="col-sm-6">
-                            <script>document.write(new Date().getFullYear())</script> © Clivax Gym.
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="text-sm-end d-none d-sm-block">
-                                Designed & Developed <i class="mdi mdi-heart text-danger"></i> by <a
-                                    href="https://kavyainfoweb.com/" target="_blank" class="text-muted">Kavya Infoweb
-                                    Pvt. Ltd.</a>
-                            </div>
-                        </div>
+                      <div class="col">
+                        <h6 class="text-white m-0">
+                          <i class="far fa-bell me-2"></i> Notifications
+                        </h6>
+                      </div>
+                      <div class="col-auto">
+                        <a href="#!" class="badge bg-info-subtle text-info">
+                          6+</a
+                        >
+                      </div>
                     </div>
+                  </div>
+                  <div data-simplebar style="max-height: 230px">
+                    <a href="#" class="text-reset notification-item">
+                      <div class="d-flex">
+                        <div class="avatar avatar-xs avatar-label-success me-3">
+                          <span class="rounded fs-16">
+                            <i class="mdi mdi-account-plus-outline"></i>
+                          </span>
+                        </div>
+                        <div class="flex-1">
+                          <h6 class="mb-1">New member registered</h6>
+                          <div class="fs-12 text-muted">
+                            <p class="mb-0">
+                              <i class="mdi mdi-clock-outline"></i> 5 min ago
+                            </p>
+                          </div>
+                        </div>
+                        <i class="mdi mdi-chevron-right align-middle ms-2"></i>
+                      </div>
+                    </a>
+
+                    <a href="#" class="text-reset notification-item">
+                      <div class="d-flex">
+                        <div class="avatar avatar-xs avatar-label-warning me-3">
+                          <span class="rounded fs-16">
+                            <i class="mdi mdi-alarm"></i>
+                          </span>
+                        </div>
+                        <div class="flex-1">
+                          <h6 class="mb-1">Session missed by trainer</h6>
+                          <div class="fs-12 text-muted">
+                            <p class="mb-0">
+                              <i class="mdi mdi-clock-outline"></i> 30 min ago
+                            </p>
+                          </div>
+                        </div>
+                        <i class="mdi mdi-chevron-right align-middle ms-2"></i>
+                      </div>
+                    </a>
+
+                    <a href="#" class="text-reset notification-item">
+                      <div class="d-flex">
+                        <div class="avatar avatar-xs avatar-label-danger me-3">
+                          <span class="rounded fs-16">
+                            <i class="mdi mdi-cash-clock"></i>
+                          </span>
+                        </div>
+                        <div class="flex-1">
+                          <h6 class="mb-1">Payment due for member ID #1023</h6>
+                          <div class="fs-12 text-muted">
+                            <p class="mb-0">
+                              <i class="mdi mdi-clock-outline"></i> 2 hours ago
+                            </p>
+                          </div>
+                        </div>
+                        <i class="mdi mdi-chevron-right align-middle ms-2"></i>
+                      </div>
+                    </a>
+
+                    <a href="#" class="text-reset notification-item">
+                      <div class="d-flex">
+                        <div class="avatar avatar-xs avatar-label-info me-3">
+                          <span class="rounded fs-16">
+                            <i class="mdi mdi-calendar-check-outline"></i>
+                          </span>
+                        </div>
+                        <div class="flex-1">
+                          <h6 class="mb-1">
+                            Today’s session starts in 30 minutes
+                          </h6>
+                          <div class="fs-12 text-muted">
+                            <p class="mb-0">
+                              <i class="mdi mdi-clock-outline"></i> 3 hours ago
+                            </p>
+                          </div>
+                        </div>
+                        <i class="mdi mdi-chevron-right align-middle ms-2"></i>
+                      </div>
+                    </a>
+
+                    <a href="#" class="text-reset notification-item">
+                      <div class="d-flex">
+                        <div
+                          class="avatar avatar-xs avatar-label-secondary me-3"
+                        >
+                          <span class="rounded fs-16">
+                            <i class="mdi mdi-update"></i>
+                          </span>
+                        </div>
+                        <div class="flex-1">
+                          <h6 class="mb-1">Member plan updated (ID #1008)</h6>
+                          <div class="fs-12 text-muted">
+                            <p class="mb-0">
+                              <i class="mdi mdi-clock-outline"></i> Yesterday
+                            </p>
+                          </div>
+                        </div>
+                        <i class="mdi mdi-chevron-right align-middle ms-2"></i>
+                      </div>
+                    </a>
+
+                    <a href="#" class="text-reset notification-item">
+                      <div class="d-flex">
+                        <div class="avatar avatar-xs avatar-label-primary me-3">
+                          <span class="rounded fs-16">
+                            <i class="mdi mdi-lock-reset"></i>
+                          </span>
+                        </div>
+                        <div class="flex-1">
+                          <h6 class="mb-1">Admin password changed</h6>
+                          <div class="fs-12 text-muted">
+                            <p class="mb-0">
+                              <i class="mdi mdi-clock-outline"></i> 2 days ago
+                            </p>
+                          </div>
+                        </div>
+                        <i class="mdi mdi-chevron-right align-middle ms-2"></i>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="p-2 border-top">
+                    <div class="d-grid">
+                      <a
+                        class="btn btn-sm btn-link font-size-14 text-center"
+                        href="javascript:void(0)"
+                      >
+                        <i class="mdi mdi-arrow-right-circle me-1"></i> View
+                        More..
+                      </a>
+                    </div>
+                  </div>
                 </div>
-            </footer>
+              </div>
+              <!-- End Notification -->
 
+              <!-- Start Profile -->
+              <div class="dropdown d-inline-block">
+                <button
+                  type="button"
+                  class="btn btn-sm top-icon p-0"
+                  id="page-header-user-dropdown"
+                  data-bs-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <img
+                    class="rounded avatar-2xs p-0"
+                    src="assets/images/users/avatar-6.png"
+                    alt="Header Avatar"
+                  />
+                </button>
+                <div
+                  class="dropdown-menu dropdown-menu-wide dropdown-menu-end dropdown-menu-animated overflow-hidden py-0"
+                >
+                  <div class="card border-0">
+                    <div class="card-header bg-primary rounded-0">
+                      <div class="rich-list-item w-100 p-0">
+                        <div class="rich-list-prepend">
+                          <div class="avatar avatar-label-light avatar-circle">
+                            <div class="avatar-display">
+                              <i class="fas fa-user-circle"></i>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="rich-list-content">
+                          <h3 class="rich-list-title text-white">Admin</h3>
+                          <span class="rich-list-subtitle text-white"
+                            >info@kavyainfoweb.com</span
+                          >
+                        </div>
+                        <div class="rich-list-append">
+                          <span class="badge badge-label-light fs-6">6+</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card-body p-0">
+                      <div
+                        class="grid-nav grid-nav-flush grid-nav-action grid-nav-no-rounded"
+                      >
+                        <div class="grid-nav-row">
+                          <a href="apps-contact.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-user-edit"></i>
+                            </div>
+                            <span class="grid-nav-content">My Profile</span>
+                          </a>
+                          <a href="trainer-profile.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-dumbbell"></i>
+                            </div>
+                            <span class="grid-nav-content"
+                              >Trainer Profile</span
+                            >
+                          </a>
+                          <a href="#" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-running"></i>
+                            </div>
+                            <span class="grid-nav-content">Workout Logs</span>
+                          </a>
+                        </div>
+
+                        <div class="grid-nav-row">
+                          <a href="live-session.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="far fa-calendar-check"></i>
+                            </div>
+                            <span class="grid-nav-content"
+                              >Session Calendar</span
+                            >
+                          </a>
+                          <a href="diet-plan.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-apple-alt"></i>
+                            </div>
+                            <span class="grid-nav-content">Diet Notes</span>
+                          </a>
+                          <a href="#" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="far fa-bell"></i>
+                            </div>
+                            <span class="grid-nav-content">Notifications</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card-footer card-footer-bordered rounded-0">
+                      <a href="auth-login.html" class="btn btn-label-danger"
+                        >Sign out</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Profile -->
+            </div>
+          </div>
+          <!-- End menu -->
         </div>
-        <!-- end main content-->
+      </header>
+      <!-- End topbar -->
+
+      <!-- ========== Left Sidebar Start ========== -->
+      <div class="sidebar-left">
+        <div data-simplebar class="h-100">
+          <!--- Sidebar-menu -->
+          <div id="sidebar-menu">
+            <!-- Left Menu Start -->
+            <ul class="left-menu list-unstyled" id="side-menu">
+              <li>
+                <a href="index.html" class="">
+                  <i class="fas fa-desktop"></i>
+                  <span>Dashboard</span>
+                </a>
+              </li>
+
+              <!-- <li class="menu-title">Elements</li> -->
+
+              <li>
+                <a href="javascript: void(0);" class="has-arrow">
+                  <i class="fa fa-users"></i>
+                  <span>Member Management</span>
+                </a>
+                <ul class="sub-menu" aria-expanded="false">
+                  <li>
+                    <a href="add-new-member.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i
+                      >Add New Member</a
+                    >
+                  </li>
+                  <li>
+                    <a href="show-all-member.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i
+                      >All Members</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <a href="javascript: void(0);" class="has-arrow">
+                  <i class="fa fa-id-card-alt"></i>
+                  <span>Membership Plans</span>
+                </a>
+                <ul class="sub-menu" aria-expanded="false">
+                  <li>
+                    <a href="add-new-plan.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      Add New
+                    </a>
+                  </li>
+                  <li>
+                    <a href="view-plan.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      View Plan
+                    </a>
+                  </li>
+                  <li>
+                    <a href="manage-plan.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      Manage Plan
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="javascript: void(0);" class="has-arrow">
+                  <i class="fa fa-calendar-check"></i>
+                  <span>Session Management</span>
+                </a>
+                <ul class="sub-menu" aria-expanded="false">
+                  <li>
+                    <a href="live-session.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i
+                      >Live Session
+                    </a>
+                  </li>
+                  <li>
+                    <a href="offline-session.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i
+                      >Offline Session
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <a href="javascript: void(0);" class="has-arrow">
+                  <i class="fa fa-user-tie"></i>
+                  <span>Staff Management</span>
+                </a>
+                <ul class="sub-menu" aria-expanded="false">
+                  <li>
+                    <a href="add-new-staff.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      Add New</a
+                    >
+                  </li>
+                  <li>
+                    <a href="manage-staff.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      Manage Staff</a
+                    >
+                  </li>
+                  <li>
+                    <a href="show-all-staff.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      All Staff Members</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <a href="javascript: void(0);" class="has-arrow">
+                  <i class="fa fa-wallet"></i>
+                  <span>Account Management</span>
+                </a>
+                <ul class="sub-menu" aria-expanded="false">
+                  <!-- Show All -->
+                  <li>
+                    <a href="add-new-account.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i
+                      >Add New Account
+                    </a>
+                  </li>
+
+                  <!-- Show All -->
+                  <li>
+                    <a href="show-all-account.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      All Accounts
+                    </a>
+                  </li>
+
+                  <!-- Member Invoices with dropdown -->
+                  <li>
+                    <a href="create-invoice.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      Create Invoices
+                    </a>
+                  </li>
+
+                  <!-- Payment History -->
+                  <li>
+                    <a href="pyments.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      Payment History
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <a href="renewals.html">
+                  <i class="fa fa-sync-alt"></i>
+                  <span>Renewals</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="attendance.html">
+                  <i class="fa fa-calendar-check"></i>
+                  <span>Attendance</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="javascript: void(0);" class="has-arrow">
+                  <i class="fa fa-chart-pie"></i>
+                  <span>Reports</span>
+                </a>
+                <ul class="sub-menu" aria-expanded="false">
+                  <!-- GYM-RELATED REPORTS -->
+                  <li>
+                    <a href="membership-report.html">
+                      <i class="mdi mdi-account-group-outline align-middle"></i>
+                      Membership Report
+                    </a>
+                  </li>
+                  <li>
+                    <a href="revenue-report.html">
+                      <i class="mdi mdi-currency-inr align-middle"></i> Revenue
+                      Report
+                    </a>
+                  </li>
+
+                  <!-- Existing Chart Pages -->
+                </ul>
+              </li>
+
+              <li>
+                <a href="settings.html">
+                  <i class="fas fa-cog"></i>
+                  <span>Settings</span>
+                </a>
+              </li>
+              <li>
+                <a href="auth-login.html">
+                  <i class="fas fa-sign-out-alt"></i>
+                  <span>Logout</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- Sidebar -->
+        </div>
+      </div>
+      <!-- Left Sidebar End -->
+
+      <!-- ============================================================== -->
+      <!-- start content -->
+
+      <div class="main-content">
+        <div class="page-content">
+          <div class="container-fluid">
+            <!-- Page Title -->
+            <div class="row">
+              <div class="col-12">
+                <div
+                  class="page-title-box d-flex align-items-center justify-content-between"
+                >
+                  <h4 class="mb-sm-0">Show All Equipments</h4>
+                  <div class="page-title-right">
+                    <p style="padding-top: 15px; font-size: 14px">
+                      <a href="index.html">Home</a> >> Equipment
+                    </p>
+                    <button id="toggleFormBtn" class="btn btn-success">
+                      Add Equipment
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add Equipment Form -->
+            <!-- Your existing form (unchanged) -->
+            <div class="row" id="addEquipmentForm" style="display: none">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4>Add New Equipment</h4>
+                  </div>
+                  <div class="card-body">
+                    <form>
+                      <div class="row">
+                        <div class="col-md-4 mb-3">
+                          <label>Equipment Name</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="e.g. Treadmill"
+                          />
+                        </div>
+                        <div class="col-md-4 mb-3">
+                          <label>Category</label>
+                          <select class="form-control">
+                            <option value="">Select Category</option>
+                            <option>Cardio</option>
+                            <option>Strength</option>
+                            <option>Flexibility</option>
+                          </select>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                          <label>Brand</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="e.g. LifeFitness"
+                          />
+                        </div>
+                        <div class="col-md-4 mb-3">
+                          <label>Purchase Date</label>
+                          <input type="date" class="form-control" />
+                        </div>
+                        <div class="col-md-4 mb-3">
+                          <label>Status</label>
+                          <select class="form-control">
+                            <option value="">Select Status</option>
+                            <option>Active</option>
+                            <option>Under Maintenance</option>
+                            <option>Inactive</option>
+                          </select>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                          <label>Location</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="e.g. Cardio Zone"
+                          />
+                        </div>
+                        <div class="col-12 text-end">
+                          <button
+                            type="button"
+                            class="btn btn-secondary"
+                            onclick="backToMainPage()"
+                          >
+                            Cancel
+                          </button>
+                          <button type="submit" class="btn btn-primary">
+                            Save
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ✅ Add CSS for red border on invalid fields -->
+            <style>
+              .is-invalid {
+                border-color: red !important;
+              }
+            </style>
+
+            <!-- ✅ Add JavaScript for validation (at bottom of HTML or in <script> block) -->
+            <script>
+              document.addEventListener("DOMContentLoaded", function () {
+                const form = document.querySelector("#addEquipmentForm form");
+
+                form.addEventListener("submit", function (e) {
+                  e.preventDefault();
+
+                  let isValid = true;
+                  const inputs = form.querySelectorAll("input, select");
+
+                  inputs.forEach((input) => {
+                    if (input.value.trim() === "") {
+                      input.classList.add("is-invalid");
+                      isValid = false;
+                    } else {
+                      input.classList.remove("is-invalid");
+                    }
+                  });
+
+                  if (isValid) {
+                    alert("Form submitted successfully!");
+                    // Replace the below line with your own form submission logic if needed
+                    // form.submit();
+                  }
+                });
+              });
+            </script>
+
+            <!-- Equipment Tabs -->
+            <ul class="nav nav-tabs mb-3" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active"
+                  data-bs-toggle="tab"
+                  data-bs-target="#all"
+                  type="button"
+                  role="tab"
+                >
+                  All
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  data-bs-toggle="tab"
+                  data-bs-target="#machinery"
+                  type="button"
+                  role="tab"
+                >
+                  Machinary
+                </button>
+              </li>
+
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  data-bs-toggle="tab"
+                  data-bs-target="#maintenance"
+                  type="button"
+                  role="tab"
+                >
+                  Maintainance
+                </button>
+              </li>
+            </ul>
+
+            <div class="tab-content">
+              <!-- All Tab -->
+              <div class="tab-pane fade show active" id="all" role="tabpanel">
+                <div class="card">
+                  <div class="card-body">
+                    <table
+                      class="table table-hover table-bordered table-striped"
+                    >
+                      <thead>
+                        <tr>
+                          <th style="background-color: #38c66c">
+                            Equipment ID
+                          </th>
+                          <th style="background-color: #38c66c">Image</th>
+                          <th style="background-color: #38c66c">Name</th>
+                          <th style="background-color: #38c66c">Category</th>
+                          <th style="background-color: #38c66c">Brand</th>
+                          <th style="background-color: #38c66c">
+                            Purchase Date
+                          </th>
+                          <th style="background-color: #38c66c">Status</th>
+                          <th style="background-color: #38c66c">Location</th>
+                          <th style="background-color: #38c66c">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>EQ001</td>
+                          <td>
+                            <img
+                              src="assets/images/tradmill.img.jpeg"
+                              width="50"
+                            />
+                          </td>
+                          <td>Treadmill</td>
+                          <td>Cardio</td>
+                          <td>LifeFitness</td>
+                          <td>2023-04-15</td>
+                          <td>Active</td>
+                          <td>Cardio Zone</td>
+                          <td>
+                            <button class="btn btn-primary btn-sm show-details">
+                              Show Details
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>EQ002</td>
+                          <td>
+                            <img
+                              src="assets/images/legpressmachine.img.jpeg"
+                              width="50"
+                            />
+                          </td>
+                          <td>Leg Press</td>
+                          <td>Strength</td>
+                          <td>Technogym</td>
+                          <td>2022-09-12</td>
+                          <td>Under Maintenance</td>
+                          <td>Strength Area</td>
+                          <td>
+                            <button class="btn btn-primary btn-sm show-details">
+                              Show Details
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>EQ003</td>
+                          <td>
+                            <img
+                              src="assets/images/rowing machine.img.jpeg"
+                              width="50"
+                            />
+                          </td>
+                          <td>Rowing Machine</td>
+                          <td>Cardio</td>
+                          <td>Concept2</td>
+                          <td>2021-06-10</td>
+                          <td>Active</td>
+                          <td>Cardio Zone</td>
+                          <td>
+                            <button class="btn btn-primary btn-sm show-details">
+                              Show Details
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Machinery Tab -->
+              <!-- Machinery Tab -->
+              <div class="tab-pane fade" id="machinery" role="tabpanel">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="card">
+                          <div class="card-header">
+                            <h4 class="card-title">Machinery Details</h4>
+                          </div>
+                          <div class="card-body">
+                            <table
+                              class="table table-hover table-bordered table-striped dt-responsive nowrap"
+                              style="
+                                border-collapse: collapse;
+                                border-spacing: 0;
+                                width: 100%;
+                              "
+                            >
+                              <thead class="table-info">
+                                <tr>
+                                  <th style="background-color: #38c66c">
+                                    Machine ID
+                                  </th>
+                                  <th style="background-color: #38c66c">
+                                    Image
+                                  </th>
+                                  <th style="background-color: #38c66c">
+                                    Machine Name
+                                  </th>
+                                  <th style="background-color: #38c66c">
+                                    Category
+                                  </th>
+                                  <th style="background-color: #38c66c">
+                                    Purchase Date
+                                  </th>
+                                  <th style="background-color: #38c66c">
+                                    Vendor
+                                  </th>
+                                  <th style="background-color: #38c66c">
+                                    Contact
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>MC001</td>
+                                  <td>
+                                    <img
+                                      src="assets/images/equipment/treadmill.png"
+                                      width="50"
+                                    />
+                                  </td>
+                                  <td>Treadmill Pro 3000</td>
+                                  <td>Cardio</td>
+                                  <td>2022-03-10</td>
+                                  <td>FitGear India</td>
+                                  <td>9876543210</td>
+                                </tr>
+                                <tr>
+                                  <td>MC002</td>
+                                  <td>
+                                    <img
+                                      src="assets/images/equipment/legpress.png"
+                                      width="50"
+                                    />
+                                  </td>
+                                  <td>Leg Press Machine</td>
+                                  <td>Strength</td>
+                                  <td>2021-10-25</td>
+                                  <td>MuscleTools Pvt Ltd</td>
+                                  <td>9123456780</td>
+                                </tr>
+                                <tr>
+                                  <td>MC003</td>
+                                  <td>
+                                    <img
+                                      src="assets/images/equipment/rowing.png"
+                                      width="50"
+                                    />
+                                  </td>
+                                  <td>Elliptical Cross Trainer</td>
+                                  <td>Cardio</td>
+                                  <td>2023-01-15</td>
+                                  <td>CardioWorld</td>
+                                  <td>9012345678</td>
+                                </tr>
+                                <tr>
+                                  <td>MC004</td>
+                                  <td>
+                                    <img
+                                      src="assets/images/equipment/smithmachine.png"
+                                      width="50"
+                                    />
+                                  </td>
+                                  <td>Smith Machine</td>
+                                  <td>Strength</td>
+                                  <td>2020-06-30</td>
+                                  <td>IronFlex Equip</td>
+                                  <td>9090909090</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Maintenance Tab -->
+              <!-- Maintenance Tab -->
+              <div class="tab-pane fade" id="maintenance" role="tabpanel">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="card">
+                          <div class="card-header">
+                            <h4 class="card-title">Maintenance History</h4>
+                          </div>
+                          <div class="card-body">
+                            <table
+                              class="table table-hover table-bordered table-striped dt-responsive nowrap"
+                              style="
+                                border-collapse: collapse;
+                                border-spacing: 0;
+                                width: 100%;
+                              "
+                            >
+                              <thead class="table-warning">
+                                <tr>
+                                  <th style="background-color: #38c66c">
+                                    Maintenance ID
+                                  </th>
+                                  <th style="background-color: #38c66c">
+                                    Machine ID
+                                  </th>
+                                  <th style="background-color: #38c66c">
+                                    Maintenance Date
+                                  </th>
+                                  <th style="background-color: #38c66c">
+                                    Performed By
+                                  </th>
+                                  <th style="background-color: #38c66c">
+                                    Remarks
+                                  </th>
+                                  <th style="background-color: #38c66c">
+                                    Last Maintenance Date
+                                  </th>
+                                  <th style="background-color: #38c66c">
+                                    Next Due
+                                  </th>
+                                  <th style="background-color: #38c66c">
+                                    Status
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>MT001</td>
+                                  <td>MC001</td>
+                                  <td>2024-06-15</td>
+                                  <td>Ramesh Patel</td>
+                                  <td>Lubricated belt, checked motor</td>
+                                  <td>2024-02-15</td>
+                                  <td>2024-12-15</td>
+                                  <td>
+                                    <span class="badge bg-success"
+                                      >Completed</span
+                                    >
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>MT002</td>
+                                  <td>MC003</td>
+                                  <td>2024-04-10</td>
+                                  <td>Vikas Sharma</td>
+                                  <td>Software update needed</td>
+                                  <td>2023-11-10</td>
+                                  <td>2024-10-10</td>
+                                  <td>
+                                    <span class="badge bg-warning text-dark"
+                                      >Scheduled</span
+                                    >
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>MT003</td>
+                                  <td>MC004</td>
+                                  <td>2024-03-10</td>
+                                  <td>Anita Mehra</td>
+                                  <td>Hydraulics issue — pending repair</td>
+                                  <td>2023-09-10</td>
+                                  <td>2024-09-10</td>
+                                  <td>
+                                    <span class="badge bg-danger">Pending</span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>MT004</td>
+                                  <td>MC002</td>
+                                  <td>2024-04-20</td>
+                                  <td>Sameer Khan</td>
+                                  <td>Bolts tightened, pads replaced</td>
+                                  <td>2023-10-20</td>
+                                  <td>2024-10-20</td>
+                                  <td>
+                                    <span class="badge bg-success"
+                                      >Completed</span
+                                    >
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Equipment Detail Card -->
+            <div id="equipmentDetailCard" class="row" style="display: none">
+              <div class="col-12">
+                <div class="card">
+                  <div
+                    class="card-header d-flex justify-content-between align-items-center"
+                  >
+                    <h4 class="mb-0">Equipment Details</h4>
+                    <button
+                      class="btn btn-outline-secondary btn-sm"
+                      onclick="backToMainPage()"
+                    >
+                      Back to Page
+                    </button>
+                  </div>
+                  <div class="card-body row">
+                    <!-- Left: Equipment Info -->
+                    <div class="col-md-8">
+                      <div class="row">
+                        <div class="col-sm-6 mb-2">
+                          <strong>Equipment ID:</strong>
+                          <span id="detailId"></span>
+                        </div>
+                        <div class="col-sm-6 mb-2">
+                          <strong>Name:</strong> <span id="detailName"></span>
+                        </div>
+                        <div class="col-sm-6 mb-2">
+                          <strong>Category:</strong>
+                          <span id="detailCategory"></span>
+                        </div>
+                        <div class="col-sm-6 mb-2">
+                          <strong>Brand:</strong> <span id="detailBrand"></span>
+                        </div>
+                        <div class="col-sm-6 mb-2">
+                          <strong>Purchase Date:</strong>
+                          <span id="detailDate"></span>
+                        </div>
+                        <div class="col-sm-6 mb-2">
+                          <strong>Status:</strong>
+                          <span id="detailStatus"></span>
+                        </div>
+                        <div class="col-sm-6 mb-2">
+                          <strong>Location:</strong>
+                          <span id="detailLocation"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Right: Equipment Image -->
+                    <div class="col-md-4 text-center">
+                      <img
+                        id="detailImage"
+                        src=""
+                        class="img-thumbnail"
+                        width="200"
+                        alt="Equipment Image"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- container-fluid -->
+        </div>
+      </div>
+
+      <!-- end content -->
+      <!-- ============================================================== -->
+      <footer class="footer">
+        <div class="container-fluid">
+          <div class="row align-items-center">
+            <div class="col-sm-6">
+              <script>
+                document.write(new Date().getFullYear());
+              </script>
+              © Clivax Gym.
+            </div>
+            <div class="col-sm-6">
+              <div class="text-sm-end d-none d-sm-block">
+                Designed & Developed
+                <i class="mdi mdi-heart text-danger"></i> by
+                <a
+                  href="https://kavyainfoweb.com/"
+                  target="_blank"
+                  class="text-muted"
+                  >Kavya Infoweb Pvt. Ltd.</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
-    <!-- end layout-wrapper -->
 
+    <!-- END layout-wrapper -->
 
-    <div class="custom-setting bg-primary pe-0 d-flex flex-column rounded-start">
-        <button type="button" class="btn btn-wide border-0 text-white fs-20 avatar-sm rounded-end-0"
-            id="light-dark-mode">
-            <i class="mdi mdi-brightness-7 align-middle"></i>
-            <i class="mdi mdi-white-balance-sunny align-middle"></i>
-        </button>
-        <!-- <button type="button" class="btn btn-wide border-0 text-white fs-20 avatar-sm" data-toggle="fullscreen">
+    <div
+      class="custom-setting bg-primary pe-0 d-flex flex-column rounded-start"
+    >
+      <button
+        type="button"
+        class="btn btn-wide border-0 text-white fs-20 avatar-sm rounded-end-0"
+        id="light-dark-mode"
+      >
+        <i class="mdi mdi-brightness-7 align-middle"></i>
+        <i class="mdi mdi-white-balance-sunny align-middle"></i>
+      </button>
+      <!-- <button type="button" class="btn btn-wide border-0 text-white fs-20 avatar-sm" data-toggle="fullscreen">
             <i class="mdi mdi-arrow-expand-all align-middle"></i>
         </button>
         <button type="button" class="btn btn-wide border-0 text-white fs-16 avatar-sm" id="layout-dir-btn">
@@ -1142,195 +1383,244 @@
         </button> -->
     </div>
 
-
     <!-- Rightbar Sidebar -->
     <div class="offcanvas offcanvas-end" id="offcanvas-rightsidabar">
-        <div class="card h-100 rounded-0" data-simplebar="init">
-            <div class="card-header bg-light">
-                <h6 class="card-title text-uppercase">Activities</h6>
-                <div class="card-addon">
-                    <button class="btn btn-label-danger" data-bs-dismiss="offcanvas">
-                        <i class="fa fa-times"></i>
-                    </button>
-                </div>
+      <div class="card h-100 rounded-0" data-simplebar="init">
+        <div class="card-header bg-light">
+          <h6 class="card-title text-uppercase">Activities</h6>
+          <div class="card-addon">
+            <button class="btn btn-label-danger" data-bs-dismiss="offcanvas">
+              <i class="fa fa-times"></i>
+            </button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="">
+            <h3 class="card-title">Company summary</h3>
+            <div class="border rounded p-2">
+              <p class="text-muted mb-2">Server Load</p>
+              <h4 class="fs-16 mb-2">489</h4>
+              <div class="progress progress-sm" style="height: 4px">
+                <div class="progress-bar bg-success" style="width: 49.4%"></div>
+              </div>
+              <p class="text-muted mb-0 mt-1">49.4% <span>Avg</span></p>
             </div>
-            <div class="card-body">
-                <div class="">
-                    <h3 class="card-title">Company summary</h3>
-                    <div class="border rounded p-2">
-                        <p class="text-muted mb-2">Server Load</p>
-                        <h4 class="fs-16 mb-2">489</h4>
-                        <div class="progress progress-sm" style="height:4px;">
-                            <div class="progress-bar bg-success" style="width: 49.4%"></div>
-                        </div>
-                        <p class="text-muted mb-0 mt-1">49.4% <span>Avg</span></p>
-                    </div>
-                    <div class="border rounded p-2">
-                        <p class="text-muted mb-2">Members online</p>
-                        <h4 class="fs-16 mb-2">3,450</h4>
-                        <div class="progress progress-sm" style="height:4px;">
-                            <div class="progress-bar bg-danger" style="width: 34.6%"></div>
-                        </div>
-                        <p class="text-muted mb-0 mt-1">34.6% <span>Avg</span></p>
-                    </div>
-                    <div class="border rounded p-2">
-                        <p class="text-muted mb-2">Today's revenue</p>
-                        <h4 class="fs-16 mb-2">$18,390</h4>
-                        <div class="progress progress-sm" style="height:4px;">
-                            <div class="progress-bar bg-warning" style="width: 20%"></div>
-                        </div>
-                        <p class="text-muted mb-0 mt-1">$37,578 <span>Avg</span></p>
-                    </div>
-                    <div class="border rounded p-2">
-                        <p class="text-muted mb-2">Expected profit</p>
-                        <h4 class="fs-16 mb-2">$23,461</h4>
-                        <div class="progress progress-sm" style="height:4px;">
-                            <div class="progress-bar bg-info" style="width: 60%"></div>
-                        </div>
-                        <p class="text-muted mb-0 mt-1">$23,461 <span>Avg</span></p>
-                    </div>
-                </div>
-
-                <div class="mt-4">
-                    <h3 class="card-title">Latest log</h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-primary"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">12 new users registered</p>
-                                    <span class="text-muted">Just now</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-success"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">System shutdown <span
-                                            class="badge badge-label-success">pending</span></p>
-                                    <span class="text-muted">2 mins</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-primary"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">New invoice received</p>
-                                    <span class="text-muted">3 mins</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-danger"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">New order received <span
-                                            class="badge badge-label-danger">urgent</span></p>
-                                    <span class="text-muted">10 mins</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-warning"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">Production server down</p>
-                                    <span class="text-muted">1 hrs</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-info"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">System error <a href="#">check</a></p>
-                                    <span class="text-muted">2 hrs</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-secondary"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">DB overloaded 80%</p>
-                                    <span class="text-muted">5 hrs</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-success"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">Production server up</p>
-                                    <span class="text-muted">6 hrs</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-4">
-                    <h3 class="card-title">Upcoming activities</h3>
-                    <div class="timeline timeline-timed">
-                        <div class="timeline-item">
-                            <span class="timeline-time">10:00</span>
-                            <div class="timeline-pin"><i class="marker marker-circle text-primary"></i></div>
-                            <div class="timeline-content">
-                                <div>
-                                    <span>Meeting with</span>
-                                    <div class="avatar-group ms-2">
-                                        <div class="avatar avatar-circle">
-                                            <img src="assets/images/users/avatar-1.png" alt="Avatar image"
-                                                class="avatar-2xs" />
-                                        </div>
-                                        <div class="avatar avatar-circle">
-                                            <img src="assets/images/users/avatar-2.png" alt="Avatar image"
-                                                class="avatar-2xs" />
-                                        </div>
-                                        <div class="avatar avatar-circle">
-                                            <img src="assets/images/users/avatar-3.png" alt="Avatar image"
-                                                class="avatar-2xs" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-time">12:45</span>
-                            <div class="timeline-pin"><i class="marker marker-circle text-warning"></i></div>
-                            <div class="timeline-content">
-                                <p class="mb-0">Lorem ipsum dolor sit amit,consectetur eiusmdd tempor incididunt ut
-                                    labore et dolore magna elit enim at minim veniam quis nostrud</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-time">14:00</span>
-                            <div class="timeline-pin"><i class="marker marker-circle text-danger"></i></div>
-                            <div class="timeline-content">
-                                <p class="mb-0">Received a new feedback on <a href="#">GoFinance</a> App product.</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-time">15:20</span>
-                            <div class="timeline-pin"><i class="marker marker-circle text-success"></i></div>
-                            <div class="timeline-content">
-                                <p class="mb-0">Lorem ipsum dolor sit amit,consectetur eiusmdd tempor incididunt ut
-                                    labore et dolore magna.</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-time">17:00</span>
-                            <div class="timeline-pin"><i class="marker marker-circle text-info"></i></div>
-                            <div class="timeline-content">
-                                <p class="mb-0">Make Deposit <a href="#">USD 700</a> o ESL.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="border rounded p-2">
+              <p class="text-muted mb-2">Members online</p>
+              <h4 class="fs-16 mb-2">3,450</h4>
+              <div class="progress progress-sm" style="height: 4px">
+                <div class="progress-bar bg-danger" style="width: 34.6%"></div>
+              </div>
+              <p class="text-muted mb-0 mt-1">34.6% <span>Avg</span></p>
             </div>
-        </div> <!-- end card-->
+            <div class="border rounded p-2">
+              <p class="text-muted mb-2">Today's revenue</p>
+              <h4 class="fs-16 mb-2">$18,390</h4>
+              <div class="progress progress-sm" style="height: 4px">
+                <div class="progress-bar bg-warning" style="width: 20%"></div>
+              </div>
+              <p class="text-muted mb-0 mt-1">$37,578 <span>Avg</span></p>
+            </div>
+            <div class="border rounded p-2">
+              <p class="text-muted mb-2">Expected profit</p>
+              <h4 class="fs-16 mb-2">$23,461</h4>
+              <div class="progress progress-sm" style="height: 4px">
+                <div class="progress-bar bg-info" style="width: 60%"></div>
+              </div>
+              <p class="text-muted mb-0 mt-1">$23,461 <span>Avg</span></p>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <h3 class="card-title">Latest log</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-primary"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">12 new users registered</p>
+                    <span class="text-muted">Just now</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-success"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">
+                      System shutdown
+                      <span class="badge badge-label-success">pending</span>
+                    </p>
+                    <span class="text-muted">2 mins</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-primary"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">New invoice received</p>
+                    <span class="text-muted">3 mins</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-danger"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">
+                      New order received
+                      <span class="badge badge-label-danger">urgent</span>
+                    </p>
+                    <span class="text-muted">10 mins</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-warning"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">Production server down</p>
+                    <span class="text-muted">1 hrs</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-info"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">System error <a href="#">check</a></p>
+                    <span class="text-muted">2 hrs</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-secondary"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">DB overloaded 80%</p>
+                    <span class="text-muted">5 hrs</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-success"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">Production server up</p>
+                    <span class="text-muted">6 hrs</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <h3 class="card-title">Upcoming activities</h3>
+            <div class="timeline timeline-timed">
+              <div class="timeline-item">
+                <span class="timeline-time">10:00</span>
+                <div class="timeline-pin">
+                  <i class="marker marker-circle text-primary"></i>
+                </div>
+                <div class="timeline-content">
+                  <div>
+                    <span>Meeting with</span>
+                    <div class="avatar-group ms-2">
+                      <div class="avatar avatar-circle">
+                        <img
+                          src="assets/images/users/avatar-1.png"
+                          alt="Avatar image"
+                          class="avatar-2xs"
+                        />
+                      </div>
+                      <div class="avatar avatar-circle">
+                        <img
+                          src="assets/images/users/avatar-2.png"
+                          alt="Avatar image"
+                          class="avatar-2xs"
+                        />
+                      </div>
+                      <div class="avatar avatar-circle">
+                        <img
+                          src="assets/images/users/avatar-3.png"
+                          alt="Avatar image"
+                          class="avatar-2xs"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-time">12:45</span>
+                <div class="timeline-pin">
+                  <i class="marker marker-circle text-warning"></i>
+                </div>
+                <div class="timeline-content">
+                  <p class="mb-0">
+                    Lorem ipsum dolor sit amit,consectetur eiusmdd tempor
+                    incididunt ut labore et dolore magna elit enim at minim
+                    veniam quis nostrud
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-time">14:00</span>
+                <div class="timeline-pin">
+                  <i class="marker marker-circle text-danger"></i>
+                </div>
+                <div class="timeline-content">
+                  <p class="mb-0">
+                    Received a new feedback on <a href="#">GoFinance</a> App
+                    product.
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-time">15:20</span>
+                <div class="timeline-pin">
+                  <i class="marker marker-circle text-success"></i>
+                </div>
+                <div class="timeline-content">
+                  <p class="mb-0">
+                    Lorem ipsum dolor sit amit,consectetur eiusmdd tempor
+                    incididunt ut labore et dolore magna.
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-time">17:00</span>
+                <div class="timeline-pin">
+                  <i class="marker marker-circle text-info"></i>
+                </div>
+                <div class="timeline-content">
+                  <p class="mb-0">
+                    Make Deposit <a href="#">USD 700</a> o ESL.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end card-->
     </div>
 
     <!-- JAVASCRIPT -->
@@ -1340,350 +1630,79 @@
     <script src="assets/libs/simplebar/simplebar.min.js"></script>
     <script src="assets/libs/node-waves/waves.min.js"></script>
 
+    <!-- Required datatable js -->
+    <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
 
-    <!-- apexcharts -->
-    <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
-    <!-- Chart.js CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- buttons examples -->
+    <script src="assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="assets/libs/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
+    <script src="assets/libs/datatables.net-buttons/js/buttons.colVis.min.js"></script>
 
-    <script src="assets/js/pages/dashboard.init.js"></script>
-    <!-- Chart.js CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Responsive examples -->
+    <script src="assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="assets/libs/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
 
-    <!-- App js -->
+    <!-- Datatable init js -->
+    <script src="assets/js/pages/datatables-advanced.init.js"></script>
+
     <script src="assets/js/app.js"></script>
+    <script src="assets/js/staff.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const allDetails = document.querySelectorAll("table details");
+      const toggleFormBtn = document.getElementById("toggleFormBtn");
+      const addForm = document.getElementById("addEquipmentForm");
+      const tabContent = document.querySelector(".tab-content");
+      const detailCard = document.getElementById("equipmentDetailCard");
+      const navTabs = document.querySelector(".nav-tabs"); // Added for tabs control
 
-            allDetails.forEach((detail) => {
-                const summary = detail.querySelector("summary");
+      // Toggle form visibility
+      toggleFormBtn.addEventListener("click", function () {
+        const isVisible = addForm.style.display === "block";
+        addForm.style.display = isVisible ? "none" : "block";
+        tabContent.style.display = isVisible ? "block" : "none";
+        navTabs.style.display = isVisible ? "flex" : "none"; // Hide tabs when form is visible
+        detailCard.style.display = "none";
+      });
 
-                summary.addEventListener("click", (e) => {
-                    e.preventDefault();
+      // Back button logic
+      function backToMainPage() {
+        detailCard.style.display = "none";
+        tabContent.style.display = "block";
+        navTabs.style.display = "flex"; // Show tabs again
+        addForm.style.display = "none";
+      }
 
-                    const isOpen = detail.hasAttribute("open");
+      // Show details logic
+      const showButtons = document.querySelectorAll(".show-details");
+      showButtons.forEach((btn) => {
+        btn.addEventListener("click", function () {
+          const row = btn.closest("tr");
+          const cells = row.querySelectorAll("td");
 
-                    // Close all other details
-                    allDetails.forEach((otherDetail) => {
-                        if (otherDetail !== detail) {
-                            otherDetail.removeAttribute("open");
-                            otherDetail.querySelector("summary").textContent = "Show";
-                        }
-                    });
+          document.getElementById("detailId").textContent =
+            cells[0].textContent;
+          document.getElementById("detailImage").src =
+            cells[1].querySelector("img").src;
+          document.getElementById("detailName").textContent =
+            cells[2].textContent;
+          document.getElementById("detailCategory").textContent =
+            cells[3].textContent;
+          document.getElementById("detailBrand").textContent =
+            cells[4].textContent;
+          document.getElementById("detailDate").textContent =
+            cells[5].textContent;
+          document.getElementById("detailStatus").textContent =
+            cells[6].textContent;
+          document.getElementById("detailLocation").textContent =
+            cells[7].textContent;
 
-                    // Toggle current detail
-                    if (isOpen) {
-                        detail.removeAttribute("open");
-                        summary.textContent = "Show";
-                    } else {
-                        detail.setAttribute("open", "");
-                        summary.textContent = "Hide";
-                    }
-                });
-            });
+          // Show detail card
+          detailCard.style.display = "block";
+          tabContent.style.display = "none";
+          navTabs.style.display = "none"; // Hide tabs when details are shown
+          addForm.style.display = "none";
         });
+      });
     </script>
-
-    <!-- Chart Script -->
-    <script>
-        const ctx = document.getElementById('revenueBarChart').getContext('2d');
-
-        let revenueChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: [],
-                datasets: [{
-                    label: 'Revenue (₹)',
-                    data: [],
-                    backgroundColor: '#38c66c',
-                    borderRadius: 5,
-                    barPercentage: 0.4,
-                    categoryPercentage: 0.5,
-                }]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        ticks: {
-                            callback: value => '₹' + value
-                        }
-                    }
-                },
-                plugins: {
-                    legend: { display: false },
-                    tooltip: {
-                        callbacks: {
-                            label: context => '₹' + context.parsed.y
-                        }
-                    }
-                }
-            }
-        });
-
-        const monthlyRevenue = {
-            'Jan': 105000, 'Feb': 97000, 'Mar': 112000, 'Apr': 128000,
-            'May': 122000, 'Jun': 119000, 'Jul': 134000, 'Aug': 110000,
-            'Sep': 98000, 'Oct': 126000, 'Nov': 124000, 'Dec': 143000
-        };
-
-        function updateChart(labels, data) {
-            // Adjust bar width dynamically
-            let count = labels.length;
-            let barP = 0.4, catP = 0.5;
-            if (count >= 10) {
-                barP = 0.25;
-                catP = 0.4;
-            } else if (count >= 6) {
-                barP = 0.3;
-                catP = 0.45;
-            }
-
-            revenueChart.data.labels = labels;
-            revenueChart.data.datasets[0].data = data;
-            revenueChart.data.datasets[0].barPercentage = barP;
-            revenueChart.data.datasets[0].categoryPercentage = catP;
-            revenueChart.update();
-
-            const total = data.reduce((a, b) => a + b, 0);
-            const avg = Math.round(total / data.length);
-            const max = Math.max(...data);
-
-            document.getElementById('totalRevenue').innerText = '₹' + total.toLocaleString();
-            document.getElementById('avgRevenue').innerText = '₹' + avg.toLocaleString();
-            document.getElementById('maxRevenue').innerText = '₹' + max.toLocaleString();
-        }
-
-        function generateWeeklyRevenue(fromDate, toDate) {
-            const weeks = [];
-            const labels = [];
-            const oneWeek = 7 * 24 * 60 * 60 * 1000;
-            let current = new Date(fromDate);
-            let weekCount = 1;
-
-            while (current < toDate) {
-                const next = new Date(current.getTime() + oneWeek);
-                labels.push(`Week ${weekCount++}`);
-                weeks.push(Math.floor(25000 + Math.random() * 20000)); // Dummy data
-                current = next;
-            }
-
-            return { labels, data: weeks };
-        }
-
-        // Range Buttons
-        document.querySelectorAll('.range-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const range = btn.dataset.range;
-                let selectedMonths = [];
-
-                switch (range) {
-                    case '2M': selectedMonths = ['Jun', 'Jul']; break;
-                    case '3M': selectedMonths = ['May', 'Jun', 'Jul']; break;
-                    case '4M': selectedMonths = ['Apr', 'May', 'Jun', 'Jul']; break;
-                    case '6M': selectedMonths = ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']; break;
-                    case '1Y': selectedMonths = Object.keys(monthlyRevenue); break;
-                }
-
-                const revenueValues = selectedMonths.map(month => monthlyRevenue[month]);
-                updateChart(selectedMonths, revenueValues);
-            });
-        });
-
-        // Weekly Filter
-        document.getElementById('filterBtn').addEventListener('click', () => {
-            const fromVal = document.getElementById('revenueFromDate').value;
-            const toVal = document.getElementById('revenueToDate').value;
-
-            if (!fromVal || !toVal) {
-                alert('Please select both From and To dates.');
-                return;
-            }
-
-            const fromDate = new Date(fromVal);
-            const toDate = new Date(toVal);
-
-            if (fromDate >= toDate) {
-                alert('Please select a valid date range.');
-                return;
-            }
-
-            const { labels, data } = generateWeeklyRevenue(fromDate, toDate);
-            updateChart(labels, data);
-        });
-
-        // Load Default Chart
-        document.querySelector('[data-range="3M"]').click();
-    </script>
-
-
-    <script>
-        const birthdayData = [
-
-            {
-                name: 'Rohan Mehra', type: 'Staff', date: '2025-07-31', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            },
-            {
-                name: 'Sneha Joshi', type: 'Member', date: '2025-07-31', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            },
-            {
-                name: 'Arjun Yadav', type: 'Staff', date: '2025-07-31', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            },
-            {
-                name: 'Simran Kaur', type: 'Member', date: '2025-07-31', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            },
-            {
-                name: 'Vikas Jain', type: 'Staff', date: '2025-07-31', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            },
-            {
-                name: 'Riya Kapoor', type: 'Member', date: '2025-07-31', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            },
-            {
-                name: 'Tushar Roy', type: 'Staff', date: '2025-07-31', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            },
-            {
-                name: 'Kunal Singh', type: 'Member', date: '2025-08-03', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            },
-            {
-                name: 'Preeti Sharma', type: 'Staff', date: '2025-08-04', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            },
-            {
-                name: 'Ankit Verma', type: 'Member', date: '2025-08-08', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            },
-            {
-                name: 'Meena Kumari', type: 'Staff', date: '2025-08-10', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            },
-            {
-                name: 'Sunil Dutt', type: 'Member', date: '2025-08-12', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            },
-            {
-                name: 'Payal Rathore', type: 'Staff', date: '2025-08-15', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            },
-            {
-                name: 'Tarun Goel', type: 'Member', date: '2025-08-18', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            },
-            {
-                name: 'Diksha Rana', type: 'Staff', date: '2025-08-21', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            },
-            {
-                name: 'Mohan Das', type: 'Member', date: '2025-08-25', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            },
-            {
-                name: 'Alka Jain', type: 'Staff', date: '2025-08-28', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            }
-        ];
-
-        const todaySlider = document.getElementById('todaySlider');
-        const upcomingSlider = document.getElementById('upcomingSlider');
-        const searchedSlider = document.getElementById('searchedSlider');
-
-        const today = new Date().toISOString().slice(0, 10);
-        const thisMonth = new Date().getMonth();
-        let currentBirthdayList = [];
-
-        const renderSlider = (data, container) => {
-            container.innerHTML = '';
-            data.forEach((person) => {
-                const card = document.createElement('div');
-                card.className = 'card p-2 text-center';
-                card.style.minWidth = '180px';
-                card.innerHTML = `
-        <img src="https://via.placeholder.com/100" class="rounded-circle mx-auto" height="80" alt="">
-        <h6 class="mt-2 mb-0">${person.name}</h6>
-        <small class="text-muted">${person.type}</small>
-        <div class="text-danger">🎂 ${new Date(person.date).toDateString()}</div>
-      `;
-                container.appendChild(card);
-            });
-            startAutoScroll(container);
-        };
-
-        const startAutoScroll = (slider) => {
-            let scrollAmount = 0;
-            setInterval(() => {
-                if (slider.scrollWidth > slider.clientWidth) {
-                    scrollAmount += 1;
-                    if (scrollAmount >= slider.scrollWidth - slider.clientWidth) scrollAmount = 0;
-                    slider.scrollTo({ left: scrollAmount, behavior: 'smooth' });
-                }
-            }, 40);
-        };
-
-        const showOnlySlider = (target) => {
-            [todaySlider, upcomingSlider, searchedSlider].forEach(s => s.style.display = 'none');
-            target.style.display = 'flex';
-        };
-
-        window.addEventListener('DOMContentLoaded', () => {
-            const todays = birthdayData.filter(b => b.date === today);
-            if (todays.length > 0) {
-                showOnlySlider(todaySlider);
-                renderSlider(todays, todaySlider);
-                showPopup(todays);
-            }
-        });
-
-        document.getElementById('toggleTodayBtn').addEventListener('click', () => {
-            const todays = birthdayData.filter(b => b.date === today);
-            showOnlySlider(todaySlider);
-            renderSlider(todays, todaySlider);
-            showPopup(todays);
-        });
-
-        document.getElementById('toggleUpcomingBtn').addEventListener('click', () => {
-            const upcoming = birthdayData.filter(b => {
-                const bday = new Date(b.date);
-                return bday > new Date(today) && bday.getMonth() === thisMonth;
-            });
-            showOnlySlider(upcomingSlider);
-            renderSlider(upcoming, upcomingSlider);
-        });
-
-        document.getElementById('searchDateBtn').addEventListener('click', () => {
-            const selected = document.getElementById('birthdayDate').value;
-            const matches = birthdayData.filter(b => b.date === selected);
-            showOnlySlider(searchedSlider);
-            renderSlider(matches, searchedSlider);
-            showPopup(matches);
-        });
-
-        function showPopup(birthdays) {
-            const popup = new bootstrap.Modal(document.getElementById("birthdayPopup"));
-            const container = document.getElementById("popupBirthdayContainer");
-            container.innerHTML = '';
-            currentBirthdayList = birthdays;
-            birthdays.forEach((person) => {
-                const card = document.createElement('div');
-                card.className = 'card p-3 text-center shadow-sm';
-                card.style.width = '200px';
-                card.innerHTML = `
-        <img src="https://via.placeholder.com/100" class="rounded-circle mx-auto" height="80" alt="">
-        <h6 class="mt-2 mb-0">${person.name}</h6>
-        <small class="text-muted">${person.type}</small>
-        <p class="text-success">🎂 Happy Birthday!</p>
-      `;
-                container.appendChild(card);
-            });
-            popup.show();
-        }
-
-        function sendCombinedWhatsAppWishes() {
-            if (currentBirthdayList.length === 0) return; // 🚫 Do nothing if no birthday
-
-            const names = currentBirthdayList.map(p => p.name).join(', ');
-            const msg = `🎉 Clivax Gym wishes a very Happy Birthday to ${names}! 🎂🥳 Stay strong and fabulous! 💪`;
-
-            window.open(`https://wa.me/919999999999?text=${encodeURIComponent(msg)}`, '_blank');
-
-            const popup = bootstrap.Modal.getInstance(document.getElementById("birthdayPopup"));
-            popup.hide();
-        }
-
-    </script>
-
-
-</body>
-
+  </body>
 </html>
