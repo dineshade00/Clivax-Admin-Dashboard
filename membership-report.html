@@ -879,8 +879,7 @@
 
     <script>
    
-      // Print function
-      function printTable() {
+     function printTable() {
         const printContents =
           document.getElementById("printableTable").innerHTML;
         const originalContents = document.body.innerHTML;
@@ -888,8 +887,9 @@
         document.body.innerHTML = printContents;
         window.print();
         document.body.innerHTML = originalContents;
-        location.reload(); // Restore event bindings
+        location.reload(); // Reload to restore JS state and event bindings
       }
+      
 
       $(document).ready(function () {
         $(".input-daterange").datepicker({
