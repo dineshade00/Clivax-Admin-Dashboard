@@ -48,6 +48,7 @@
       type="text/css"
     />
     <!-- ADD THIS IN HEAD -->
+
     <style>
       @media print {
         body * {
@@ -64,13 +65,35 @@
           left: 0;
           top: 0;
           width: 100%;
+          overflow: visible !important;
         }
 
-        /* Hide pagination, entries info, and print button during print */
+        .dataTables_wrapper,
+        #reportTableContainer {
+          overflow: visible !important;
+          height: auto !important;
+        }
+
+        .dataTables_filter,
+        .dataTables_length,
         .dataTables_info,
         .dataTables_paginate,
         .print-btn {
           display: none !important;
+        }
+
+        table,
+        thead,
+        tbody,
+        tr,
+        td,
+        th {
+          page-break-inside: avoid !important;
+          page-break-after: auto;
+        }
+
+        table.dataTable {
+          width: 100% !important;
         }
       }
     </style>
@@ -990,7 +1013,18 @@
                     class="mt-4"
                     style="display: none"
                   >
-                    <div class="table-responsive shadow-sm">
+                    <div class="shadow-sm">
+                      <!-- Print Button -->
+                      <div class="text-end mt-3 mb-3">
+                        <button
+                          class="btn btn-outline-primary print-btn"
+                          onclick="printReport()"
+                        >
+                          <i class="fa fa-print fs-14 text-muted"></i>
+                          Print Report
+                        </button>
+                      </div>
+                      <h4 class="card-title">Revenue Report</h4>
                       <table
                         id="datatable"
                         class="table table-hover table-bordered table-striped dt-responsive nowrap"
@@ -1034,6 +1068,230 @@
                             <td>6 Month Plan</td>
                             <td>8000</td>
                             <td>10/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>004</td>
+                            <td>Kavya</td>
+                            <td>Sharma</td>
+                            <td>1 Month Plan</td>
+                            <td>1800</td>
+                            <td>12/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>005</td>
+                            <td>Rahul</td>
+                            <td>Kumar</td>
+                            <td>12 Month Plan</td>
+                            <td>15000</td>
+                            <td>14/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>004</td>
+                            <td>Kavya</td>
+                            <td>Sharma</td>
+                            <td>1 Month Plan</td>
+                            <td>1800</td>
+                            <td>12/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>005</td>
+                            <td>Rahul</td>
+                            <td>Kumar</td>
+                            <td>12 Month Plan</td>
+                            <td>15000</td>
+                            <td>14/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>004</td>
+                            <td>Kavya</td>
+                            <td>Sharma</td>
+                            <td>1 Month Plan</td>
+                            <td>1800</td>
+                            <td>12/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>005</td>
+                            <td>Rahul</td>
+                            <td>Kumar</td>
+                            <td>12 Month Plan</td>
+                            <td>15000</td>
+                            <td>14/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>004</td>
+                            <td>Kavya</td>
+                            <td>Sharma</td>
+                            <td>1 Month Plan</td>
+                            <td>1800</td>
+                            <td>12/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>005</td>
+                            <td>Rahul</td>
+                            <td>Kumar</td>
+                            <td>12 Month Plan</td>
+                            <td>15000</td>
+                            <td>14/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>004</td>
+                            <td>Kavya</td>
+                            <td>Sharma</td>
+                            <td>1 Month Plan</td>
+                            <td>1800</td>
+                            <td>12/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>005</td>
+                            <td>Rahul</td>
+                            <td>Kumar</td>
+                            <td>12 Month Plan</td>
+                            <td>15000</td>
+                            <td>14/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>004</td>
+                            <td>Kavya</td>
+                            <td>Sharma</td>
+                            <td>1 Month Plan</td>
+                            <td>1800</td>
+                            <td>12/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>005</td>
+                            <td>Rahul</td>
+                            <td>Kumar</td>
+                            <td>12 Month Plan</td>
+                            <td>15000</td>
+                            <td>14/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>004</td>
+                            <td>Kavya</td>
+                            <td>Sharma</td>
+                            <td>1 Month Plan</td>
+                            <td>1800</td>
+                            <td>12/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>005</td>
+                            <td>Rahul</td>
+                            <td>Kumar</td>
+                            <td>12 Month Plan</td>
+                            <td>15000</td>
+                            <td>14/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>004</td>
+                            <td>Kavya</td>
+                            <td>Sharma</td>
+                            <td>1 Month Plan</td>
+                            <td>1800</td>
+                            <td>12/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>005</td>
+                            <td>Rahul</td>
+                            <td>Kumar</td>
+                            <td>12 Month Plan</td>
+                            <td>15000</td>
+                            <td>14/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>004</td>
+                            <td>Kavya</td>
+                            <td>Sharma</td>
+                            <td>1 Month Plan</td>
+                            <td>1800</td>
+                            <td>12/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>005</td>
+                            <td>Rahul</td>
+                            <td>Kumar</td>
+                            <td>12 Month Plan</td>
+                            <td>15000</td>
+                            <td>14/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>004</td>
+                            <td>Kavya</td>
+                            <td>Sharma</td>
+                            <td>1 Month Plan</td>
+                            <td>1800</td>
+                            <td>12/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>005</td>
+                            <td>Rahul</td>
+                            <td>Kumar</td>
+                            <td>12 Month Plan</td>
+                            <td>15000</td>
+                            <td>14/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>004</td>
+                            <td>Kavya</td>
+                            <td>Sharma</td>
+                            <td>1 Month Plan</td>
+                            <td>1800</td>
+                            <td>12/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>005</td>
+                            <td>Rahul</td>
+                            <td>Kumar</td>
+                            <td>12 Month Plan</td>
+                            <td>15000</td>
+                            <td>14/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>004</td>
+                            <td>Kavya</td>
+                            <td>Sharma</td>
+                            <td>1 Month Plan</td>
+                            <td>1800</td>
+                            <td>12/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>005</td>
+                            <td>Rahul</td>
+                            <td>Kumar</td>
+                            <td>12 Month Plan</td>
+                            <td>15000</td>
+                            <td>14/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>004</td>
+                            <td>Kavya</td>
+                            <td>Sharma</td>
+                            <td>1 Month Plan</td>
+                            <td>1800</td>
+                            <td>12/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>005</td>
+                            <td>Rahul</td>
+                            <td>Kumar</td>
+                            <td>12 Month Plan</td>
+                            <td>15000</td>
+                            <td>14/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>004</td>
+                            <td>Kavya</td>
+                            <td>Sharma</td>
+                            <td>1 Month Plan</td>
+                            <td>1800</td>
+                            <td>12/05/2025</td>
+                          </tr>
+                          <tr>
+                            <td>005</td>
+                            <td>Rahul</td>
+                            <td>Kumar</td>
+                            <td>12 Month Plan</td>
+                            <td>15000</td>
+                            <td>14/05/2025</td>
                           </tr>
                           <tr>
                             <td>004</td>
@@ -1133,16 +1391,6 @@
                           </tr>
                         </tbody>
                       </table>
-                      <!-- Print Button -->
-                      <div class="text-end mt-3 mb-3">
-                        <button
-                          class="btn btn-outline-primary print-btn"
-                          onclick="printReport()"
-                        >
-                          <i class="fa fa-print fs-14 text-muted"></i>
-                          Print Report
-                        </button>
-                      </div>
                     </div>
                   </div>
                 </div>
