@@ -25,11 +25,11 @@
   <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/attendence.css">
+ 
   <!-- Replace your previous CSS with this -->
   <link rel="stylesheet" href="assets/css/attendance.css">
   <style>
-   
+
   </style>
 </head>
 
@@ -611,61 +611,64 @@
 
       <div class="page-content">
         <div class="container-fluid py-4">
-    <h4 class="mb-3">Staff Attendance</h4>
-    <div class="card mb-4">
-      <div class="card-body">
-        <div class="mb-3">
-          <label class="form-label">Select Staff Name</label>
-          <select id="staffFullName" class="form-select" required>
-            <option value="">-- Select Staff --</option>
-            <option>Vishal Kubde</option>
-            <option>Darshan Lakde</option>
-            <option>Emily Rathi</option>
-            <option>Pawan Satpute</option>
-            <option>Shree Pathak</option>
-            <option>Mayank Rahate</option>
-            <option>Shivam Patil</option>
-            <option>Dinesh Ade</option>
-            <option>Abhishek Amre</option>
-          </select>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Date</label>
-          <input type="date" class="form-control" id="staffDate" required />
-        </div>
-        <div class="d-flex gap-2 mb-4">
-          <button class="btn btn-primary w-10" onclick="submitAttendance(true)">Present</button>
-          <button class="btn btn-danger w-10" onclick="submitAttendance(false)">Absent</button>
-        </div>
-        <div class="row mb-3">
-          <div class="col-md-6 mb-2">
-            <label class="form-label">From Date</label>
-            <input type="date" id="fromDate" class="form-control" />
-          </div>
-          <div class="col-md-6 mb-2">
-            <label class="form-label">To Date</label>
-            <input type="date" id="toDate" class="form-control" />
-          </div>
-        </div>
-        <div class="mb-3">
-          <button class="btn btn-primary w-10" onclick="generateReport()">Generate</button>
-        </div>
-      </div>
-    </div>
+          <h4 class="mb-3">Staff Attendance</h4>
+          <div class="card mb-4">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Select Staff Name</label>
+                  <select id="staffFullName" class="form-select" required>
+                    <option value="">-- Select Staff --</option>
+                    <option>Vishal Kubde</option>
+                    <option>Darshan Lakde</option>
+                    <option>Emily Rathi</option>
+                    <option>Pawan Satpute</option>
+                    <option>Shree Pathak</option>
+                    <option>Mayank Rahate</option>
+                    <option>Shivam Patil</option>
+                    <option>Dinesh Ade</option>
+                    <option>Abhishek Amre</option>
+                  </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Date</label>
+                  <input type="date" class="form-control" id="staffDate" required />
+                </div>
+              </div>
 
-    <div class="table-responsive">
-      <table class="table table-bordered table-striped">
-        <thead>
-          <tr>
-            <th style="width: 150px">Full Name</th>
-            <th>Attendance</th>
-          </tr>
-        </thead>
-        <tbody id="staffTableBody"></tbody>
-      </table>
-    </div>
-    <div class="text-end mt-2" id="countSection"></div>
-  </div>
+              <div class="d-flex gap-2 mb-4">
+                <button class="btn btn-primary w-10" onclick="submitAttendance(true)">Present</button>
+                <button class="btn btn-danger w-10" onclick="submitAttendance(false)">Absent</button>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-6 mb-2">
+                  <label class="form-label">From Date</label>
+                  <input type="date" id="fromDate" class="form-control" />
+                </div>
+                <div class="col-md-6 mb-2">
+                  <label class="form-label">To Date</label>
+                  <input type="date" id="toDate" class="form-control" />
+                </div>
+              </div>
+              <div class="mb-3">
+                <button class="btn btn-primary w-10" onclick="generateReport()">Generate</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th style="width: 150px">Full Name</th>
+                  <th>Attendance</th>
+                </tr>
+              </thead>
+              <tbody id="staffTableBody"></tbody>
+            </table>
+          </div>
+          <div class="text-end mt-2" id="countSection"></div>
+        </div>
 
         <footer class="footer">
           <div class="container-fluid">
