@@ -878,6 +878,17 @@
     <script src="assets/js/app.js"></script>
 
     <script>
+       // DataTable initialization (ONLY table, no search, no pagination, no info)
+      $(document).ready(function () {
+        $("#datatable").DataTable({
+          dom: "t",
+          paging: false,
+          searching: false,
+          info: false,
+        });
+      });
+
+      // Print function
       function printTable() {
         const printContents =
           document.getElementById("printableTable").innerHTML;
@@ -886,7 +897,7 @@
         document.body.innerHTML = printContents;
         window.print();
         document.body.innerHTML = originalContents;
-        location.reload(); // Reload to restore JS state and event bindings
+        location.reload(); // Restore event bindings
       }
 
       $(document).ready(function () {
