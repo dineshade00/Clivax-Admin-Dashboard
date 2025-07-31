@@ -1,3 +1,32 @@
+// Set max date to today for both date inputs
+document.addEventListener("DOMContentLoaded", function () {
+  const today = new Date().toISOString().split("T")[0];
+  document.getElementById("fromDate").setAttribute("max", today);
+  document.getElementById("toDate").setAttribute("max", today);
+});
+
+// Show the report table and initialize DataTable without pagination, search, length dropdown, or info
+function showReportTable() {
+  const container = document.getElementById("reportTableContainer");
+  container.style.display = "block";
+
+  if (!$.fn.DataTable.isDataTable("#datatable")) {
+    $("#datatable").DataTable({
+      responsive: true,
+      paging: false,
+      searching: false,
+      info: false,
+      lengthChange: false,
+    });
+  }
+}
+
+// Print only the report section
+function printReport() {
+  window.print();
+}
+
+// Existing ApexCharts Scripts
 var chartPieBasicColors = getChartColorsArray("simple_pie_chart");
 chartPieBasicColors &&
   ((options = {
@@ -12,7 +41,7 @@ chartPieBasicColors &&
       "Custom Plan",
     ],
     legend: { position: "bottom" },
-    dataLabels: { dropShadow: { enabled: !1 } }, // keeps % inside the slices
+    dataLabels: { dropShadow: { enabled: false } },
     tooltip: {
       y: {
         formatter: function (val) {
@@ -27,8 +56,6 @@ chartPieBasicColors &&
     options
   )).render());
 
-///////
-
 var chartRadarBasicColors = getChartColorsArray("basic_radar");
 chartRadarBasicColors &&
   ((options = {
@@ -41,7 +68,7 @@ chartRadarBasicColors &&
         ],
       },
     ],
-    chart: { height: 350, type: "radar", toolbar: { show: !1 } },
+    chart: { height: 350, type: "radar", toolbar: { show: false } },
     colors: chartRadarBasicColors,
     xaxis: {
       categories: [
@@ -65,8 +92,6 @@ chartRadarBasicColors &&
     options
   )).render());
 
-/////////////////
-
 var areachartSplineColors = getChartColorsArray("area_chart_spline");
 
 if (areachartSplineColors) {
@@ -74,7 +99,6 @@ if (areachartSplineColors) {
     series: [
       {
         name: "This Year",
-        // Revenue values in thousands of rupees (₹) for each month
         data: [120, 150, 90, 180, 200, 220, 210, 230, 240, 260, 280, 300],
       },
       {
@@ -85,16 +109,10 @@ if (areachartSplineColors) {
     chart: {
       height: 350,
       type: "area",
-      toolbar: {
-        show: false,
-      },
+      toolbar: { show: false },
     },
-    dataLabels: {
-      enabled: false,
-    },
-    stroke: {
-      curve: "smooth",
-    },
+    dataLabels: { enabled: false },
+    stroke: { curve: "smooth" },
     colors: areachartSplineColors,
     xaxis: {
       type: "category",
@@ -115,8 +133,8 @@ if (areachartSplineColors) {
     },
     yaxis: {
       min: 0,
-      max: 300, // up to ₹300k; adjust if your data exceeds this
-      tickAmount: 6, // Generates ticks at 0, 50, 100, 150, 200, 250, 300
+      max: 300,
+      tickAmount: 6,
       labels: {
         formatter: function (value) {
           return "₹" + value + "k";
@@ -139,17 +157,11 @@ if (areachartSplineColors) {
   chart.render();
 }
 
-//////////////////////
-
-// Grab the theme‑aware color palette that your helper supplies
 var chartDonutBasicColors = getChartColorsArray("simple_dount_chart");
 
 if (chartDonutBasicColors) {
   const options = {
-    // Numerical values for each slice (keep or replace with your own data)
     series: [44, 55, 41, 17, 15],
-
-    // 🔹 New: human‑readable names for every slice
     labels: [
       "Memberships",
       "Day Passes",
@@ -157,26 +169,17 @@ if (chartDonutBasicColors) {
       "Group Classes",
       "Personal Training",
     ],
-
     chart: {
       height: 300,
       type: "donut",
     },
-
-    legend: {
-      position: "bottom",
-    },
-
+    legend: { position: "bottom" },
     dataLabels: {
-      dropShadow: {
-        enabled: false, // clearer than !1, but identical behavior
-      },
+      dropShadow: { enabled: false },
     },
-
     colors: chartDonutBasicColors,
   };
 
-  // Mount and render the chart
   const chart = new ApexCharts(
     document.querySelector("#simple_dount_chart"),
     options
