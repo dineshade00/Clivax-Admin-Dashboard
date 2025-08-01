@@ -62,7 +62,7 @@
       referrerpolicy="no-referrer"
     />
 
- <style>
+    <style>
       @media print {
         body {
           -webkit-print-color-adjust: exact;
@@ -88,7 +88,19 @@
           width: 100%;
         }
       }
-    </style> 
+      .card-for-print {
+        width: 320px;
+        height: 190px;
+        overflow: hidden;
+      }
+
+      @media (max-width: 768px) {
+        .card-for-print {
+          width: 320px;
+          height: 190px;
+        }
+      }
+    </style>
   </head>
 
 
@@ -867,7 +879,6 @@
                   id="cardContentToPrint"
                   style="
                     padding: 20px;
-
                     border-radius: 10px;
                     background: transparent;
                     box-shadow: none;
@@ -884,65 +895,87 @@
                       </button>
                     </div>
                     <div
+                      class="card-for-print"
                       style="
                         border: 2px solid #000;
                         border-radius: 10px;
-                        padding: 20px;
+                        padding: 10px; /* Reduced padding */
                         position: relative;
-                        background-image: url(assets/images/cardimg2.jpg);
+                        background-image: url(assets/images/cardbg2.jpg);
                         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08),
                           inset 0 1px 3px rgba(255, 255, 255, 0.7);
                         color: #333333;
                         border: 1px solid #e0e0e0;
                         transition: all 0.3s ease;
+                        box-sizing: border-box; /* Ensures padding is included in the width/height */
                       "
                     >
-                      <div>
-                        <h4 style="color: #333333; font-size: 15px">
-                          <strong>CLIVAX GYM</strong>
-                        </h4>
-                        <p style="font-size: 15px">
-                          <strong id="cardMemberId">#CA-xxxxx</strong>
-                        </p>
-                        <div
-                          style="
-                            display: flex;
-                            justify-content: space-between;
-                            align-items: center;
-                            text-align: left;
-                          "
-                        >
-                          <div style="flex: 1; padding-right: 20px">
-                            <p style="font-size: 15px">
-                              <strong id="cardName">Name</strong>
-                            </p>
-                            <p id="cardAddress" style="font-size: 15px">
-                              Address
-                            </p>
-                            <p style="font-size: 15px">
-                              <strong>MEMBERSHIP:</strong>
-                              <span id="cardType">Type</span>
-                            </p>
-                            <p style="font-size: 15px">
-                              <small
-                                >VALID TILL:
-                                <span id="cardValidTill"
-                                  >March 13, 2025</span
-                                ></small
-                              >
-                            </p>
-                          </div>
-                          <div style="flex-shrink: 0">
-                            <img
-                              src="/mnt/data/b736b69f-2b26-4143-be1a-bcb3ec5ab0c3.png"
-                              alt="Profile"
-                              width="100"
+                      <div
+                        style="
+                          display: flex;
+                          flex-direction: column;
+                          height: 100%;
+                        "
+                      >
+                        <div style="flex-grow: 1">
+                          <h4
+                            style="
+                              color: #333333;
+                              font-size: 15px;
+                              margin-bottom: 5px;
+                            "
+                          >
+                            <strong>CLIVAX GYM</strong>
+                          </h4>
+                          <p style="font-size: 14px; margin-bottom: 10px">
+                            <strong id="cardMemberId">#CA-xxxxx</strong>
+                          </p>
+                          <div
+                            style="
+                              display: flex;
+                              justify-content: space-between;
+                              align-items: center;
+                              text-align: left;
+                            "
+                          >
+                            <div
                               style="
-                                border-radius: 10px;
-                                border: 1px solid #cccccc;
+                                flex: 1;
+                                padding-right: 10px;
+                                font-size: 13px;
                               "
-                              id="cardPhoto"
-                            />
+                            >
+                              <p style="margin-bottom: 5px">
+                                <strong id="cardName">Name</strong>
+                              </p>
+                              <p id="cardAddress" style="margin-bottom: 5px">
+                                Address
+                              </p>
+                              <p style="margin-bottom: 5px">
+                                <strong>MEMBERSHIP:</strong>
+                                <span id="cardType">Type</span>
+                              </p>
+                              <p style="margin-bottom: 0">
+                                <small>
+                                  VALID TILL:
+                                  <span id="cardValidTill">March 13, 2025</span>
+                                </small>
+                              </p>
+                            </div>
+                            <div style="flex-shrink: 0">
+                              <img
+                                src="/mnt/data/b736b69f-2b26-4143-be1a-bcb3ec5ab0c3.png"
+                                alt="Profile"
+                                width="80"
+                                height="100"
+                                style="
+                                  border-radius: 10px;
+                                  border: 1px solid #cccccc;
+                                  object-fit: cover;
+                                "
+                                id="cardPhoto"
+                              />
+                            </div>
                           </div>
                         </div>
                       </div>
