@@ -62,17 +62,29 @@
       referrerpolicy="no-referrer"
     />
 
-    <style>
+     <style>
+      @media print {
+        /* This rule forces the browser to print all background images and colors */
+        body {
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+
+        /* Target the card content specifically to ensure its background is printed */
+
+        /* Hide the print button itself on the printed page */
+        .btn.btn-sm.btn-secondary {
+          display: none !important;
+        }
+      }
       @media print {
         body * {
           visibility: hidden;
         }
-
         #cardContentToPrint,
         #cardContentToPrint * {
           visibility: visible;
         }
-
         #cardContentToPrint {
           position: absolute;
           top: 0;
