@@ -1,26 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-
+  <head>
     <meta charset="utf-8" />
-    <title>Membership-Report | Clivax</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <title>Revenue Report | Clivax</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      content="Premium Multipurpose Admin & Dashboard Template"
+      name="description"
+    />
     <meta content="Codebucks" name="author" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="assets/images/favicon.ico" />
 
+    <!-- dark layout js -->
+    <script src="assets/js/pages/layout.js"></script>
+
     <!-- DataTables -->
     <link
       href="assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-
-    <!-- buttons datatable -->
-    <link
-      href="assets/libs/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css"
       rel="stylesheet"
       type="text/css"
     />
@@ -31,9 +28,6 @@
       rel="stylesheet"
       type="text/css"
     />
-
-    <!-- dark layout js -->
-    <script src="assets/js/pages/layout.js"></script>
 
     <!-- Bootstrap Css -->
     <link
@@ -53,634 +47,760 @@
       rel="stylesheet"
       type="text/css"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44jKVadk2uNPnHzYUthhd8fjGPSSVU-NoQzXhGQzXLcWkLJKv5W4OnXhVwgyh4jsgSAoKw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-      <style>
-            @media (max-width: 767.98px) { /* Bootstrap's default breakpoint for small devices */
-      .col-md-auto {
-        margin-top: 10px; /* Adjust the value as needed */
+    <!-- ADD THIS IN HEAD -->
+
+    <style>
+      @media print {
+        body * {
+          visibility: hidden;
         }
+
+        #printable-report,
+        #printable-report * {
+          visibility: visible;
         }
-    
-        </style>
-</head>
 
+        #printable-report {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          overflow: visible !important;
+        }
 
-<body>
+        .dataTables_wrapper,
+        #reportTableContainer {
+          overflow: visible !important;
+          height: auto !important;
+        }
 
-    <!-- Begin page -->
+        .dataTables_filter,
+        .dataTables_length,
+        .dataTables_info,
+        .dataTables_paginate,
+        .print-btn {
+          display: none !important;
+        }
+
+        table,
+        thead,
+        tbody,
+        tr,
+        td,
+        th {
+          page-break-inside: avoid !important;
+          page-break-after: auto;
+        }
+
+        table.dataTable {
+          width: 100% !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
     <div id="layout-wrapper">
+      <!-- Start topbar -->
+      <header id="page-topbar">
+        <div class="navbar-header">
+          <!-- Logo -->
 
-
-        <!-- Start topbar -->
-      
-
-<header id="page-topbar">
-  <div class="navbar-header">
-    <div class="navbar-logo-box">
-      <a href="index.html" class="logo logo-dark">
-        <span class="logo-sm">
-          <img src="assets/images/logo-sm.png" alt="logo-sm-dark" height="20" />
-        </span>
-        <span class="logo-lg">
-          <img src="assets/images/logo-dark.png" alt="logo-dark" height="18" />
-        </span>
-      </a>
-
-      <a href="index.html" class="logo logo-light">
-        <span class="logo-sm">
-          <img src="assets/images/logo-sm.png" alt="logo-sm-light" height="20" />
-        </span>
-        <span class="logo-lg">
-          <img src="assets/images/logo-light.png" alt="logo-light" height="18" />
-        </span>
-      </a>
-
-      <button type="button" class="btn btn-sm top-icon sidebar-btn" id="sidebar-btn">
-        <i class="mdi mdi-menu-open align-middle fs-19"></i>
-      </button>
-    </div>
-    <div class="d-flex justify-content-between menu-sm px-3 ms-auto">
-      <div class="d-flex align-items-center gap-2">
-        <div class="dropdown d-none d-lg-block">
-          <button
-            type="button"
-            class="btn btn-primary btn-sm fs-14 d-inline"
-            data-bs-toggle="dropdown"
-          >
-            Gym Modules
-            <i class="mdi mdi-chevron-down align-middle"></i>
-          </button>
-          <div class="dropdown-menu dropdown-menu-start dropdown-menu-animated">
-            <a href="equipment.html" class="dropdown-item">
-              <div class="dropdown-icon"><i class="fas fa-dumbbell"></i></div>
-              <span class="dropdown-content">Equipments</span>
-              <div class="dropdown-addon">
-                <span class="badge badge-warning rounded-pill">20</span>
-              </div>
-            </a>
-            <a href="create-invoice.html" class="dropdown-item">
-              <div class="dropdown-icon"><i class="fas fa-file-invoice"></i></div>
-              <span class="dropdown-content">Membership Invoice</span>
-            </a>
-
-            <div class="dropdown-divider"></div>
-
-            <a href="apps-contact.html" class="dropdown-item">
-              <div class="dropdown-icon"><i class="fas fa-user-circle"></i></div>
-              <span class="dropdown-content">My Profile</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="dropdown d-none d-lg-block">
-          <button
-            type="button"
-            class="btn btn-primary btn-sm fs-14"
-            data-bs-toggle="dropdown"
-            aria-haspopup="false"
-            aria-expanded="false"
-          >
-            Features
-            <i class="mdi mdi-chevron-down align-middle"></i>
-          </button>
-          <div
-            class="dropdown-menu dropdown-menu-start dropdown-menu-lg-widest dropdown-menu-widest dropdown-menu-animated bg-primary-subtle overflow-hidden"
-          >
-            <div class="dropdown-row justify-content-center">
-              <div class="p-2 menu-image">
+          <!-- Start Navbar-Brand -->
+          <div class="navbar-logo-box">
+            <a href="index.html" class="logo logo-dark">
+              <span class="logo-sm">
                 <img
-                  src="assets/images/mega-menu.png"
-                  alt="mega-menu image"
-                  class="img-fluid"
-                  style="height: 200px"
+                  src="assets/images/logo-sm.png"
+                  alt="logo-sm-dark"
+                  height="20"
                 />
-              </div>
+              </span>
+              <span class="logo-lg">
+                <img
+                  src="assets/images/logo-dark.png"
+                  alt="logo-dark"
+                  height="18"
+                />
+              </span>
+            </a>
 
-              <div class="dropdown-col">
-                <h2 class="">Welcome to Clivax Gym!</h2>
-                <p class="text-muted mb-0">
-                  Track members, manage plans, monitor trainers, and streamline gym
-                  operations with our digital gym dashboard.
-                </p>
-                <div class="mt-3">
-                  <a href="auth-login.html" class="btn btn-dark btn-wider">Admin Login</a>
+            <a href="index.html" class="logo logo-light">
+              <span class="logo-sm">
+                <img
+                  src="assets/images/logo-sm.png"
+                  alt="logo-sm-light"
+                  height="20"
+                />
+              </span>
+              <span class="logo-lg">
+                <img
+                  src="assets/images/logo-light.png"
+                  alt="logo-light"
+                  height="18"
+                />
+              </span>
+            </a>
+
+            <button
+              type="button"
+              class="btn btn-sm top-icon sidebar-btn"
+              id="sidebar-btn"
+            >
+              <i class="mdi mdi-menu-open align-middle fs-19"></i>
+            </button>
+          </div>
+          <!-- End navbar brand -->
+
+          <!-- Start menu -->
+          <div class="d-flex justify-content-between menu-sm px-3 ms-auto">
+            <div class="d-flex align-items-center gap-2">
+              <div class="dropdown d-none d-lg-block">
+                <button
+                  type="button"
+                  class="btn btn-primary btn-sm fs-14 d-inline"
+                  data-bs-toggle="dropdown"
+                >
+                  Gym Modules
+                  <i class="mdi mdi-chevron-down align-middle"></i>
+                </button>
+                <div
+                  class="dropdown-menu dropdown-menu-start dropdown-menu-animated"
+                >
+                  <!-- Inventory Manager -->
+                  <a href="equipment.html" class="dropdown-item">
+                    <div class="dropdown-icon">
+                      <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <span class="dropdown-content">Equipments</span>
+                    <div class="dropdown-addon">
+                      <span class="badge badge-warning rounded-pill">20</span>
+                    </div>
+                  </a>
+
+                  <!-- Invoice -->
+                  <a href="create-invoice.html" class="dropdown-item">
+                    <div class="dropdown-icon">
+                      <i class="fas fa-file-invoice"></i>
+                    </div>
+                    <span class="dropdown-content">Membership Invoice</span>
+                  </a>
+
+                  <!-- Divider -->
+                  <div class="dropdown-divider"></div>
+
+                  <!-- My Account -->
+                  <a href="apps-contact.html" class="dropdown-item">
+                    <div class="dropdown-icon">
+                      <i class="fas fa-user-circle"></i>
+                    </div>
+                    <span class="dropdown-content">My Profile</span>
+                  </a>
                 </div>
               </div>
 
-              <div class="dropdown-col border-start border-primary border-opacity-50">
-                <h4 class="dropdown-header">Gym Features</h4>
-                <div class="grid-nav grid-nav-action">
-                  <div class="grid-nav-row">
-                    <a href="index.html" class="grid-nav-item">
-                      <div class="grid-nav-icon"><i class="fas fa-chart-line"></i></div>
-                      <span class="grid-nav-content">Dashboard</span>
-                    </a>
-                    <a href="show-all-member.html" class="grid-nav-item">
-                      <div class="grid-nav-icon"><i class="fas fa-user-friends"></i></div>
-                      <span class="grid-nav-content">Members</span>
-                    </a>
-                    <a href="renewals.html" class="grid-nav-item">
-                      <div class="grid-nav-icon"><i class="fas fa-redo-alt"></i></div>
-                      <span class="grid-nav-content">Renewals</span>
-                    </a>
-                  </div>
-                  <div class="grid-nav-row">
-                    <a href="trainer-profile.html" class="grid-nav-item">
-                      <div class="grid-nav-icon"><i class="fas fa-dumbbell"></i></div>
-                      <span class="grid-nav-content">Trainers</span>
-                    </a>
-                    <a href="view-plan.html" class="grid-nav-item">
-                      <div class="grid-nav-icon"><i class="fas fa-id-card-alt"></i></div>
-                      <span class="grid-nav-content">Membership Plans</span>
-                    </a>
-                    <a href="revenue-report.html" class="grid-nav-item">
-                      <div class="grid-nav-icon"><i class="fas fa-file-alt"></i></div>
-                      <span class="grid-nav-content">Reports</span>
-                    </a>
+              <div class="dropdown d-none d-lg-block">
+                <button
+                  type="button"
+                  class="btn btn-primary btn-sm fs-14"
+                  data-bs-toggle="dropdown"
+                  aria-haspopup="false"
+                  aria-expanded="false"
+                >
+                  Features
+                  <i class="mdi mdi-chevron-down align-middle"></i>
+                </button>
+                <div
+                  class="dropdown-menu dropdown-menu-start dropdown-menu-lg-widest dropdown-menu-widest dropdown-menu-animated bg-primary-subtle overflow-hidden"
+                >
+                  <div class="dropdown-row justify-content-center">
+                    <!-- Original Image (Unchanged) -->
+                    <div class="p-2 menu-image">
+                      <img
+                        src="assets/images/mega-menu.png"
+                        alt="mega-menu image"
+                        class="img-fluid"
+                        style="height: 200px"
+                      />
+                    </div>
+
+                    <!-- Gym Welcome Section -->
+                    <div class="dropdown-col">
+                      <h2 class="">Welcome to Clivax Gym!</h2>
+                      <p class="text-muted mb-0">
+                        Track members, manage plans, monitor trainers, and
+                        streamline gym operations with our digital gym
+                        dashboard.
+                      </p>
+                      <div class="mt-3">
+                        <a href="auth-login.html" class="btn btn-dark btn-wider"
+                          >Admin Login</a
+                        >
+                      </div>
+                    </div>
+
+                    <!-- Features Section -->
+                    <div
+                      class="dropdown-col border-start border-primary border-opacity-50"
+                    >
+                      <h4 class="dropdown-header">Gym Features</h4>
+                      <div class="grid-nav grid-nav-action">
+                        <div class="grid-nav-row">
+                          <a href="index.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-chart-line"></i>
+                            </div>
+                            <span class="grid-nav-content">Dashboard</span>
+                          </a>
+                          <a href="show-all-member.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-user-friends"></i>
+                            </div>
+                            <span class="grid-nav-content">Members</span>
+                          </a>
+                          <a href="renewals.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-redo-alt"></i>
+                            </div>
+                            <span class="grid-nav-content">Renewals</span>
+                          </a>
+                        </div>
+                        <div class="grid-nav-row">
+                          <a href="trainer-profile.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-dumbbell"></i>
+                            </div>
+                            <span class="grid-nav-content">Trainers</span>
+                          </a>
+                          <a href="view-plan.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-id-card-alt"></i>
+                            </div>
+                            <span class="grid-nav-content"
+                              >Membership Plans</span
+                            >
+                          </a>
+                          <a href="revenue-report.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-file-alt"></i>
+                            </div>
+                            <span class="grid-nav-content">Reports</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Tools Section -->
+                    <div
+                      class="dropdown-col border-start border-primary border-opacity-50"
+                    >
+                      <h4 class="dropdown-header">Quick Tools</h4>
+                      <a href="attendance.html" class="dropdown-item">
+                        <i
+                          class="mdi mdi-account-check-outline align-middle dropdown-bullet me-2"
+                        ></i>
+                        <span class="dropdown-content">Attendance</span>
+                      </a>
+                      <a href="diet-plan.html" class="dropdown-item">
+                        <i
+                          class="mdi mdi-food-apple-outline align-middle dropdown-bullet me-2"
+                        ></i>
+                        <span class="dropdown-content">Diet Plans</span>
+                      </a>
+                      <a href="manage-staff.html" class="dropdown-item">
+                        <i
+                          class="mdi mdi-account-tie align-middle dropdown-bullet me-2"
+                        ></i>
+                        <span class="dropdown-content">Staff Management</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-
-              <div class="dropdown-col border-start border-primary border-opacity-50">
-                <h4 class="dropdown-header">Quick Tools</h4>
-                <a href="attendance.html" class="dropdown-item">
-                  <i class="mdi mdi-account-check-outline align-middle dropdown-bullet me-2"></i>
-                  <span class="dropdown-content">Attendance</span>
-                </a>
-                <a href="diet-plan.html" class="dropdown-item">
-                  <i class="mdi mdi-food-apple-outline align-middle dropdown-bullet me-2"></i>
-                  <span class="dropdown-content">Diet Plans</span>
-                </a>
-                <a href="manage-staff.html" class="dropdown-item">
-                  <i class="mdi mdi-account-tie align-middle dropdown-bullet me-2"></i>
-                  <span class="dropdown-content">Staff Management</span>
-                </a>
               </div>
             </div>
+
+            <div class="d-flex align-items-center gap-2">
+              <!-- Start Notification -->
+              <div class="dropdown d-inline-block">
+                <button
+                  type="button"
+                  class="btn btn-sm top-icon"
+                  id="page-header-notifications-dropdown"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-bell align-middle"></i>
+                  <span class="btn-marker"
+                    ><i class="marker marker-dot text-danger"></i
+                  ></span>
+                </button>
+                <div
+                  class="dropdown-menu dropdown-menu-lg dropdown-menu-md dropdown-menu-end p-0"
+                  aria-labelledby="page-header-notifications-dropdown"
+                >
+                  <div class="p-3 bg-info">
+                    <div class="row align-items-center">
+                      <div class="col">
+                        <h6 class="text-white m-0">
+                          <i class="far fa-bell me-2"></i> Notifications
+                        </h6>
+                      </div>
+                      <div class="col-auto">
+                        <a href="#!" class="badge bg-info-subtle text-info">
+                          6+</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div data-simplebar style="max-height: 230px">
+                    <a href="#" class="text-reset notification-item">
+                      <div class="d-flex">
+                        <div class="avatar avatar-xs avatar-label-success me-3">
+                          <span class="rounded fs-16">
+                            <i class="mdi mdi-account-plus-outline"></i>
+                          </span>
+                        </div>
+                        <div class="flex-1">
+                          <h6 class="mb-1">New member registered</h6>
+                          <div class="fs-12 text-muted">
+                            <p class="mb-0">
+                              <i class="mdi mdi-clock-outline"></i> 5 min ago
+                            </p>
+                          </div>
+                        </div>
+                        <i class="mdi mdi-chevron-right align-middle ms-2"></i>
+                      </div>
+                    </a>
+
+                    <a href="#" class="text-reset notification-item">
+                      <div class="d-flex">
+                        <div class="avatar avatar-xs avatar-label-warning me-3">
+                          <span class="rounded fs-16">
+                            <i class="mdi mdi-alarm"></i>
+                          </span>
+                        </div>
+                        <div class="flex-1">
+                          <h6 class="mb-1">Session missed by trainer</h6>
+                          <div class="fs-12 text-muted">
+                            <p class="mb-0">
+                              <i class="mdi mdi-clock-outline"></i> 30 min ago
+                            </p>
+                          </div>
+                        </div>
+                        <i class="mdi mdi-chevron-right align-middle ms-2"></i>
+                      </div>
+                    </a>
+
+                    <a href="#" class="text-reset notification-item">
+                      <div class="d-flex">
+                        <div class="avatar avatar-xs avatar-label-danger me-3">
+                          <span class="rounded fs-16">
+                            <i class="mdi mdi-cash-clock"></i>
+                          </span>
+                        </div>
+                        <div class="flex-1">
+                          <h6 class="mb-1">Payment due for member ID #1023</h6>
+                          <div class="fs-12 text-muted">
+                            <p class="mb-0">
+                              <i class="mdi mdi-clock-outline"></i> 2 hours ago
+                            </p>
+                          </div>
+                        </div>
+                        <i class="mdi mdi-chevron-right align-middle ms-2"></i>
+                      </div>
+                    </a>
+
+                    <a href="#" class="text-reset notification-item">
+                      <div class="d-flex">
+                        <div class="avatar avatar-xs avatar-label-info me-3">
+                          <span class="rounded fs-16">
+                            <i class="mdi mdi-calendar-check-outline"></i>
+                          </span>
+                        </div>
+                        <div class="flex-1">
+                          <h6 class="mb-1">
+                            Today’s session starts in 30 minutes
+                          </h6>
+                          <div class="fs-12 text-muted">
+                            <p class="mb-0">
+                              <i class="mdi mdi-clock-outline"></i> 3 hours ago
+                            </p>
+                          </div>
+                        </div>
+                        <i class="mdi mdi-chevron-right align-middle ms-2"></i>
+                      </div>
+                    </a>
+
+                    <a href="#" class="text-reset notification-item">
+                      <div class="d-flex">
+                        <div
+                          class="avatar avatar-xs avatar-label-secondary me-3"
+                        >
+                          <span class="rounded fs-16">
+                            <i class="mdi mdi-update"></i>
+                          </span>
+                        </div>
+                        <div class="flex-1">
+                          <h6 class="mb-1">Member plan updated (ID #1008)</h6>
+                          <div class="fs-12 text-muted">
+                            <p class="mb-0">
+                              <i class="mdi mdi-clock-outline"></i> Yesterday
+                            </p>
+                          </div>
+                        </div>
+                        <i class="mdi mdi-chevron-right align-middle ms-2"></i>
+                      </div>
+                    </a>
+
+                    <a href="#" class="text-reset notification-item">
+                      <div class="d-flex">
+                        <div class="avatar avatar-xs avatar-label-primary me-3">
+                          <span class="rounded fs-16">
+                            <i class="mdi mdi-lock-reset"></i>
+                          </span>
+                        </div>
+                        <div class="flex-1">
+                          <h6 class="mb-1">Admin password changed</h6>
+                          <div class="fs-12 text-muted">
+                            <p class="mb-0">
+                              <i class="mdi mdi-clock-outline"></i> 2 days ago
+                            </p>
+                          </div>
+                        </div>
+                        <i class="mdi mdi-chevron-right align-middle ms-2"></i>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="p-2 border-top">
+                    <div class="d-grid">
+                      <a
+                        class="btn btn-sm btn-link font-size-14 text-center"
+                        href="javascript:void(0)"
+                      >
+                        <i class="mdi mdi-arrow-right-circle me-1"></i> View
+                        More..
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Notification -->
+
+              <!-- Start Profile -->
+              <div class="dropdown d-inline-block">
+                <button
+                  type="button"
+                  class="btn btn-sm top-icon p-0"
+                  id="page-header-user-dropdown"
+                  data-bs-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <img
+                    class="rounded avatar-2xs p-0"
+                    src="assets/images/users/avatar-6.png"
+                    alt="Header Avatar"
+                  />
+                </button>
+                <div
+                  class="dropdown-menu dropdown-menu-wide dropdown-menu-end dropdown-menu-animated overflow-hidden py-0"
+                >
+                  <div class="card border-0">
+                    <div class="card-header bg-primary rounded-0">
+                      <div class="rich-list-item w-100 p-0">
+                        <div class="rich-list-prepend">
+                          <div class="avatar avatar-label-light avatar-circle">
+                            <div class="avatar-display">
+                              <i class="fas fa-user-circle"></i>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="rich-list-content">
+                          <h3 class="rich-list-title text-white">Admin</h3>
+                          <span class="rich-list-subtitle text-white"
+                            >info@kavyainfoweb.com</span
+                          >
+                        </div>
+                        <div class="rich-list-append">
+                          <span class="badge badge-label-light fs-6">6+</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card-body p-0">
+                      <div
+                        class="grid-nav grid-nav-flush grid-nav-action grid-nav-no-rounded"
+                      >
+                        <div class="grid-nav-row">
+                          <a href="apps-contact.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-user-edit"></i>
+                            </div>
+                            <span class="grid-nav-content">My Profile</span>
+                          </a>
+                          <a href="trainer-profile.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-dumbbell"></i>
+                            </div>
+                            <span class="grid-nav-content"
+                              >Trainer Profile</span
+                            >
+                          </a>
+                          <a href="#" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-running"></i>
+                            </div>
+                            <span class="grid-nav-content">Workout Logs</span>
+                          </a>
+                        </div>
+
+                        <div class="grid-nav-row">
+                          <a href="live-session.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="far fa-calendar-check"></i>
+                            </div>
+                            <span class="grid-nav-content"
+                              >Session Calendar</span
+                            >
+                          </a>
+                          <a href="diet-plan.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-apple-alt"></i>
+                            </div>
+                            <span class="grid-nav-content">Diet Notes</span>
+                          </a>
+                          <a href="#" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="far fa-bell"></i>
+                            </div>
+                            <span class="grid-nav-content">Notifications</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card-footer card-footer-bordered rounded-0">
+                      <a href="auth-login.html" class="btn btn-label-danger"
+                        >Sign out</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Profile -->
+            </div>
           </div>
+          <!-- End menu -->
+        </div>
+      </header>
+      <!-- End topbar -->
+      <!-- ========== Left Sidebar Start ========== -->
+      <div class="sidebar-left">
+        <div data-simplebar class="h-100">
+          <!--- Sidebar-menu -->
+          <div id="sidebar-menu">
+            <!-- Left Menu Start -->
+            <ul class="left-menu list-unstyled" id="side-menu">
+              <li>
+                <a href="index.html" class="">
+                  <i class="fas fa-desktop"></i>
+                  <span>Dashboard</span>
+                </a>
+              </li>
+
+              <!-- <li class="menu-title">Elements</li> -->
+
+              <li>
+                <a href="javascript: void(0);" class="has-arrow">
+                  <i class="fa fa-users"></i>
+                  <span>Member Management</span>
+                </a>
+                <ul class="sub-menu" aria-expanded="false">
+                  <li>
+                    <a href="add-new-member.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i
+                      >Add New Member</a
+                    >
+                  </li>
+                  <li>
+                    <a href="show-all-member.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i
+                      >All Members</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <a href="javascript: void(0);" class="has-arrow">
+                  <i class="fa fa-id-card-alt"></i>
+                  <span>Membership Plans</span>
+                </a>
+                <ul class="sub-menu" aria-expanded="false">
+                  <li>
+                    <a href="add-new-plan.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      Add New
+                    </a>
+                  </li>
+                  <li>
+                    <a href="view-plan.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      View Plan
+                    </a>
+                  </li>
+                  <li>
+                    <a href="manage-plan.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      Manage Plan
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="javascript: void(0);" class="has-arrow">
+                  <i class="fa fa-calendar-check"></i>
+                  <span>Session Management</span>
+                </a>
+                <ul class="sub-menu" aria-expanded="false">
+                  <li>
+                    <a href="live-session.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i
+                      >Live Session
+                    </a>
+                  </li>
+                  <li>
+                    <a href="offline-session.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i
+                      >Offline Session
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <a href="javascript: void(0);" class="has-arrow">
+                  <i class="fa fa-user-tie"></i>
+                  <span>Staff Management</span>
+                </a>
+                <ul class="sub-menu" aria-expanded="false">
+                  <li>
+                    <a href="add-new-staff.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      Add New</a
+                    >
+                  </li>
+                  <li>
+                    <a href="show-all-staff.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      All Staff Members</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <a href="javascript: void(0);" class="has-arrow">
+                  <i class="fa fa-wallet"></i>
+                  <span>Account Management</span>
+                </a>
+                <ul class="sub-menu" aria-expanded="false">
+                  <!-- Show All -->
+                  <li>
+                    <a href="add-new-account.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i
+                      >Add New Account
+                    </a>
+                  </li>
+
+                  <!-- Show All -->
+                  <li>
+                    <a href="show-all-account.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      All Accounts
+                    </a>
+                  </li>
+
+                  <!-- Member Invoices with dropdown -->
+                  <li>
+                    <a href="create-invoice.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      Create Invoices
+                    </a>
+                  </li>
+
+                  <!-- Payment History -->
+                  <li>
+                    <a href="pyments.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      Payment History
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <a href="renewals.html">
+                  <i class="fa fa-sync-alt"></i>
+                  <span>Renewals</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="attendance.html">
+                  <i class="fa fa-calendar-check"></i>
+                  <span>Attendance</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="javascript: void(0);" class="has-arrow">
+                  <i class="fa fa-chart-pie"></i>
+                  <span>Reports</span>
+                </a>
+                <ul class="sub-menu" aria-expanded="false">
+                  <!-- GYM-RELATED REPORTS -->
+                  <li>
+                    <a href="membership-report.html">
+                      <i class="mdi mdi-account-group-outline align-middle"></i>
+                      Membership Report
+                    </a>
+                  </li>
+                  <li>
+                    <a href="revenue-report.html">
+                      <i class="mdi mdi-currency-inr align-middle"></i> Revenue
+                      Report
+                    </a>
+                  </li>
+
+                  <!-- Existing Chart Pages -->
+                </ul>
+              </li>
+
+              <li>
+                <a href="settings.html">
+                  <i class="fas fa-cog"></i>
+                  <span>Settings</span>
+                </a>
+              </li>
+              <li>
+                <a href="auth-login.html">
+                  <i class="fas fa-sign-out-alt"></i>
+                  <span>Logout</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- Sidebar -->
         </div>
       </div>
+      <!-- Left Sidebar End -->
 
-      <div class="d-flex align-items-center gap-2">
-        <div class="dropdown d-inline-block">
-          <button
-            type="button"
-            class="btn btn-sm top-icon"
-            id="page-header-notifications-dropdown"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <i class="fas fa-bell align-middle"></i>
-            <span class="btn-marker"
-              ><i class="marker marker-dot text-danger"></i
-            ></span>
-          </button>
-          <div
-            class="dropdown-menu dropdown-menu-lg dropdown-menu-md dropdown-menu-end p-0"
-            aria-labelledby="page-header-notifications-dropdown"
-          >
-            <div class="p-3 bg-info">
-              <div class="row align-items-center">
-                <div class="col">
-                  <h6 class="text-white m-0">
-                    <i class="far fa-bell me-2"></i> Notifications
-                  </h6>
-                </div>
-                <div class="col-auto">
-                  <a href="#!" class="badge bg-info-subtle text-info"> 6+</a>
-                </div>
-              </div>
-            </div>
-            <div data-simplebar style="max-height: 230px">
-              <a href="#" class="text-reset notification-item">
-                <div class="d-flex">
-                  <div class="avatar avatar-xs avatar-label-success me-3">
-                    <span class="rounded fs-16">
-                      <i class="mdi mdi-account-plus-outline"></i>
-                    </span>
-                  </div>
-                  <div class="flex-1">
-                    <h6 class="mb-1">New member registered</h6>
-                    <div class="fs-12 text-muted">
-                      <p class="mb-0">
-                        <i class="mdi mdi-clock-outline"></i> 5 min ago
-                      </p>
-                    </div>
-                  </div>
-                  <i class="mdi mdi-chevron-right align-middle ms-2"></i>
-                </div>
-              </a>
+      <!-- Start right Content here -->
 
-              <a href="#" class="text-reset notification-item">
-                <div class="d-flex">
-                  <div class="avatar avatar-xs avatar-label-warning me-3">
-                    <span class="rounded fs-16">
-                      <i class="mdi mdi-alarm"></i>
-                    </span>
-                  </div>
-                  <div class="flex-1">
-                    <h6 class="mb-1">Session missed by trainer</h6>
-                    <div class="fs-12 text-muted">
-                      <p class="mb-0">
-                        <i class="mdi mdi-clock-outline"></i> 30 min ago
-                      </p>
-                    </div>
-                  </div>
-                  <i class="mdi mdi-chevron-right align-middle ms-2"></i>
-                </div>
-              </a>
-
-              <a href="#" class="text-reset notification-item">
-                <div class="d-flex">
-                  <div class="avatar avatar-xs avatar-label-danger me-3">
-                    <span class="rounded fs-16">
-                      <i class="mdi mdi-cash-clock"></i>
-                    </span>
-                  </div>
-                  <div class="flex-1">
-                    <h6 class="mb-1">Payment due for member ID #1023</h6>
-                    <div class="fs-12 text-muted">
-                      <p class="mb-0">
-                        <i class="mdi mdi-clock-outline"></i> 2 hours ago
-                      </p>
-                    </div>
-                  </div>
-                  <i class="mdi mdi-chevron-right align-middle ms-2"></i>
-                </div>
-              </a>
-
-              <a href="#" class="text-reset notification-item">
-                <div class="d-flex">
-                  <div class="avatar avatar-xs avatar-label-info me-3">
-                    <span class="rounded fs-16">
-                      <i class="mdi mdi-calendar-check-outline"></i>
-                    </span>
-                  </div>
-                  <div class="flex-1">
-                    <h6 class="mb-1">Today’s session starts in 30 minutes</h6>
-                    <div class="fs-12 text-muted">
-                      <p class="mb-0">
-                        <i class="mdi mdi-clock-outline"></i> 3 hours ago
-                      </p>
-                    </div>
-                  </div>
-                  <i class="mdi mdi-chevron-right align-middle ms-2"></i>
-                </div>
-              </a>
-
-              <a href="#" class="text-reset notification-item">
-                <div class="d-flex">
-                  <div class="avatar avatar-xs avatar-label-secondary me-3">
-                    <span class="rounded fs-16">
-                      <i class="mdi mdi-update"></i>
-                    </span>
-                  </div>
-                  <div class="flex-1">
-                    <h6 class="mb-1">Member plan updated (ID #1008)</h6>
-                    <div class="fs-12 text-muted">
-                      <p class="mb-0">
-                        <i class="mdi mdi-clock-outline"></i> Yesterday
-                      </p>
-                    </div>
-                  </div>
-                  <i class="mdi mdi-chevron-right align-middle ms-2"></i>
-                </div>
-              </a>
-
-              <a href="#" class="text-reset notification-item">
-                <div class="d-flex">
-                  <div class="avatar avatar-xs avatar-label-primary me-3">
-                    <span class="rounded fs-16">
-                      <i class="mdi mdi-lock-reset"></i>
-                    </span>
-                  </div>
-                  <div class="flex-1">
-                    <h6 class="mb-1">Admin password changed</h6>
-                    <div class="fs-12 text-muted">
-                      <p class="mb-0">
-                        <i class="mdi mdi-clock-outline"></i> 2 days ago
-                      </p>
-                    </div>
-                  </div>
-                  <i class="mdi mdi-chevron-right align-middle ms-2"></i>
-                </div>
-              </a>
-            </div>
-            <div class="p-2 border-top">
-              <div class="d-grid">
-                <a
-                  class="btn btn-sm btn-link font-size-14 text-center"
-                  href="javascript:void(0)"
-                >
-                  <i class="mdi mdi-arrow-right-circle me-1"></i> View More..
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="dropdown d-inline-block">
-          <button
-            type="button"
-            class="btn btn-sm top-icon p-0"
-            id="page-header-user-dropdown"
-            data-bs-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            <img
-              class="rounded avatar-2xs p-0"
-              src="assets/images/users/avatar-6.png"
-              alt="Header Avatar"
-            />
-          </button>
-          <div
-            class="dropdown-menu dropdown-menu-wide dropdown-menu-end dropdown-menu-animated overflow-hidden py-0"
-          >
-            <div class="card border-0">
-              <div class="card-header bg-primary rounded-0">
-                <div class="rich-list-item w-100 p-0">
-                  <div class="rich-list-prepend">
-                    <div class="avatar avatar-label-light avatar-circle">
-                      <div class="avatar-display">
-                        <i class="fas fa-user-circle"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="rich-list-content">
-                    <h3 class="rich-list-title text-white">Admin</h3>
-                    <span class="rich-list-subtitle text-white"
-                      >info@kavyainfoweb.com</span
-                    >
-                  </div>
-                  <div class="rich-list-append">
-                    <span class="badge badge-label-light fs-6">6+</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card-body p-0">
-                <div class="grid-nav grid-nav-flush grid-nav-action grid-nav-no-rounded">
-                  <div class="grid-nav-row">
-                    <a href="apps-contact.html" class="grid-nav-item">
-                      <div class="grid-nav-icon">
-                        <i class="fas fa-user-edit"></i>
-                      </div>
-                      <span class="grid-nav-content">My Profile</span>
-                    </a>
-                    <a href="trainer-profile.html" class="grid-nav-item">
-                      <div class="grid-nav-icon">
-                        <i class="fas fa-dumbbell"></i>
-                      </div>
-                      <span class="grid-nav-content">Trainer Profile</span>
-                    </a>
-                    <a href="#" class="grid-nav-item">
-                      <div class="grid-nav-icon">
-                        <i class="fas fa-running"></i>
-                      </div>
-                      <span class="grid-nav-content">Workout Logs</span>
-                    </a>
-                  </div>
-
-                  <div class="grid-nav-row">
-                    <a href="live-session.html" class="grid-nav-item">
-                      <div class="grid-nav-icon">
-                        <i class="far fa-calendar-check"></i>
-                      </div>
-                      <span class="grid-nav-content">Session Calendar</span>
-                    </a>
-                    <a href="diet-plan.html" class="grid-nav-item">
-                      <div class="grid-nav-icon">
-                        <i class="fas fa-apple-alt"></i>
-                      </div>
-                      <span class="grid-nav-content">Diet Notes</span>
-                    </a>
-                    <a href="#" class="grid-nav-item">
-                      <div class="grid-nav-icon">
-                        <i class="far fa-bell"></i>
-                      </div>
-                      <span class="grid-nav-content">Notifications</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card-footer card-footer-bordered rounded-0">
-                <a href="auth-login.html" class="btn btn-label-danger">Sign out</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        </div>
-    </div>
-    </div>
-</header>        <!-- End topbar -->
-
-            <!-- ========== Left Sidebar Start ========== -->
-        <div class="sidebar-left">
-
-            <div data-simplebar class="h-100">
-
-                <!--- Sidebar-menu -->
-                <div id="sidebar-menu">
-                    <!-- Left Menu Start -->
-                    <ul class="left-menu list-unstyled" id="side-menu">
-                        <li>
-                            <a href="index.html" class="">
-                                <i class="fas fa-desktop"></i>
-                                <span>Dashboard</span>
-                            </a>
-                        </li>
-
-                        <!-- <li class="menu-title">Elements</li> -->
-
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow ">
-                                <i class="fa fa-users"></i>
-                                <span>Member Management</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="add-new-member.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>Add New Member</a>
-                                </li>
-                                <li><a href="show-all-member.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>All Members</a>
-                                </li>
-                            </ul>
-                        </li>
-
-
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow ">
-                                <i class="fa fa-id-card-alt"></i>
-                                <span>Membership Plans</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li>
-                                    <a href="add-new-plan.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
-                                        Add New
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="view-plan.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
-                                        View Plan
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="manage-plan.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
-                                        Manage Plan
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow">
-                                <i class="fa fa-calendar-check"></i>
-                                <span>Session Management</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li>
-                                    <a href="live-session.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>Live Session
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="offline-session.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>Offline Session
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-
-
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow ">
-                                <i class="fa fa-user-tie"></i>
-                                <span>Staff Management</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                
-                                <li><a href="add-new-staff.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i> Add New</a>
-                                </li>
-                                <li><a href="show-all-staff.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i> All Staff Members</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow ">
-                                <i class="fa fa-wallet"></i>
-                                <span>Account Management</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-
-                                <!-- Show All -->
-                                <li>
-                                    <a href="add-new-account.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>Add New Account
-                                    </a>
-                                </li>
-
-                                <!-- Show All -->
-                                <li>
-                                    <a href="show-all-account.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i> All Accounts
-                                    </a>
-                                </li>
-
-                                <!-- Member Invoices with dropdown -->
-                                <li>
-                                    <a href="create-invoice.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i> Create Invoices
-                                    </a>
-                                </li>
-
-                                <!-- Payment History -->
-                                <li>
-                                    <a href="pyments.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i> Payment History
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="renewals.html">
-                                <i class="fa fa-sync-alt"></i>
-                                <span>Renewals</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="attendance.html">
-                                <i class="fa fa-calendar-check"></i>
-                                <span>Attendance</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow">
-                                  <i class="fa fa-chart-pie"></i>
-                                  <span>Reports</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-
-                                <!-- GYM-RELATED REPORTS -->
-                                <li>
-                                    <a href="membership-report.html">
-                                        <i class="mdi mdi-account-group-outline align-middle"></i> Membership Report
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="revenue-report.html">
-                                        <i class="mdi mdi-currency-inr align-middle"></i> Revenue Report
-                                    </a>
-                                </li>
-                             
-
-                                <!-- Existing Chart Pages -->
-
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="settings.html">
-                                <i class="fas fa-cog"></i>
-                                <span>Settings</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="auth-login.html">
-                                <i class="fas fa-sign-out-alt"></i>
-                                <span>Logout</span>
-                            </a>
-                        </li>
-
-
-                    </ul>
-                </div>
-                <!-- Sidebar -->
-            </div>
-        </div>
-        <!-- Left Sidebar End -->
-    <!-- Start right Content here -->
-        <!-- ============================================================== -->
-       <div class="main-content">
+      <div class="main-content">
         <div class="page-content">
           <div class="container-fluid">
-            <!-- start page title -->
             <div class="row">
               <div class="col-12">
                 <div
@@ -693,116 +813,940 @@
                       <li class="breadcrumb-item">
                         <a href="index.html">Home</a>
                       </li>
-                      <li class="breadcrumb-item active">Membersip Reports</li>
+                      <li class="breadcrumb-item active">MembershipReport</li>
                     </ol>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- end page title -->
+            <!-- end row -->
 
-            <div class="row mt-3">
-              <div class="col-sm-4 col-lg-2">
-                <label class="col-form-label text-sm-end">Select Date</label>
-              </div>
-              <div class="col-sm-5 col-lg-4" style="margin-left: -10%">
-                <div class="mb-2">
-                  <div class="input-group input-daterange">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="From"
-                      id="fromDate"
-                    />
-                    <span class="input-group-text">
-                      <i class="fa fa-ellipsis-h"></i>
-                    </span>
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="To"
-                      id="toDate"
-                    />
-                  </div>
+            <!-- Date Picker -->
+
+            <div class="card">
+              <div class="card-header">
+                <div class="card-icon">
+                  <i class="fas fa-rupee-sign fs-14 text-muted"></i>
                 </div>
+                <h4 class="card-title mb-0">Membership Report</h4>
               </div>
-              <div class="col-md-auto">
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  id="generateReportBtn"
-                >
-                  Generate Report
-                </button>
-              </div>
-            </div>
-
-            <div class="row" id="membershipReportTable" style="display: none">
-              <div class="col-12">
-                <div class="card">
-                  <div
-                    class="card-header d-flex justify-content-between align-items-center"
-                  >
-                    <h4 class="card-title mb-0">Membership Reports</h4>
-                    <div>
-                      <button
-                        class="btn btn-outline-primary me-2"
-                        id="filterAllBtn"
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-4 col-lg-6 mb-3">
+                    <div
+                      class="d-flex justify-content-between align-content-end shadow-lg p-3"
+                    >
+                      <div>
+                        <p class="text-muted text-truncate mb-2">
+                          Total Members
+                        </p>
+                        <h5 class="mb-0 fw-bold fs-4">1,240</h5>
+                        <div class="d-flex align-items-center mt-2">
+                          <i class="mdi mdi-menu-up text-success"></i>
+                          <span class="text-success ms-1"
+                            >Our Total Gym Members</span
+                          >
+                        </div>
+                      </div>
+                      <div
+                        class="rounded-circle bg-light d-flex align-items-center justify-content-center"
+                        style="width: 56px; height: 56px"
                       >
-                        All
-                      </button>
-                      <button
-                        class="btn btn-outline-success me-2"
-                        id="filterActiveBtn"
-                      >
-                        Active
-                      </button>
-                      <button
-                        class="btn btn-outline-danger me-2"
-                        id="filterExpiredBtn"
-                      >
-                        Expired
-                      </button>
-
-                      <button
-                        class="btn btn-outline-dark"
-                        onclick="printTable()"
-                      >
-                        Print
-                      </button>
+                        <i class="mdi mdi-currency-usd text-primary fs-4"></i>
+                      </div>
                     </div>
                   </div>
-                  <div class="card-body" id="printableTable">
-                    <table
-                      id="datatable"
-                      class="table table-hover table-bordered table-striped dt-responsive nowrap"
-                      style="width: 100%"
+
+                  <div class="col-sm-4 col-lg-6 mb-3">
+                    <div
+                      class="d-flex justify-content-between align-content-end shadow-lg p-3"
                     >
-                      <thead>
-                        <tr>
-                          <th>ID</th>
-                          <th>First Name</th>
-                          <th>Last Name</th>
-                          <th>Membership Type</th>
-                          <th>Status</th>
-                        </tr>
-                      </thead>
-                      <tbody></tbody>
-                    </table>
+                      <div>
+                        <p class="text-muted text-truncate mb-2">
+                          Upcomming Members Expired this Month
+                        </p>
+                        <h5 class="mb-0 fw-bold fs-4">45</h5>
+                        <div class="d-flex align-items-center mt-2">
+                          <i class="mdi mdi-menu-up text-success"></i>
+                          <span class="text-success ms-1">
+                            Upcomming month</span
+                          >
+                        </div>
+                      </div>
+                      <div
+                        class="rounded-circle bg-light d-flex align-items-center justify-content-center"
+                        style="width: 56px; height: 56px"
+                      >
+                        <i class="mdi mdi-trending-up text-primary fs-4"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4 col-lg-6 mb-3">
+                    <div
+                      class="d-flex justify-content-between align-content-end shadow-lg p-3"
+                    >
+                      <div>
+                        <p class="text-muted text-truncate mb-2">
+                          Active Members
+                        </p>
+                        <h5 class="mb-0 fw-bold fs-4">1200</h5>
+                        <div class="d-flex align-items-center mt-2">
+                          <i class="mdi mdi-menu-up text-success"></i>
+                          <span class="text-success ms-1"
+                            >Current Active Members</span
+                          >
+                        </div>
+                      </div>
+                      <div
+                        class="rounded-circle bg-light d-flex align-items-center justify-content-center"
+                        style="width: 56px; height: 56px"
+                      >
+                        <i
+                          class="mdi mdi-account-multiple text-primary fs-4"
+                        ></i>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4 col-lg-6 mb-3">
+                    <div
+                      class="d-flex justify-content-between align-content-end shadow-lg p-3"
+                    >
+                      <div>
+                        <p class="text-muted text-truncate mb-2">
+                          Expired Current Month
+                        </p>
+                        <h5 class="mb-0 fw-bold fs-4">40</h5>
+                        <div class="d-flex align-items-center mt-2">
+                          <i class="mdi mdi-menu-down text-danger"></i>
+                          <span class="text-danger ms-1">Expired Members</span>
+                        </div>
+                      </div>
+                      <div
+                        class="rounded-circle bg-light d-flex align-items-center justify-content-center"
+                        style="width: 56px; height: 56px"
+                      >
+                        <i class="mdi mdi-target text-primary fs-4"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <hr />
+                <div class="row mt-3">
+                  <div class="card-header">
+                    <div class="card-icon">
+                      <i class="fas fa-file-alt fs-14 text-muted"></i>
+                    </div>
+                    <h4 class="card-title mb-0">Generate Membership Report</h4>
+                  </div>
+
+                  <div class="col-md-4 mb-2 mt-4">
+                    <label
+                      for="fromDate"
+                      class="form-label text-muted fw-semibold"
+                      >From</label
+                    >
+                    <input
+                      type="date"
+                      class="form-control border-primary"
+                      id="fromDate"
+                      max=""
+                    />
+                  </div>
+                  <div class="col-md-4 mb-2 mt-4">
+                    <label
+                      for="toDate"
+                      class="form-label text-muted fw-semibold"
+                      >To</label
+                    >
+                    <input
+                      type="date"
+                      class="form-control border-primary"
+                      id="toDate"
+                      max=""
+                    />
+                  </div>
+                </div>
+
+                <div class="col-md-4 mt-4">
+                  <button
+                    class="btn btn-primary w-100 shadow-sm fw-semibold"
+                    onclick="showReportTable()"
+                  >
+                    Generate Report
+                  </button>
+                </div>
+
+                <div id="printable-report">
+                  <div
+                    id="reportTableContainer"
+                    class="mt-4"
+                    style="display: none"
+                  >
+                    <div class="shadow-sm">
+                      <div class="text-end mt-3 mb-3">
+                        <button
+                          class="btn btn-outline-primary print-btn"
+                          onclick="printReport()"
+                        >
+                          <i class="fa fa-print fs-14 text-muted"></i>
+                          Print Report
+                        </button>
+                      </div>
+                      <h4 class="card-title">Revenue Report</h4>
+                      <table
+                        id="datatable"
+                        class="table table-hover table-bordered table-striped dt-responsive nowrap"
+                        style="
+                          border-collapse: collapse;
+                          border-spacing: 0;
+                          width: 100%;
+                        "
+                      >
+                        <thead>
+                          <tr>
+                            <th>Id</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Membership Type</th>
+                            <th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr data-joindate="2025-06-26">
+                             
+                            <td>001</td>
+                             
+                            <td>Rishabh</td>
+                             
+                            <td>Deshmukh</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-danger">Expired</span>
+                            </td>
+                          </tr>
+                          <tr data-joindate="2025-05-11">
+                             
+                            <td>002</td>
+                             
+                            <td>Aarav</td>
+                             
+                            <td>Mehra</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-success">Active</span>
+                            </td>
+                          </tr>
+                          <tr data-joindate="2025-02-06">
+                             
+                            <td>003</td>
+                             
+                            <td>Diya</td>
+                             
+                            <td>Patel</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-danger">Expired</span>
+                            </td>
+                          </tr>
+                          <tr data-joindate="2025-09-14">
+                             
+                            <td>004</td>
+                             
+                            <td>Vivaan</td>
+                             
+                            <td>Sharma</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-danger">Expired</span>
+                            </td>
+                          </tr>
+                          <tr data-joindate="2025-12-25">
+                             
+                            <td>005</td>
+                             
+                            <td>Anaya</td>
+                             
+                            <td>Joshi</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-danger">Expired</span>
+                            </td>
+                          </tr>
+                          <tr data-joindate="2024-04-13">
+                             
+                            <td>006</td>
+                             
+                            <td>Krishna</td>
+                             
+                            <td>Iyer</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-success">Active</span>
+                            </td>
+                          </tr>
+                          <tr data-joindate="2023-01-03">
+                             
+                            <td>007</td>
+                             
+                            <td>Ishaan</td>
+                             
+                            <td>Choudhary</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-danger">Expired</span>
+                            </td>
+                          </tr>
+                          <tr data-joindate="2025-12-23">
+                             
+                            <td>008</td>
+                             
+                            <td>Meera</td>
+                             
+                            <td>Reddy</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-success">Active</span>
+                            </td>
+                          </tr>
+                          <tr data-joindate="2024-07-03">
+                             
+                            <td>009</td>
+                             
+                            <td>Yuvraj</td>
+                             
+                            <td>Kapoor</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-success">Active</span>
+                            </td>
+                          </tr>
+                          <tr data-joindate="2025-06-10">
+                             
+                            <td>010</td>
+                             
+                            <td>Saanvi</td>
+                             
+                            <td>Aggarwal</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-success">Active</span>
+                            </td>
+                          </tr>
+                          <tr data-joindate="2025-05-19">
+                             
+                            <td>011</td>
+                             
+                            <td>Arjun</td>
+                             
+                            <td>Bhatia</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-danger">Expired</span>
+                            </td>
+                          </tr>
+                          <tr data-joindate="2023-04-15">
+                             
+                            <td>012</td>
+                             
+                            <td>Kavya</td>
+                             
+                            <td>Nair</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-success">Active</span>
+                            </td>
+                          </tr>
+                          <tr data-joindate="2025-03-09">
+                             
+                            <td>013</td>
+                             
+                            <td>Advait</td>
+                             
+                            <td>Singh</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-success">Active</span>
+                            </td>
+                          </tr>
+                          <tr data-joindate="2025-05-27">
+                             
+                            <td>014</td>
+                             
+                            <td>Myra</td>
+                             
+                            <td>Malhotra</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-danger">Expired</span>
+                            </td>
+                          </tr>
+                          <tr data-joindate="2025-02-13">
+                             
+                            <td>015</td>
+                             
+                            <td>Parth</td>
+                             
+                            <td>Saxena</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-danger">Expired</span>
+                            </td>
+                          </tr>
+                          <tr data-joindate="2025-12-26">
+                             
+                            <td>016</td>
+                             
+                            <td>Riya</td>
+                             
+                            <td>Verma</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-success">Active</span>
+                            </td>
+                          </tr>
+                          <tr data-joindate="2024-09-17">
+                             
+                            <td>017</td>
+                             
+                            <td>Siddharth</td>
+                             
+                            <td>Pandey</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-danger">Expired</span>
+                            </td>
+                          </tr>
+                          <tr data-joindate="2023-05-25">
+                             
+                            <td>018</td>
+                             
+                            <td>Anika</td>
+                             
+                            <td>Kulkarni</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-success">Active</span>
+                            </td>
+                          </tr>
+                          <tr data-joindate="2025-10-12">
+                             
+                            <td>019</td>
+                             
+                            <td>Karan</td>
+                             
+                            <td>Thakur</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-danger">Expired</span>
+                            </td>
+                          </tr>
+                          <tr data-joindate="2025-11-22">
+                             
+                            <td>020</td>
+                             
+                            <td>Tanvi</td>
+                             
+                            <td>Bhatt</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-success">Active</span>
+                            </td>
+                          </tr>
+                          <tr data-joindate="2025-01-05">
+                             
+                            <td>021</td>
+                             
+                            <td>Kabir</td>
+                             
+                            <td>Singh</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-success">Active</span>
+                            </td>
+                          </tr>
+                          <tr data-joindate="2025-04-01">
+                             
+                            <td>022</td>
+                             
+                            <td>Aanya</td>
+                             
+                            <td>Gupta</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-danger">Expired</span>
+                            </td>
+                          </tr>
+                          <tr data-joindate="2025-08-20">
+                             
+                            <td>023</td>
+                             
+                            <td>Vivaan</td>
+                             
+                            <td>Mehra</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-success">Active</span>
+                            </td>
+                          </tr>
+                          <tr data-joindate="2025-07-07">
+                             
+                            <td>024</td>
+                             
+                            <td>Saisha</td>
+                             
+                            <td>Patel</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-success">Active</span>
+                            </td>
+                          </tr>
+                          <tr data-joindate="2024-03-10">
+                             
+                            <td>025</td>
+                             
+                            <td>Dev</td>
+                             
+                            <td>Sharma</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-danger">Expired</span>
+                            </td>
+                          </tr>
+                          <tr data-joindate="2024-11-29">
+                             
+                            <td>026</td>
+                             
+                            <td>Kiara</td>
+                             
+                            <td>Reddy</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-success">Active</span>
+                            </td>
+                          </tr>
+                          <tr data-joindate="2023-02-18">
+                             
+                            <td>027</td>
+                             
+                            <td>Rohan</td>
+                             
+                            <td>Malhotra</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-danger">Expired</span>
+                            </td>
+                          </tr>
+                          <tr data-joindate="2023-06-05">
+                             
+                            <td>028</td>
+                             
+                            <td>Priya</td>
+                             
+                            <td>Singh</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-success">Active</span>
+                            </td>
+                          </tr>
+                          <tr data-joindate="2023-08-11">
+                             
+                            <td>029</td>
+                             
+                            <td>Veer</td>
+                             
+                            <td>Bhatia</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-success">Active</span>
+                            </td>
+                          </tr>
+                          <tr data-joindate="2024-01-22">
+                             
+                            <td>030</td>
+                             
+                            <td>Mira</td>
+                             
+                            <td>Saxena</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-danger">Expired</span>
+                            </td>
+                          </tr>
+                          <tr data-joindate="2024-02-10">
+                             
+                            <td>031</td>
+                             
+                            <td>Anil</td>
+                             
+                            <td>Verma</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-success">Active</span>
+                            </td>
+                          </tr>
+
+                          <tr data-joindate="2024-03-15">
+                             
+                            <td>032</td>
+                             
+                            <td>Kavya</td>
+                             
+                            <td>Mehta</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-danger">Expired</span>
+                            </td>
+                          </tr>
+
+                          <tr data-joindate="2024-04-05">
+                             
+                            <td>033</td>
+                             
+                            <td>Rohan</td>
+                             
+                            <td>Shah</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-success">Active</span>
+                            </td>
+                          </tr>
+
+                          <tr data-joindate="2024-06-20">
+                             
+                            <td>034</td>
+                             
+                            <td>Neha</td>
+                             
+                            <td>Patel</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-danger">Expired</span>
+                            </td>
+                          </tr>
+
+                          <tr data-joindate="2024-12-01">
+                             
+                            <td>035</td>
+                             
+                            <td>Vikas</td>
+                             
+                            <td>Reddy</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-danger">Expired</span>
+                            </td>
+                          </tr>
+                          <tr data-joindate="2025-01-12">
+                             
+                            <td>036</td>
+                             
+                            <td>Isha</td>
+                             
+                            <td>Singh</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-success">Active</span>
+                            </td>
+                          </tr>
+
+                          <tr data-joindate="2025-01-28">
+                             
+                            <td>037</td>
+                             
+                            <td>Raj</td>
+                             
+                            <td>Kumar</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-danger">Expired</span>
+                            </td>
+                          </tr>
+
+                          <tr data-joindate="2025-02-08">
+                             
+                            <td>038</td>
+                             
+                            <td>Tanvi</td>
+                             
+                            <td>Joshi</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-success">Active</span>
+                            </td>
+                          </tr>
+
+                          <tr data-joindate="2025-02-19">
+                             
+                            <td>039</td>
+                             
+                            <td>Rajat</td>
+                             
+                            <td>Kapoor</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-danger">Expired</span>
+                            </td>
+                          </tr>
+
+                          <tr data-joindate="2025-03-03">
+                             
+                            <td>040</td>
+                             
+                            <td>Divya</td>
+                             
+                            <td>Nair</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-danger">Expired</span>
+                            </td>
+                          </tr>
+
+                          <tr data-joindate="2025-03-22">
+                             
+                            <td>041</td>
+                             
+                            <td>Aman</td>
+                             
+                            <td>Das</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-success">Active</span>
+                            </td>
+                          </tr>
+
+                          <tr data-joindate="2025-04-10">
+                             
+                            <td>042</td>
+                             
+                            <td>Nisha</td>
+                             
+                            <td>Thakur</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-danger">Expired</span>
+                            </td>
+                          </tr>
+
+                          <tr data-joindate="2025-04-29">
+                             
+                            <td>043</td>
+                             
+                            <td>Arjun</td>
+                             
+                            <td>Chauhan</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-success">Active</span>
+                            </td>
+                          </tr>
+
+                          <tr data-joindate="2025-05-04">
+                             
+                            <td>044</td>
+                             
+                            <td>Preeti</td>
+                             
+                            <td>Bajaj</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-danger">Expired</span>
+                            </td>
+                          </tr>
+
+                          <tr data-joindate="2025-05-18">
+                             
+                            <td>045</td>
+                             
+                            <td>Yash</td>
+                             
+                            <td>Saini</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-success">Active</span>
+                            </td>
+                          </tr>
+
+                          <tr data-joindate="2025-06-02">
+                             
+                            <td>046</td>
+                             
+                            <td>Meera</td>
+                             
+                            <td>Jain</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-danger">Expired</span>
+                            </td>
+                          </tr>
+
+                          <tr data-joindate="2025-06-13">
+                             
+                            <td>047</td>
+                             
+                            <td>Deepak</td>
+                             
+                            <td>Gill</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-success">Active</span>
+                            </td>
+                          </tr>
+
+                          <tr data-joindate="2025-07-01">
+                             
+                            <td>048</td>
+                             
+                            <td>Shruti</td>
+                             
+                            <td>Malhotra</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-success">Active</span>
+                            </td>
+                          </tr>
+
+                          <tr data-joindate="2025-07-15">
+                             
+                            <td>049</td>
+                             
+                            <td>Mohit</td>
+                             
+                            <td>Goyal</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-danger">Expired</span>
+                            </td>
+                          </tr>
+
+                          <tr data-joindate="2025-07-27">
+                             
+                            <td>050</td>
+                             
+                            <td>Simran</td>
+                             
+                            <td>Arora</td>
+                             
+                            <td>1 Month Plan</td>
+                             
+                            <td>
+                              <span class="badge text-bg-success">Active</span>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-
-            <!-- end row -->
           </div>
-          <!-- container-fluid -->
         </div>
-        <!-- End Page-content -->
       </div>
-      <!-- end main content-->
+      <!-- end container-fluid -->
     </div>
-    <!-- END layout-wrapper -->
+    <!-- End Page-content -->
+
     <footer class="footer">
       <div class="container-fluid">
         <div class="row align-items-center">
@@ -814,7 +1758,8 @@
           </div>
           <div class="col-sm-6">
             <div class="text-sm-end d-none d-sm-block">
-              Designed & Developed <i class="mdi mdi-heart text-danger"></i> by
+              Designed & Developed
+              <i class="mdi mdi-heart text-danger"></i> by
               <a
                 href="https://kavyainfoweb.com/"
                 target="_blank"
@@ -826,6 +1771,10 @@
         </div>
       </div>
     </footer>
+
+    <!-- end main content-->
+
+    <!-- end layout-wrapper -->
 
     <div
       class="custom-setting bg-primary pe-0 d-flex flex-column rounded-start"
@@ -840,8 +1789,6 @@
       </button>
     </div>
 
-  
-
     <!-- JAVASCRIPT -->
     <script src="assets/libs/jquery/jquery.min.js"></script>
     <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -853,322 +1800,36 @@
     <script src="assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
     <script src="assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
 
-    <!-- buttons examples -->
-    <script src="assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="assets/libs/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
-    <script src="assets/libs/datatables.net-buttons/js/buttons.colVis.min.js"></script>
-
     <!-- Responsive examples -->
     <script src="assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
     <script src="assets/libs/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
 
-    <!-- Datatable init js -->
-    <script src="assets/js/pages/datatables-advanced.init.js"></script>
+    <!-- apexcharts -->
+    <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+    <script src="assets/js/pages/dashboard.init.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.js"></script>
+    <!-- apexcharts -->
+
+    <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+    <!-- apexcharts -->
+
+    <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+    <!-- mixed charts init -->
+
+    <script src="assets/js/pages/apexcharts-mixed.init.js"></script>
+
+    <!-- Bootstrap datepicker -->
 
     <script src="assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+
     <script src="assets/js/pages/form-datepicker.init.js"></script>
+    <!-- <script src="assets/js/membership-report.js"></script> -->
 
-    <!-- Bootstrap Datepicker -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.10.0/dist/css/bootstrap-datepicker.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.10.0/dist/js/bootstrap-datepicker.min.js"></script>
-
-    <script src="assets/js/app.js"></script>
-
-    <script>
-   
-     function printTable() {
-        const printContents =
-          document.getElementById("printableTable").innerHTML;
-        const originalContents = document.body.innerHTML;
-
-        document.body.innerHTML = printContents;
-        window.print();
-        document.body.innerHTML = originalContents;
-        location.reload(); // Reload to restore JS state and event bindings
-      }
-      
-
-      $(document).ready(function () {
-        $(".input-daterange").datepicker({
-          todayBtn: "linked",
-          format: "mm/dd/yyyy",
-          autoclose: true,
-          endDate: "today", // This line prevents future dates from being selected
-        });
-
-        let dataTable = $("#datatable").DataTable({
-          language: {
-            paginate: {
-              previous: "<i class='mdi mdi-chevron-left'>",
-              next: "<i class='mdi mdi-chevron-right'>",
-            },
-          },
-          drawCallback: function () {
-            $(".dataTables_paginate > .pagination").addClass("pagination");
-          },
-          data: [],
-          columns: [
-            { data: "id" },
-            { data: "firstName" },
-            { data: "lastName" },
-            { data: "membershipType" },
-            {
-              data: "status",
-              render: function (data, type, row) {
-                let badgeClass = data === "Active" ? "bg-success" : "bg-danger";
-                return `<span class="badge ${badgeClass}">${data}</span>`;
-              },
-            },
-          ],
-          responsive: true, // Ensure responsive is enabled
-        });
-
-        // Force DataTables to recalculate its responsive layout on window resize
-        // This helps ensure the table expands fully when moving from mobile to desktop view
-        $(window).on("resize", function () {
-          if (dataTable.responsive) {
-            // Check if responsive extension is available
-            dataTable.responsive.recalc();
-          }
-        });
-
-        // Also trigger recalculation on initial load
-        if (dataTable.responsive) {
-          dataTable.responsive.recalc();
-        }
-
-        const allDummyData = [
-          {
-            id: 1,
-            firstName: "Tiger",
-            lastName: "Nixon",
-            membershipType: "Premium",
-            status: "Active",
-            registrationDate: "01/15/2024",
-          },
-          {
-            id: 2,
-            firstName: "Garrett",
-            lastName: "Winters",
-            membershipType: "Standard",
-            status: "Active",
-            registrationDate: "02/20/2024",
-          },
-          {
-            id: 3,
-            firstName: "Ashton",
-            lastName: "Cox",
-            membershipType: "Basic",
-            status: "Expired",
-            registrationDate: "03/10/2024",
-          },
-          {
-            id: 4,
-            firstName: "Cedric",
-            lastName: "Kelly",
-            membershipType: "Premium",
-            status: "Active",
-            registrationDate: "04/01/2024",
-          },
-          {
-            id: 5,
-            firstName: "Airi",
-            lastName: "Satou",
-            membershipType: "Standard",
-            status: "Active",
-            registrationDate: "05/05/2024",
-          },
-          {
-            id: 6,
-            firstName: "Brielle",
-            lastName: "Williamson",
-            membershipType: "Premium",
-            status: "Expired",
-            registrationDate: "06/25/2024",
-          },
-          {
-            id: 7,
-            firstName: "Herrod",
-            lastName: "Chandler",
-            membershipType: "Basic",
-            status: "Active",
-            registrationDate: "07/12/2024",
-          },
-          {
-            id: 8,
-            firstName: "Rhona",
-            lastName: "Davidson",
-            membershipType: "Premium",
-            status: "Active",
-            registrationDate: "08/18/2024",
-          },
-          {
-            id: 9,
-            firstName: "Colleen",
-            lastName: "Hurst",
-            membershipType: "Standard",
-            status: "Expired",
-            registrationDate: "09/03/2024",
-          },
-          {
-            id: 10,
-            firstName: "Sonya",
-            lastName: "Frost",
-            membershipType: "Premium",
-            status: "Active",
-            registrationDate: "10/30/2024",
-          },
-          {
-            id: 11,
-            firstName: "Jena",
-            lastName: "Gaines",
-            membershipType: "Basic",
-            status: "Active",
-            registrationDate: "11/01/2024",
-          },
-          {
-            id: 12,
-            firstName: "Quinn",
-            lastName: "Flynn",
-            membershipType: "Standard",
-            status: "Expired",
-            registrationDate: "12/14/2024",
-          },
-          {
-            id: 13,
-            firstName: "Charde",
-            lastName: "Marshall",
-            membershipType: "Premium",
-            status: "Active",
-            registrationDate: "01/01/2025",
-          },
-          {
-            id: 14,
-            firstName: "Haley",
-            lastName: "Kennedy",
-            membershipType: "Basic",
-            status: "Active",
-            registrationDate: "02/10/2025",
-          },
-          {
-            id: 15,
-            firstName: "Tatyana",
-            lastName: "Fitzpatrick",
-            membershipType: "Standard",
-            status: "Expired",
-            registrationDate: "03/22/2025",
-          },
-          {
-            id: 16,
-            firstName: "Michael",
-            lastName: "Silva",
-            membershipType: "Premium",
-            status: "Active",
-            registrationDate: "04/05/2025",
-          },
-          {
-            id: 17,
-            firstName: "Paul",
-            lastName: "Byrd",
-            membershipType: "Basic",
-            status: "Active",
-            registrationDate: "05/19/2025",
-          },
-          {
-            id: 18,
-            firstName: "Gloria",
-            lastName: "Little",
-            membershipType: "Standard",
-            status: "Expired",
-            registrationDate: "06/01/2025",
-          },
-          {
-            id: 19,
-            firstName: "Bradley",
-            lastName: "Greer",
-            membershipType: "Premium",
-            status: "Active",
-            registrationDate: "07/15/2025",
-          },
-          {
-            id: 20,
-            firstName: "Dai",
-            lastName: "Rios",
-            membershipType: "Basic",
-            status: "Expired",
-            registrationDate: "07/28/2025",
-          },
-        ];
-
-        function filterData(data, fromDateStr, toDateStr) {
-          let filtered = data;
-
-          if (fromDateStr && toDateStr) {
-            const fromDate = new Date(fromDateStr);
-            const toDate = new Date(toDateStr);
-            toDate.setHours(23, 59, 59, 999); // Set to end of the day
-
-            filtered = filtered.filter((row) => {
-              const registrationDate = new Date(row.registrationDate);
-              return registrationDate >= fromDate && registrationDate <= toDate;
-            });
-          }
-
-          return filtered;
-        }
-
-        let lastFilteredData = [];
-
-        $("#generateReportBtn").on("click", function () {
-          const fromDate = $("#fromDate").val();
-          const toDate = $("#toDate").val();
-
-          if (fromDate && toDate) {
-            $("#membershipReportTable").show();
-            lastFilteredData = filterData(allDummyData, fromDate, toDate);
-            dataTable.clear().rows.add(lastFilteredData).draw();
-            // After drawing, ensure responsive recalculation
-            if (dataTable.responsive) {
-              dataTable.responsive.recalc();
-            }
-          } else {
-            alert("Please select both From Date and To Date.");
-          }
-        });
-
-        $("#filterActiveBtn").on("click", function () {
-          const activeData = lastFilteredData.filter(
-            (row) => row.status === "Active"
-          );
-          dataTable.clear().rows.add(activeData).draw();
-          // After drawing, ensure responsive recalculation
-          if (dataTable.responsive) {
-            dataTable.responsive.recalc();
-          }
-        });
-
-        $("#filterExpiredBtn").on("click", function () {
-          const expiredData = lastFilteredData.filter(
-            (row) => row.status === "Expired"
-          );
-          dataTable.clear().rows.add(expiredData).draw();
-          // After drawing, ensure responsive recalculation
-          if (dataTable.responsive) {
-            dataTable.responsive.recalc();
-          }
-        });
-
-        $("#filterAllBtn").on("click", function () {
-          dataTable.clear().rows.add(lastFilteredData).draw();
-          // After drawing, ensure responsive recalculation
-          if (dataTable.responsive) {
-            dataTable.responsive.recalc();
-          }
-        });
-      });
-    </script>
+ 
   </body>
 </html>
