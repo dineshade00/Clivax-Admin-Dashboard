@@ -1,4 +1,3 @@
-// Toggle between Staff and Member History Tabs
 function showHistory(tabId) {
   document.getElementById("staffHistory").style.display = "none";
   document.getElementById("memberHistory").style.display = "none";
@@ -11,7 +10,6 @@ function showHistory(tabId) {
   else buttons[1].classList.add("active");
 }
 
-// Dummy Data Arrays (Replace with actual data as needed)
 const staffData = [
   {
     name: "Shubham Khodke",
@@ -52,7 +50,6 @@ const memberData = [
   },
 ];
 
-// Load Data into Tables
 function loadHistoryData() {
   const staffBody = document.getElementById("staffHistoryBody");
   staffBody.innerHTML = "";
@@ -67,7 +64,7 @@ function loadHistoryData() {
         <td>₹${item.amount}</td>
         <td>${item.date}</td>
         <td>${item.mode}</td>
-        <td>
+        <td class="no-print">
           <button class="btn btn-sm btn-info" onclick='printIndividualStaff(${JSON.stringify(
             item
           )})'>
@@ -89,7 +86,7 @@ function loadHistoryData() {
         <td>${item.type}</td>
         <td>₹${item.amount}</td>
         <td>${item.date}</td>
-        <td>
+        <td class="no-print">
           <button class="btn btn-sm btn-info" onclick='printIndividualMember(${JSON.stringify(
             item
           )})'>
@@ -104,7 +101,6 @@ function loadHistoryData() {
 
 document.addEventListener("DOMContentLoaded", loadHistoryData);
 
-// Print Entire Section (Used for full tables)
 function printSection(sectionId) {
   const section = document.getElementById(sectionId);
   const printWindow = window.open("", "", "height=600,width=800");
@@ -118,6 +114,11 @@ function printSection(sectionId) {
         table { width: 100%; border-collapse: collapse; }
         th, td { border: 1px solid #000; padding: 8px; text-align: left; }
         h4 { text-align: center; }
+        @media print {
+          .no-print, .no-print * {
+            display: none !important;
+          }
+        }
       </style>
     </head>
     <body>${section.innerHTML}</body>
@@ -129,7 +130,6 @@ function printSection(sectionId) {
   printWindow.close();
 }
 
-// Print Individual Staff
 function printIndividualStaff(staff) {
   const html = `
     <h4>STAFF SALARY PAYMENT HISTORY</h4>
@@ -165,7 +165,6 @@ function printIndividualStaff(staff) {
   printWindow.close();
 }
 
-// Print Individual Member
 function printIndividualMember(member) {
   const html = `
     <h4>MEMBER BILL PAYMENT HISTORY</h4>
@@ -192,31 +191,6 @@ function printIndividualMember(member) {
     <body>${html}</body>
     </html>
   `);
-  printWindow.document.close();
-  printWindow.focus();
-  printWindow.print();
-  printWindow.close();
-}
-
-function printSection(sectionId) {
-  const section = document.getElementById(sectionId);
-  const sectionContent = section.innerHTML;
-  const printWindow = window.open("", "", "height=600,width=800");
-  printWindow.document.write(`
-    <html><head><title>Print History</title>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-      <style>
-        body { padding: 20px; }
-        table { width: 100%; border-collapse: collapse; }
-        th, td { border: 1px solid #000; padding: 8px; text-align: left; }
-        h4 { text-align: center; }
-        @media print {
-          button, #printStaffBtn {
-            display: none !important;
-          }
-        }
-      </style>
-    </head><body>${sectionContent}</body></html>`);
   printWindow.document.close();
   printWindow.focus();
   printWindow.print();
