@@ -24,8 +24,7 @@
     <!-- App Css-->
     <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
     <link href="assets/css/pyment.css" rel="stylesheet">
-   
-
+ 
 </head>
 
 <body>
@@ -523,6 +522,9 @@
                                 <li><a href="add-new-staff.html">
                                         <i class="mdi mdi-checkbox-blank-circle align-middle"></i> Add New</a>
                                 </li>
+                                <li><a href="manage-staff.html">
+                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i> Manage Staff</a>
+                                </li>
                                 <li><a href="show-all-staff.html">
                                         <i class="mdi mdi-checkbox-blank-circle align-middle"></i> All Staff Members</a>
                                 </li>
@@ -634,129 +636,112 @@
         <div class="main-content">
 
             <div class="page-content">
-                <div class="container-fluid">
+  <div class="container-fluid">
+    <!-- Page Title -->
+    <div class="row">
+      <div class="col-12">
+        <div class="page-title-box d-flex align-items-center justify-content-between">
+          <h4 class="mb-sm-0">PAYMENT HISTORY</h4>
+          <div class="page-title-right">
+            <ol class="breadcrumb m-0">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item active">All Payment History</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
 
-                    <!-- start page title -->
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0"> PAYMENT HISTORY</h4>
+    <!-- Tabs -->
+    <ul class="nav nav-tabs my-4" id="historyTabs">
+      <li class="nav-item">
+        <button class="nav-link active" onclick="showHistory('staffHistory')">Staff Salary History</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" onclick="showHistory('memberHistory')">Member Payment History</button>
+      </li>
+    </ul>
 
-                                <div class="page-title-right">
-                                    <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                        <li class="breadcrumb-item active">All Payment History</li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end page title -->
+    <!-- Staff Salary History -->
+    <div id="staffHistory">
+      <div class="card">
+        <div class="card-header card-header-bordered">
+          <h4 class="card-title mb-0">STAFF SALARY PAYMENT HISTORY</h4>
+        </div>
+        <div class="card-body table-responsive">
+          <table class="table table-bordered table-hover align-middle text-center">
+            <thead>
+              <tr>
+                <th style="background-color: #38C66C;">Staff Name</th>
+                <th style="background-color: #38C66C;">Staff ID</th>
+                <th style="background-color: #38C66C;">Job Role</th>
+                <th style="background-color: #38C66C;">Account No</th>
+                <th style="background-color: #38C66C;">Bank</th>
+                <th style="background-color: #38C66C;">Amount (₹)</th>
+                <th style="background-color: #38C66C;">Salary Date</th>
+                <th style="background-color: #38C66C;">Payment Mode</th>
+                <th style="background-color: #38C66C;" class="no-print">Action</th>
+              </tr>
+            </thead>
+            <tbody id="staffHistoryBody" style="text-align: center;"></tbody>
+          </table>
+          <div class="text-end mt-3">
+            <button id="printStaffBtn" class="btn btn-outline-primary no-print " onclick="printSection('staffHistory')">
+              🖨️ Print All Staff History
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- Member Payment History -->
+    <div id="memberHistory" style="display: none;">
+      <div class="card">
+        <div class="card-header card-header-bordered">
+          <h4 class="card-title mb-0">MEMBER BILL PAYMENT HISTORY</h4>
+        </div>
+        <div class="card-body table-responsive">
+          <table class="table table-bordered table-hover align-middle text-center">
+            <thead>
+              <tr>
+                <th style="background-color: #38C66C;">Member Name</th>
+                <th style="background-color: #38C66C;">Member ID</th>
+                <th style="background-color: #38C66C;">Membership Type</th>
+                <th style="background-color: #38C66C;">Amount (₹)</th>
+                <th style="background-color: #38C66C;">Billing Date</th>
+                <th style="background-color: #38C66C;" class="no-print">Action</th>
+              </tr>
+            </thead>
+            <tbody id="memberHistoryBody" style="text-align: center;"></tbody>
+          </table>
+          <div class="text-end mt-3">
+            <button class="btn btn-outline-primary no-print" onclick="printSection('memberHistory')">
+              🖨️ Print All Member History
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-                    <!-- Add this in the body section -->
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div class="col-sm-6">
+          <script>document.write(new Date().getFullYear())</script> © Clivax Gym.
+        </div>
+        <div class="col-sm-6">
+          <div class="text-sm-end d-none d-sm-block">
+            Designed & Developed <i class="mdi mdi-heart text-danger"></i> by
+            <a href="https://kavyainfoweb.com/" target="_blank" class="text-muted">Kavya Infoweb Pvt. Ltd.</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
 
-                    <!-- Payment History Tabs -->
-                    <ul class="nav nav-tabs my-4" id="historyTabs">
-                        <li class="nav-item">
-                            <button class="nav-link active" onclick="showHistory('staffHistory')">Staff Salary
-                                History</button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="nav-link" onclick="showHistory('memberHistory')">Member Payment
-                                History</button>
-                        </li>
-                    </ul>
-
-                    <!-- Staff Salary History Table -->
-                    <div id="staffHistory">
-                        <div class="card">
-                            <div class="card-header card-header-bordered">
-                                <h4 class="card-title mb-0">STAFF SALARY PAYMENT HISTORY</h4>
-                            </div>
-                            <div class="card-body table-responsive">
-                                <table class="table table-bordered table-hover align-middle text-center">
-                                    <thead>
-                                        <tr>
-                                            <th style="background-color: #38C66C;">Staff Name</th>
-                                            <th style="background-color: #38C66C;">Staff ID</th>
-                                            <th style="background-color: #38C66C;">Job Role</th>
-                                            <th style="background-color: #38C66C;">Account No</th>
-                                            <th style="background-color: #38C66C;">Bank</th>
-                                            <th style="background-color: #38C66C;">Amount (₹)</th>
-                                            <th style="background-color: #38C66C;">Salary Date</th>
-                                            <th style="background-color: #38C66C;">Payment Mode</th>
-                                            <th style="background-color: #38C66C;">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="staffHistoryBody" style="text-align: center;">
-                                        <!-- Dynamic entries will appear here -->
-                                    </tbody>
-                                </table>
-                                <div class="text-end mt-3">
-                                    <button id="printStaffBtn" class="btn btn-outline-primary"
-                                        onclick="printSection('staffHistory')">
-                                        🖨️ Print All Staff History
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Member Payment History Table -->
-                    <div id="memberHistory" style="display: none;">
-                        <div class="card">
-                            <div class="card-header card-header-bordered">
-                                <h4 class="card-title mb-0">MEMBER BILL PAYMENT HISTORY</h4>
-                            </div>
-                            <div class="card-body table-responsive">
-                                <table class="table table-bordered table-hover align-middle text-center">
-                                    <thead>
-                                        <tr>
-                                            <th style="background-color: #38C66C;">Member Name</th>
-                                            <th style="background-color: #38C66C;">Member ID</th>
-                                            <th style="background-color: #38C66C;">Membership Type</th>
-                                            <th style="background-color: #38C66C;">Amount (₹)</th>
-                                            <th style="background-color: #38C66C;">Billing Date</th>
-                                            <th style="background-color: #38C66C;">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="memberHistoryBody" style="text-align: center;">
-                                        <!-- Dynamic entries will appear here -->
-                                    </tbody>
-                                </table>
-                                <div class="text-end mt-3">
-                                    <button class="btn btn-outline-primary" onclick="printSection('memberHistory')">🖨️
-                                        Print Member History</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-                <!-- End Page-content -->
-
-                <footer class="footer">
-                    <div class="container-fluid">
-                        <div class="row align-items-center">
-                            <div class="col-sm-6">
-                                <script>document.write(new Date().getFullYear())</script> © Clivax Gym.
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="text-sm-end d-none d-sm-block">
-                                    Designed & Developed <i class="mdi mdi-heart text-danger"></i> by <a
-                                        href="https://kavyainfoweb.com/" target="_blank" class="text-muted">Kavya
-                                        Infoweb
-                                        Pvt. Ltd.</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-
-
-            </div>
             <!-- end main content-->
         </div>
         <!-- end layout-wrapper -->
