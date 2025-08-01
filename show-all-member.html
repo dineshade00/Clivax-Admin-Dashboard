@@ -62,17 +62,13 @@
       referrerpolicy="no-referrer"
     />
 
-     <style>
+ <style>
       @media print {
-        /* This rule forces the browser to print all background images and colors */
         body {
           -webkit-print-color-adjust: exact;
           print-color-adjust: exact;
         }
 
-        /* Target the card content specifically to ensure its background is printed */
-
-        /* Hide the print button itself on the printed page */
         .btn.btn-sm.btn-secondary {
           display: none !important;
         }
@@ -92,26 +88,8 @@
           width: 100%;
         }
       }
-    </style>
-  </head>
+    </style>  </head>
 
-  <style>
-    @media print {
-      body * {
-        visibility: hidden;
-      }
-      #cardContentToPrint,
-      #cardContentToPrint * {
-        visibility: visible;
-      }
-      #cardContentToPrint {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-      }
-    }
-  </style>
 
   <body>
     <!-- Begin page -->
@@ -873,7 +851,7 @@
                 </div>
               </div>
             </div>
-                 <div
+      <div
               class="modal fade"
               id="membershipCardModal"
               tabindex="-1"
@@ -906,27 +884,25 @@
                     </div>
                     <div
                       style="
-                        border: 2px solid #000; /* Original outer black border */
+                        border: 2px solid #000;
                         border-radius: 10px;
-
                         padding: 20px;
                         position: relative;
-                        /* Applying the light, ethereal background here */
                         background-image: url(assets/images/cardimg2.jpg);
-
                         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08),
-                          /* Soft general shadow */ inset 0 1px 3px
-                            rgba(255, 255, 255, 0.7); /* Very light inner highlight */
-                        color: #333333; /* Default text color to dark grey */
-                        border: 1px solid #e0e0e0; /* A very faint, almost invisible border */
-                        transition: all 0.3s ease; /* Smooth transitions */
+                          inset 0 1px 3px rgba(255, 255, 255, 0.7);
+                        color: #333333;
+                        border: 1px solid #e0e0e0;
+                        transition: all 0.3s ease;
                       "
                     >
                       <div>
-                        <h4 style="color: #333333">
+                        <h4 style="color: #333333; font-size: 15px">
                           <strong>CLIVAX GYM</strong>
                         </h4>
-                        <p><strong id="cardMemberId">#CA-xxxxx</strong></p>
+                        <p style="font-size: 15px">
+                          <strong id="cardMemberId">#CA-xxxxx</strong>
+                        </p>
                         <div
                           style="
                             display: flex;
@@ -936,15 +912,17 @@
                           "
                         >
                           <div style="flex: 1; padding-right: 20px">
-                            <p>
+                            <p style="font-size: 15px">
                               <strong id="cardName">Name</strong>
                             </p>
-                            <p id="cardAddress">Address</p>
-                            <p>
+                            <p id="cardAddress" style="font-size: 15px">
+                              Address
+                            </p>
+                            <p style="font-size: 15px">
                               <strong>MEMBERSHIP:</strong>
                               <span id="cardType">Type</span>
                             </p>
-                            <p>
+                            <p style="font-size: 15px">
                               <small
                                 >VALID TILL:
                                 <span id="cardValidTill"
@@ -958,7 +936,6 @@
                               src="/mnt/data/b736b69f-2b26-4143-be1a-bcb3ec5ab0c3.png"
                               alt="Profile"
                               width="100"
-                              height="130"
                               style="
                                 border-radius: 10px;
                                 border: 1px solid #cccccc;
