@@ -1,1149 +1,1782 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-
+  <head>
     <meta charset="utf-8" />
     <title>Dashboard | Clivax - Admin Dashboard</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      content="Premium Multipurpose Admin & Dashboard Template"
+      name="description"
+    />
     <meta content="Codebucks" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
-
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
 
     <!-- dark layout js -->
     <script src="assets/js/pages/layout.js"></script>
 
     <!-- Bootstrap Css -->
-    <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <link
+      href="assets/css/bootstrap.min.css"
+      id="bootstrap-style"
+      rel="stylesheet"
+      type="text/css"
+    />
     <!-- Icons Css -->
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- simplebar css -->
-    <link href="assets/libs/simplebar/simplebar.min.css" rel="stylesheet">
+    <link href="assets/libs/simplebar/simplebar.min.css" rel="stylesheet" />
     <!-- App Css-->
-    <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <link
+      href="assets/css/app.min.css"
+      id="app-style"
+      rel="stylesheet"
+      type="text/css"
+    />
     <style>
-        .combined-slider::-webkit-scrollbar {
-            display: none;
-        }
+      .combined-slider::-webkit-scrollbar {
+        display: none;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <div id="layout-wrapper">
+      <!-- Start topbar -->
+      <header id="page-topbar">
+        <div class="navbar-header">
+          <!-- Logo -->
 
+          <!-- Start Navbar-Brand -->
+          <div class="navbar-logo-box">
+            <a href="index.html" class="logo logo-dark">
+              <span class="logo-sm">
+                <img
+                  src="assets/images/logo-sm.png"
+                  alt="logo-sm-dark"
+                  height="20"
+                />
+              </span>
+              <span class="logo-lg">
+                <img
+                  src="assets/images/logo-dark.png"
+                  alt="logo-dark"
+                  height="18"
+                />
+              </span>
+            </a>
 
-        <!-- Start topbar -->
-        <header id="page-topbar">
-            <div class="navbar-header">
+            <a href="index.html" class="logo logo-light">
+              <span class="logo-sm">
+                <img
+                  src="assets/images/logo-sm.png"
+                  alt="logo-sm-light"
+                  height="20"
+                />
+              </span>
+              <span class="logo-lg">
+                <img
+                  src="assets/images/logo-light.png"
+                  alt="logo-light"
+                  height="18"
+                />
+              </span>
+            </a>
 
-                <!-- Logo -->
+            <button
+              type="button"
+              class="btn btn-sm top-icon sidebar-btn"
+              id="sidebar-btn"
+            >
+              <i class="mdi mdi-menu-open align-middle fs-19"></i>
+            </button>
+          </div>
+          <!-- End navbar brand -->
 
-                <!-- Start Navbar-Brand -->
-                <div class="navbar-logo-box">
-                    <a href="index.html" class="logo logo-dark">
-                        <span class="logo-sm">
-                            <img src="assets/images/logo-sm.png" alt="logo-sm-dark" height="20">
-                        </span>
-                        <span class="logo-lg">
-                            <img src="assets/images/logo-dark.png" alt="logo-dark" height="18">
-                        </span>
-                    </a>
+          <!-- Start menu -->
+          <div class="d-flex justify-content-between menu-sm px-3 ms-auto">
+            <div class="d-flex align-items-center gap-2">
+              <div class="dropdown d-none d-lg-block">
+                <button
+                  type="button"
+                  class="btn btn-primary btn-sm fs-14 d-inline"
+                  data-bs-toggle="dropdown"
+                >
+                  Gym Modules
+                  <i class="mdi mdi-chevron-down align-middle"></i>
+                </button>
+                <div
+                  class="dropdown-menu dropdown-menu-start dropdown-menu-animated"
+                >
+                  <!-- Inventory Manager -->
+                  <a href="equipment.html" class="dropdown-item">
+                    <div class="dropdown-icon">
+                      <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <span class="dropdown-content">Equipments</span>
+                    <div class="dropdown-addon">
+                      <span class="badge badge-warning rounded-pill">20</span>
+                    </div>
+                  </a>
 
-                    <a href="index.html" class="logo logo-light">
-                        <span class="logo-sm">
-                            <img src="assets/images/logo-sm.png" alt="logo-sm-light" height="20">
-                        </span>
-                        <span class="logo-lg">
-                            <img src="assets/images/logo-light.png" alt="logo-light" height="18">
-                        </span>
-                    </a>
+                  <!-- Invoice -->
+                  <a href="create-invoice.html" class="dropdown-item">
+                    <div class="dropdown-icon">
+                      <i class="fas fa-file-invoice"></i>
+                    </div>
+                    <span class="dropdown-content">Membership Invoice</span>
+                  </a>
 
-                    <button type="button" class="btn btn-sm top-icon sidebar-btn" id="sidebar-btn">
-                        <i class="mdi mdi-menu-open align-middle fs-19"></i>
-                    </button>
+                  <!-- Divider -->
+                  <div class="dropdown-divider"></div>
+
+                  <!-- My Account -->
+                  <a href="apps-contact.html" class="dropdown-item">
+                    <div class="dropdown-icon">
+                      <i class="fas fa-user-circle"></i>
+                    </div>
+                    <span class="dropdown-content">My Profile</span>
+                  </a>
                 </div>
-                <!-- End navbar brand -->
+              </div>
 
-                <!-- Start menu -->
-                <div class="d-flex justify-content-between menu-sm px-3 ms-auto">
-                    <div class="d-flex align-items-center gap-2">
-                        <div class="dropdown d-none d-lg-block">
-                            <button type="button" class="btn btn-primary btn-sm fs-14 d-inline"
-                                data-bs-toggle="dropdown">
-                                Gym Modules
-                                <i class="mdi mdi-chevron-down align-middle"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-start dropdown-menu-animated">
-
-                                <!-- Inventory Manager -->
-                                <a href="equipment.html" class="dropdown-item">
-                                    <div class="dropdown-icon"><i class="fas fa-dumbbell"></i></div>
-                                    <span class="dropdown-content">Equipments</span>
-                                    <div class="dropdown-addon"><span class="badge badge-warning rounded-pill">20</span>
-                                    </div>
-                                </a>
-
-                                <!-- Invoice -->
-                                <a href="create-invoice.html" class="dropdown-item">
-                                    <div class="dropdown-icon"><i class="fas fa-file-invoice"></i></div>
-                                    <span class="dropdown-content">Membership Invoice</span>
-                                </a>
-
-                                <!-- Divider -->
-                                <div class="dropdown-divider"></div>
-
-                                <!-- My Account -->
-                                <a href="apps-contact.html" class="dropdown-item">
-                                    <div class="dropdown-icon"><i class="fas fa-user-circle"></i></div>
-                                    <span class="dropdown-content">My Profile</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="dropdown d-none d-lg-block">
-                            <button type="button" class="btn btn-primary btn-sm fs-14" data-bs-toggle="dropdown"
-                                aria-haspopup="false" aria-expanded="false">
-                                Features
-                                <i class="mdi mdi-chevron-down align-middle"></i>
-                            </button>
-                            <div
-                                class="dropdown-menu dropdown-menu-start dropdown-menu-lg-widest dropdown-menu-widest dropdown-menu-animated bg-primary-subtle overflow-hidden">
-                                <div class="dropdown-row justify-content-center">
-
-                                    <!-- Original Image (Unchanged) -->
-                                    <div class="p-2 menu-image">
-                                        <img src="assets/images/mega-menu.png" alt="mega-menu image" class="img-fluid"
-                                            style="height: 200px;">
-                                    </div>
-
-                                    <!-- Gym Welcome Section -->
-                                    <div class="dropdown-col">
-                                        <h2 class="">Welcome to Clivax Gym!</h2>
-                                        <p class="text-muted mb-0">
-                                            Track members, manage plans, monitor trainers, and streamline gym operations
-                                            with our digital gym
-                                            dashboard.
-                                        </p>
-                                        <div class="mt-3">
-                                            <a href="auth-login.html" class="btn btn-dark btn-wider">Admin Login</a>
-                                        </div>
-                                    </div>
-
-                                    <!-- Features Section -->
-                                    <div class="dropdown-col border-start border-primary border-opacity-50">
-                                        <h4 class="dropdown-header">Gym Features</h4>
-                                        <div class="grid-nav grid-nav-action">
-                                            <div class="grid-nav-row">
-                                                <a href="index.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="fas fa-chart-line"></i></div>
-                                                    <span class="grid-nav-content">Dashboard</span>
-                                                </a>
-                                                <a href="show-all-member.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="fas fa-user-friends"></i></div>
-                                                    <span class="grid-nav-content">Members</span>
-                                                </a>
-                                                <a href="renewals.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="fas fa-redo-alt"></i></div>
-                                                    <span class="grid-nav-content">Renewals</span>
-                                                </a>
-                                            </div>
-                                            <div class="grid-nav-row">
-                                                <a href="trainer-profile.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="fas fa-dumbbell"></i></div>
-                                                    <span class="grid-nav-content">Trainers</span>
-                                                </a>
-                                                <a href="view-plan.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="fas fa-id-card-alt"></i></div>
-                                                    <span class="grid-nav-content">Membership Plans</span>
-                                                </a>
-                                                <a href="revenue-report.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon"><i class="fas fa-file-alt"></i></div>
-                                                    <span class="grid-nav-content">Reports</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Tools Section -->
-                                    <div class="dropdown-col border-start border-primary border-opacity-50">
-                                        <h4 class="dropdown-header">Quick Tools</h4>
-                                        <a href="attendance.html" class="dropdown-item">
-                                            <i
-                                                class="mdi mdi-account-check-outline align-middle dropdown-bullet me-2"></i>
-                                            <span class="dropdown-content">Attendance</span>
-                                        </a>
-                                        <a href="diet-plan.html" class="dropdown-item">
-                                            <i class="mdi mdi-food-apple-outline align-middle dropdown-bullet me-2"></i>
-                                            <span class="dropdown-content">Diet Plans</span>
-                                        </a>
-                                        <a href="manage-staff.html" class="dropdown-item">
-                                            <i class="mdi mdi-account-tie align-middle dropdown-bullet me-2"></i>
-                                            <span class="dropdown-content">Staff Management</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+              <div class="dropdown d-none d-lg-block">
+                <button
+                  type="button"
+                  class="btn btn-primary btn-sm fs-14"
+                  data-bs-toggle="dropdown"
+                  aria-haspopup="false"
+                  aria-expanded="false"
+                >
+                  Features
+                  <i class="mdi mdi-chevron-down align-middle"></i>
+                </button>
+                <div
+                  class="dropdown-menu dropdown-menu-start dropdown-menu-lg-widest dropdown-menu-widest dropdown-menu-animated bg-primary-subtle overflow-hidden"
+                >
+                  <div class="dropdown-row justify-content-center">
+                    <!-- Original Image (Unchanged) -->
+                    <div class="p-2 menu-image">
+                      <img
+                        src="assets/images/mega-menu.png"
+                        alt="mega-menu image"
+                        class="img-fluid"
+                        style="height: 200px"
+                      />
                     </div>
 
-                    <div class="d-flex align-items-center gap-2">
-
-                        <!-- Start Notification -->
-                        <div class="dropdown d-inline-block">
-                            <button type="button" class="btn btn-sm top-icon" id="page-header-notifications-dropdown"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-bell align-middle"></i>
-                                <span class="btn-marker"><i class="marker marker-dot text-danger"></i></span>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-md dropdown-menu-end p-0"
-                                aria-labelledby="page-header-notifications-dropdown">
-                                <div class="p-3 bg-info">
-                                    <div class="row align-items-center">
-                                        <div class="col">
-                                            <h6 class="text-white m-0">
-                                                <i class="far fa-bell me-2"></i> Notifications
-                                            </h6>
-                                        </div>
-                                        <div class="col-auto">
-                                            <a href="#!" class="badge bg-info-subtle text-info">
-                                                6+</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div data-simplebar style="max-height: 230px">
-                                    <a href="#" class="text-reset notification-item">
-                                        <div class="d-flex">
-                                            <div class="avatar avatar-xs avatar-label-success me-3">
-                                                <span class="rounded fs-16">
-                                                    <i class="mdi mdi-account-plus-outline"></i>
-                                                </span>
-                                            </div>
-                                            <div class="flex-1">
-                                                <h6 class="mb-1">New member registered</h6>
-                                                <div class="fs-12 text-muted">
-                                                    <p class="mb-0">
-                                                        <i class="mdi mdi-clock-outline"></i> 5 min ago
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <i class="mdi mdi-chevron-right align-middle ms-2"></i>
-                                        </div>
-                                    </a>
-
-                                    <a href="#" class="text-reset notification-item">
-                                        <div class="d-flex">
-                                            <div class="avatar avatar-xs avatar-label-warning me-3">
-                                                <span class="rounded fs-16">
-                                                    <i class="mdi mdi-alarm"></i>
-                                                </span>
-                                            </div>
-                                            <div class="flex-1">
-                                                <h6 class="mb-1">Session missed by trainer</h6>
-                                                <div class="fs-12 text-muted">
-                                                    <p class="mb-0">
-                                                        <i class="mdi mdi-clock-outline"></i> 30 min ago
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <i class="mdi mdi-chevron-right align-middle ms-2"></i>
-                                        </div>
-                                    </a>
-
-                                    <a href="#" class="text-reset notification-item">
-                                        <div class="d-flex">
-                                            <div class="avatar avatar-xs avatar-label-danger me-3">
-                                                <span class="rounded fs-16">
-                                                    <i class="mdi mdi-cash-clock"></i>
-                                                </span>
-                                            </div>
-                                            <div class="flex-1">
-                                                <h6 class="mb-1">Payment due for member ID #1023</h6>
-                                                <div class="fs-12 text-muted">
-                                                    <p class="mb-0">
-                                                        <i class="mdi mdi-clock-outline"></i> 2 hours ago
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <i class="mdi mdi-chevron-right align-middle ms-2"></i>
-                                        </div>
-                                    </a>
-
-                                    <a href="#" class="text-reset notification-item">
-                                        <div class="d-flex">
-                                            <div class="avatar avatar-xs avatar-label-info me-3">
-                                                <span class="rounded fs-16">
-                                                    <i class="mdi mdi-calendar-check-outline"></i>
-                                                </span>
-                                            </div>
-                                            <div class="flex-1">
-                                                <h6 class="mb-1">
-                                                    Today’s session starts in 30 minutes
-                                                </h6>
-                                                <div class="fs-12 text-muted">
-                                                    <p class="mb-0">
-                                                        <i class="mdi mdi-clock-outline"></i> 3 hours ago
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <i class="mdi mdi-chevron-right align-middle ms-2"></i>
-                                        </div>
-                                    </a>
-
-                                    <a href="#" class="text-reset notification-item">
-                                        <div class="d-flex">
-                                            <div class="avatar avatar-xs avatar-label-secondary me-3">
-                                                <span class="rounded fs-16">
-                                                    <i class="mdi mdi-update"></i>
-                                                </span>
-                                            </div>
-                                            <div class="flex-1">
-                                                <h6 class="mb-1">Member plan updated (ID #1008)</h6>
-                                                <div class="fs-12 text-muted">
-                                                    <p class="mb-0">
-                                                        <i class="mdi mdi-clock-outline"></i> Yesterday
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <i class="mdi mdi-chevron-right align-middle ms-2"></i>
-                                        </div>
-                                    </a>
-
-                                    <a href="#" class="text-reset notification-item">
-                                        <div class="d-flex">
-                                            <div class="avatar avatar-xs avatar-label-primary me-3">
-                                                <span class="rounded fs-16">
-                                                    <i class="mdi mdi-lock-reset"></i>
-                                                </span>
-                                            </div>
-                                            <div class="flex-1">
-                                                <h6 class="mb-1">Admin password changed</h6>
-                                                <div class="fs-12 text-muted">
-                                                    <p class="mb-0">
-                                                        <i class="mdi mdi-clock-outline"></i> 2 days ago
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <i class="mdi mdi-chevron-right align-middle ms-2"></i>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="p-2 border-top">
-                                    <div class="d-grid">
-                                        <a class="btn btn-sm btn-link font-size-14 text-center"
-                                            href="javascript:void(0)">
-                                            <i class="mdi mdi-arrow-right-circle me-1"></i> View
-                                            More..
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Notification -->
-
-                        <!-- Start Profile -->
-                        <div class="dropdown d-inline-block">
-                            <button type="button" class="btn btn-sm top-icon p-0" id="page-header-user-dropdown"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="rounded avatar-2xs p-0" src="assets/images/users/avatar-6.png"
-                                    alt="Header Avatar" />
-                            </button>
-                            <div
-                                class="dropdown-menu dropdown-menu-wide dropdown-menu-end dropdown-menu-animated overflow-hidden py-0">
-                                <div class="card border-0">
-                                    <div class="card-header bg-primary rounded-0">
-                                        <div class="rich-list-item w-100 p-0">
-                                            <div class="rich-list-prepend">
-                                                <div class="avatar avatar-label-light avatar-circle">
-                                                    <div class="avatar-display">
-                                                        <i class="fas fa-user-circle"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="rich-list-content">
-                                                <h3 class="rich-list-title text-white">Admin</h3>
-                                                <span class="rich-list-subtitle text-white">info@kavyainfoweb.com</span>
-                                            </div>
-                                            <div class="rich-list-append">
-                                                <span class="badge badge-label-light fs-6">6+</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card-body p-0">
-                                        <div class="grid-nav grid-nav-flush grid-nav-action grid-nav-no-rounded">
-                                            <div class="grid-nav-row">
-                                                <a href="apps-contact.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon">
-                                                        <i class="fas fa-user-edit"></i>
-                                                    </div>
-                                                    <span class="grid-nav-content">My Profile</span>
-                                                </a>
-                                                <a href="trainer-profile.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon">
-                                                        <i class="fas fa-dumbbell"></i>
-                                                    </div>
-                                                    <span class="grid-nav-content">Trainer Profile</span>
-                                                </a>
-                                                <a href="#" class="grid-nav-item">
-                                                    <div class="grid-nav-icon">
-                                                        <i class="fas fa-running"></i>
-                                                    </div>
-                                                    <span class="grid-nav-content">Workout Logs</span>
-                                                </a>
-                                            </div>
-
-                                            <div class="grid-nav-row">
-                                                <a href="live-session.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon">
-                                                        <i class="far fa-calendar-check"></i>
-                                                    </div>
-                                                    <span class="grid-nav-content">Session Calendar</span>
-                                                </a>
-                                                <a href="diet-plan.html" class="grid-nav-item">
-                                                    <div class="grid-nav-icon">
-                                                        <i class="fas fa-apple-alt"></i>
-                                                    </div>
-                                                    <span class="grid-nav-content">Diet Notes</span>
-                                                </a>
-                                                <a href="#" class="grid-nav-item">
-                                                    <div class="grid-nav-icon">
-                                                        <i class="far fa-bell"></i>
-                                                    </div>
-                                                    <span class="grid-nav-content">Notifications</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card-footer card-footer-bordered rounded-0">
-                                        <a href="auth-login.html" class="btn btn-label-danger">Sign out</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Profile -->
+                    <!-- Gym Welcome Section -->
+                    <div class="dropdown-col">
+                      <h2 class="">Welcome to Clivax Gym!</h2>
+                      <p class="text-muted mb-0">
+                        Track members, manage plans, monitor trainers, and
+                        streamline gym operations with our digital gym
+                        dashboard.
+                      </p>
+                      <div class="mt-3">
+                        <a href="auth-login.html" class="btn btn-dark btn-wider"
+                          >Admin Login</a
+                        >
+                      </div>
                     </div>
+
+                    <!-- Features Section -->
+                    <div
+                      class="dropdown-col border-start border-primary border-opacity-50"
+                    >
+                      <h4 class="dropdown-header">Gym Features</h4>
+                      <div class="grid-nav grid-nav-action">
+                        <div class="grid-nav-row">
+                          <a href="index.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-chart-line"></i>
+                            </div>
+                            <span class="grid-nav-content">Dashboard</span>
+                          </a>
+                          <a href="show-all-member.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-user-friends"></i>
+                            </div>
+                            <span class="grid-nav-content">Members</span>
+                          </a>
+                          <a href="renewals.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-redo-alt"></i>
+                            </div>
+                            <span class="grid-nav-content">Renewals</span>
+                          </a>
+                        </div>
+                        <div class="grid-nav-row">
+                          <a href="trainer-profile.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-dumbbell"></i>
+                            </div>
+                            <span class="grid-nav-content">Trainers</span>
+                          </a>
+                          <a href="view-plan.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-id-card-alt"></i>
+                            </div>
+                            <span class="grid-nav-content"
+                              >Membership Plans</span
+                            >
+                          </a>
+                          <a href="revenue-report.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-file-alt"></i>
+                            </div>
+                            <span class="grid-nav-content">Reports</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Tools Section -->
+                    <div
+                      class="dropdown-col border-start border-primary border-opacity-50"
+                    >
+                      <h4 class="dropdown-header">Quick Tools</h4>
+                      <a href="attendance.html" class="dropdown-item">
+                        <i
+                          class="mdi mdi-account-check-outline align-middle dropdown-bullet me-2"
+                        ></i>
+                        <span class="dropdown-content">Attendance</span>
+                      </a>
+                      <a href="diet-plan.html" class="dropdown-item">
+                        <i
+                          class="mdi mdi-food-apple-outline align-middle dropdown-bullet me-2"
+                        ></i>
+                        <span class="dropdown-content">Diet Plans</span>
+                      </a>
+                      <a href="manage-staff.html" class="dropdown-item">
+                        <i
+                          class="mdi mdi-account-tie align-middle dropdown-bullet me-2"
+                        ></i>
+                        <span class="dropdown-content">Staff Management</span>
+                      </a>
+                    </div>
+                  </div>
                 </div>
-                <!-- End menu -->
+              </div>
             </div>
-        </header>
-        <!-- End topbar -->
-        <!-- ========== Left Sidebar Start ========== -->
-        <div class="sidebar-left">
 
-            <div data-simplebar class="h-100">
-
-                <!--- Sidebar-menu -->
-                <div id="sidebar-menu">
-                    <!-- Left Menu Start -->
-                    <ul class="left-menu list-unstyled" id="side-menu">
-                        <li>
-                            <a href="index.html" class="">
-                                <i class="fas fa-desktop"></i>
-                                <span>Dashboard</span>
-                            </a>
-                        </li>
-
-                        <!-- <li class="menu-title">Elements</li> -->
-
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow ">
-                                <i class="fa fa-users"></i>
-                                <span>Member Management</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="add-new-member.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>Add New Member</a>
-                                </li>
-                                <li><a href="show-all-member.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>All Members</a>
-                                </li>
-                            </ul>
-                        </li>
-
-
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow ">
-                                <i class="fa fa-id-card-alt"></i>
-                                <span>Membership Plans</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li>
-                                    <a href="add-new-plan.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
-                                        Add New
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="view-plan.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
-                                        View Plan
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="manage-plan.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
-                                        Manage Plan
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow">
-                                <i class="fa fa-calendar-check"></i>
-                                <span>Session Management</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li>
-                                    <a href="live-session.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>Live Session
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="offline-session.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>Offline Session
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-
-
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow ">
-                                <i class="fa fa-user-tie"></i>
-                                <span>Staff Management</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-
-                                <li><a href="add-new-staff.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i> Add New</a>
-                                </li>
-                                <li><a href="show-all-staff.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i> All Staff Members</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow ">
-                                <i class="fa fa-wallet"></i>
-                                <span>Account Management</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-
-                                <!-- Show All -->
-                                <li>
-                                    <a href="add-new-account.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i>Add New Account
-                                    </a>
-                                </li>
-
-                                <!-- Show All -->
-                                <li>
-                                    <a href="show-all-account.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i> All Accounts
-                                    </a>
-                                </li>
-
-                                <!-- Member Invoices with dropdown -->
-                                <li>
-                                    <a href="create-invoice.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i> Create Invoices
-                                    </a>
-                                </li>
-
-                                <!-- Payment History -->
-                                <li>
-                                    <a href="pyments.html">
-                                        <i class="mdi mdi-checkbox-blank-circle align-middle"></i> Payment History
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="renewals.html">
-                                <i class="fa fa-sync-alt"></i>
-                                <span>Renewals</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="attendance.html">
-                                <i class="fa fa-calendar-check"></i>
-                                <span>Attendance</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow">
-                                <i class="fa fa-chart-pie"></i>
-                                <span>Reports</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-
-                                <!-- GYM-RELATED REPORTS -->
-                                <li>
-                                    <a href="membership-report.html">
-                                        <i class="mdi mdi-account-group-outline align-middle"></i> Membership Report
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="revenue-report.html">
-                                        <i class="mdi mdi-currency-inr align-middle"></i> Revenue Report
-                                    </a>
-                                </li>
-
-
-                                <!-- Existing Chart Pages -->
-
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="settings.html">
-                                <i class="fas fa-cog"></i>
-                                <span>Settings</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="auth-login.html">
-                                <i class="fas fa-sign-out-alt"></i>
-                                <span>Logout</span>
-                            </a>
-                        </li>
-
-
-                    </ul>
-                </div>
-                <!-- Sidebar -->
-            </div>
-        </div>
-        <!-- Left Sidebar End -->
-
-
-        <!-- Start right Content here -->
-
-        <div class="main-content">
-            <div class="page-content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <div>
-                                    <h4 class="fs-16 fw-semibold mb-1 mb-md-2">Good Morning, <span
-                                            class="text-primary">Dinesh!</span></h4>
-                                    <p class="text-muted mb-0">
-                                        Your gym’s energy, captured in today’s updates.
-                                    </p>
-
-                                </div>
-                                <div class="page-title-right">
-                                    <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Clivax</a></li>
-                                        <li class="breadcrumb-item active">Dashboard</li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--    end row -->
-
-                    <div class="row">
-                        <div class="col-xxl-9">
-                            <div class="card">
-                                <div class="card-header">
-                                    <div class="card-icon">
-                                        <i class="fas fa-cart-plus fs-14 text-muted"></i>
-                                    </div>
-                                    <h4 class="card-title mb-0">Overall Sales</h4>
-                                    <div class="dropdown card-addon">
-                                        <a href="#" class="dropdown-toggle arrow-none card-drop"
-                                            data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="mdi mdi-dots-sidebar"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-end">
-                                            <!-- item-->
-                                            <a href="javascript:void(0);" class="dropdown-item">Sales Report</a>
-                                            <!-- item-->
-                                            <a href="javascript:void(0);" class="dropdown-item">Export Report</a>
-                                            <!-- item-->
-                                            <a href="javascript:void(0);" class="dropdown-item">Profit</a>
-                                            <!-- item-->
-                                            <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <div class="d-flex justify-content-between align-content-end shadow-lg p-3">
-                                                <div>
-                                                    <p class="text-muted text-truncate mb-2">Total Members</p>
-                                                    <h5 class="mb-0">1,240</h5>
-                                                </div>
-                                                <div class="text-success float-end">
-                                                    <i class="mdi mdi-menu-up"> </i>1.2%
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-4">
-                                            <div class="d-flex justify-content-between align-content-end shadow-lg p-3">
-                                                <div>
-                                                    <p class="text-muted text-truncate mb-2">Member Expiring Soon</p>
-                                                    <h5 class="mb-0">20 Member</h5>
-                                                </div>
-                                                <div class="text-success float-end">
-                                                    <i class="mdi mdi-menu-up"> </i>3.0%
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-4">
-                                            <div class="d-flex justify-content-between align-content-end shadow-lg p-3">
-                                                <div>
-                                                    <p class="text-muted text-truncate mb-2">Total Revenue</p>
-                                                    <h5 class="mb-0">₹15,75,000</h5>
-                                                </div>
-                                                <div class="text-success float-end">
-                                                    <i class="mdi mdi-menu-up"> </i>2.5%
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-4 mt-3">
-                                            <div class="d-flex justify-content-between align-content-end shadow-lg p-3">
-                                                <div>
-                                                    <p class="text-muted text-truncate mb-2">Active Trainers</p>
-                                                    <h5 class="mb-0">15</h5>
-                                                </div>
-                                                <div class="text-success float-end">
-                                                    <i class="mdi mdi-menu-up"> </i>1.5%
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-4 mt-3">
-                                            <div class="d-flex justify-content-between align-content-end shadow-lg p-3">
-                                                <div>
-                                                    <p class="text-muted text-truncate mb-2">Total Equipment</p>
-                                                    <h5 class="mb-0">85</h5>
-                                                </div>
-                                                <div class="text-success float-end">
-                                                    <i class="mdi mdi-menu-up"> </i>0.9%
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-4 mt-3">
-                                            <div class="d-flex justify-content-between align-content-end shadow-lg p-3">
-                                                <div>
-                                                    <p class="text-muted text-truncate mb-2">Expired Member</p>
-                                                    <h5 class="mb-0">32</h5>
-                                                </div>
-                                                <div class="text-danger float-end">
-                                                    <i class="mdi mdi-menu-down"> </i>1.1%
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                            <div class="row">
-                                <!-- Total Balance -->
-                                <div class="col-xl-4">
-                                    <div class="card bg-danger-subtle"
-                                        style="background: url('assets/images/dashboard/dashboard-shape-1.png'); background-repeat: no-repeat; background-position: bottom center;">
-                                        <div class="card-body">
-                                            <div class="d-flex">
-                                                <div class="avatar avatar-sm avatar-label-danger">
-                                                    <i class="mdi mdi-buffer mt-1"></i>
-                                                </div>
-                                                <div class="ms-3">
-                                                    <p class="text-danger mb-1">Total Balance</p>
-                                                    <h4 class="mb-0">₹11,90,452.55</h4>
-                                                </div>
-                                            </div>
-                                            <div class="hstack gap-2 mt-3">
-                                                <button class="btn btn-light">Transfer</button>
-                                                <button class="btn btn-info">Request</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Active Memberships -->
-                                <div class="col-xl-4">
-                                    <div class="card bg-success-subtle"
-                                        style="background: url('assets/images/dashboard/dashboard-shape-2.png'); background-repeat: no-repeat; background-position: bottom center;">
-                                        <div class="card-body">
-                                            <div class="d-flex">
-                                                <div class="avatar avatar-sm avatar-label-success">
-                                                    <i class="mdi mdi-account-multiple mt-1"></i>
-                                                </div>
-                                                <div class="ms-3">
-                                                    <p class="text-success mb-1">Active Memberships</p>
-                                                    <h4 class="mb-0">120 Members</h4>
-                                                </div>
-                                            </div>
-                                            <div class="mt-3 mb-2">
-                                                <p class="mb-0">4 expiring soon</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Sessions Completed -->
-                                <div class="col-xl-4">
-                                    <div class="card bg-info-subtle"
-                                        style="background: url('assets/images/dashboard/dashboard-shape-3.png'); background-repeat: no-repeat; background-position: bottom center;">
-                                        <div class="card-body">
-                                            <div class="d-flex">
-                                                <div class="avatar avatar-sm avatar-label-info">
-                                                    <i class="mdi mdi-dumbbell mt-1"></i>
-                                                </div>
-                                                <div class="ms-3">
-                                                    <p class="text-info mb-1">Total Sessions Completed</p>
-                                                    <h4 class="mb-0">72</h4>
-                                                </div>
-                                            </div>
-                                            <div class="mt-3 mb-2">
-                                                <p class="mb-0">
-                                                    <span class="text-primary me-2 fs-14">
-                                                        <i class="fas fa-caret-up me-1"></i>3.4%
-                                                    </span>
-                                                    last month
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end row -->
-                            <!-- Birthday Dashboard Section -->
-                            <section class="birthday-dashboard-section py-3" style="background-color: #f8f9fa;">
-                                <div class="container">
-                                    <!-- Calendar and Buttons -->
-                                    <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
-                                        <div class="d-flex align-items-center gap-2">
-                                            <label for="birthdayDate" class="form-label fw-bold text-secondary mb-0">📅
-                                                Check Birthdays:</label>
-                                            <input type="date" id="birthdayDate" class="form-control"
-                                                style="width: 200px;">
-                                            <button class="btn btn-sm btn-outline-info"
-                                                id="searchDateBtn">Search</button>
-                                        </div>
-                                        <div class="d-flex gap-2 mt-2 mt-md-0">
-                                            <button id="toggleTodayBtn" class="btn btn-sm btn-primary fw-bold">🎂
-                                                Today's Birthdays</button>
-                                            <button id="toggleUpcomingBtn"
-                                                class="btn btn-sm btn-outline-secondary fw-bold">📆 Upcoming
-                                                Birthdays</button>
-                                        </div>
-                                    </div>
-
-                                    <!-- Birthday Cards Section -->
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="card shadow">
-                                                <div class="card-header bg-primary text-white">🎉 Birthdays</div>
-                                                <div class="card-body overflow-hidden">
-                                                    <!-- Sliders -->
-                                                    <div id="todaySlider"
-                                                        class="combined-slider d-flex gap-3 overflow-auto flex-nowrap mb-2"
-                                                        style="display:none;"></div>
-                                                    <div id="upcomingSlider"
-                                                        class="combined-slider d-flex gap-3 overflow-auto flex-nowrap mb-2"
-                                                        style="display:none;"></div>
-                                                    <div id="searchedSlider"
-                                                        class="combined-slider d-flex gap-3 overflow-auto flex-nowrap mb-2"
-                                                        style="display:none;"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-
-                           <!-- Birthday Popup Modal -->
-<div class="modal fade" id="birthdayPopup" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" style="max-width: 480px;">
-    <div class="modal-content" style="border-radius: 10px; overflow: hidden;">
-
-      <!-- Modal Header -->
-      <div class="modal-header d-flex justify-content-between align-items-start" style="padding: 10px 16px;">
-        <h6 class="modal-title text-danger" style="font-size: 16px; margin-top: 4px;">
-          🎂 Birthday Wishes
-        </h6>
-
-        <div class="d-flex align-items-center gap-2">
-          <button onclick="sendCombinedWhatsAppWishes()" class="btn btn-sm btn-success">
-            🎁 Send Wishes
-          </button>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-      </div>
-
-      <!-- Modal Body -->
-      <div class="modal-body d-flex flex-wrap justify-content-center gap-2" id="popupBirthdayContainer"
-        style="padding: 10px; max-height: 360px; overflow-y: auto;">
-        <!-- Cards injected here via JS -->
-      </div>
-
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-                            <!-- Gym Revenue Section -->
-                            <section class="gym-revenue-section py-4">
-                                <div class="container-fluid">
-                                    <div class="card shadow-sm border-0">
-                                        <div class="card-body">
-                                            <!-- Top Filters -->
-                                            <div
-                                                class="d-flex flex-wrap justify-content-between align-items-center mb-4">
-                                                <h5 class="card-title text-success mb-2">Gym Revenue Analytics</h5>
-                                                <div class="d-flex flex-wrap gap-2 align-items-center">
-                                                    <label class="form-label mb-0">From:</label>
-                                                    <input type="date" class="form-control form-control-sm"
-                                                        id="revenueFromDate">
-                                                    <label class="form-label mb-0">To:</label>
-                                                    <input type="date" class="form-control form-control-sm"
-                                                        id="revenueToDate">
-                                                    <button class="btn btn-success btn-sm" id="filterBtn">Show
-                                                        Weekly</button>
-                                                </div>
-                                            </div>
-
-                                            <!-- Timeframe Buttons -->
-                                            <div class="btn-group mb-3" role="group">
-                                                <button class="btn btn-outline-success btn-sm range-btn"
-                                                    data-range="2M">Last 2
-                                                    Months</button>
-                                                <button class="btn btn-outline-success btn-sm range-btn"
-                                                    data-range="3M">Last 3
-                                                    Months</button>
-                                                <button class="btn btn-outline-success btn-sm range-btn"
-                                                    data-range="4M">Last 4
-                                                    Months</button>
-                                                <button class="btn btn-outline-success btn-sm range-btn"
-                                                    data-range="6M">Last 6
-                                                    Months</button>
-                                                <button class="btn btn-outline-success btn-sm range-btn"
-                                                    data-range="1Y">Last 1
-                                                    Year</button>
-                                            </div>
-
-                                            <!-- Chart -->
-                                            <canvas id="revenueBarChart" height="90"></canvas>
-
-                                            <!-- Revenue Stats -->
-                                            <div class="row text-center mt-4">
-                                                <div class="col-md-4 mb-3">
-                                                    <h6 class="text-muted">Total Revenue</h6>
-                                                    <h4 class="text-success fw-bold" id="totalRevenue">₹0</h4>
-                                                </div>
-                                                <div class="col-md-4 mb-3">
-                                                    <h6 class="text-muted">Average per Period</h6>
-                                                    <h4 class="text-info fw-bold" id="avgRevenue">₹0</h4>
-                                                </div>
-                                                <div class="col-md-4 mb-3">
-                                                    <h6 class="text-muted">Highest Earning</h6>
-                                                    <h4 class="text-danger fw-bold" id="maxRevenue">₹0</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-
-
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="card" style="max-height: 500px; overflow-y: auto;" data-simplebar>
-                                        <div class="card-header">
-                                            <div class="card-icon text-muted">
-                                                <i class="fas fa-chalkboard-teacher fs-14"></i>
-                                            </div>
-                                            <h3 class="card-title">Trainer-wise Member Assignment</h3>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="table-responsive">
-                                                <table class="table table-bordered text-nowrap mb-0">
-                                                    <thead class="table-light">
-                                                        <tr>
-                                                            <th>Trainer Name</th>
-                                                            <th>Total Members Assigned</th>
-                                                            <th>View Members</th>
-
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td class="align-middle"><i
-                                                                    class="mdi mdi-account-tie text-primary me-2"></i>Ravi
-                                                                Shankar</td>
-                                                            <td class="align-middle">56 Members</td>
-                                                            <td class="align-middle">
-                                                                <details>
-                                                                    <summary
-                                                                        class="btn btn-sm btn-outline-primary toggle-btn">
-                                                                        Show</summary>
-                                                                    <ul class="mb-0 mt-2 ps-3">
-                                                                        <li>Rohit Sharma</li>
-                                                                        <li>Vikram Pawar</li>
-                                                                        <li>Neeraj Mehta</li>
-                                                                        <li>Anjali Chauhan</li>
-                                                                        <li>Arjun Kale</li>
-                                                                    </ul>
-                                                                </details>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="align-middle"><i
-                                                                    class="mdi mdi-account-tie text-success me-2"></i>Priya
-                                                                Deshmukh</td>
-                                                            <td class="align-middle">36 Members</td>
-                                                            <td class="align-middle">
-                                                                <details>
-                                                                    <summary
-                                                                        class="btn btn-sm btn-outline-primary toggle-btn">
-                                                                        Show</summary>
-                                                                    <ul class="mb-0 mt-2 ps-3">
-                                                                        <li>Neha Kulkarni</li>
-                                                                        <li>Rahul More</li>
-                                                                        <li>Shruti Patil</li>
-                                                                        <li>Amit Thorat</li>
-                                                                    </ul>
-                                                                </details>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="align-middle"><i
-                                                                    class="mdi mdi-account-tie text-info me-2"></i>Amit
-                                                                Kale</td>
-                                                            <td class="align-middle">43 Members</td>
-                                                            <td class="align-middle">
-                                                                <details>
-                                                                    <summary
-                                                                        class="btn btn-sm btn-outline-primary toggle-btn">
-                                                                        Show</summary>
-                                                                    <ul class="mb-0 mt-2 ps-3">
-                                                                        <li>Akash Verma</li>
-                                                                        <li>Meera Joshi</li>
-                                                                        <li>Sagar Desai</li>
-                                                                    </ul>
-                                                                </details>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="align-middle"><i
-                                                                    class="mdi mdi-account-tie text-warning me-2"></i>Sneha
-                                                                Jadhav</td>
-                                                            <td class="align-middle">22 Members</td>
-                                                            <td class="align-middle">
-                                                                <details>
-                                                                    <summary
-                                                                        class="btn btn-sm btn-outline-primary toggle-btn">
-                                                                        Show</summary>
-                                                                    <ul class="mb-0 mt-2 ps-3">
-                                                                        <li>Sneha Patil</li>
-                                                                        <li>Kunal Shinde</li>
-                                                                        <li>Payal Jain</li>
-                                                                    </ul>
-                                                                </details>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="align-middle"><i
-                                                                    class="mdi mdi-account-tie text-danger me-2"></i>Deepak
-                                                                Joshi</td>
-                                                            <td class="align-middle">40 Members</td>
-                                                            <td class="align-middle">
-                                                                <details>
-                                                                    <summary
-                                                                        class="btn btn-sm btn-outline-primary toggle-btn">
-                                                                        Show</summary>
-                                                                    <ul class="mb-0 mt-2 ps-3">
-                                                                        <li>Ramesh Tiwari</li>
-                                                                        <li>Shalini Gokhale</li>
-                                                                        <li>Pratik Ghosh</li>
-                                                                        <li>Varsha Yadav</li>
-                                                                    </ul>
-                                                                </details>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-
-
-
-                    </div>
-                    <!-- end row -->
-
-
-
-                    <!-- end row -->
-
-
-
-
-                </div>
-                <!-- end container-fluid -->
-            </div>
-            <!-- End Page-content -->
-
-            <footer class="footer">
-                <div class="container-fluid">
+            <div class="d-flex align-items-center gap-2">
+              <!-- Start Notification -->
+              <div class="dropdown d-inline-block">
+                <button
+                  type="button"
+                  class="btn btn-sm top-icon"
+                  id="page-header-notifications-dropdown"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-bell align-middle"></i>
+                  <span class="btn-marker"
+                    ><i class="marker marker-dot text-danger"></i
+                  ></span>
+                </button>
+                <div
+                  class="dropdown-menu dropdown-menu-lg dropdown-menu-md dropdown-menu-end p-0"
+                  aria-labelledby="page-header-notifications-dropdown"
+                >
+                  <div class="p-3 bg-info">
                     <div class="row align-items-center">
-                        <div class="col-sm-6">
-                            <script>document.write(new Date().getFullYear())</script> © Clivax Gym.
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="text-sm-end d-none d-sm-block">
-                                Designed & Developed <i class="mdi mdi-heart text-danger"></i> by <a
-                                    href="https://kavyainfoweb.com/" target="_blank" class="text-muted">Kavya Infoweb
-                                    Pvt. Ltd.</a>
-                            </div>
-                        </div>
+                      <div class="col">
+                        <h6 class="text-white m-0">
+                          <i class="far fa-bell me-2"></i> Notifications
+                        </h6>
+                      </div>
+                      <div class="col-auto">
+                        <a href="#!" class="badge bg-info-subtle text-info">
+                          6+</a
+                        >
+                      </div>
                     </div>
-                </div>
-            </footer>
+                  </div>
+                  <div data-simplebar style="max-height: 230px">
+                    <a href="#" class="text-reset notification-item">
+                      <div class="d-flex">
+                        <div class="avatar avatar-xs avatar-label-success me-3">
+                          <span class="rounded fs-16">
+                            <i class="mdi mdi-account-plus-outline"></i>
+                          </span>
+                        </div>
+                        <div class="flex-1">
+                          <h6 class="mb-1">New member registered</h6>
+                          <div class="fs-12 text-muted">
+                            <p class="mb-0">
+                              <i class="mdi mdi-clock-outline"></i> 5 min ago
+                            </p>
+                          </div>
+                        </div>
+                        <i class="mdi mdi-chevron-right align-middle ms-2"></i>
+                      </div>
+                    </a>
 
+                    <a href="#" class="text-reset notification-item">
+                      <div class="d-flex">
+                        <div class="avatar avatar-xs avatar-label-warning me-3">
+                          <span class="rounded fs-16">
+                            <i class="mdi mdi-alarm"></i>
+                          </span>
+                        </div>
+                        <div class="flex-1">
+                          <h6 class="mb-1">Session missed by trainer</h6>
+                          <div class="fs-12 text-muted">
+                            <p class="mb-0">
+                              <i class="mdi mdi-clock-outline"></i> 30 min ago
+                            </p>
+                          </div>
+                        </div>
+                        <i class="mdi mdi-chevron-right align-middle ms-2"></i>
+                      </div>
+                    </a>
+
+                    <a href="#" class="text-reset notification-item">
+                      <div class="d-flex">
+                        <div class="avatar avatar-xs avatar-label-danger me-3">
+                          <span class="rounded fs-16">
+                            <i class="mdi mdi-cash-clock"></i>
+                          </span>
+                        </div>
+                        <div class="flex-1">
+                          <h6 class="mb-1">Payment due for member ID #1023</h6>
+                          <div class="fs-12 text-muted">
+                            <p class="mb-0">
+                              <i class="mdi mdi-clock-outline"></i> 2 hours ago
+                            </p>
+                          </div>
+                        </div>
+                        <i class="mdi mdi-chevron-right align-middle ms-2"></i>
+                      </div>
+                    </a>
+
+                    <a href="#" class="text-reset notification-item">
+                      <div class="d-flex">
+                        <div class="avatar avatar-xs avatar-label-info me-3">
+                          <span class="rounded fs-16">
+                            <i class="mdi mdi-calendar-check-outline"></i>
+                          </span>
+                        </div>
+                        <div class="flex-1">
+                          <h6 class="mb-1">
+                            Today’s session starts in 30 minutes
+                          </h6>
+                          <div class="fs-12 text-muted">
+                            <p class="mb-0">
+                              <i class="mdi mdi-clock-outline"></i> 3 hours ago
+                            </p>
+                          </div>
+                        </div>
+                        <i class="mdi mdi-chevron-right align-middle ms-2"></i>
+                      </div>
+                    </a>
+
+                    <a href="#" class="text-reset notification-item">
+                      <div class="d-flex">
+                        <div
+                          class="avatar avatar-xs avatar-label-secondary me-3"
+                        >
+                          <span class="rounded fs-16">
+                            <i class="mdi mdi-update"></i>
+                          </span>
+                        </div>
+                        <div class="flex-1">
+                          <h6 class="mb-1">Member plan updated (ID #1008)</h6>
+                          <div class="fs-12 text-muted">
+                            <p class="mb-0">
+                              <i class="mdi mdi-clock-outline"></i> Yesterday
+                            </p>
+                          </div>
+                        </div>
+                        <i class="mdi mdi-chevron-right align-middle ms-2"></i>
+                      </div>
+                    </a>
+
+                    <a href="#" class="text-reset notification-item">
+                      <div class="d-flex">
+                        <div class="avatar avatar-xs avatar-label-primary me-3">
+                          <span class="rounded fs-16">
+                            <i class="mdi mdi-lock-reset"></i>
+                          </span>
+                        </div>
+                        <div class="flex-1">
+                          <h6 class="mb-1">Admin password changed</h6>
+                          <div class="fs-12 text-muted">
+                            <p class="mb-0">
+                              <i class="mdi mdi-clock-outline"></i> 2 days ago
+                            </p>
+                          </div>
+                        </div>
+                        <i class="mdi mdi-chevron-right align-middle ms-2"></i>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="p-2 border-top">
+                    <div class="d-grid">
+                      <a
+                        class="btn btn-sm btn-link font-size-14 text-center"
+                        href="javascript:void(0)"
+                      >
+                        <i class="mdi mdi-arrow-right-circle me-1"></i> View
+                        More..
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Notification -->
+
+              <!-- Start Profile -->
+              <div class="dropdown d-inline-block">
+                <button
+                  type="button"
+                  class="btn btn-sm top-icon p-0"
+                  id="page-header-user-dropdown"
+                  data-bs-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <img
+                    class="rounded avatar-2xs p-0"
+                    src="assets/images/users/avatar-6.png"
+                    alt="Header Avatar"
+                  />
+                </button>
+                <div
+                  class="dropdown-menu dropdown-menu-wide dropdown-menu-end dropdown-menu-animated overflow-hidden py-0"
+                >
+                  <div class="card border-0">
+                    <div class="card-header bg-primary rounded-0">
+                      <div class="rich-list-item w-100 p-0">
+                        <div class="rich-list-prepend">
+                          <div class="avatar avatar-label-light avatar-circle">
+                            <div class="avatar-display">
+                              <i class="fas fa-user-circle"></i>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="rich-list-content">
+                          <h3 class="rich-list-title text-white">Admin</h3>
+                          <span class="rich-list-subtitle text-white"
+                            >info@kavyainfoweb.com</span
+                          >
+                        </div>
+                        <div class="rich-list-append">
+                          <span class="badge badge-label-light fs-6">6+</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card-body p-0">
+                      <div
+                        class="grid-nav grid-nav-flush grid-nav-action grid-nav-no-rounded"
+                      >
+                        <div class="grid-nav-row">
+                          <a href="apps-contact.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-user-edit"></i>
+                            </div>
+                            <span class="grid-nav-content">My Profile</span>
+                          </a>
+                          <a href="trainer-profile.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-dumbbell"></i>
+                            </div>
+                            <span class="grid-nav-content"
+                              >Trainer Profile</span
+                            >
+                          </a>
+                          <a href="#" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-running"></i>
+                            </div>
+                            <span class="grid-nav-content">Workout Logs</span>
+                          </a>
+                        </div>
+
+                        <div class="grid-nav-row">
+                          <a href="live-session.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="far fa-calendar-check"></i>
+                            </div>
+                            <span class="grid-nav-content"
+                              >Session Calendar</span
+                            >
+                          </a>
+                          <a href="diet-plan.html" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="fas fa-apple-alt"></i>
+                            </div>
+                            <span class="grid-nav-content">Diet Notes</span>
+                          </a>
+                          <a href="#" class="grid-nav-item">
+                            <div class="grid-nav-icon">
+                              <i class="far fa-bell"></i>
+                            </div>
+                            <span class="grid-nav-content">Notifications</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card-footer card-footer-bordered rounded-0">
+                      <a href="auth-login.html" class="btn btn-label-danger"
+                        >Sign out</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Profile -->
+            </div>
+          </div>
+          <!-- End menu -->
         </div>
-        <!-- end main content-->
+      </header>
+      <!-- End topbar -->
+      <!-- ========== Left Sidebar Start ========== -->
+      <div class="sidebar-left">
+        <div data-simplebar class="h-100">
+          <!--- Sidebar-menu -->
+          <div id="sidebar-menu">
+            <!-- Left Menu Start -->
+            <ul class="left-menu list-unstyled" id="side-menu">
+              <li>
+                <a href="index.html" class="">
+                  <i class="fas fa-desktop"></i>
+                  <span>Dashboard</span>
+                </a>
+              </li>
+
+              <!-- <li class="menu-title">Elements</li> -->
+
+              <li>
+                <a href="javascript: void(0);" class="has-arrow">
+                  <i class="fa fa-users"></i>
+                  <span>Member Management</span>
+                </a>
+                <ul class="sub-menu" aria-expanded="false">
+                  <li>
+                    <a href="add-new-member.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i
+                      >Add New Member</a
+                    >
+                  </li>
+                  <li>
+                    <a href="show-all-member.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i
+                      >All Members</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <a href="javascript: void(0);" class="has-arrow">
+                  <i class="fa fa-id-card-alt"></i>
+                  <span>Membership Plans</span>
+                </a>
+                <ul class="sub-menu" aria-expanded="false">
+                  <li>
+                    <a href="add-new-plan.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      Add New
+                    </a>
+                  </li>
+                  <li>
+                    <a href="view-plan.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      View Plan
+                    </a>
+                  </li>
+                  <li>
+                    <a href="manage-plan.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      Manage Plan
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="javascript: void(0);" class="has-arrow">
+                  <i class="fa fa-calendar-check"></i>
+                  <span>Session Management</span>
+                </a>
+                <ul class="sub-menu" aria-expanded="false">
+                  <li>
+                    <a href="live-session.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i
+                      >Live Session
+                    </a>
+                  </li>
+                  <li>
+                    <a href="offline-session.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i
+                      >Offline Session
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <a href="javascript: void(0);" class="has-arrow">
+                  <i class="fa fa-user-tie"></i>
+                  <span>Staff Management</span>
+                </a>
+                <ul class="sub-menu" aria-expanded="false">
+                  <li>
+                    <a href="add-new-staff.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      Add New</a
+                    >
+                  </li>
+                  <li>
+                    <a href="show-all-staff.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      All Staff Members</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <a href="javascript: void(0);" class="has-arrow">
+                  <i class="fa fa-wallet"></i>
+                  <span>Account Management</span>
+                </a>
+                <ul class="sub-menu" aria-expanded="false">
+                  <!-- Show All -->
+                  <li>
+                    <a href="add-new-account.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i
+                      >Add New Account
+                    </a>
+                  </li>
+
+                  <!-- Show All -->
+                  <li>
+                    <a href="show-all-account.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      All Accounts
+                    </a>
+                  </li>
+
+                  <!-- Member Invoices with dropdown -->
+                  <li>
+                    <a href="create-invoice.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      Create Invoices
+                    </a>
+                  </li>
+
+                  <!-- Payment History -->
+                  <li>
+                    <a href="pyments.html">
+                      <i class="mdi mdi-checkbox-blank-circle align-middle"></i>
+                      Payment History
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <a href="renewals.html">
+                  <i class="fa fa-sync-alt"></i>
+                  <span>Renewals</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="attendance.html">
+                  <i class="fa fa-calendar-check"></i>
+                  <span>Attendance</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="javascript: void(0);" class="has-arrow">
+                  <i class="fa fa-chart-pie"></i>
+                  <span>Reports</span>
+                </a>
+                <ul class="sub-menu" aria-expanded="false">
+                  <!-- GYM-RELATED REPORTS -->
+                  <li>
+                    <a href="membership-report.html">
+                      <i class="mdi mdi-account-group-outline align-middle"></i>
+                      Membership Report
+                    </a>
+                  </li>
+                  <li>
+                    <a href="revenue-report.html">
+                      <i class="mdi mdi-currency-inr align-middle"></i> Revenue
+                      Report
+                    </a>
+                  </li>
+
+                  <!-- Existing Chart Pages -->
+                </ul>
+              </li>
+
+              <li>
+                <a href="settings.html">
+                  <i class="fas fa-cog"></i>
+                  <span>Settings</span>
+                </a>
+              </li>
+              <li>
+                <a href="auth-login.html">
+                  <i class="fas fa-sign-out-alt"></i>
+                  <span>Logout</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- Sidebar -->
+        </div>
+      </div>
+      <!-- Left Sidebar End -->
+
+      <!-- Start right Content here -->
+
+      <div class="main-content">
+        <div class="page-content">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <div
+                  class="page-title-box d-flex align-items-center justify-content-between"
+                >
+                  <div>
+                    <h4 class="fs-16 fw-semibold mb-1 mb-md-2">
+                      Good Morning, <span class="text-primary">Dinesh!</span>
+                    </h4>
+                    <p class="text-muted mb-0">
+                      Your gym’s energy, captured in today’s updates.
+                    </p>
+                  </div>
+                  <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                      <li class="breadcrumb-item">
+                        <a href="javascript: void(0);">Clivax</a>
+                      </li>
+                      <li class="breadcrumb-item active">Dashboard</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--    end row -->
+
+            <div class="row">
+              <div class="col-xxl-9">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="card-icon">
+                      <i class="fas fa-cart-plus fs-14 text-muted"></i>
+                    </div>
+                    <h4 class="card-title mb-0">Overall Sales</h4>
+                    <div class="dropdown card-addon">
+                      <a
+                        href="#"
+                        class="dropdown-toggle arrow-none card-drop"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <i class="mdi mdi-dots-sidebar"></i>
+                      </a>
+                      <div class="dropdown-menu dropdown-menu-end">
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item"
+                          >Sales Report</a
+                        >
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item"
+                          >Export Report</a
+                        >
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item"
+                          >Profit</a
+                        >
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item"
+                          >Action</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <div
+                          class="d-flex justify-content-between align-content-end shadow-lg p-3"
+                        >
+                          <div>
+                            <p class="text-muted text-truncate mb-2">
+                              Total Members
+                            </p>
+                            <h5 class="mb-0">1,240</h5>
+                          </div>
+                          <div class="text-success float-end">
+                            <i class="mdi mdi-menu-up"> </i>1.2%
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-4">
+                        <div
+                          class="d-flex justify-content-between align-content-end shadow-lg p-3"
+                        >
+                          <div>
+                            <p class="text-muted text-truncate mb-2">
+                              Member Expiring Soon
+                            </p>
+                            <h5 class="mb-0">20 Member</h5>
+                          </div>
+                          <div class="text-success float-end">
+                            <i class="mdi mdi-menu-up"> </i>3.0%
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-4">
+                        <div
+                          class="d-flex justify-content-between align-content-end shadow-lg p-3"
+                        >
+                          <div>
+                            <p class="text-muted text-truncate mb-2">
+                              Total Revenue
+                            </p>
+                            <h5 class="mb-0">₹15,75,000</h5>
+                          </div>
+                          <div class="text-success float-end">
+                            <i class="mdi mdi-menu-up"> </i>2.5%
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-4 mt-3">
+                        <div
+                          class="d-flex justify-content-between align-content-end shadow-lg p-3"
+                        >
+                          <div>
+                            <p class="text-muted text-truncate mb-2">
+                              Active Trainers
+                            </p>
+                            <h5 class="mb-0">15</h5>
+                          </div>
+                          <div class="text-success float-end">
+                            <i class="mdi mdi-menu-up"> </i>1.5%
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-4 mt-3">
+                        <div
+                          class="d-flex justify-content-between align-content-end shadow-lg p-3"
+                        >
+                          <div>
+                            <p class="text-muted text-truncate mb-2">
+                              Total Equipment
+                            </p>
+                            <h5 class="mb-0">85</h5>
+                          </div>
+                          <div class="text-success float-end">
+                            <i class="mdi mdi-menu-up"> </i>0.9%
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-4 mt-3">
+                        <div
+                          class="d-flex justify-content-between align-content-end shadow-lg p-3"
+                        >
+                          <div>
+                            <p class="text-muted text-truncate mb-2">
+                              Expired Member
+                            </p>
+                            <h5 class="mb-0">32</h5>
+                          </div>
+                          <div class="text-danger float-end">
+                            <i class="mdi mdi-menu-down"> </i>1.1%
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <!-- Suppliment Sales -->
+                  <div class="col-xl-4 position-relative">
+                    <div
+                      class="card bg-danger-subtle"
+                      style="
+                        background: url('assets/images/dashboard/dashboard-shape-1.png');
+                        background-repeat: no-repeat;
+                        background-position: bottom center;
+                      "
+                    >
+                      <div class="card-body">
+                        <div class="d-flex">
+                          <div class="avatar avatar-sm avatar-label-danger">
+                            <i class="mdi mdi-buffer mt-1"></i>
+                          </div>
+                          <div class="ms-3">
+                            <p class="text-danger mb-1">Suppliment Sales</p>
+                            <h4 class="mb-0">₹18,000</h4>
+                          </div>
+                        </div>
+                        <div class="hstack gap-2 mt-3 position-relative">
+                          <button
+                            class="btn btn-primary"
+                            id="toggleFormBtn"
+                            onclick="toggleSaleForm()"
+                          >
+                            Add New Sale
+                          </button>
+                          <button
+                            class="btn btn-info"
+                            onclick="showTransactionModal()"
+                          >
+                            Recent Transactions
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Sale Form on top of card -->
+                    <div
+                      id="saleFormContainer"
+                      class="card shadow-lg p-4 position-absolute"
+                      style="
+                        top: 0;
+                        right: 0;
+                        width: 100%;
+                        z-index: 999;
+                        display: none;
+                      "
+                    >
+                      <div
+                        class="d-flex justify-content-between align-items-center mb-3"
+                      >
+                        <h5 class="fw-bold mb-0">Log a New Sale</h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          onclick="toggleSaleForm()"
+                        ></button>
+                      </div>
+                      <form id="saleForm">
+                        <div class="mb-3">
+                          <label class="form-label fw-medium"
+                            >Product Name</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="productName"
+                            placeholder="e.g., Whey Protein"
+                            required
+                          />
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6 mb-3">
+                            <label class="form-label fw-medium">Quantity</label>
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="quantity"
+                              value="1"
+                              required
+                            />
+                          </div>
+                          <div class="col-md-6 mb-3">
+                            <label class="form-label fw-medium"
+                              >Price per Item (₹)</label
+                            >
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="price"
+                              placeholder="e.g., 2500"
+                              required
+                            />
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label fw-medium"
+                            >Date of Sale</label
+                          >
+                          <input
+                            type="date"
+                            class="form-control"
+                            id="saleDate"
+                            placeholder="dd-mm-yyyy"
+                            required
+                          />
+                        </div>
+                        <div class="d-flex justify-content-end mt-3">
+                          <button
+                            type="button"
+                            class="btn btn-light me-2"
+                            onclick="toggleSaleForm()"
+                          >
+                            Cancel
+                          </button>
+                          <button type="submit" class="btn btn-primary">
+                            Log Sale
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+
+                  <!-- Modal for Recent Transactions (Centered) -->
+                  <div
+                    class="modal fade"
+                    id="transactionModal"
+                    tabindex="-1"
+                    aria-labelledby="transactionModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                      <div class="modal-content p-3 rounded-3">
+                        <div class="modal-header border-0">
+                          <h5
+                            class="modal-title fw-bold"
+                            id="transactionModalLabel"
+                          >
+                            Recent Transactions
+                          </h5>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <div class="modal-body pt-0">
+                          <div class="d-flex justify-content-end mb-3">
+                            <button
+                              class="btn btn-outline-dark"
+                              onclick="window.print()"
+                            >
+                              Print
+                            </button>
+                          </div>
+                          <div class="table-responsive">
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                  <th class="text-uppercase text-muted small">
+                                    Product
+                                  </th>
+                                  <th class="text-uppercase text-muted small">
+                                    Qty
+                                  </th>
+                                  <th class="text-uppercase text-muted small">
+                                    Price
+                                  </th>
+                                  <th class="text-uppercase text-muted small">
+                                    Total
+                                  </th>
+                                  <th class="text-uppercase text-muted small">
+                                    Action
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody id="transactionBody">
+                                <!-- New rows will be inserted here -->
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Modal for Recent Transactions -->
+                  <div
+                    class="modal fade"
+                    id="transactionModal"
+                    tabindex="-1"
+                    aria-labelledby="transactionModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                      <div class="modal-content p-3 rounded-3">
+                        <div class="modal-header border-0">
+                          <h5
+                            class="modal-title fw-bold"
+                            id="transactionModalLabel"
+                          >
+                            Recent Transactions
+                          </h5>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <div class="modal-body pt-0">
+                          <div class="d-flex justify-content-end mb-3">
+                            <button
+                              class="btn btn-outline-dark"
+                              onclick="window.print()"
+                            >
+                              Print
+                            </button>
+                          </div>
+                          <div class="table-responsive">
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                  <th class="text-uppercase text-muted small">
+                                    Product
+                                  </th>
+                                  <th class="text-uppercase text-muted small">
+                                    Qty
+                                  </th>
+                                  <th class="text-uppercase text-muted small">
+                                    Price
+                                  </th>
+                                  <th class="text-uppercase text-muted small">
+                                    Total
+                                  </th>
+                                  <th class="text-uppercase text-muted small">
+                                    Action
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody id="transactionBody">
+                                <!-- Dynamic rows will appear here -->
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Transactions Table -->
+                  <div
+                    class="card mt-4"
+                    id="transactionTableCard"
+                    style="display: none"
+                  >
+                    <div class="card-body">
+                      <h5 class="fw-bold">Recent Transactions</h5>
+                      <button class="btn btn-primary mb-3">
+                        + Add New Sale
+                      </button>
+                      <div class="table-responsive">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th class="text-uppercase text-muted small">
+                                Product
+                              </th>
+                              <th class="text-uppercase text-muted small">
+                                Qty
+                              </th>
+                              <th class="text-uppercase text-muted small">
+                                Price
+                              </th>
+                              <th class="text-uppercase text-muted small">
+                                Total
+                              </th>
+                              <th class="text-uppercase text-muted small">
+                                Action
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody id="transactionBody">
+                            <!-- New rows will be inserted here -->
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Log Sale Modal -->
+                  <div
+                    class="modal fade"
+                    id="logSaleModal"
+                    tabindex="-1"
+                    aria-labelledby="logSaleModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog">
+                      <div class="modal-content rounded-3 p-3">
+                        <div class="modal-header border-0 pb-0">
+                          <h5
+                            class="modal-title fw-bold"
+                            id="logSaleModalLabel"
+                          >
+                            Log a New Sale
+                          </h5>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <div class="modal-body pt-0">
+                          <form>
+                            <div class="mb-3">
+                              <label class="form-label">Product Name</label>
+                              <input
+                                type="text"
+                                class="form-control"
+                                placeholder="e.g., Whey Protein"
+                              />
+                            </div>
+                            <div class="row">
+                              <div class="col-md-6 mb-3">
+                                <label class="form-label">Quantity</label>
+                                <input
+                                  type="number"
+                                  class="form-control"
+                                  value="1"
+                                />
+                              </div>
+                              <div class="col-md-6 mb-3">
+                                <label class="form-label"
+                                  >Price per Item (₹)</label
+                                >
+                                <input
+                                  type="number"
+                                  class="form-control"
+                                  placeholder="e.g., 2500"
+                                />
+                              </div>
+                            </div>
+                            <div class="mb-4">
+                              <label class="form-label">Date of Sale</label>
+                              <input
+                                type="date"
+                                class="form-control"
+                                placeholder="dd-mm-yyyy"
+                              />
+                            </div>
+                            <div class="d-flex justify-content-end">
+                              <button
+                                type="button"
+                                class="btn btn-light me-2"
+                                data-bs-dismiss="modal"
+                              >
+                                Cancel
+                              </button>
+                              <button type="submit" class="btn btn-primary">
+                                Log Sale
+                              </button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Active Memberships -->
+                  <div class="col-xl-4">
+                    <div
+                      class="card bg-success-subtle"
+                      style="
+                        background: url('assets/images/dashboard/dashboard-shape-2.png');
+                        background-repeat: no-repeat;
+                        background-position: bottom center;
+                      "
+                    >
+                      <div class="card-body">
+                        <div class="d-flex">
+                          <div class="avatar avatar-sm avatar-label-success">
+                            <i class="mdi mdi-account-multiple mt-1"></i>
+                          </div>
+                          <div class="ms-3">
+                            <p class="text-success mb-1">Active Memberships</p>
+                            <h4 class="mb-0">120 Members</h4>
+                          </div>
+                        </div>
+                        <div class="mt-3 mb-2">
+                          <p class="mb-0">4 expiring soon</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Sessions Completed -->
+                  <div class="col-xl-4">
+                    <div
+                      class="card bg-info-subtle"
+                      style="
+                        background: url('assets/images/dashboard/dashboard-shape-3.png');
+                        background-repeat: no-repeat;
+                        background-position: bottom center;
+                      "
+                    >
+                      <div class="card-body">
+                        <div class="d-flex">
+                          <div class="avatar avatar-sm avatar-label-info">
+                            <i class="mdi mdi-dumbbell mt-1"></i>
+                          </div>
+                          <div class="ms-3">
+                            <p class="text-info mb-1">
+                              Total Sessions Completed
+                            </p>
+                            <h4 class="mb-0">72</h4>
+                          </div>
+                        </div>
+                        <div class="mt-3 mb-2">
+                          <p class="mb-0">
+                            <span class="text-primary me-2 fs-14">
+                              <i class="fas fa-caret-up me-1"></i>3.4%
+                            </span>
+                            last month
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- end row -->
+                <!-- Birthday Dashboard Section -->
+                <section
+                  class="birthday-dashboard-section py-3"
+                  style="background-color: #f8f9fa"
+                >
+                  <div class="container">
+                    <!-- Calendar and Buttons -->
+                    <div
+                      class="d-flex justify-content-between align-items-center mb-3 flex-wrap"
+                    >
+                      <div class="d-flex align-items-center gap-2">
+                        <label
+                          for="birthdayDate"
+                          class="form-label fw-bold text-secondary mb-0"
+                          >📅 Check Birthdays:</label
+                        >
+                        <input
+                          type="date"
+                          id="birthdayDate"
+                          class="form-control"
+                          style="width: 200px"
+                        />
+                        <button
+                          class="btn btn-sm btn-outline-info"
+                          id="searchDateBtn"
+                        >
+                          Search
+                        </button>
+                      </div>
+                      <div class="d-flex gap-2 mt-2 mt-md-0">
+                        <button
+                          id="toggleTodayBtn"
+                          class="btn btn-sm btn-primary fw-bold"
+                        >
+                          🎂 Today's Birthdays
+                        </button>
+                        <button
+                          id="toggleUpcomingBtn"
+                          class="btn btn-sm btn-outline-secondary fw-bold"
+                        >
+                          📆 Upcoming Birthdays
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- Birthday Cards Section -->
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="card shadow">
+                          <div class="card-header bg-primary text-white">
+                            🎉 Birthdays
+                          </div>
+                          <div class="card-body overflow-hidden">
+                            <!-- Sliders -->
+                            <div
+                              id="todaySlider"
+                              class="combined-slider d-flex gap-3 overflow-auto flex-nowrap mb-2"
+                              style="display: none"
+                            ></div>
+                            <div
+                              id="upcomingSlider"
+                              class="combined-slider d-flex gap-3 overflow-auto flex-nowrap mb-2"
+                              style="display: none"
+                            ></div>
+                            <div
+                              id="searchedSlider"
+                              class="combined-slider d-flex gap-3 overflow-auto flex-nowrap mb-2"
+                              style="display: none"
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- Birthday Popup Modal -->
+                <div
+                  class="modal fade"
+                  id="birthdayPopup"
+                  tabindex="-1"
+                  aria-hidden="true"
+                >
+                  <div
+                    class="modal-dialog modal-dialog-centered"
+                    style="max-width: 480px"
+                  >
+                    <div
+                      class="modal-content"
+                      style="border-radius: 10px; overflow: hidden"
+                    >
+                      <!-- Modal Header -->
+                      <div
+                        class="modal-header d-flex justify-content-between align-items-start"
+                        style="padding: 10px 16px"
+                      >
+                        <h6
+                          class="modal-title text-danger"
+                          style="font-size: 16px; margin-top: 4px"
+                        >
+                          🎂 Birthday Wishes
+                        </h6>
+
+                        <div class="d-flex align-items-center gap-2">
+                          <button
+                            onclick="sendCombinedWhatsAppWishes()"
+                            class="btn btn-sm btn-success"
+                          >
+                            🎁 Send Wishes
+                          </button>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                          ></button>
+                        </div>
+                      </div>
+
+                      <!-- Modal Body -->
+                      <div
+                        class="modal-body d-flex flex-wrap justify-content-center gap-2"
+                        id="popupBirthdayContainer"
+                        style="
+                          padding: 10px;
+                          max-height: 360px;
+                          overflow-y: auto;
+                        "
+                      >
+                        <!-- Cards injected here via JS -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Gym Revenue Section -->
+                <section class="gym-revenue-section py-4">
+                  <div class="container-fluid">
+                    <div class="card shadow-sm border-0">
+                      <div class="card-body">
+                        <!-- Top Filters -->
+                        <div
+                          class="d-flex flex-wrap justify-content-between align-items-center mb-4"
+                        >
+                          <h5 class="card-title text-success mb-2">
+                            Gym Revenue Analytics
+                          </h5>
+                          <div
+                            class="d-flex flex-wrap gap-2 align-items-center"
+                          >
+                            <label class="form-label mb-0">From:</label>
+                            <input
+                              type="date"
+                              class="form-control form-control-sm"
+                              id="revenueFromDate"
+                            />
+                            <label class="form-label mb-0">To:</label>
+                            <input
+                              type="date"
+                              class="form-control form-control-sm"
+                              id="revenueToDate"
+                            />
+                            <button
+                              class="btn btn-success btn-sm"
+                              id="filterBtn"
+                            >
+                              Show Weekly
+                            </button>
+                          </div>
+                        </div>
+
+                        <!-- Timeframe Buttons -->
+                        <div class="btn-group mb-3" role="group">
+                          <button
+                            class="btn btn-outline-success btn-sm range-btn"
+                            data-range="2M"
+                          >
+                            Last 2 Months
+                          </button>
+                          <button
+                            class="btn btn-outline-success btn-sm range-btn"
+                            data-range="3M"
+                          >
+                            Last 3 Months
+                          </button>
+                          <button
+                            class="btn btn-outline-success btn-sm range-btn"
+                            data-range="4M"
+                          >
+                            Last 4 Months
+                          </button>
+                          <button
+                            class="btn btn-outline-success btn-sm range-btn"
+                            data-range="6M"
+                          >
+                            Last 6 Months
+                          </button>
+                          <button
+                            class="btn btn-outline-success btn-sm range-btn"
+                            data-range="1Y"
+                          >
+                            Last 1 Year
+                          </button>
+                        </div>
+
+                        <!-- Chart -->
+                        <canvas id="revenueBarChart" height="90"></canvas>
+
+                        <!-- Revenue Stats -->
+                        <div class="row text-center mt-4">
+                          <div class="col-md-4 mb-3">
+                            <h6 class="text-muted">Total Revenue</h6>
+                            <h4 class="text-success fw-bold" id="totalRevenue">
+                              ₹0
+                            </h4>
+                          </div>
+                          <div class="col-md-4 mb-3">
+                            <h6 class="text-muted">Average per Period</h6>
+                            <h4 class="text-info fw-bold" id="avgRevenue">
+                              ₹0
+                            </h4>
+                          </div>
+                          <div class="col-md-4 mb-3">
+                            <h6 class="text-muted">Highest Earning</h6>
+                            <h4 class="text-danger fw-bold" id="maxRevenue">
+                              ₹0
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <div class="row">
+                  <div class="col-12">
+                    <div
+                      class="card"
+                      style="max-height: 500px; overflow-y: auto"
+                      data-simplebar
+                    >
+                      <div class="card-header">
+                        <div class="card-icon text-muted">
+                          <i class="fas fa-chalkboard-teacher fs-14"></i>
+                        </div>
+                        <h3 class="card-title">
+                          Trainer-wise Member Assignment
+                        </h3>
+                      </div>
+                      <div class="card-body">
+                        <div class="table-responsive">
+                          <table class="table table-bordered text-nowrap mb-0">
+                            <thead class="table-light">
+                              <tr>
+                                <th>Trainer Name</th>
+                                <th>Total Members Assigned</th>
+                                <th>View Members</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td class="align-middle">
+                                  <i
+                                    class="mdi mdi-account-tie text-primary me-2"
+                                  ></i
+                                  >Ravi Shankar
+                                </td>
+                                <td class="align-middle">56 Members</td>
+                                <td class="align-middle">
+                                  <details>
+                                    <summary
+                                      class="btn btn-sm btn-outline-primary toggle-btn"
+                                    >
+                                      Show
+                                    </summary>
+                                    <ul class="mb-0 mt-2 ps-3">
+                                      <li>Rohit Sharma</li>
+                                      <li>Vikram Pawar</li>
+                                      <li>Neeraj Mehta</li>
+                                      <li>Anjali Chauhan</li>
+                                      <li>Arjun Kale</li>
+                                    </ul>
+                                  </details>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="align-middle">
+                                  <i
+                                    class="mdi mdi-account-tie text-success me-2"
+                                  ></i
+                                  >Priya Deshmukh
+                                </td>
+                                <td class="align-middle">36 Members</td>
+                                <td class="align-middle">
+                                  <details>
+                                    <summary
+                                      class="btn btn-sm btn-outline-primary toggle-btn"
+                                    >
+                                      Show
+                                    </summary>
+                                    <ul class="mb-0 mt-2 ps-3">
+                                      <li>Neha Kulkarni</li>
+                                      <li>Rahul More</li>
+                                      <li>Shruti Patil</li>
+                                      <li>Amit Thorat</li>
+                                    </ul>
+                                  </details>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="align-middle">
+                                  <i
+                                    class="mdi mdi-account-tie text-info me-2"
+                                  ></i
+                                  >Amit Kale
+                                </td>
+                                <td class="align-middle">43 Members</td>
+                                <td class="align-middle">
+                                  <details>
+                                    <summary
+                                      class="btn btn-sm btn-outline-primary toggle-btn"
+                                    >
+                                      Show
+                                    </summary>
+                                    <ul class="mb-0 mt-2 ps-3">
+                                      <li>Akash Verma</li>
+                                      <li>Meera Joshi</li>
+                                      <li>Sagar Desai</li>
+                                    </ul>
+                                  </details>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="align-middle">
+                                  <i
+                                    class="mdi mdi-account-tie text-warning me-2"
+                                  ></i
+                                  >Sneha Jadhav
+                                </td>
+                                <td class="align-middle">22 Members</td>
+                                <td class="align-middle">
+                                  <details>
+                                    <summary
+                                      class="btn btn-sm btn-outline-primary toggle-btn"
+                                    >
+                                      Show
+                                    </summary>
+                                    <ul class="mb-0 mt-2 ps-3">
+                                      <li>Sneha Patil</li>
+                                      <li>Kunal Shinde</li>
+                                      <li>Payal Jain</li>
+                                    </ul>
+                                  </details>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="align-middle">
+                                  <i
+                                    class="mdi mdi-account-tie text-danger me-2"
+                                  ></i
+                                  >Deepak Joshi
+                                </td>
+                                <td class="align-middle">40 Members</td>
+                                <td class="align-middle">
+                                  <details>
+                                    <summary
+                                      class="btn btn-sm btn-outline-primary toggle-btn"
+                                    >
+                                      Show
+                                    </summary>
+                                    <ul class="mb-0 mt-2 ps-3">
+                                      <li>Ramesh Tiwari</li>
+                                      <li>Shalini Gokhale</li>
+                                      <li>Pratik Ghosh</li>
+                                      <li>Varsha Yadav</li>
+                                    </ul>
+                                  </details>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end row -->
+
+            <!-- end row -->
+          </div>
+          <!-- end container-fluid -->
+        </div>
+        <!-- End Page-content -->
+
+        <footer class="footer">
+          <div class="container-fluid">
+            <div class="row align-items-center">
+              <div class="col-sm-6">
+                <script>
+                  document.write(new Date().getFullYear());
+                </script>
+                © Clivax Gym.
+              </div>
+              <div class="col-sm-6">
+                <div class="text-sm-end d-none d-sm-block">
+                  Designed & Developed
+                  <i class="mdi mdi-heart text-danger"></i> by
+                  <a
+                    href="https://kavyainfoweb.com/"
+                    target="_blank"
+                    class="text-muted"
+                    >Kavya Infoweb Pvt. Ltd.</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <!-- end main content-->
     </div>
     <!-- end layout-wrapper -->
 
-
-    <div class="custom-setting bg-primary pe-0 d-flex flex-column rounded-start">
-        <button type="button" class="btn btn-wide border-0 text-white fs-20 avatar-sm rounded-end-0"
-            id="light-dark-mode">
-            <i class="mdi mdi-brightness-7 align-middle"></i>
-            <i class="mdi mdi-white-balance-sunny align-middle"></i>
-        </button>
-        <!-- <button type="button" class="btn btn-wide border-0 text-white fs-20 avatar-sm" data-toggle="fullscreen">
+    <div
+      class="custom-setting bg-primary pe-0 d-flex flex-column rounded-start"
+    >
+      <button
+        type="button"
+        class="btn btn-wide border-0 text-white fs-20 avatar-sm rounded-end-0"
+        id="light-dark-mode"
+      >
+        <i class="mdi mdi-brightness-7 align-middle"></i>
+        <i class="mdi mdi-white-balance-sunny align-middle"></i>
+      </button>
+      <!-- <button type="button" class="btn btn-wide border-0 text-white fs-20 avatar-sm" data-toggle="fullscreen">
             <i class="mdi mdi-arrow-expand-all align-middle"></i>
         </button>
         <button type="button" class="btn btn-wide border-0 text-white fs-16 avatar-sm" id="layout-dir-btn">
@@ -1151,195 +1784,244 @@
         </button> -->
     </div>
 
-
     <!-- Rightbar Sidebar -->
     <div class="offcanvas offcanvas-end" id="offcanvas-rightsidabar">
-        <div class="card h-100 rounded-0" data-simplebar="init">
-            <div class="card-header bg-light">
-                <h6 class="card-title text-uppercase">Activities</h6>
-                <div class="card-addon">
-                    <button class="btn btn-label-danger" data-bs-dismiss="offcanvas">
-                        <i class="fa fa-times"></i>
-                    </button>
-                </div>
+      <div class="card h-100 rounded-0" data-simplebar="init">
+        <div class="card-header bg-light">
+          <h6 class="card-title text-uppercase">Activities</h6>
+          <div class="card-addon">
+            <button class="btn btn-label-danger" data-bs-dismiss="offcanvas">
+              <i class="fa fa-times"></i>
+            </button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="">
+            <h3 class="card-title">Company summary</h3>
+            <div class="border rounded p-2">
+              <p class="text-muted mb-2">Server Load</p>
+              <h4 class="fs-16 mb-2">489</h4>
+              <div class="progress progress-sm" style="height: 4px">
+                <div class="progress-bar bg-success" style="width: 49.4%"></div>
+              </div>
+              <p class="text-muted mb-0 mt-1">49.4% <span>Avg</span></p>
             </div>
-            <div class="card-body">
-                <div class="">
-                    <h3 class="card-title">Company summary</h3>
-                    <div class="border rounded p-2">
-                        <p class="text-muted mb-2">Server Load</p>
-                        <h4 class="fs-16 mb-2">489</h4>
-                        <div class="progress progress-sm" style="height:4px;">
-                            <div class="progress-bar bg-success" style="width: 49.4%"></div>
-                        </div>
-                        <p class="text-muted mb-0 mt-1">49.4% <span>Avg</span></p>
-                    </div>
-                    <div class="border rounded p-2">
-                        <p class="text-muted mb-2">Members online</p>
-                        <h4 class="fs-16 mb-2">3,450</h4>
-                        <div class="progress progress-sm" style="height:4px;">
-                            <div class="progress-bar bg-danger" style="width: 34.6%"></div>
-                        </div>
-                        <p class="text-muted mb-0 mt-1">34.6% <span>Avg</span></p>
-                    </div>
-                    <div class="border rounded p-2">
-                        <p class="text-muted mb-2">Today's revenue</p>
-                        <h4 class="fs-16 mb-2">$18,390</h4>
-                        <div class="progress progress-sm" style="height:4px;">
-                            <div class="progress-bar bg-warning" style="width: 20%"></div>
-                        </div>
-                        <p class="text-muted mb-0 mt-1">$37,578 <span>Avg</span></p>
-                    </div>
-                    <div class="border rounded p-2">
-                        <p class="text-muted mb-2">Expected profit</p>
-                        <h4 class="fs-16 mb-2">$23,461</h4>
-                        <div class="progress progress-sm" style="height:4px;">
-                            <div class="progress-bar bg-info" style="width: 60%"></div>
-                        </div>
-                        <p class="text-muted mb-0 mt-1">$23,461 <span>Avg</span></p>
-                    </div>
-                </div>
-
-                <div class="mt-4">
-                    <h3 class="card-title">Latest log</h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-primary"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">12 new users registered</p>
-                                    <span class="text-muted">Just now</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-success"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">System shutdown <span
-                                            class="badge badge-label-success">pending</span></p>
-                                    <span class="text-muted">2 mins</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-primary"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">New invoice received</p>
-                                    <span class="text-muted">3 mins</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-danger"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">New order received <span
-                                            class="badge badge-label-danger">urgent</span></p>
-                                    <span class="text-muted">10 mins</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-warning"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">Production server down</p>
-                                    <span class="text-muted">1 hrs</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-info"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">System error <a href="#">check</a></p>
-                                    <span class="text-muted">2 hrs</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-secondary"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">DB overloaded 80%</p>
-                                    <span class="text-muted">5 hrs</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-pin"><i class="marker marker-dot text-success"></i></div>
-                            <div class="timeline-content">
-                                <div class="d-flex justify-content-between">
-                                    <p class="mb-0">Production server up</p>
-                                    <span class="text-muted">6 hrs</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-4">
-                    <h3 class="card-title">Upcoming activities</h3>
-                    <div class="timeline timeline-timed">
-                        <div class="timeline-item">
-                            <span class="timeline-time">10:00</span>
-                            <div class="timeline-pin"><i class="marker marker-circle text-primary"></i></div>
-                            <div class="timeline-content">
-                                <div>
-                                    <span>Meeting with</span>
-                                    <div class="avatar-group ms-2">
-                                        <div class="avatar avatar-circle">
-                                            <img src="assets/images/users/avatar-1.png" alt="Avatar image"
-                                                class="avatar-2xs" />
-                                        </div>
-                                        <div class="avatar avatar-circle">
-                                            <img src="assets/images/users/avatar-2.png" alt="Avatar image"
-                                                class="avatar-2xs" />
-                                        </div>
-                                        <div class="avatar avatar-circle">
-                                            <img src="assets/images/users/avatar-3.png" alt="Avatar image"
-                                                class="avatar-2xs" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-time">12:45</span>
-                            <div class="timeline-pin"><i class="marker marker-circle text-warning"></i></div>
-                            <div class="timeline-content">
-                                <p class="mb-0">Lorem ipsum dolor sit amit,consectetur eiusmdd tempor incididunt ut
-                                    labore et dolore magna elit enim at minim veniam quis nostrud</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-time">14:00</span>
-                            <div class="timeline-pin"><i class="marker marker-circle text-danger"></i></div>
-                            <div class="timeline-content">
-                                <p class="mb-0">Received a new feedback on <a href="#">GoFinance</a> App product.</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-time">15:20</span>
-                            <div class="timeline-pin"><i class="marker marker-circle text-success"></i></div>
-                            <div class="timeline-content">
-                                <p class="mb-0">Lorem ipsum dolor sit amit,consectetur eiusmdd tempor incididunt ut
-                                    labore et dolore magna.</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-time">17:00</span>
-                            <div class="timeline-pin"><i class="marker marker-circle text-info"></i></div>
-                            <div class="timeline-content">
-                                <p class="mb-0">Make Deposit <a href="#">USD 700</a> o ESL.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="border rounded p-2">
+              <p class="text-muted mb-2">Members online</p>
+              <h4 class="fs-16 mb-2">3,450</h4>
+              <div class="progress progress-sm" style="height: 4px">
+                <div class="progress-bar bg-danger" style="width: 34.6%"></div>
+              </div>
+              <p class="text-muted mb-0 mt-1">34.6% <span>Avg</span></p>
             </div>
-        </div> <!-- end card-->
+            <div class="border rounded p-2">
+              <p class="text-muted mb-2">Today's revenue</p>
+              <h4 class="fs-16 mb-2">$18,390</h4>
+              <div class="progress progress-sm" style="height: 4px">
+                <div class="progress-bar bg-warning" style="width: 20%"></div>
+              </div>
+              <p class="text-muted mb-0 mt-1">$37,578 <span>Avg</span></p>
+            </div>
+            <div class="border rounded p-2">
+              <p class="text-muted mb-2">Expected profit</p>
+              <h4 class="fs-16 mb-2">$23,461</h4>
+              <div class="progress progress-sm" style="height: 4px">
+                <div class="progress-bar bg-info" style="width: 60%"></div>
+              </div>
+              <p class="text-muted mb-0 mt-1">$23,461 <span>Avg</span></p>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <h3 class="card-title">Latest log</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-primary"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">12 new users registered</p>
+                    <span class="text-muted">Just now</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-success"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">
+                      System shutdown
+                      <span class="badge badge-label-success">pending</span>
+                    </p>
+                    <span class="text-muted">2 mins</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-primary"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">New invoice received</p>
+                    <span class="text-muted">3 mins</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-danger"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">
+                      New order received
+                      <span class="badge badge-label-danger">urgent</span>
+                    </p>
+                    <span class="text-muted">10 mins</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-warning"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">Production server down</p>
+                    <span class="text-muted">1 hrs</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-info"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">System error <a href="#">check</a></p>
+                    <span class="text-muted">2 hrs</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-secondary"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">DB overloaded 80%</p>
+                    <span class="text-muted">5 hrs</span>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-pin">
+                  <i class="marker marker-dot text-success"></i>
+                </div>
+                <div class="timeline-content">
+                  <div class="d-flex justify-content-between">
+                    <p class="mb-0">Production server up</p>
+                    <span class="text-muted">6 hrs</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <h3 class="card-title">Upcoming activities</h3>
+            <div class="timeline timeline-timed">
+              <div class="timeline-item">
+                <span class="timeline-time">10:00</span>
+                <div class="timeline-pin">
+                  <i class="marker marker-circle text-primary"></i>
+                </div>
+                <div class="timeline-content">
+                  <div>
+                    <span>Meeting with</span>
+                    <div class="avatar-group ms-2">
+                      <div class="avatar avatar-circle">
+                        <img
+                          src="assets/images/users/avatar-1.png"
+                          alt="Avatar image"
+                          class="avatar-2xs"
+                        />
+                      </div>
+                      <div class="avatar avatar-circle">
+                        <img
+                          src="assets/images/users/avatar-2.png"
+                          alt="Avatar image"
+                          class="avatar-2xs"
+                        />
+                      </div>
+                      <div class="avatar avatar-circle">
+                        <img
+                          src="assets/images/users/avatar-3.png"
+                          alt="Avatar image"
+                          class="avatar-2xs"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-time">12:45</span>
+                <div class="timeline-pin">
+                  <i class="marker marker-circle text-warning"></i>
+                </div>
+                <div class="timeline-content">
+                  <p class="mb-0">
+                    Lorem ipsum dolor sit amit,consectetur eiusmdd tempor
+                    incididunt ut labore et dolore magna elit enim at minim
+                    veniam quis nostrud
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-time">14:00</span>
+                <div class="timeline-pin">
+                  <i class="marker marker-circle text-danger"></i>
+                </div>
+                <div class="timeline-content">
+                  <p class="mb-0">
+                    Received a new feedback on <a href="#">GoFinance</a> App
+                    product.
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-time">15:20</span>
+                <div class="timeline-pin">
+                  <i class="marker marker-circle text-success"></i>
+                </div>
+                <div class="timeline-content">
+                  <p class="mb-0">
+                    Lorem ipsum dolor sit amit,consectetur eiusmdd tempor
+                    incididunt ut labore et dolore magna.
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-time">17:00</span>
+                <div class="timeline-pin">
+                  <i class="marker marker-circle text-info"></i>
+                </div>
+                <div class="timeline-content">
+                  <p class="mb-0">
+                    Make Deposit <a href="#">USD 700</a> o ESL.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end card-->
     </div>
 
     <!-- JAVASCRIPT -->
@@ -1348,7 +2030,6 @@
     <script src="assets/libs/metismenu/metisMenu.min.js"></script>
     <script src="assets/libs/simplebar/simplebar.min.js"></script>
     <script src="assets/libs/node-waves/waves.min.js"></script>
-
 
     <!-- apexcharts -->
     <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
@@ -1362,337 +2043,489 @@
     <!-- App js -->
     <script src="assets/js/app.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const allDetails = document.querySelectorAll("table details");
+      document.addEventListener("DOMContentLoaded", () => {
+        const allDetails = document.querySelectorAll("table details");
 
-            allDetails.forEach((detail) => {
-                const summary = detail.querySelector("summary");
+        allDetails.forEach((detail) => {
+          const summary = detail.querySelector("summary");
 
-                summary.addEventListener("click", (e) => {
-                    e.preventDefault();
+          summary.addEventListener("click", (e) => {
+            e.preventDefault();
 
-                    const isOpen = detail.hasAttribute("open");
+            const isOpen = detail.hasAttribute("open");
 
-                    // Close all other details
-                    allDetails.forEach((otherDetail) => {
-                        if (otherDetail !== detail) {
-                            otherDetail.removeAttribute("open");
-                            otherDetail.querySelector("summary").textContent = "Show";
-                        }
-                    });
-
-                    // Toggle current detail
-                    if (isOpen) {
-                        detail.removeAttribute("open");
-                        summary.textContent = "Show";
-                    } else {
-                        detail.setAttribute("open", "");
-                        summary.textContent = "Hide";
-                    }
-                });
+            // Close all other details
+            allDetails.forEach((otherDetail) => {
+              if (otherDetail !== detail) {
+                otherDetail.removeAttribute("open");
+                otherDetail.querySelector("summary").textContent = "Show";
+              }
             });
+
+            // Toggle current detail
+            if (isOpen) {
+              detail.removeAttribute("open");
+              summary.textContent = "Show";
+            } else {
+              detail.setAttribute("open", "");
+              summary.textContent = "Hide";
+            }
+          });
         });
+      });
     </script>
 
     <!-- Chart Script -->
     <script>
-        const ctx = document.getElementById('revenueBarChart').getContext('2d');
+      const ctx = document.getElementById("revenueBarChart").getContext("2d");
 
-        let revenueChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: [],
-                datasets: [{
-                    label: 'Revenue (₹)',
-                    data: [],
-                    backgroundColor: '#38c66c',
-                    borderRadius: 5,
-                    barPercentage: 0.4,
-                    categoryPercentage: 0.5,
-                }]
+      let revenueChart = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: [],
+          datasets: [
+            {
+              label: "Revenue (₹)",
+              data: [],
+              backgroundColor: "#38c66c",
+              borderRadius: 5,
+              barPercentage: 0.4,
+              categoryPercentage: 0.5,
             },
-            options: {
-                responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        ticks: {
-                            callback: value => '₹' + value
-                        }
-                    }
-                },
-                plugins: {
-                    legend: { display: false },
-                    tooltip: {
-                        callbacks: {
-                            label: context => '₹' + context.parsed.y
-                        }
-                    }
-                }
-            }
-        });
+          ],
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: true,
+              ticks: {
+                callback: (value) => "₹" + value,
+              },
+            },
+          },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: (context) => "₹" + context.parsed.y,
+              },
+            },
+          },
+        },
+      });
 
-        const monthlyRevenue = {
-            'Jan': 105000, 'Feb': 97000, 'Mar': 112000, 'Apr': 128000,
-            'May': 122000, 'Jun': 119000, 'Jul': 134000, 'Aug': 110000,
-            'Sep': 98000, 'Oct': 126000, 'Nov': 124000, 'Dec': 143000
-        };
+      const monthlyRevenue = {
+        Jan: 105000,
+        Feb: 97000,
+        Mar: 112000,
+        Apr: 128000,
+        May: 122000,
+        Jun: 119000,
+        Jul: 134000,
+        Aug: 110000,
+        Sep: 98000,
+        Oct: 126000,
+        Nov: 124000,
+        Dec: 143000,
+      };
 
-        function updateChart(labels, data) {
-            // Adjust bar width dynamically
-            let count = labels.length;
-            let barP = 0.4, catP = 0.5;
-            if (count >= 10) {
-                barP = 0.25;
-                catP = 0.4;
-            } else if (count >= 6) {
-                barP = 0.3;
-                catP = 0.45;
-            }
-
-            revenueChart.data.labels = labels;
-            revenueChart.data.datasets[0].data = data;
-            revenueChart.data.datasets[0].barPercentage = barP;
-            revenueChart.data.datasets[0].categoryPercentage = catP;
-            revenueChart.update();
-
-            const total = data.reduce((a, b) => a + b, 0);
-            const avg = Math.round(total / data.length);
-            const max = Math.max(...data);
-
-            document.getElementById('totalRevenue').innerText = '₹' + total.toLocaleString();
-            document.getElementById('avgRevenue').innerText = '₹' + avg.toLocaleString();
-            document.getElementById('maxRevenue').innerText = '₹' + max.toLocaleString();
+      function updateChart(labels, data) {
+        // Adjust bar width dynamically
+        let count = labels.length;
+        let barP = 0.4,
+          catP = 0.5;
+        if (count >= 10) {
+          barP = 0.25;
+          catP = 0.4;
+        } else if (count >= 6) {
+          barP = 0.3;
+          catP = 0.45;
         }
 
-        function generateWeeklyRevenue(fromDate, toDate) {
-            const weeks = [];
-            const labels = [];
-            const oneWeek = 7 * 24 * 60 * 60 * 1000;
-            let current = new Date(fromDate);
-            let weekCount = 1;
+        revenueChart.data.labels = labels;
+        revenueChart.data.datasets[0].data = data;
+        revenueChart.data.datasets[0].barPercentage = barP;
+        revenueChart.data.datasets[0].categoryPercentage = catP;
+        revenueChart.update();
 
-            while (current < toDate) {
-                const next = new Date(current.getTime() + oneWeek);
-                labels.push(`Week ${weekCount++}`);
-                weeks.push(Math.floor(25000 + Math.random() * 20000)); // Dummy data
-                current = next;
-            }
+        const total = data.reduce((a, b) => a + b, 0);
+        const avg = Math.round(total / data.length);
+        const max = Math.max(...data);
 
-            return { labels, data: weeks };
+        document.getElementById("totalRevenue").innerText =
+          "₹" + total.toLocaleString();
+        document.getElementById("avgRevenue").innerText =
+          "₹" + avg.toLocaleString();
+        document.getElementById("maxRevenue").innerText =
+          "₹" + max.toLocaleString();
+      }
+
+      function generateWeeklyRevenue(fromDate, toDate) {
+        const weeks = [];
+        const labels = [];
+        const oneWeek = 7 * 24 * 60 * 60 * 1000;
+        let current = new Date(fromDate);
+        let weekCount = 1;
+
+        while (current < toDate) {
+          const next = new Date(current.getTime() + oneWeek);
+          labels.push(`Week ${weekCount++}`);
+          weeks.push(Math.floor(25000 + Math.random() * 20000)); // Dummy data
+          current = next;
         }
 
-        // Range Buttons
-        document.querySelectorAll('.range-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const range = btn.dataset.range;
-                let selectedMonths = [];
+        return { labels, data: weeks };
+      }
 
-                switch (range) {
-                    case '2M': selectedMonths = ['Jun', 'Jul']; break;
-                    case '3M': selectedMonths = ['May', 'Jun', 'Jul']; break;
-                    case '4M': selectedMonths = ['Apr', 'May', 'Jun', 'Jul']; break;
-                    case '6M': selectedMonths = ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']; break;
-                    case '1Y': selectedMonths = Object.keys(monthlyRevenue); break;
-                }
+      // Range Buttons
+      document.querySelectorAll(".range-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const range = btn.dataset.range;
+          let selectedMonths = [];
 
-                const revenueValues = selectedMonths.map(month => monthlyRevenue[month]);
-                updateChart(selectedMonths, revenueValues);
-            });
+          switch (range) {
+            case "2M":
+              selectedMonths = ["Jun", "Jul"];
+              break;
+            case "3M":
+              selectedMonths = ["May", "Jun", "Jul"];
+              break;
+            case "4M":
+              selectedMonths = ["Apr", "May", "Jun", "Jul"];
+              break;
+            case "6M":
+              selectedMonths = ["Feb", "Mar", "Apr", "May", "Jun", "Jul"];
+              break;
+            case "1Y":
+              selectedMonths = Object.keys(monthlyRevenue);
+              break;
+          }
+
+          const revenueValues = selectedMonths.map(
+            (month) => monthlyRevenue[month]
+          );
+          updateChart(selectedMonths, revenueValues);
         });
+      });
 
-        // Weekly Filter
-        document.getElementById('filterBtn').addEventListener('click', () => {
-            const fromVal = document.getElementById('revenueFromDate').value;
-            const toVal = document.getElementById('revenueToDate').value;
+      // Weekly Filter
+      document.getElementById("filterBtn").addEventListener("click", () => {
+        const fromVal = document.getElementById("revenueFromDate").value;
+        const toVal = document.getElementById("revenueToDate").value;
 
-            if (!fromVal || !toVal) {
-                alert('Please select both From and To dates.');
-                return;
-            }
+        if (!fromVal || !toVal) {
+          alert("Please select both From and To dates.");
+          return;
+        }
 
-            const fromDate = new Date(fromVal);
-            const toDate = new Date(toVal);
+        const fromDate = new Date(fromVal);
+        const toDate = new Date(toVal);
 
-            if (fromDate >= toDate) {
-                alert('Please select a valid date range.');
-                return;
-            }
+        if (fromDate >= toDate) {
+          alert("Please select a valid date range.");
+          return;
+        }
 
-            const { labels, data } = generateWeeklyRevenue(fromDate, toDate);
-            updateChart(labels, data);
-        });
+        const { labels, data } = generateWeeklyRevenue(fromDate, toDate);
+        updateChart(labels, data);
+      });
 
-        // Load Default Chart
-        document.querySelector('[data-range="3M"]').click();
+      // Load Default Chart
+      document.querySelector('[data-range="3M"]').click();
     </script>
 
-
     <script>
-        const birthdayData = [
+      const birthdayData = [
+        {
+          name: "Rohan Mehra",
+          type: "Staff",
+          date: "2025-07-30",
+          img: "https://tse3.mm.bing.net/th/id/OIP.rLPJTXV1dTyD63YUsuv_kAHaHa?pid=Api&P=0&h=180",
+        },
+        {
+          name: "Sneha Joshi",
+          type: "Member",
+          date: "2025-07-31",
+          img: "https://randomuser.me/api/portraits/men/11.jpg",
+        },
+        {
+          name: "Arjun Yadav",
+          type: "Staff",
+          date: "2025-07-31",
+          img: "https://randomuser.me/api/portraits/men/11.jpg",
+        },
+        {
+          name: "Simran Kaur",
+          type: "Member",
+          date: "2025-07-31",
+          img: "https://randomuser.me/api/portraits/men/11.jpg",
+        },
+        {
+          name: "Vikas Jain",
+          type: "Staff",
+          date: "2025-07-31",
+          img: "https://randomuser.me/api/portraits/men/11.jpg",
+        },
+        {
+          name: "Riya Kapoor",
+          type: "Member",
+          date: "2025-07-31",
+          img: "https://randomuser.me/api/portraits/men/11.jpg",
+        },
+        {
+          name: "Tushar Roy",
+          type: "Staff",
+          date: "2025-07-31",
+          img: "https://randomuser.me/api/portraits/men/11.jpg",
+        },
+        {
+          name: "Kunal Singh",
+          type: "Member",
+          date: "2025-08-03",
+          img: "https://randomuser.me/api/portraits/men/11.jpg",
+        },
+        {
+          name: "Preeti Sharma",
+          type: "Staff",
+          date: "2025-08-04",
+          img: "https://randomuser.me/api/portraits/men/11.jpg",
+        },
+        {
+          name: "Ankit Verma",
+          type: "Member",
+          date: "2025-08-08",
+          img: "https://randomuser.me/api/portraits/men/11.jpg",
+        },
+        {
+          name: "Meena Kumari",
+          type: "Staff",
+          date: "2025-08-10",
+          img: "https://randomuser.me/api/portraits/men/11.jpg",
+        },
+        {
+          name: "Sunil Dutt",
+          type: "Member",
+          date: "2025-08-12",
+          img: "https://randomuser.me/api/portraits/men/11.jpg",
+        },
+        {
+          name: "Payal Rathore",
+          type: "Staff",
+          date: "2025-08-15",
+          img: "https://randomuser.me/api/portraits/men/11.jpg",
+        },
+        {
+          name: "Tarun Goel",
+          type: "Member",
+          date: "2025-08-18",
+          img: "https://randomuser.me/api/portraits/men/11.jpg",
+        },
+        {
+          name: "Diksha Rana",
+          type: "Staff",
+          date: "2025-08-21",
+          img: "https://randomuser.me/api/portraits/men/11.jpg",
+        },
+        {
+          name: "Mohan Das",
+          type: "Member",
+          date: "2025-08-25",
+          img: "https://randomuser.me/api/portraits/men/11.jpg",
+        },
+        {
+          name: "Alka Jain",
+          type: "Staff",
+          date: "2025-08-28",
+          img: "https://randomuser.me/api/portraits/men/11.jpg",
+        },
+      ];
 
-            {
-                name: 'Rohan Mehra', type: 'Staff', date: '2025-07-30', img: 'https://tse3.mm.bing.net/th/id/OIP.rLPJTXV1dTyD63YUsuv_kAHaHa?pid=Api&P=0&h=180'
-            },
-            {
-                name: 'Sneha Joshi', type: 'Member', date: '2025-07-31', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            },
-            {
-                name: 'Arjun Yadav', type: 'Staff', date: '2025-07-31', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            },
-            {
-                name: 'Simran Kaur', type: 'Member', date: '2025-07-31', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            },
-            {
-                name: 'Vikas Jain', type: 'Staff', date: '2025-07-31', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            },
-            {
-                name: 'Riya Kapoor', type: 'Member', date: '2025-07-31', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            },
-            {
-                name: 'Tushar Roy', type: 'Staff', date: '2025-07-31', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            },
-            {
-                name: 'Kunal Singh', type: 'Member', date: '2025-08-03', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            },
-            {
-                name: 'Preeti Sharma', type: 'Staff', date: '2025-08-04', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            },
-            {
-                name: 'Ankit Verma', type: 'Member', date: '2025-08-08', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            },
-            {
-                name: 'Meena Kumari', type: 'Staff', date: '2025-08-10', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            },
-            {
-                name: 'Sunil Dutt', type: 'Member', date: '2025-08-12', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            },
-            {
-                name: 'Payal Rathore', type: 'Staff', date: '2025-08-15', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            },
-            {
-                name: 'Tarun Goel', type: 'Member', date: '2025-08-18', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            },
-            {
-                name: 'Diksha Rana', type: 'Staff', date: '2025-08-21', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            },
-            {
-                name: 'Mohan Das', type: 'Member', date: '2025-08-25', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            },
-            {
-                name: 'Alka Jain', type: 'Staff', date: '2025-08-28', img: 'https://randomuser.me/api/portraits/men/11.jpg'
-            }
-        ];
+      const todaySlider = document.getElementById("todaySlider");
+      const upcomingSlider = document.getElementById("upcomingSlider");
+      const searchedSlider = document.getElementById("searchedSlider");
 
-        const todaySlider = document.getElementById('todaySlider');
-        const upcomingSlider = document.getElementById('upcomingSlider');
-        const searchedSlider = document.getElementById('searchedSlider');
+      const today = new Date().toISOString().slice(0, 10);
+      const thisMonth = new Date().getMonth();
+      let currentBirthdayList = [];
 
-        const today = new Date().toISOString().slice(0, 10);
-        const thisMonth = new Date().getMonth();
-        let currentBirthdayList = [];
-
-        const renderSlider = (data, container) => {
-            container.innerHTML = '';
-            data.forEach((person) => {
-                const card = document.createElement('div');
-                card.className = 'card p-2 text-center';
-                card.style.minWidth = '180px';
-                card.innerHTML = `
+      const renderSlider = (data, container) => {
+        container.innerHTML = "";
+        data.forEach((person) => {
+          const card = document.createElement("div");
+          card.className = "card p-2 text-center";
+          card.style.minWidth = "180px";
+          card.innerHTML = `
         <img src="https://via.placeholder.com/100" class="rounded-circle mx-auto" height="80" alt="">
         <h6 class="mt-2 mb-0">${person.name}</h6>
         <small class="text-muted">${person.type}</small>
-        <div class="text-danger">🎂 ${new Date(person.date).toDateString()}</div>
+        <div class="text-danger">🎂 ${new Date(
+          person.date
+        ).toDateString()}</div>
       `;
-                container.appendChild(card);
-            });
-            startAutoScroll(container);
-        };
+          container.appendChild(card);
+        });
+        startAutoScroll(container);
+      };
 
-        const startAutoScroll = (slider) => {
-            let scrollAmount = 0;
-            setInterval(() => {
-                if (slider.scrollWidth > slider.clientWidth) {
-                    scrollAmount += 1;
-                    if (scrollAmount >= slider.scrollWidth - slider.clientWidth) scrollAmount = 0;
-                    slider.scrollTo({ left: scrollAmount, behavior: 'smooth' });
-                }
-            }, 40);
-        };
+      const startAutoScroll = (slider) => {
+        let scrollAmount = 0;
+        setInterval(() => {
+          if (slider.scrollWidth > slider.clientWidth) {
+            scrollAmount += 1;
+            if (scrollAmount >= slider.scrollWidth - slider.clientWidth)
+              scrollAmount = 0;
+            slider.scrollTo({ left: scrollAmount, behavior: "smooth" });
+          }
+        }, 40);
+      };
 
-        const showOnlySlider = (target) => {
-            [todaySlider, upcomingSlider, searchedSlider].forEach(s => s.style.display = 'none');
-            target.style.display = 'flex';
-        };
+      const showOnlySlider = (target) => {
+        [todaySlider, upcomingSlider, searchedSlider].forEach(
+          (s) => (s.style.display = "none")
+        );
+        target.style.display = "flex";
+      };
 
-        window.addEventListener('DOMContentLoaded', () => {
-            const todays = birthdayData.filter(b => b.date === today);
-            if (todays.length > 0) {
-                showOnlySlider(todaySlider);
-                renderSlider(todays, todaySlider);
-                showPopup(todays);
-            }
+      window.addEventListener("DOMContentLoaded", () => {
+        const todays = birthdayData.filter((b) => b.date === today);
+        if (todays.length > 0) {
+          showOnlySlider(todaySlider);
+          renderSlider(todays, todaySlider);
+          showPopup(todays);
+        }
+      });
+
+      document
+        .getElementById("toggleTodayBtn")
+        .addEventListener("click", () => {
+          const todays = birthdayData.filter((b) => b.date === today);
+          showOnlySlider(todaySlider);
+          renderSlider(todays, todaySlider);
+          showPopup(todays);
         });
 
-        document.getElementById('toggleTodayBtn').addEventListener('click', () => {
-            const todays = birthdayData.filter(b => b.date === today);
-            showOnlySlider(todaySlider);
-            renderSlider(todays, todaySlider);
-            showPopup(todays);
+      document
+        .getElementById("toggleUpcomingBtn")
+        .addEventListener("click", () => {
+          const upcoming = birthdayData.filter((b) => {
+            const bday = new Date(b.date);
+            return bday > new Date(today) && bday.getMonth() === thisMonth;
+          });
+          showOnlySlider(upcomingSlider);
+          renderSlider(upcoming, upcomingSlider);
         });
 
-        document.getElementById('toggleUpcomingBtn').addEventListener('click', () => {
-            const upcoming = birthdayData.filter(b => {
-                const bday = new Date(b.date);
-                return bday > new Date(today) && bday.getMonth() === thisMonth;
-            });
-            showOnlySlider(upcomingSlider);
-            renderSlider(upcoming, upcomingSlider);
-        });
+      document.getElementById("searchDateBtn").addEventListener("click", () => {
+        const selected = document.getElementById("birthdayDate").value;
+        const matches = birthdayData.filter((b) => b.date === selected);
+        showOnlySlider(searchedSlider);
+        renderSlider(matches, searchedSlider);
+        showPopup(matches);
+      });
 
-        document.getElementById('searchDateBtn').addEventListener('click', () => {
-            const selected = document.getElementById('birthdayDate').value;
-            const matches = birthdayData.filter(b => b.date === selected);
-            showOnlySlider(searchedSlider);
-            renderSlider(matches, searchedSlider);
-            showPopup(matches);
-        });
-
-        function showPopup(birthdays) {
-            const popup = new bootstrap.Modal(document.getElementById("birthdayPopup"));
-            const container = document.getElementById("popupBirthdayContainer");
-            container.innerHTML = '';
-            currentBirthdayList = birthdays;
-            birthdays.forEach((person) => {
-                const card = document.createElement('div');
-                card.className = 'card p-3 text-center shadow-sm';
-                card.style.width = '200px';
-                card.innerHTML = `
+      function showPopup(birthdays) {
+        const popup = new bootstrap.Modal(
+          document.getElementById("birthdayPopup")
+        );
+        const container = document.getElementById("popupBirthdayContainer");
+        container.innerHTML = "";
+        currentBirthdayList = birthdays;
+        birthdays.forEach((person) => {
+          const card = document.createElement("div");
+          card.className = "card p-3 text-center shadow-sm";
+          card.style.width = "200px";
+          card.innerHTML = `
         <img src="https://via.placeholder.com/100" class="rounded-circle mx-auto" height="80" alt="">
         <h6 class="mt-2 mb-0">${person.name}</h6>
         <small class="text-muted">${person.type}</small>
         <p class="text-success">🎂 Happy Birthday!</p>
       `;
-                container.appendChild(card);
-            });
-            popup.show();
-        }
+          container.appendChild(card);
+        });
+        popup.show();
+      }
 
-        function sendCombinedWhatsAppWishes() {
-            if (currentBirthdayList.length === 0) return; // 🚫 Do nothing if no birthday
+      function sendCombinedWhatsAppWishes() {
+        if (currentBirthdayList.length === 0) return; // 🚫 Do nothing if no birthday
 
-            const names = currentBirthdayList.map(p => p.name).join(', ');
-            const msg = `🎉 Clivax Gym wishes a very Happy Birthday to ${names}! 🎂🥳 Stay strong and fabulous! 💪`;
+        const names = currentBirthdayList.map((p) => p.name).join(", ");
+        const msg = `🎉 Clivax Gym wishes a very Happy Birthday to ${names}! 🎂🥳 Stay strong and fabulous! 💪`;
 
-            window.open(`https://wa.me/919999999999?text=${encodeURIComponent(msg)}`, '_blank');
+        window.open(
+          `https://wa.me/919999999999?text=${encodeURIComponent(msg)}`,
+          "_blank"
+        );
 
-            const popup = bootstrap.Modal.getInstance(document.getElementById("birthdayPopup"));
-            popup.hide();
-        }
-
+        const popup = bootstrap.Modal.getInstance(
+          document.getElementById("birthdayPopup")
+        );
+        popup.hide();
+      }
     </script>
+    <script>
+      function toggleSaleForm() {
+        const form = document.getElementById("saleFormContainer");
+        form.style.display = form.style.display === "none" ? "block" : "none";
+      }
 
+      function showTransactionModal() {
+        const modal = new bootstrap.Modal(
+          document.getElementById("transactionModal")
+        );
+        modal.show();
+      }
 
-</body>
+      document
+        .getElementById("saleForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
 
+          const name = document.getElementById("productName").value.trim();
+          const qty = parseInt(document.getElementById("quantity").value);
+          const price = parseFloat(document.getElementById("price").value);
+          const total = qty * price;
+
+          const row = `
+      <tr>
+        <td>${name}</td>
+        <td>${qty}</td>
+        <td>₹${price.toLocaleString(undefined, {
+          minimumFractionDigits: 2,
+        })}</td>
+        <td class="fw-bold">₹${total.toLocaleString(undefined, {
+          minimumFractionDigits: 2,
+        })}</td>
+        <td><span class="text-danger" style="cursor:pointer" onclick="deleteRow(this)">Delete</span></td>
+      </tr>
+    `;
+
+          document
+            .getElementById("transactionBody")
+            .insertAdjacentHTML("beforeend", row);
+
+          this.reset();
+          toggleSaleForm();
+        });
+
+      function deleteRow(el) {
+        el.closest("tr").remove();
+      }
+
+      // Hide form on outside click
+      document.addEventListener("click", function (e) {
+        const form = document.getElementById("saleFormContainer");
+        const button = document.getElementById("toggleFormBtn");
+
+        if (
+          form &&
+          !form.contains(e.target) &&
+          !button.contains(e.target) &&
+          form.style.display === "block"
+        ) {
+          form.style.display = "none";
+        }
+      });
+    </script>
+  </body>
 </html>
