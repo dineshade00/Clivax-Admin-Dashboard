@@ -764,8 +764,9 @@
               </div>
               <div class="card-body">
                 <form id="editForm">
-                  <div class="row g-3 align-items-end">
-                    <div class="col-12 col-md-4">
+                  <div class="row g-3">
+                    <!-- Membership Type -->
+                    <div class="col-md-6">
                       <label for="membershipType" class="form-label"
                         >Membership Type</label
                       >
@@ -775,10 +776,12 @@
                         name="type"
                         required
                       >
-                        <option value="" disabled>Select Type</option>
+                        <option value="" disabled selected>Select Type</option>
                       </select>
                     </div>
-                    <div class="col-12 col-md-4">
+
+                    <!-- Amount -->
+                    <div class="col-md-6">
                       <label for="membershipAmount" class="form-label"
                         >Amount (INR)</label
                       >
@@ -790,7 +793,9 @@
                         required
                       />
                     </div>
-                    <div class="col-12 col-md-4">
+
+                    <!-- Duration -->
+                    <div class="col-md-6">
                       <label for="membershipDuration" class="form-label"
                         >Duration</label
                       >
@@ -802,7 +807,9 @@
                         required
                       />
                     </div>
-                    <div class="col-12 col-md-4">
+
+                    <!-- Offer -->
+                    <div class="col-md-6">
                       <label for="membershipOffer" class="form-label"
                         >Offer</label
                       >
@@ -815,6 +822,8 @@
                       />
                     </div>
                   </div>
+
+                  <!-- Submit Button -->
                   <div class="d-grid d-md-flex justify-content-md-end mt-4">
                     <button class="btn btn-primary" type="submit">
                       Save Changes
