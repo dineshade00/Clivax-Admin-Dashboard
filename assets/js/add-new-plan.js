@@ -1,18 +1,18 @@
 const typeSelect = document.getElementById("membershipType");
 const popup = document.getElementById("addTypePopup");
 let plans = {
-  basic: { amount: "999", offer: "Free diet plan", duration: "1 Month" },
-  standard: {
-    amount: "2499",
-    offer: "1 week free training",
-    duration: "3 Months",
-  },
-  premium: { amount: "4499", offer: "Free gym kit", duration: "6 Months" },
-  personal: {
-    amount: "2499",
-    offer: "Dedicated trainer & diet plan",
-    duration: "1 Month",
-  },
+  // basic: { amount: "999", offer: "Free diet plan", duration: "1 Month" },
+  // standard: {
+  //   amount: "2499",
+  //   offer: "1 week free training",
+  //   duration: "3 Months",
+  // },
+  // premium: { amount: "4499", offer: "Free gym kit", duration: "6 Months" },
+  // personal: {
+  //   amount: "2499",
+  //   offer: "Dedicated trainer & diet plan",
+  //   duration: "1 Month",
+  // },
 };
 
 // Load from localStorage
