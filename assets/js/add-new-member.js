@@ -1,4 +1,4 @@
- 
+    
       document.addEventListener("DOMContentLoaded", function () {
         const addMemberForm = document.getElementById("addMemberForm");
         const proceedToPaymentBtn = document.getElementById(
@@ -23,11 +23,85 @@
         const joiningDateInput = document.getElementById("joining_date");
         const expiryDateInput = document.getElementById("expiry_date");
 
-        const membershipPrices = {
-          "1 month plan": 500,
-          "3 month plan": 1300,
-          "6 month plan": 2000,
-        };
+        // Load membership plans from localStorage
+        const storedPlans = JSON.parse(
+          localStorage.getItem("memberships") || "[]"
+        );
+
+        // Normalize plan data
+        const membershipPlans = storedPlans.map((plan) => ({
+          type: capitalize(plan.type),
+          amount: parseFloat(plan.amount),
+        }));
+
+        // Helper function to capitalize membership names
+        function capitalize(text) {
+          return text.charAt(0).toUpperCase() + text.slice(1);
+        }
+
+        // Populate dropdown with only type names
+        membershipTypeSelect.innerHTML =
+          '<option value="">Select Membership Type</option>';
+        membershipPlans.forEach((plan) => {
+          const option = document.createElement("option");
+          option.value = plan.type;
+          option.textContent = plan.type;
+          option.dataset.amount = plan.amount;
+          membershipTypeSelect.appendChild(option);
+        });
+
+        // Track selected total for recalculating due amount
+        let selectedTotalAmount = 0;
+
+        function updateDueAmount() {
+          const paidAmount = parseFloat(amountPaidInput.value) || 0;
+          dueAmountInput.value = Math.max(selectedTotalAmount - paidAmount, 0);
+        }
+
+        function calculateExpiryDate() {
+          const joiningDate = joiningDateInput.value;
+          const membership = membershipTypeSelect.value;
+
+          if (!joiningDate || !membership) {
+            expiryDateInput.value = "";
+            return;
+          }
+
+          const date = new Date(joiningDate);
+          if (membership.toLowerCase().includes("1 month")) {
+            date.setMonth(date.getMonth() + 1);
+          } else if (membership.toLowerCase().includes("3 month")) {
+            date.setMonth(date.getMonth() + 3);
+          } else if (membership.toLowerCase().includes("6 month")) {
+            date.setMonth(date.getMonth() + 6);
+          }
+          expiryDateInput.value = date.toISOString().split("T")[0];
+        }
+
+        // Event: Membership type change
+        membershipTypeSelect.addEventListener("change", () => {
+          const selectedOption =
+            membershipTypeSelect.options[membershipTypeSelect.selectedIndex];
+          selectedTotalAmount = selectedOption?.dataset?.amount
+            ? parseFloat(selectedOption.dataset.amount)
+            : 0;
+          dueAmountInput.value = selectedTotalAmount;
+          amountPaidInput.addEventListener("input", updateDueAmount);
+          function updateDueAmount() {
+            const paidAmount = parseFloat(amountPaidInput.value) || 0;
+            dueAmountInput.value = Math.max(
+              selectedTotalAmount - paidAmount,
+              0
+            );
+          }
+
+          calculateExpiryDate();
+          updateDueAmount(); // Ensure correct calculation if paid amount is already entered
+        });
+
+        // Event: Paid Amount change
+        amountPaidInput.addEventListener("input", updateDueAmount);
+        joiningDateInput.addEventListener("change", calculateExpiryDate);
 
         function updateDueAmount() {
           const selectedPlan = membershipTypeSelect.value;
@@ -286,4 +360,4 @@
           }
         }
       });
-    
+   
