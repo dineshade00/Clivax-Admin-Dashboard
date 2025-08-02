@@ -415,7 +415,7 @@ $(function () {
       if (!found) {
         todayRow.html(`
           <div class="col-12">
-            <div class="alert alert-info text-center" role="alert">
+            <div class="alert alert-danger text-center" role="alert">
               There are no sessions for today...
             </div>
           </div>
