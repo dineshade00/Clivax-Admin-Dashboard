@@ -2,10 +2,10 @@ const params = new URLSearchParams(window.location.search);
 let index = params.get("index");
 let data = JSON.parse(localStorage.getItem("memberships") || "[]");
 let plans = {
-  basic: { amount: "999", offer: "Free diet plan" },
-  standard: { amount: "2499", offer: "1 week free training" },
-  premium: { amount: "4499", offer: "Free gym kit" },
-  personal: { amount: "2499", offer: "Dedicated trainer & diet plan" },
+  // basic: { amount: "999", offer: "Free diet plan" },
+  // standard: { amount: "2499", offer: "1 week free training" },
+  // premium: { amount: "4499", offer: "Free gym kit" },
+  // personal: { amount: "2499", offer: "Dedicated trainer & diet plan" },
 };
 
 // Merge custom plans from localStorage
