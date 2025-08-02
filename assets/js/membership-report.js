@@ -188,41 +188,45 @@
         chart.render();
       }
     
-      function showReportTable() {
-        const fromDate = document.getElementById("fromDate").value;
-        const toDate = document.getElementById("toDate").value;
+function showReportTable() {
+  const fromDate = document.getElementById("fromDate").value;
+  const toDate = document.getElementById("toDate").value;
 
-        const table = document.getElementById("datatable");
-        const rows = table.querySelectorAll("tbody tr");
+  // Ensure both dates are selected
+  if (!fromDate || !toDate) {
+    alert("Please select both From and To dates before generating the report.");
+    return;
+  }
 
-        let count = 0;
-        rows.forEach((row) => {
-          const joinDate = row.getAttribute("data-joindate");
-          if (joinDate) {
-            if (
-              (!fromDate || joinDate >= fromDate) &&
-              (!toDate || joinDate <= toDate)
-            ) {
-              row.style.display = "";
-              count++;
-            } else {
-              row.style.display = "none";
-            }
-          }
-        });
+  const table = document.getElementById("datatable");
+  const rows = table.querySelectorAll("tbody tr");
 
-        // Show container
-        document.getElementById("reportTableContainer").style.display = "block";
-
-        // Reinitialize DataTable if needed
-        if (!$.fn.DataTable.isDataTable("#datatable")) {
-          $("#datatable").DataTable({
-            responsive: true,
-            paging: false,
-            searching: false,
-            info: false,
-            lengthChange: false,
-          });
-        }
+  let count = 0;
+  rows.forEach((row) => {
+    const joinDate = row.getAttribute("data-joindate");
+    if (joinDate) {
+      if (joinDate >= fromDate && joinDate <= toDate) {
+        row.style.display = "";
+        count++;
+      } else {
+        row.style.display = "none";
       }
-    
+    }
+  });
+
+  // Show container only after filtering
+  document.getElementById("reportTableContainer").style.display = "block";
+
+  // Reinitialize DataTable if not already done
+  if (!$.fn.DataTable.isDataTable("#datatable")) {
+    $("#datatable").DataTable({
+      responsive: true,
+      paging: false,
+      searching: false,
+      info: false,
+      lengthChange: false,
+    });
+  }
+}
+
+
