@@ -467,7 +467,7 @@ $(function () {
     if (!foundAny) {
       $wrap.append(`
       <div class="col-12">
-        <div class="alert alert-info text-center mb-0" role="alert">
+        <div class="alert alert-danger text-center mb-0" role="alert">
           There are no session for today...
         </div>
       </div>
