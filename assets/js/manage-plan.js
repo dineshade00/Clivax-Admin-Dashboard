@@ -8,7 +8,6 @@ let plans = {
   personal: { amount: "2499", offer: "Dedicated trainer & diet plan" },
 };
 
-
 // Merge custom plans from localStorage
 const storedPlans = JSON.parse(localStorage.getItem("customPlans") || "{}");
 plans = { ...plans, ...storedPlans };
@@ -41,6 +40,7 @@ if (index === null || !data[index]) {
 const entry = data[index];
 document.getElementById("membershipType").value = entry.type;
 document.getElementById("membershipAmount").value = entry.amount;
+document.getElementById("membershipDuration").value = entry.duration;
 document.getElementById("membershipOffer").value = entry.offer;
 
 // Update on change (optional)
@@ -51,10 +51,10 @@ document
     if (plans[selected]) {
       document.getElementById("membershipAmount").value =
         plans[selected].amount;
+      document.getElementById("newDuration").value = plans[selected].duration;
       document.getElementById("membershipOffer").value = plans[selected].offer;
     }
   });
-
 
 // Save edits
 
@@ -64,6 +64,7 @@ document.getElementById("editForm").addEventListener("submit", function (e) {
   const updated = {
     type: document.getElementById("membershipType").value,
     amount: document.getElementById("membershipAmount").value,
+    duration: document.getElementById("membershipDuration").value,
     offer: document.getElementById("membershipOffer").value,
   };
 
@@ -71,5 +72,4 @@ document.getElementById("editForm").addEventListener("submit", function (e) {
   localStorage.setItem("memberships", JSON.stringify(data));
   alert("Updated successfully.");
   window.location.href = "view-plan.html";
-  
 });
